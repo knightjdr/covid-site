@@ -1,0 +1,40 @@
+.report > * {
+  margin: 1rem 0;
+}
+
+.report header {
+  column-gap: 0.5em;
+  display: grid;
+  font-family: var(--font-secondary);
+  grid-template-columns: 5rem auto;
+  row-gap: 0.5rem;
+}
+.report header > :nth-child(odd) {
+  font-weight: bold;
+  justify-self: end;
+}
+.report header > :nth-child(odd)::after {
+  content: ':';
+}
+
+.report__protein-sequence {
+  position: relative;
+}
+.report__protein-sequence button {
+  bottom: 0.2em;
+  opacity: 0;
+  position: absolute;
+  right: 0.2em;
+  transition: opacity 0.3s;
+}
+.report__protein-sequence code {
+  display: block;
+  padding: 0.2rem 0.5rem;
+}
+.report__protein-sequence code:hover + button,
+.report__protein-sequence button:hover {
+  opacity: 1;
+}
+.report__protein-sequence summary {
+  margin-bottom: 0.5rem;
+}
