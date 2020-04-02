@@ -1,4 +1,5 @@
 html {
+  --color-font-dark: #333;
   --color-primary: #7dc383;
   --color-secondary: #699c78;
   --color-accent: #fff1bc;
@@ -207,7 +208,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.9);
+  color: var(--color-font-dark);
   font-family: var(--font-primary);
   font-weight: normal;
   font-size: 1.2em;
@@ -617,19 +618,22 @@ pre tt:after {
 }
 
 .layout {
+  align-items: center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-Width: 960px;
   min-height: 100vh;
   padding: 0 1.0875rem 1.45rem;
 }
 .layout > main {
   flex-grow: 1;
+  max-width: 960px;
+  width: 100%;
 }
 .layout > footer {
   display: flex;
+  font-family: var(--font-secondary);
   justify-content: center;
 }
 

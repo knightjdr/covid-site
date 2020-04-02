@@ -6,8 +6,11 @@ import Report from './report';
 import copyToClipboard from '../../utils/copy-to-clipboard';
 
 const ReportContainer = ({
+  conditions,
+  description,
   gene,
   orfName,
+  preys,
   proteinSequence,
   uniprot,
 }) => {
@@ -17,9 +20,12 @@ const ReportContainer = ({
 
   return (
     <Report
+      conditions={conditions}
       copyProteinToClipboard={copyProteinToClipboard}
+      description={description}
       gene={gene}
       orfName={orfName}
+      preys={preys}
       proteinSequence={proteinSequence}
       uniprot={uniprot}
     />
@@ -27,8 +33,11 @@ const ReportContainer = ({
 };
 
 ReportContainer.propTypes = {
+  conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
   orfName: PropTypes.string.isRequired,
+  preys: PropTypes.shape({}).isRequired,
   proteinSequence: PropTypes.string.isRequired,
   uniprot: PropTypes.string.isRequired,
 };

@@ -1,0 +1,12 @@
+.comparison__inner {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.comparison__select-menus {
+  display: flex;
+  flex-direction: column;
+}
+.comparison__select-menus > * {
+  margin-bottom: 1rem;
+}

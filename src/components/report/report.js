@@ -1,12 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Comparison from './comparison/comparison-container';
+
 import './report.css';
 
 const Report = ({
+  conditions,
   copyProteinToClipboard,
+  description,
   gene,
   orfName,
+  preys,
   proteinSequence,
   uniprot,
 }) => (
@@ -22,6 +27,8 @@ const Report = ({
           {uniprot}
         </a>
       </span>
+      <span>Description</span>
+      <span>{description}</span>
     </header>
     <details className="report__protein-sequence">
       <summary>Protein sequence</summary>
@@ -35,13 +42,20 @@ const Report = ({
         copy
       </button>
     </details>
+    <Comparison
+      conditions={conditions}
+      preys={preys}
+    />
   </div>
 );
 
 Report.propTypes = {
+  conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   copyProteinToClipboard: PropTypes.func.isRequired,
+  description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
   orfName: PropTypes.string.isRequired,
+  preys: PropTypes.shape({}).isRequired,
   proteinSequence: PropTypes.string.isRequired,
   uniprot: PropTypes.string.isRequired,
 };

@@ -2,15 +2,32 @@
   {
     "gene": "ORF1AB",
     "orfName": "NSP1",
-    "route": "NSP1",
+    "description": "Inhibits host translation (w 40S). Cleavage near 5'UTR.",
+    "pathName": "NSP1",
     "uniprot": "P0C6X7",
-    "proteinSequence": "MESLVPGFNEKTHVQLSLPVLQVRDVLVRGFGDSVEEVLSEARQHLKDGTCGLVEVEKGVLPQLEQPYVFIKRSDARTAPHGHVMVELVAELEGIQYGRSGETLGVLVPHVGEIPVAYRKVLLRKNGNKGAGGHSYGADLKSFDLGDELGTDPYEDFQENWNTKHSSGVTRELMRELNGG"
+    "conditions": ["a", "b", "c"],
+    "proteinSequence": "MESLVPGFNEKTHVQLSLPVLQVRDVLVRGFGDSVEEVLSEARQHLKDGTCGLVEVEKGVLPQLEQPYVFIKRSDARTAPHGHVMVELVAELEGIQYGRSGETLGVLVPHVGEIPVAYRKVLLRKNGNKGAGGHSYGADLKSFDLGDELGTDPYEDFQENWNTKHSSGVTRELMRELNGG",
+    "preys": {
+      "prey1": [
+        { "condition": "a", "count": 10 },
+        { "condition": "b", "count": 5 },
+        { "condition": "c", "count": 20.8 }
+      ],
+      "prey2": [
+        { "condition": "a", "count": 7 },
+        { "condition": "b", "count": 30.3 },
+        { "condition": "c", "count": 15 }
+      ]
+    }
   },
   {
     "gene": "ORF7A",
     "orfName": "ORF7A protein",
-    "route": "ORF7A-protein",
+    "description": "unknown",
+    "pathName": "ORF7A-protein",
     "uniprot": "P59635",
-    "proteinSequence": "MKIILFLALITLATCELYHYQECVRGTTVLLKEPCSSGTYEGNSPFHPLADNKFALTCFSTQFAFACPDGVKHVYQLRARSVSPKLFIRQEEVQELYSPIFLIVAAIVFITLCFTLKRKTE"
+    "conditions": [],
+    "proteinSequence": "MKIILFLALITLATCELYHYQECVRGTTVLLKEPCSSGTYEGNSPFHPLADNKFALTCFSTQFAFACPDGVKHVYQLRARSVSPKLFIRQEEVQELYSPIFLIVAAIVFITLCFTLKRKTE",
+    "preys": {}
   }
 ]
