@@ -1,3 +1,3 @@
 require('typeface-quicksand');
-require('typeface-karla');
+require('typeface-source-sans-pro');
 require('typeface-source-serif-pro');

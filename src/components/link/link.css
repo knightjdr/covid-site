@@ -1,0 +1,31 @@
+a {
+  background-color: transparent;
+  font-family: var(--font-secondary);
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+}
+a:focus {
+  outline: none;
+}
+a::-moz-focus-inner {
+  border: none;
+}
+a:link {
+  color: #2468e5;
+}
+a:visited {
+  color: #551A8B;
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+a.nav-link:visited {
+  color: #2468e5;
+}

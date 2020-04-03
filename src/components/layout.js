@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 
+import Link from './link/link';
 import Navbar from './navbar/navbar';
 
 import './layout.css';
@@ -17,7 +18,8 @@ const Layout = ({
           <main>{children}</main>
           <footer>
             ©
-            <a href="https://gingraslab.lunenfeld.ca">Gingras lab</a>
+            {' '}
+            <Link to="https://gingraslab.lunenfeld.ca">Gingras lab</Link>
             ,
             {' '}
             {new Date().getFullYear()}

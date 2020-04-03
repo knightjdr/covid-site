@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/covid-site',
   siteMetadata: {
     title: 'COVID-19 interactome',
     description: 'BioID-based interactome of the COVID-19 proteome.',
@@ -20,9 +21,9 @@ module.exports = {
         name: 'COVID-19 interactome',
         short_name: 'COVID-19 interactome',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
+        background_color: '#7dc383',
+        theme_color: '#7dc383',
+        display: 'standalone',
         icon: 'src/images/virus.png',
       },
     },

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
+import Link from '../link/link';
 import Virus from './assets/virus';
 
 const Icon = () => (

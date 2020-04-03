@@ -46,6 +46,23 @@ const Nav = styled.nav`
   .nav__icon svg .st1 {
     fill:var(--color-accent);
   }
+
+  .nav__right {
+    color: var(--color-font-dark);
+    margin-left: auto;
+  }
+  .nav__right a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .nav__right a:link,
+  .nav__right a:visited {
+    color: var(--color-font-dark);
+  }
+  .nav__right a:focus,
+  .nav__right a:hover {
+    color: var(--color-secondary);
+  }
 `;
 
 export default Nav;

@@ -19,6 +19,11 @@
 .report header > :nth-child(odd)::after {
   content: ':';
 }
+.report header a.nav-link:link,
+.report header a.nav-link:visited {
+  color: #53765F;
+}
+
 .report summary {
   font-family: var(--font-title);
   font-weight: bold;

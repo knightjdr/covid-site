@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Comparison from './comparison/comparison-container';
+import Link from '../link/link';
 
 import './report.css';
 
@@ -23,9 +24,12 @@ const Report = ({
       <span>{orfName}</span>
       <span>Uniprot</span>
       <span>
-        <a href={`https://www.uniprot.org/uniprot/${uniprot}`}>
+        <Link
+          nav
+          to={`https://www.uniprot.org/uniprot/${uniprot}`}
+        >
           {uniprot}
-        </a>
+        </Link>
       </span>
       <span>Description</span>
       <span>{description}</span>

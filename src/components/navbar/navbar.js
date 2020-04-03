@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Icon from './icon';
+import Link from '../link/link';
 import Nav from './navbar-style';
 
 const Navbar = ({
@@ -9,6 +10,9 @@ const Navbar = ({
 }) => (
   <Nav>
     { pathName !== '/' && <Icon /> }
+    <div className="nav__right">
+      <Link to="/about">About</Link>
+    </div>
   </Nav>
 );
 
