@@ -11,6 +11,7 @@ const Navbar = ({
   <Nav>
     { pathName !== '/' && <Icon /> }
     <div className="nav__right">
+      <Link to="/downloads">Downloads</Link>
       <Link to="/about">About</Link>
     </div>
   </Nav>

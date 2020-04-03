@@ -3,13 +3,11 @@ import React from 'react';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo/seo';
 
-const AboutPage = () => (
+const DownloadsPage = () => (
   <Layout>
     <SEO title="About" />
-    <h1>About</h1>
-    <h2>Contact</h2>
-    <h2>Funding</h2>
+    <h1>Downloads</h1>
   </Layout>
 );
 
-export default AboutPage;
+export default DownloadsPage;

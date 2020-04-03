@@ -1,0 +1,26 @@
+.report__table thead {
+  border-bottom: 2px solid var(--color-secondary);
+  border-top: 2px solid var(--color-secondary);
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.report__table tbody {
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.report__table td,
+.report__table th {
+  padding: 0.4rem 0.6rem;
+}
+
+.report__table th {
+  text-align: center;
+}
+
+.report__table tbody td {
+  border: none;
+}
+.report__table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}

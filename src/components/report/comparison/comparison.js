@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Details from '../../details/details';
 import Scatterplot from './scatterplot-container';
 import Select from './select';
 
@@ -12,7 +13,10 @@ const Comparison = ({
   selectCondition,
   selectedConditions,
 }) => (
-  <details className="comparison">
+  <Details
+    className="comparison"
+    listStyleType="dot"
+  >
     <summary>Compare conditions</summary>
     <div className="comparison__inner">
       <div className="comparison__select-menus">
@@ -35,7 +39,7 @@ const Comparison = ({
         y={selectedConditions.x}
       />
     </div>
-  </details>
+  </Details>
 );
 
 Comparison.propTypes = {

@@ -1,11 +1,18 @@
 html {
+  --alert: #FFFBE6;
+  --alert2: #ffe14d;
   --color-font-dark: #333;
+  --color-font-light: #F2F2F2;
   --color-primary: #7dc383;
   --color-secondary: #699c78;
   --color-accent: #fff1bc;
   --font-primary: 'Source Serif Pro', serif;
   --font-secondary: 'Source Sans Pro', sans-serif;
-  --font-title: 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Helvetica, sans-serif;;
+  --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  --font-title: 'Quicksand', sans-serif;
+  --timing-function: cubic-bezier(.17, .67, .16, .99);
+  --success: #026E07;
+  --warning: #C2352A;
   font-family: serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -624,17 +631,19 @@ pre tt:after {
   flex-direction: column;
   margin: 0 auto;
   min-height: 100vh;
-  padding: 0 1.0875rem 1.45rem;
 }
 .layout > main {
   flex-grow: 1;
   max-width: 960px;
+  padding: 0.5rem 1rem;
   width: 100%;
 }
 .layout > footer {
   display: flex;
   font-family: var(--font-secondary);
   justify-content: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
 
 select {

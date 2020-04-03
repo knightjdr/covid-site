@@ -6,7 +6,7 @@
 
 .scatterplot__placeholder {
   align-items: center;
-  background-color: #e6ede8;
+  background-color: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--color-secondary);
   border-radius: 3px;
   display: flex;

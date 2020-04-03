@@ -52,6 +52,7 @@ const Nav = styled.nav`
     margin-left: auto;
   }
   .nav__right a {
+    margin: 0 0.6rem;
     text-decoration: none;
     transition: color 0.3s ease;
   }

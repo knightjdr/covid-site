@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from '../../components/link/link';
-import SEO from '../../components/seo';
+import SEO from '../../components/seo/seo';
 
 import './404.css';
 
@@ -18,7 +18,7 @@ const NotFoundPage = () => (
       </p>
       <Link
         className="missing__link"
-        nav="to"
+        nav
         to="/"
       >
         Home

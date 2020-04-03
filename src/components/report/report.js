@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { faCopy } from '@fortawesome/pro-solid-svg-icons';
 
 import Comparison from './comparison/comparison-container';
+import Details from '../details/details';
+import IconButton from '../buttons/icon/button';
 import Link from '../link/link';
+import Table from './table/table-container';
 
 import './report.css';
 
@@ -18,35 +22,47 @@ const Report = ({
 }) => (
   <div className="report">
     <header>
-      <span>Gene</span>
-      <span>{gene}</span>
-      <span>ORF</span>
-      <span>{orfName}</span>
-      <span>Uniprot</span>
-      <span>
+      <h1>
+        <div className="report__header-title">Gene</div>
+        <div>{gene}</div>
+      </h1>
+      <div className="report__header-field">ORF</div>
+      <div>{orfName}</div>
+      <div className="report__header-field">Uniprot</div>
+      <div>
         <Link
           nav
           to={`https://www.uniprot.org/uniprot/${uniprot}`}
         >
           {uniprot}
         </Link>
-      </span>
-      <span>Description</span>
-      <span>{description}</span>
+      </div>
+      <div className="report__header-field">Description</div>
+      <div>{description}</div>
     </header>
-    <details className="report__protein-sequence">
+    <Details>
       <summary>Protein sequence</summary>
-      <code>
-        {proteinSequence}
-      </code>
-      <button
-        onClick={copyProteinToClipboard}
-        type="button"
-      >
-        copy
-      </button>
-    </details>
+      <div className="report__protein-sequence">
+        <code>
+          <div>{proteinSequence}</div>
+        </code>
+        <div className="report__protein-copy">
+          <span>Copy</span>
+          <IconButton
+            icon={faCopy}
+            kind="primary"
+            onClick={copyProteinToClipboard}
+            size="xs"
+            type="button"
+          />
+        </div>
+      </div>
+    </Details>
     <Comparison
+      conditions={conditions}
+      preys={preys}
+    />
+    <Table
       conditions={conditions}
       preys={preys}
     />

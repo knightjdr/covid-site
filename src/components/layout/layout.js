@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 
-import Link from './link/link';
-import Navbar from './navbar/navbar';
+import Link from '../link/link';
+import Navbar from '../navbar/navbar';
 
 import './layout.css';
 
