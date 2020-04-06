@@ -15,19 +15,22 @@ const Report = ({
   copyProteinToClipboard,
   description,
   gene,
-  orfName,
+  id,
   preys,
+  proteinName,
   proteinSequence,
   uniprot,
 }) => (
   <div className="report">
     <header>
       <h1>
-        <div className="report__header-title">Gene</div>
-        <div>{gene}</div>
+        <div className="report__header-title">ID</div>
+        <div>{id}</div>
       </h1>
-      <div className="report__header-field">ORF</div>
-      <div>{orfName}</div>
+      <div className="report__header-field">Gene</div>
+      <div>{gene}</div>
+      <div className="report__header-field">Protein name</div>
+      <div>{proteinName}</div>
       <div className="report__header-field">Uniprot</div>
       <div>
         <Link
@@ -62,6 +65,7 @@ const Report = ({
       conditions={conditions}
       preys={preys}
     />
+    <h2 className="report__prey-header">Preys</h2>
     <Table
       conditions={conditions}
       preys={preys}
@@ -74,8 +78,9 @@ Report.propTypes = {
   copyProteinToClipboard: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
-  orfName: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
+  proteinName: PropTypes.string.isRequired,
   proteinSequence: PropTypes.string.isRequired,
   uniprot: PropTypes.string.isRequired,
 };

@@ -12,8 +12,9 @@ const IndexPage = () => (
       BioID-based interactome of the COVID-19 proteome
     </p>
     <ul>
-      <li><Link to="/NSP1" nav>NSP1</Link></li>
-      <li><Link to="/ORF7A-protein" nav>ORF7A protein</Link></li>
+      <li><Link to="/E" nav>E</Link></li>
+      <li><Link to="/M" nav>M</Link></li>
+      <li><Link to="/NSP10" nav>NSP10</Link></li>
     </ul>
   </Layout>
 );

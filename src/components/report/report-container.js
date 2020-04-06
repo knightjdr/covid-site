@@ -9,8 +9,9 @@ const ReportContainer = ({
   conditions,
   description,
   gene,
-  orfName,
+  id,
   preys,
+  proteinName,
   proteinSequence,
   uniprot,
 }) => {
@@ -24,8 +25,9 @@ const ReportContainer = ({
       copyProteinToClipboard={copyProteinToClipboard}
       description={description}
       gene={gene}
-      orfName={orfName}
+      id={id}
       preys={preys}
+      proteinName={proteinName}
       proteinSequence={proteinSequence}
       uniprot={uniprot}
     />
@@ -36,8 +38,9 @@ ReportContainer.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
-  orfName: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
+  proteinName: PropTypes.string.isRequired,
   proteinSequence: PropTypes.string.isRequired,
   uniprot: PropTypes.string.isRequired,
 };

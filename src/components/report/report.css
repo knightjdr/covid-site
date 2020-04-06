@@ -46,6 +46,10 @@
   width: 10rem;
 }
 
+.report__prey-header {
+  margin-bottom: 0.8rem;
+}
+
 .report__protein-sequence {
   display: flex;
   margin-top: 0.5rem;

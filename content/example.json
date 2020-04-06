@@ -1,0 +1,39 @@
+[
+  {
+    "id": "NSP1",
+    "gene": "ORF1AB",
+    "proteinName": "NSP1",
+    "uniprot": "P0C6X7",
+    "description": "Inhibits host translation (w 40S). Cleavage near 5'UTR.",
+    "conditions": ["a", "b", "c"],
+    "proteinSequence": "MESLVPGFNEKTHVQLSLPVLQVRDVLVRGFGDSVEEVLSEARQHLKDGTCGLVEVEKGVLPQLEQPYVFIKRSDARTAPHGHVMVELVAELEGIQYGRSGETLGVLVPHVGEIPVAYRKVLLRKNGNKGAGGHSYGADLKSFDLGDELGTDPYEDFQENWNTKHSSGVTRELMRELNGG",
+    "preys": {
+      "prey1": {
+        "id": "id1",
+        "conditions": [
+          { "condition": "a", "count": 10, "fdr": 0.01 },
+          { "condition": "b", "count": 5, "fdr": 0.01 },
+          { "condition": "c", "count": 20.8, "fdr": 0.02 }
+        ]
+      },
+      "prey2": {
+        "id": "id2",
+        "conditions": [
+          { "condition": "a", "count": 7, "fdr": 0.01 },
+          { "condition": "b", "count": 30.3, "fdr": 0.01 },
+          { "condition": "c", "count": 15, "fdr": 0.01 }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ORF7A",
+    "gene": "ORF7A",
+    "proteinName": "ORF7A protein",
+    "uniprot": "P59635",
+    "description": "unknown",
+    "conditions": [],
+    "proteinSequence": "MKIILFLALITLATCELYHYQECVRGTTVLLKEPCSSGTYEGNSPFHPLADNKFALTCFSTQFAFACPDGVKHVYQLRARSVSPKLFIRQEEVQELYSPIFLIVAAIVFITLCFTLKRKTE",
+    "preys": {}
+  }
+]

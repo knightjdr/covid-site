@@ -10,20 +10,22 @@ const BaitTemplate = ({ pageContext }) => {
     conditions,
     description,
     gene,
-    orfName,
+    id,
     preys,
+    proteinName,
     proteinSequence,
     uniprot,
   } = pageContext;
 
   return (
     <Layout>
-      <SEO title={orfName} />
+      <SEO title={id} />
       <Report
         conditions={conditions}
         description={description}
         gene={gene}
-        orfName={orfName}
+        id={id}
+        proteinName={proteinName}
         preys={preys}
         proteinSequence={proteinSequence}
         uniprot={uniprot}
@@ -37,8 +39,9 @@ BaitTemplate.propTypes = {
     conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
     description: PropTypes.string.isRequired,
     gene: PropTypes.string.isRequired,
-    orfName: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     preys: PropTypes.shape({}).isRequired,
+    proteinName: PropTypes.string.isRequired,
     proteinSequence: PropTypes.string.isRequired,
     uniprot: PropTypes.string.isRequired,
   }).isRequired,
