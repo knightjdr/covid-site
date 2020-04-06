@@ -1,5 +1,5 @@
 {
-  "name": "covid-19-interactome",
+  "name": "covid-site",
   "private": true,
   "description": "BioID-based interactome of the COVID-19 proteome",
   "version": "0.1.0",
@@ -50,9 +50,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/knightjdr/covid-19-interactome"
+    "url": "https://github.com/knightjdr/covid-site"
   },
   "bugs": {
-    "url": "https://github.com/knightjdr/covid-19-interactome/issues"
+    "url": "https://github.com/knightjdr/covid-site/issues"
   }
 }
