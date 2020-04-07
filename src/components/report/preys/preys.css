@@ -1,0 +1,10 @@
+.report__prey-options {
+  display: flex;
+  margin: 0.8rem 0;
+}
+.report__prey-options a {
+  margin-left: auto;
+}
+.report__prey-options a span {
+  margin-left: 0.3rem;
+}

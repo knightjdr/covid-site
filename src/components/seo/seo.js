@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, withPrefix } from 'gatsby';
 
 function SEO({
   description,
@@ -57,7 +57,10 @@ function SEO({
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link type="text/plain" rel="author" href={withPrefix('/humans.txt')} />
+      <meta name="robots" content="noindex,nofollow" />
+    </Helmet>
   );
 }
 

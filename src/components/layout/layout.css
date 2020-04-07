@@ -685,6 +685,12 @@ select::-ms-expand {
 	display: none;
 }
 
+.noscript-warning {
+  background-color: var(--alert2);
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

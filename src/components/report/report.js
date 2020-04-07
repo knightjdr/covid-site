@@ -6,7 +6,7 @@ import Comparison from './comparison/comparison-container';
 import Details from '../details/details';
 import IconButton from '../buttons/icon/button';
 import Link from '../link/link';
-import Table from './table/table-container';
+import Preys from './preys/preys';
 
 import './report.css';
 
@@ -65,9 +65,9 @@ const Report = ({
       conditions={conditions}
       preys={preys}
     />
-    <h2 className="report__prey-header">Preys</h2>
-    <Table
+    <Preys
       conditions={conditions}
+      id={id}
       preys={preys}
     />
   </div>

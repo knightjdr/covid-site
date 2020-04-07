@@ -15,6 +15,11 @@ const IndexPage = () => (
       <li><Link to="/E" nav>E</Link></li>
       <li><Link to="/M" nav>M</Link></li>
       <li><Link to="/NSP10" nav>NSP10</Link></li>
+      <li><Link to="/NSP2" nav>NSP2</Link></li>
+      <li><Link to="/NSP6" nav>NSP6</Link></li>
+      <li><Link to="/ORF6" nav>ORF6</Link></li>
+      <li><Link to="/ORF7A" nav>ORF7A</Link></li>
+      <li><Link to="/ORF9A" nav>ORF9A</Link></li>
     </ul>
   </Layout>
 );

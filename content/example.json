@@ -10,19 +10,19 @@
     "preys": {
       "prey1": {
         "id": "id1",
-        "conditions": [
-          { "condition": "a", "count": 10, "fdr": 0.01 },
-          { "condition": "b", "count": 5, "fdr": 0.01 },
-          { "condition": "c", "count": 20.8, "fdr": 0.02 }
-        ]
+        "conditions": {
+          "a": { "count": 10, "fdr": 0.01 },
+          "b": { "count": 5, "fdr": 0.01 },
+          "c": { "count": 20.8, "fdr": 0.02 }
+        }
       },
       "prey2": {
         "id": "id2",
-        "conditions": [
-          { "condition": "a", "count": 7, "fdr": 0.01 },
-          { "condition": "b", "count": 30.3, "fdr": 0.01 },
-          { "condition": "c", "count": 15, "fdr": 0.01 }
-        ]
+        "conditions": {
+          "a": { "count": 7, "fdr": 0.01 },
+          "b": { "count": 30.3, "fdr": 0.01 },
+          "c": { "count": 15, "fdr": 0.01 }
+        }
       }
     }
   },

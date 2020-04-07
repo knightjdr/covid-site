@@ -1,0 +1,9 @@
+.report__table td,
+.report__table th {
+  padding: 0.4rem 0.6rem;
+}
+
+.report__table td,
+.report__table th {
+  text-align: center;
+}

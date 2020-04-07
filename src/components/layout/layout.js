@@ -15,6 +15,10 @@ const Layout = ({
       ({ location }) => (
         <div className="layout">
           <Navbar pathName={location.pathname} />
+          <noscript className="noscript-warning">
+            This site relies on JavaScript which is currently disabled in your browser.
+            Some functionality will be missing as a result.
+          </noscript>
           <main>{children}</main>
           <footer>
             ©

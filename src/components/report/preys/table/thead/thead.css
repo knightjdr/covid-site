@@ -1,0 +1,43 @@
+.report__thead {
+  border-bottom: 2px solid var(--color-secondary);
+  border-top: 2px solid var(--color-secondary);
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.report__thead button {
+  background: none;
+  border: none;
+  border-radius: 3px;
+	color: inherit;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.2rem;
+  transition: all 0.3s var(--timing-function)
+}
+.report__thead button:focus,
+.report__thead button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-font-dark);
+  outline: none;
+}
+.report__thead button::-moz-focus-inner {
+  border: 0;
+}
+.report__thead button svg {
+  margin: 0.15rem 0;
+}
+
+.report__thead-prey {
+  vertical-align: bottom;
+}
+
+.report__th-inner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.report__th-inner > * {
+  margin: 0 0.15rem;
+}
