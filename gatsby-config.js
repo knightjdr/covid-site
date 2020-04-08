@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/covid-site',
   siteMetadata: {
-    siteUrl: 'https://knightjdr.github.io/covid-site',
+    siteUrl: 'https://jamesknight.dev/covid-site',
     title: 'COVID-19 interactome',
     description: 'BioID-based interactome of the COVID-19 proteome.',
   },
@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://knightjdr.github.io/covid-site',
-        sitemap: 'https://knightjdr.github.io/covid-site/sitemap.xml',
+        host: 'https://jamesknight.dev/covid-site',
+        sitemap: 'https://jamesknight.dev/covid-site/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

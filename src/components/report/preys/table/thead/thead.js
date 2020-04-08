@@ -23,7 +23,7 @@ const TableHead = ({
         </div>
       </th>
       <th colSpan={conditions.length}>
-        Conditions
+        Conditions: spectral count (FDR)
       </th>
     </tr>
     <tr>

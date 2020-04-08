@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
 import Preys from './preys';
-import isNumber from '../../../utils/sort/is-number';
+import validateFDR from '../../../utils/input-handlers/validate-fdr';
+import validateSpec from '../../../utils/input-handlers/validate-spec';
 
 const PreysContainer = ({
   conditions,
@@ -13,18 +14,15 @@ const PreysContainer = ({
   const [spectralCount, setSpectralCount] = useState(0);
 
   const handleFDRChange = (e) => {
-    let value = Number(e.target.value);
-    if (isNumber(value)) {
-      value = Math.max(0, value);
-      value = Math.min(1, value);
+    const [validated, value] = validateFDR(e);
+    if (validated) {
       setFDR(value);
     }
   };
 
   const handleSpecChange = (e) => {
-    let value = Number(e.target.value);
-    if (isNumber(value)) {
-      value = Math.max(0, value);
+    const [validated, value] = validateSpec(e);
+    if (validated) {
       setSpectralCount(value);
     }
   };

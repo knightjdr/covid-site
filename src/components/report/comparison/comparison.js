@@ -2,13 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Details from '../../details/details';
+import Options from './options-container';
 import Scatterplot from './scatterplot-container';
-import Select from './select';
+import Vertices from './vertices';
 
 import './comparison.css';
 
 const Comparison = ({
+  changeOption,
   conditions,
+  options,
   preys,
   selectCondition,
   selectedConditions,
@@ -19,31 +22,28 @@ const Comparison = ({
   >
     <summary>Compare conditions</summary>
     <div className="comparison__inner">
-      <div className="comparison__select-menus">
-        <Select
-          conditions={conditions}
-          selectCondition={selectCondition}
-          value={selectedConditions.x}
-          vertex="x"
-        />
-        <Select
-          conditions={conditions}
-          selectCondition={selectCondition}
-          value={selectedConditions.y}
-          vertex="y"
-        />
-      </div>
+      <Vertices
+        conditions={conditions}
+        selectCondition={selectCondition}
+        selectedConditions={selectedConditions}
+      />
       <Scatterplot
         preys={preys}
         x={selectedConditions.x}
         y={selectedConditions.x}
+      />
+      <Options
+        changeOption={changeOption}
+        options={options}
       />
     </div>
   </Details>
 );
 
 Comparison.propTypes = {
+  changeOption: PropTypes.func.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  options: PropTypes.shape({}).isRequired,
   preys: PropTypes.shape({}).isRequired,
   selectCondition: PropTypes.func.isRequired,
   selectedConditions: PropTypes.shape({

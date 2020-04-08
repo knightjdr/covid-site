@@ -1,4 +1,4 @@
-import isNumber from './is-number';
+import isNumber from '../is-number';
 
 const checkCharactersDefined = (a, b) => {
   if (!a && !b) {

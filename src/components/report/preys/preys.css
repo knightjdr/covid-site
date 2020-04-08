@@ -7,7 +7,7 @@
 .report__prey-filters > *:first-child {
   margin-right: 1rem;
 }
-.report__prey-filters input {
+.report__prey-filters .input {
   width: 6rem;
 }
 .report__prey-filters label {

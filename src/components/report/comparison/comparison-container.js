@@ -7,6 +7,7 @@ const ComparisonContainer = ({
   conditions,
   preys,
 }) => {
+  const [options, setOptions] = useState({ count: 0, fdr: 0.01, log: false });
   const [selectedConditions, setSelectedConditions] = useState({ x: '', y: '' });
 
   const selectCondition = (e) => {
@@ -18,9 +19,18 @@ const ComparisonContainer = ({
     });
   };
 
+  const changeOption = (field, value) => {
+    setOptions({
+      ...options,
+      [field]: value,
+    });
+  };
+
   return (
     <Comparison
+      changeOption={changeOption}
       conditions={conditions}
+      options={options}
       preys={preys}
       selectCondition={selectCondition}
       selectedConditions={selectedConditions}
