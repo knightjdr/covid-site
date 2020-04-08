@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://knightjdr.github.io/covid-site/sitemap.xml
+Host: https://knightjdr.github.io
