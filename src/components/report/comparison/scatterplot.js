@@ -13,7 +13,7 @@ const ScatterPlot = ({
     : (
       <div className="scatterplot scatterplot__placeholder">
         <span>
-          Select a pair of conditions
+          Select a pair of conditions (currently non-functional)
         </span>
       </div>
     )
