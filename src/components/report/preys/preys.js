@@ -7,15 +7,26 @@ import Link from '../../link/link';
 import Table from './table/table-container';
 
 import './preys.css';
+import Filters from './filters';
 
 const Preys = ({
   conditions,
+  fdr,
+  handleFDRChange,
+  handleSpecChange,
   id,
   preys,
+  spectralCount,
 }) => (
   <div>
     <h2 className="report__prey-header">Preys</h2>
     <div className="report__prey-options">
+      <Filters
+        fdr={fdr}
+        handleFDRChange={handleFDRChange}
+        handleSpecChange={handleSpecChange}
+        spectralCount={spectralCount}
+      />
       <Link
         download
         nav
@@ -27,16 +38,21 @@ const Preys = ({
     </div>
     <Table
       conditions={conditions}
-      fdr={0.01}
+      fdr={fdr}
       preys={preys}
+      spectralCount={spectralCount}
     />
   </div>
 );
 
 Preys.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  fdr: PropTypes.number.isRequired,
+  handleFDRChange: PropTypes.func.isRequired,
+  handleSpecChange: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
+  spectralCount: PropTypes.number.isRequired,
 };
 
 export default Preys;

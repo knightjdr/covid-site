@@ -6,7 +6,7 @@ import Comparison from './comparison/comparison-container';
 import Details from '../details/details';
 import IconButton from '../buttons/icon/button';
 import Link from '../link/link';
-import Preys from './preys/preys';
+import Preys from './preys/preys-container';
 
 import './report.css';
 
