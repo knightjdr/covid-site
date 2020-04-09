@@ -3,18 +3,19 @@ import React from 'react';
 
 import Icon from './icon';
 import Link from '../link/link';
-import Nav from './navbar-style';
+
+import './navbar.css';
 
 const Navbar = ({
   pathName,
 }) => (
-  <Nav>
+  <div className="nav">
     { pathName !== '/' && <Icon /> }
     <div className="nav__right">
       <Link to="/downloads">Downloads</Link>
       <Link to="/about">About</Link>
     </div>
-  </Nav>
+  </div>
 );
 
 Navbar.defaultProps = {

@@ -6,6 +6,7 @@ import Virus from './assets/virus';
 const Icon = () => (
   <Link
     className="nav__icon"
+    nav
     to="/"
   >
     <Virus />
