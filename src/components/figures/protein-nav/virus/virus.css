@@ -1,0 +1,36 @@
+.protein-nav__virus {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-secondary);
+}
+
+.protein-nav__virus_dark {
+  fill: #699c78;
+}
+.protein-nav__virus_light {
+  fill: #fff1bc;
+}
+.protein-nav__virus_medium {
+  fill: #7dc383;
+}
+.protein-nav__virus_semi-trans {
+  opacity: 0.5; 
+}
+
+svg path {
+  transition: fill 0.3s var(--timing-function);
+}
+
+svg [data-localization="capsid"]:hover path,
+svg [data-localization="envelope"]:hover path,
+svg [data-localization="matrix"]:hover circle,
+svg [data-localization="spike"]:hover path {
+  fill: #64b5f6;
+}
+svg[data-highlighted="capsid"] [data-localization="capsid"] path,
+svg[data-highlighted="envelope"] [data-localization="envelope"] path,
+svg[data-highlighted="matrix"] [data-localization="matrix"] circle,
+svg[data-highlighted="spike"] [data-localization="spike"] path {
+  fill: #64b5f6;
+}
