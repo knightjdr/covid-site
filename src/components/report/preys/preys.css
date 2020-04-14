@@ -7,16 +7,8 @@
 .report__prey-filters > *:first-child {
   margin-right: 1rem;
 }
-.report__prey-filters .input {
+.report__prey-filters input {
   width: 6rem;
-}
-.report__prey-filters label {
-  align-items: center;
-  display: flex;
-  font-family: var(--font-secondary);
-}
-.report__prey-filters label span {
-  margin-right: 0.4rem;
 }
 
 .report__prey-options {

@@ -11,6 +11,7 @@ const Filters = ({
 }) => (
   <div className="report__prey-filters">
     <Input
+      direction="horizontal"
       id="table_fdr_filter"
       label="FDR:"
       max={1}
@@ -21,6 +22,7 @@ const Filters = ({
       value={fdr}
     />
     <Input
+      direction="horizontal"
       id="table_spec_filter"
       label="Spectral count:"
       min={0}

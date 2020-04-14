@@ -1,0 +1,22 @@
+.search .input {
+  width: 100%;
+}
+
+.search__results {
+  display: flex;
+  font-family: var(--font-secondary);
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.search__results-none {
+  background-color: var(--color-accent);
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.search__results table {
+  width: 100%;
+}

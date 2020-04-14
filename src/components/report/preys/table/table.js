@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import CustomTable from '../../../table/table';
 import TBody from './tbody/tbody';
 import THead from './thead/thead';
-
-import './table.css';
 
 const Table = ({
   conditions,
@@ -12,7 +11,7 @@ const Table = ({
   rows,
   sortOptions,
 }) => (
-  <table className="report__table">
+  <CustomTable>
     <THead
       conditions={conditions}
       handleSortByColumn={handleSortByColumn}
@@ -22,7 +21,7 @@ const Table = ({
       conditions={conditions}
       rows={rows}
     />
-  </table>
+  </CustomTable>
 );
 
 Table.propTypes = {

@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './tbody.css';
-
 const TableBody = ({
   conditions,
   rows,
 }) => (
-  <tbody className="report__tbody">
+  <tbody>
     {
       rows.map((row) => (
         <tr key={row.id}>

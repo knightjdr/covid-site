@@ -37,5 +37,6 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    'gatsby-plugin-use-query-params',
   ],
 };

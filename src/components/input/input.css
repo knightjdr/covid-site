@@ -28,7 +28,7 @@
 
 .input_horizontal {
   align-items: center;
-  display: flex;
+  display: inline-flex;
 }
 .input_horizontal > .input__label {
   margin-right: 0.5rem;

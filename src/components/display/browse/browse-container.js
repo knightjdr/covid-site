@@ -11,9 +11,9 @@ const BrowseContainer = () => {
 
   const handleSearch = (e) => {
     const { key, target } = e;
-    if (key === 'Enter') {
-      const { value } = target;
-      console.log(value);
+    const { value } = target;
+    if (key === 'Enter' && value) {
+      navigate(`/search?term=${encodeURIComponent(value)}`);
     }
   };
 
