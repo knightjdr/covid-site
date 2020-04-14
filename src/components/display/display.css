@@ -1,0 +1,17 @@
+.display {
+  border-top: 1px solid #e8e8e8;
+  padding: 1.8rem 0;
+}
+.display > h2 {
+  width: 100%;
+}
+
+.display__instructions {
+  background-color: var(--color-accent);
+  border-radius: 0.2rem;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}

@@ -3,6 +3,10 @@
     "description": "Acts as a viroporin and self-assembles in host membranes forming pentameric protein-lipid pores that allow ion transport.",
     "id": "E",
     "gene": "E",
+    "localization": {
+      "cell": "ER",
+      "virus": "spike"
+    },
     "proteinName": "Envelope protein",
     "proteinSequence": "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV",
     "uniprot": "P59637",
@@ -8485,6 +8489,10 @@
     "description": "Component of the viral envelope.",
     "id": "M",
     "gene": "M",
+    "localization": {
+      "cell": "plasma_membrane",
+      "virus": "envelope"
+    },
     "proteinName": "Membrane glycoprotein",
     "proteinSequence": "MADSNGTITVEELKKLLEQWNLVIGFLFLTWICLLQFAYANRNRFLYIIKLIFLWLLWPVTLACFVLAAVYRINWITGGIAIAMACLVGLMWLSYFIASFRLFARTRSMWSFNPETNILLNVPLHGTILTRPLLESELVIGAVILRGHLRIAGHHLGRCDIKDLPKEITVATSRTLSYYKLGASQRVAGDSGFAAYSRYRIGNYKLNTDHSSSSDNIALLVQ",
     "uniprot": "P59596",
@@ -20693,6 +20701,10 @@
     "description": "Stimulates NSP14(3'-5' exoribonuclease) and NSP16(2'-O-methyltransferase) activities.",
     "id": "NSP10",
     "gene": "ORF1AB",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    },
     "proteinName": "NSP10",
     "proteinSequence": "AGNATEVPANSTVLSFCAFAVDAAKAYKDYLASGGQPITNCVKMLCTHTGTGQAITVTPEANMDQESFGGASCCLYCRCHIDHPNPKGFCDLKGKYVQIPTTCANDPVGFTLKNTVCTVCGMWKGYGCSCDQLREPMLQ",
     "uniprot": "P0C6X7",
@@ -33783,6 +33795,10 @@
     "description": "Modulates host cell survival signaling pathway.",
     "id": "NSP2",
     "gene": "ORF1AB",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    },
     "proteinName": "NSP2",
     "proteinSequence": "AYTRYVDNNFCGPDGYPLECIKDLLARAGKASCTLSEQLDFIDTKRGVYCCREHEHEIAWYTERSEKSYELQTPFEIKLAKKFDTFNGECPNFVFPLNSIIKTIQPRVEKKKLDGFMGRIRSVYPVASPNECNQMCLSTLMKCDHCGETSWQTGDFVKATCEFCGTENLTKEGATTCGYLPQNAVVKIYCPACHNSEVGPEHSLAEYHNESGLKTILRKGGRTIAFGGCVFSYVGCHNKCAYWVPRASANIGCNHTGVVGEGSEGLNDNLLEILQKEKVNINIVGDFKLNEEIAIILASFSASTSAFVETVKGLDYKAFKQIVESCGNFKVTKGKAKKGAWNIGEQKSILSPLYAFASEAARVVRSIFSRTLETAQNSVRVLQKAAITILDGISQYSLRLIDAMMFTSDLATNNLVVMAYITGGVVQLTSQWLTNIFGTVYEKLKPVLDWLEEKFKEGVEFLRDGWEIVKFISTCACEIVGGQIVTCAKEIKESVQTFFKLVNKFLALCADSIIIGGAKLKALNLGETFVTHSKGLYRKCVKSREETGLLMPLKAPKEIIFLEGETLPTEVLTEEVVLKTGDLQPLEQPTSEAVEAPLVGTPVCINGLMLLEIKDTEKYCALAPNMMVTNNTFTLKGG",
     "uniprot": "P0C6X7",
@@ -46216,6 +46232,10 @@
     "description": "Role in the initial induction of autophagosomes from ER (DMV formation).",
     "id": "NSP6",
     "gene": "ORF1AB",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    },
     "proteinName": "NSP6",
     "proteinSequence": "SAVKRTIKGTHHWLLLTILTSLLVLVQSTQWSLFFFLYENAFLPFAMGIIAMSAFAMMFVKHKHAFLCLFLLPSLATVAYFNMVYMPASWVMRIMTWLDMVDTSLSGFKLKDCVMYASAVVLLILMTARTVYDDGARRVWTLMNVLTLVYKVYYGNALDQAISMWALIISVTSNYSGVVTTVMFLARGIVFMCVEYCPIFFITGNTLQCIMLVYCFLGYFCTCYFGLFCLLNRYFRLTLGVYDYLVSTQEFRYMNSQGLLPPKNSIDAFKLNIKLLGVGGKPCIKVATVQ",
     "uniprot": "P0C6X7",
@@ -58847,6 +58867,10 @@
     "description": "Could be a determinant of virus virulence.",
     "id": "ORF6",
     "gene": "ORF6",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    },
     "proteinName": "ORF6 protein",
     "proteinSequence": "MFHLVDFQVTIAEILLIIMRTFKVSIWNLDYIINLIIKNLSKSLTENKYSQLDEEQPMEID",
     "uniprot": "P59634",
@@ -69003,6 +69027,10 @@
     "description": "Unknown function.",
     "id": "ORF7A",
     "gene": "ORF7A",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    },
     "proteinName": "ORF7A protein",
     "proteinSequence": "MKIILFLALITLATCELYHYQECVRGTTVLLKEPCSSGTYEGNSPFHPLADNKFALTCFSTQFAFACPDGVKHVYQLRARSVSPKLFIRQEEVQELYSPIFLIVAAIVFITLCFTLKRKTE",
     "uniprot": "P59635",
@@ -80500,6 +80528,10 @@
     "description": "Unknown function.",
     "id": "ORF9A",
     "gene": "ORF9A",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    },
     "proteinName": "SARS-CoV",
     "proteinSequence": "?",
     "uniprot": "P59636",

@@ -1,0 +1,52 @@
+.protein-nav__cell {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-secondary);
+}
+
+.protein-nav__cell-description {
+  height: 2rem;
+}
+
+.protein-nav__cell_dark {
+  fill: #916691;
+}
+.protein-nav__cell_medium {
+  fill: #cab4ca;
+}
+.protein-nav__cell_light {
+  fill: #f3dff4;
+}
+
+.protein-nav__cell-virus_dark {
+  fill: #699c78;
+}
+.protein-nav__cell-virus_light {
+  fill: #fff1bc;
+}
+.protein-nav__cell-virus_medium {
+  fill: #7dc383;
+}
+.protein-nav__vcell-virus_semi-trans {
+  opacity: 0.5; 
+}
+
+svg path {
+  transition: fill 0.3s var(--timing-function);
+}
+
+svg [data-localization="cytoplasm"]:hover path,
+svg [data-localization="ER"]:hover path,
+svg [data-localization="Golgi"]:hover path,
+svg [data-localization="nucleus"]:hover *,
+svg [data-localization="plasma_membrane"]:hover path {
+  fill: #64b5f6;
+}
+svg[data-highlighted="cytoplasm"] [data-localization="cytoplasm"] path,
+svg[data-highlighted="ER"] [data-localization="ER"] path,
+svg[data-highlighted="Golgi"] [data-localization="Golgi"] path,
+svg[data-highlighted="nucleus"] [data-localization="nucleus"] *,
+svg[data-highlighted="plasma_membrane"] [data-localization="plasma_membrane"] path {
+  fill: #64b5f6;
+}

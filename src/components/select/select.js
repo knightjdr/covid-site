@@ -4,45 +4,53 @@ import React from 'react';
 import './select.css';
 
 const Select = ({
+  label,
   onChange,
   options,
   placeholder,
   value,
   ...props
 }) => (
-  <select
-    className="select"
-    onChange={onChange}
-    value={value}
-    {...props}
-  >
+  <div className="select">
     {
-      placeholder
-      && (
-        <option disabled value="">
-          {placeholder}
-        </option>
-      )
+      label
+      && <span className="select__label">{label}</span>
     }
-    {
-      options.map((condition) => (
-        <option
-          key={condition}
-          value={condition}
-        >
-          {condition}
-        </option>
-      ))
-    }
-  </select>
+    <select
+      onChange={onChange}
+      value={value}
+      {...props}
+    >
+      {
+        placeholder
+        && (
+          <option disabled value="">
+            {placeholder}
+          </option>
+        )
+      }
+      {
+        options.map((condition) => (
+          <option
+            key={condition}
+            value={condition}
+          >
+            {condition}
+          </option>
+        ))
+      }
+    </select>
+  </div>
 );
 
 Select.defaultProps = {
+  label: '',
   placeholder: '',
   value: '',
 };
 
 Select.propTypes = {
+  label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   placeholder: PropTypes.string,

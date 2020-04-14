@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import ProteinNav from './protein-nav';
+import Localization from './localization';
 
-const ProteinNavContainer = () => {
+const LocalizationContainer = () => {
   const [highlighted, sethighlighted] = useState({ protein: '', cell: '', virus: '' });
 
   const handleProteinMouseOut = () => {
@@ -14,9 +14,10 @@ const ProteinNavContainer = () => {
   };
 
   const handleProteinMouseOver = (e) => {
-    const { virusLocalization } = e.target.dataset;
+    const { cellLocalization, virusLocalization } = e.target.dataset;
     sethighlighted({
       ...highlighted,
+      cell: cellLocalization,
       virus: virusLocalization,
     });
   };
@@ -38,7 +39,7 @@ const ProteinNavContainer = () => {
   };
 
   return (
-    <ProteinNav
+    <Localization
       handleGraphicMouseOut={handleGraphicMouseOut}
       handleGraphicMouseOver={handleGraphicMouseOver}
       handleProteinMouseOut={handleProteinMouseOut}
@@ -48,4 +49,4 @@ const ProteinNavContainer = () => {
   );
 };
 
-export default ProteinNavContainer;
+export default LocalizationContainer;

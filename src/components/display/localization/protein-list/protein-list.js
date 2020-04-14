@@ -3,18 +3,9 @@ import React from 'react';
 
 import Link from '../../../link/link';
 
-import './protein-list.css';
+import proteins from '../../../../../content/bait-list.json';
 
-const proteins = [
-  { id: 'E', virusLocalization: 'spike' },
-  { id: 'M', virusLocalization: 'envelope' },
-  { id: 'NSP10', virusLocalization: '' },
-  { id: 'NSP2', virusLocalization: '' },
-  { id: 'NSP6', virusLocalization: '' },
-  { id: 'ORF6', virusLocalization: '' },
-  { id: 'ORF7A', virusLocalization: '' },
-  { id: 'ORF9a', virusLocalization: '' },
-];
+import './protein-list.css';
 
 const ProteinList = ({
   handleProteinMouseOut,
@@ -27,7 +18,8 @@ const ProteinList = ({
         <li key={protein.id}>
           <Link
             className="protein-nav__list-link"
-            data-virus-localization={protein.virusLocalization}
+            data-cell-localization={protein.localization.cell}
+            data-virus-localization={protein.localization.virus}
             nav
             onBlur={handleProteinMouseOut}
             onFocus={handleProteinMouseOver}

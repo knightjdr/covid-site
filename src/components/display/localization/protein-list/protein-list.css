@@ -29,3 +29,11 @@
 .protein-nav__list.spike li a[data-virus-localization="spike"].protein-nav__list-link {
   background-color: #64b5f6;
 }
+
+.protein-nav__list.cytoplasm li a[data-cell-localization="cytoplasm"].protein-nav__list-link,
+.protein-nav__list.ER li a[data-cell-localization="ER"].protein-nav__list-link,
+.protein-nav__list.Golgi li a[data-cell-localization="Golgi"].protein-nav__list-link,
+.protein-nav__list.nucleus li a[data-cell-localization="nucleus"].protein-nav__list-link,
+.protein-nav__list.plasma_membrane li a[data-cell-localization="plasma_membrane"].protein-nav__list-link {
+  background-color: #64b5f6;
+}

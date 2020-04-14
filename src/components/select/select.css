@@ -1,4 +1,15 @@
 .select {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+}
+
+.select__label {
+  margin-right: .5rem;
+}
+
+.select select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -12,7 +23,7 @@
   box-sizing: border-box;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
 	display: block;
-  font-family: var(--font-secondary);
+  
   font-size: 1rem;
   max-width: 100%;
   margin: 0;
@@ -20,19 +31,19 @@
   padding: .6rem 1.4rem .5rem .8rem;
 	width: 100%;
 }
-.select:hover,
-.select:focus {
+.select select:hover,
+.select select:focus {
   background-color: #edeff2;
 	box-shadow: 0 0 1px 1px rgba(59, 153, 252, .7);
 	outline: none;
 }
-.select option {
+.select select option {
 	font-weight: normal;
 }
-.select:-moz-focusring {
+.select select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
-.select::-ms-expand {
+.select select::-ms-expand {
 	display: none;
 }

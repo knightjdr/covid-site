@@ -203,7 +203,7 @@ textarea {
 html {
   font: var(--font-primary);
   box-sizing: border-box;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 * {
   box-sizing: inherit;

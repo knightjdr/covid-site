@@ -5,6 +5,10 @@
   font-family: var(--font-secondary);
 }
 
+.protein-nav__virus-description {
+  height: 2rem;
+}
+
 .protein-nav__virus_dark {
   fill: #699c78;
 }

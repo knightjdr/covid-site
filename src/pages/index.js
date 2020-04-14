@@ -3,7 +3,10 @@ import React from 'react';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo/seo';
 
-import ProteinNav from '../components/figures/protein-nav/protein-nav-container';
+import Browse from '../components/display/browse/browse-container';
+import Localization from '../components/display/localization/localization-container';
+
+import '../components/display/display.css';
 
 const IndexPage = () => (
   <Layout>
@@ -12,7 +15,8 @@ const IndexPage = () => (
     <p>
       BioID-based interactome of the COVID-19 proteome
     </p>
-    <ProteinNav />
+    <Browse />
+    <Localization />
   </Layout>
 );
 

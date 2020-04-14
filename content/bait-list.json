@@ -1,0 +1,58 @@
+[
+  {
+    "id": "E",
+    "localization": {
+      "cell": "ER",
+      "virus": "spike"
+    }
+  },
+  {
+    "id": "M",
+    "localization": {
+      "cell": "plasma_membrane",
+      "virus": "envelope"
+    }
+  },
+  {
+    "id": "NSP10",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    }
+  },
+  {
+    "id": "NSP2",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    }
+  },
+  {
+    "id": "NSP6",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    }
+  },
+  {
+    "id": "ORF6",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    }
+  },
+  {
+    "id": "ORF7A",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    }
+  },
+  {
+    "id": "ORF9A",
+    "localization": {
+      "cell": "",
+      "virus": ""
+    }
+  }
+]

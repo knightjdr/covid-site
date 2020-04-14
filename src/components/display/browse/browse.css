@@ -1,0 +1,12 @@
+.browse {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.browse__inputs {
+  align-items: center;
+  display: flex;
+}
+.browse__inputs > *:not(:last-child) {
+  margin-right: 1rem;
+}

@@ -1,4 +1,8 @@
 .input {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+}
+.input input {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -8,7 +12,6 @@
   box-sizing: border-box;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
 	display: block;
-  font-family: var(--font-secondary);
   font-size: 1rem;
   max-width: 100%;
   margin: 0;
@@ -16,9 +19,17 @@
   padding: 0.4rem 0.5rem;
 	width: 100%;
 }
-.input:focus,
-.input:hover {
+.input input:focus,
+.input input:hover {
   background-color: #edeff2;
 	box-shadow: 0 0 1px 1px rgba(59, 153, 252, .7);
 	outline: none;
+}
+
+.input_horizontal {
+  align-items: center;
+  display: flex;
+}
+.input_horizontal > .input__label {
+  margin-right: 0.5rem;
 }
