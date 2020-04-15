@@ -1,10 +1,6 @@
 import levenshtein from 'fast-levenshtein';
 
-const preys = {
-  prey1: { synonyms: ['prey111'], uniprot: ['P11111'], baits: ['a', 'b'] },
-  prey11: { synonyms: ['p11'], uniprot: ['P111111'], baits: ['a', 'b'] },
-  prey2: { synonyms: [''], uniprot: ['P22222'], baits: ['c', 'd'] },
-};
+import preys from '../../../content/preys.json';
 
 const preyDB = Object.entries(preys).map(([key, details]) => ([
   key,

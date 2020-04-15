@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Link from '../link/link';
 import Table from '../table/table';
 
 const SearchResults = ({
@@ -24,9 +25,22 @@ const SearchResults = ({
                 searchResults.map((result) => (
                   <tr key={result.symbol}>
                     <td>{result.symbol}</td>
-                    <td>{result.synonyms.join(', ')}</td>
-                    <td>{result.uniprot.join(', ')}</td>
-                    <td>{result.baits.join(', ')}</td>
+                    <td>{result.synonyms.length > 0 ? result.synonyms.join(', ') : '-' }</td>
+                    <td>{result.uniprot.length > 0 ? result.uniprot[0] : '-'}</td>
+                    <td>
+                      {
+                        result.baits.map((bait, index) => [
+                          index > 0 && ', ',
+                          <Link
+                            key={`${result.symbol}-bait`}
+                            nav
+                            to={`/${bait}`}
+                          >
+                            {bait}
+                          </Link>,
+                        ])
+                      }
+                    </td>
                   </tr>
                 ))
               }

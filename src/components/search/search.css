@@ -6,7 +6,7 @@
   display: flex;
   font-family: var(--font-secondary);
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .search__results-none {
