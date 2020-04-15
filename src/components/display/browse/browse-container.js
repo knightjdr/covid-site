@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 
 import Browse from './browse';
 
 const BrowseContainer = () => {
+  const [selectedProtein, setSelectedProtein] = useState('');
+
   const handleChange = (e) => {
     const { value } = e.target;
-    navigate(`/${value}`);
+    setSelectedProtein(value);
   };
 
   const handleSearch = (e) => {
@@ -21,6 +23,7 @@ const BrowseContainer = () => {
     <Browse
       handleChange={handleChange}
       handleSearch={handleSearch}
+      selectedProtein={selectedProtein}
     />
   );
 };

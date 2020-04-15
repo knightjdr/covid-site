@@ -7,6 +7,7 @@ import './link.css';
 const formatClass = (classes) => (classes.length > 0 ? classes.join(' ') : undefined);
 
 const CustomLink = ({
+  buttonStyle,
   children,
   className,
   nav,
@@ -15,7 +16,10 @@ const CustomLink = ({
 }) => {
   const classes = className ? [className] : [];
   if (nav) {
-    classes.push('nav-link');
+    classes.push('link_nav');
+  }
+  if (buttonStyle) {
+    classes.push('link_button');
   }
 
   if (to.startsWith('/') && /\.[0-9a-z]+$/i.test(to)) {
@@ -50,11 +54,13 @@ const CustomLink = ({
 };
 
 CustomLink.defaultProps = {
+  buttonStyle: false,
   className: '',
   nav: false,
 };
 
 CustomLink.propTypes = {
+  buttonStyle: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   nav: PropTypes.bool,

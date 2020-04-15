@@ -6,7 +6,25 @@
 .browse__inputs {
   align-items: center;
   display: flex;
+  width: 100%;
 }
 .browse__inputs > *:not(:last-child) {
   margin-right: 1rem;
+}
+.browse__inputs .input {
+  flex: 1;
+}
+
+.browse__select-container {
+  align-items: center;
+  display: flex;
+}
+
+.browse a {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.browse .select.browse__select_option-selected select {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
