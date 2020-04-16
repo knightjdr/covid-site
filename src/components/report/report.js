@@ -16,28 +16,38 @@ const Report = ({
   description,
   gene,
   id,
+  name,
   preys,
-  proteinName,
-  proteinSequence,
+  sequence,
   uniprot,
 }) => (
   <div className="report">
     <header>
       <h1>
-        <div className="report__header-title">ID</div>
+        <div className="report__header-title">Identifier</div>
         <div>{id}</div>
       </h1>
       <div className="report__header-field">Gene</div>
       <div>{gene}</div>
       <div className="report__header-field">Protein name</div>
-      <div>{proteinName}</div>
+      <div>{name}</div>
       <div className="report__header-field">Uniprot</div>
-      <div>
+      <div className="report__header-uniprot">
+        <span>COVID-19:</span>
+        {' '}
         <Link
           nav
-          to={`https://www.uniprot.org/uniprot/${uniprot}`}
+          to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.covid}`}
         >
-          {uniprot}
+          {uniprot.covid}
+        </Link>
+        <span>SARS:</span>
+        {' '}
+        <Link
+          nav
+          to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.sars}`}
+        >
+          {uniprot.sars}
         </Link>
       </div>
       <div className="report__header-field">Description</div>
@@ -47,7 +57,7 @@ const Report = ({
       <summary>Protein sequence</summary>
       <div className="report__protein-sequence">
         <code>
-          <div>{proteinSequence}</div>
+          <div>{sequence}</div>
         </code>
         <div className="report__protein-copy">
           <span>Copy</span>
@@ -79,10 +89,13 @@ Report.propTypes = {
   description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
-  proteinName: PropTypes.string.isRequired,
-  proteinSequence: PropTypes.string.isRequired,
-  uniprot: PropTypes.string.isRequired,
+  sequence: PropTypes.string.isRequired,
+  uniprot: PropTypes.shape({
+    covid: PropTypes.string,
+    sars: PropTypes.string,
+  }).isRequired,
 };
 
 export default Report;

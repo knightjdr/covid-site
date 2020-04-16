@@ -10,13 +10,13 @@ const ReportContainer = ({
   description,
   gene,
   id,
+  name,
   preys,
-  proteinName,
-  proteinSequence,
+  sequence,
   uniprot,
 }) => {
   const copyProteinToClipboard = () => {
-    copyToClipboard(proteinSequence);
+    copyToClipboard(sequence);
   };
 
   return (
@@ -26,9 +26,9 @@ const ReportContainer = ({
       description={description}
       gene={gene}
       id={id}
+      name={name}
       preys={preys}
-      proteinName={proteinName}
-      proteinSequence={proteinSequence}
+      sequence={sequence}
       uniprot={uniprot}
     />
   );
@@ -39,10 +39,13 @@ ReportContainer.propTypes = {
   description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
-  proteinName: PropTypes.string.isRequired,
-  proteinSequence: PropTypes.string.isRequired,
-  uniprot: PropTypes.string.isRequired,
+  sequence: PropTypes.string.isRequired,
+  uniprot: PropTypes.shape({
+    covid: PropTypes.string,
+    sars: PropTypes.string,
+  }).isRequired,
 };
 
 export default ReportContainer;

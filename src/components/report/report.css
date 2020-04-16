@@ -45,6 +45,9 @@
   text-align: right;
   width: 10rem;
 }
+.report__header-uniprot a {
+  margin-right: 1rem;
+}
 
 .report__prey-header {
   margin-bottom: 0.8rem;

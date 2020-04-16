@@ -17,7 +17,7 @@ const SearchResults = ({
                 <th>Symbol</th>
                 <th>Synonyms</th>
                 <th>UniProt</th>
-                <th>Baits</th>
+                <th>Viral protein</th>
               </tr>
             </thead>
             <tbody>

@@ -2,57 +2,91 @@
   {
     "id": "E",
     "localization": {
-      "cell": "ER",
-      "virus": "spike"
+      "cell": [
+        "Golgi"
+      ],
+      "virus": [
+        "envelope"
+      ]
     }
   },
   {
     "id": "M",
     "localization": {
-      "cell": "plasma_membrane",
-      "virus": "envelope"
+      "cell": [
+        "Golgi"
+      ],
+      "virus": [
+        "envelope"
+      ]
     }
   },
   {
-    "id": "NSP10",
+    "id": "pp1a-nsp10",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
     }
   },
   {
-    "id": "NSP2",
+    "id": "pp1a-nsp2",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
     }
   },
   {
-    "id": "NSP6",
+    "id": "pp1a-nsp6",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "plasma_membrane"
+      ],
+      "virus": [
+        ""
+      ]
     }
   },
   {
-    "id": "ORF6",
+    "id": "ns6",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "ER",
+        "Golgi"
+      ],
+      "virus": [
+        ""
+      ]
     }
   },
   {
-    "id": "ORF7A",
+    "id": "ORF7a",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "ER",
+        "Golgi"
+      ],
+      "virus": [
+        ""
+      ]
     }
   },
   {
-    "id": "ORF9A",
+    "id": "ORF9b",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
     }
   }
 ]

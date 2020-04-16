@@ -23,7 +23,8 @@ const Search = ({
       label="Search:"
       onChange={handleChange}
       onKeyDown={handleSearch}
-      placeholder="Human gene symbol or UniProt accession"
+      placeholder="Human gene symbol (e.g. TRIP11) or UniProt accession (e.g. Q15643)"
+      type="search"
       value={searchTerm}
     />
     {

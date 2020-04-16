@@ -1,15 +1,22 @@
 [
   {
-    "description": "Acts as a viroporin and self-assembles in host membranes forming pentameric protein-lipid pores that allow ion transport.",
+    "description": "Plays a central role in virus morphogenesis and assembly. Acts as a viroporin and self-assembles in host membranes forming pentameric protein-lipid pores that allow ion transport. Also plays a role in the induction of apoptosis.",
     "id": "E",
     "gene": "E",
     "localization": {
-      "cell": "ER",
-      "virus": "spike"
+      "cell": [
+        "Golgi"
+      ],
+      "virus": [
+        "envelope"
+      ]
     },
-    "proteinName": "Envelope protein",
-    "proteinSequence": "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV",
-    "uniprot": "P59637",
+    "name": "Envelope small membrane protein",
+    "sequence": "MYSFVSEETGTLIVNSVLLFLAFVVFLLVTLAILTALRLCAYCCNIVNVSLVKPSFYVYSRVKNLNSSRVPDLLV",
+    "uniprot": {
+      "covid": "P0DTC4",
+      "sars": "P59637"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -8486,16 +8493,23 @@
     }
   },
   {
-    "description": "Component of the viral envelope.",
+    "description": "Component of the viral envelope that plays a central role in virus morphogenesis and assembly via its interactions with other viral proteins.",
     "id": "M",
     "gene": "M",
     "localization": {
-      "cell": "plasma_membrane",
-      "virus": "envelope"
+      "cell": [
+        "Golgi"
+      ],
+      "virus": [
+        "envelope"
+      ]
     },
-    "proteinName": "Membrane glycoprotein",
-    "proteinSequence": "MADSNGTITVEELKKLLEQWNLVIGFLFLTWICLLQFAYANRNRFLYIIKLIFLWLLWPVTLACFVLAAVYRINWITGGIAIAMACLVGLMWLSYFIASFRLFARTRSMWSFNPETNILLNVPLHGTILTRPLLESELVIGAVILRGHLRIAGHHLGRCDIKDLPKEITVATSRTLSYYKLGASQRVAGDSGFAAYSRYRIGNYKLNTDHSSSSDNIALLVQ",
-    "uniprot": "P59596",
+    "name": "Membrane protein",
+    "sequence": "MADSNGTITVEELKKLLEQWNLVIGFLFLTWICLLQFAYANRNRFLYIIKLIFLWLLWPVTLACFVLAAVYRINWITGGIAIAMACLVGLMWLSYFIASFRLFARTRSMWSFNPETNILLNVPLHGTILTRPLLESELVIGAVILRGHLRIAGHHLGRCDIKDLPKEITVATSRTLSYYKLGASQRVAGDSGFAAYSRYRIGNYKLNTDHSSSSDNIALLVQ",
+    "uniprot": {
+      "covid": "P0DTC5",
+      "sars": "P59596"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -20698,16 +20712,23 @@
     }
   },
   {
-    "description": "Stimulates NSP14(3'-5' exoribonuclease) and NSP16(2'-O-methyltransferase) activities.",
-    "id": "NSP10",
-    "gene": "ORF1AB",
+    "description": "Plays a pivotal role in viral transcription by stimulating both nsp14 3'-5' exoribonuclease and nsp16 2'-O-methyltransferase activities. Therefore plays an essential role in viral mRNAs cap methylation.",
+    "id": "pp1a-nsp10",
+    "gene": "ORF1ab",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
     },
-    "proteinName": "NSP10",
-    "proteinSequence": "AGNATEVPANSTVLSFCAFAVDAAKAYKDYLASGGQPITNCVKMLCTHTGTGQAITVTPEANMDQESFGGASCCLYCRCHIDHPNPKGFCDLKGKYVQIPTTCANDPVGFTLKNTVCTVCGMWKGYGCSCDQLREPMLQ",
-    "uniprot": "P0C6X7",
+    "name": "Replicase polyprotein 1a – non-structural protein 10",
+    "sequence": "AGNATEVPANSTVLSFCAFAVDAAKAYKDYLASGGQPITNCVKMLCTHTGTGQAITVTPEANMDQESFGGASCCLYCRCHIDHPNPKGFCDLKGKYVQIPTTCANDPVGFTLKNTVCTVCGMWKGYGCSCDQLREPMLQ",
+    "uniprot": {
+      "covid": "P0DTC1",
+      "sars": "P0C6X7"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -33792,16 +33813,23 @@
     }
   },
   {
-    "description": "Modulates host cell survival signaling pathway.",
-    "id": "NSP2",
-    "gene": "ORF1AB",
+    "description": "May play a role in the modulation of host cell survival signaling pathway by interacting with host PHB and PHB2. Indeed, these two proteins play a role in maintaining the functional integrity of the mitochondria and protecting cells from various stresses.",
+    "id": "pp1a-nsp2",
+    "gene": "ORF1ab",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
     },
-    "proteinName": "NSP2",
-    "proteinSequence": "AYTRYVDNNFCGPDGYPLECIKDLLARAGKASCTLSEQLDFIDTKRGVYCCREHEHEIAWYTERSEKSYELQTPFEIKLAKKFDTFNGECPNFVFPLNSIIKTIQPRVEKKKLDGFMGRIRSVYPVASPNECNQMCLSTLMKCDHCGETSWQTGDFVKATCEFCGTENLTKEGATTCGYLPQNAVVKIYCPACHNSEVGPEHSLAEYHNESGLKTILRKGGRTIAFGGCVFSYVGCHNKCAYWVPRASANIGCNHTGVVGEGSEGLNDNLLEILQKEKVNINIVGDFKLNEEIAIILASFSASTSAFVETVKGLDYKAFKQIVESCGNFKVTKGKAKKGAWNIGEQKSILSPLYAFASEAARVVRSIFSRTLETAQNSVRVLQKAAITILDGISQYSLRLIDAMMFTSDLATNNLVVMAYITGGVVQLTSQWLTNIFGTVYEKLKPVLDWLEEKFKEGVEFLRDGWEIVKFISTCACEIVGGQIVTCAKEIKESVQTFFKLVNKFLALCADSIIIGGAKLKALNLGETFVTHSKGLYRKCVKSREETGLLMPLKAPKEIIFLEGETLPTEVLTEEVVLKTGDLQPLEQPTSEAVEAPLVGTPVCINGLMLLEIKDTEKYCALAPNMMVTNNTFTLKGG",
-    "uniprot": "P0C6X7",
+    "name": "Replicase polyprotein 1a – non-structural protein 2",
+    "sequence": "AYTRYVDNNFCGPDGYPLECIKDLLARAGKASCTLSEQLDFIDTKRGVYCCREHEHEIAWYTERSEKSYELQTPFEIKLAKKFDTFNGECPNFVFPLNSIIKTIQPRVEKKKLDGFMGRIRSVYPVASPNECNQMCLSTLMKCDHCGETSWQTGDFVKATCEFCGTENLTKEGATTCGYLPQNAVVKIYCPACHNSEVGPEHSLAEYHNESGLKTILRKGGRTIAFGGCVFSYVGCHNKCAYWVPRASANIGCNHTGVVGEGSEGLNDNLLEILQKEKVNINIVGDFKLNEEIAIILASFSASTSAFVETVKGLDYKAFKQIVESCGNFKVTKGKAKKGAWNIGEQKSILSPLYAFASEAARVVRSIFSRTLETAQNSVRVLQKAAITILDGISQYSLRLIDAMMFTSDLATNNLVVMAYITGGVVQLTSQWLTNIFGTVYEKLKPVLDWLEEKFKEGVEFLRDGWEIVKFISTCACEIVGGQIVTCAKEIKESVQTFFKLVNKFLALCADSIIIGGAKLKALNLGETFVTHSKGLYRKCVKSREETGLLMPLKAPKEIIFLEGETLPTEVLTEEVVLKTGDLQPLEQPTSEAVEAPLVGTPVCINGLMLLEIKDTEKYCALAPNMMVTNNTFTLKGG",
+    "uniprot": {
+      "covid": "P0DTC1",
+      "sars": "P0C6X7"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -46229,16 +46257,23 @@
     }
   },
   {
-    "description": "Role in the initial induction of autophagosomes from ER (DMV formation).",
-    "id": "NSP6",
-    "gene": "ORF1AB",
+    "description": "Plays a role in the initial induction of autophagosomes from host reticulum endoplasmic. Later, limits the expansion of these phagosomes that are no longer able to deliver viral components to lysosomes.",
+    "id": "pp1a-nsp6",
+    "gene": "ORF1ab",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "plasma membrane"
+      ],
+      "virus": [
+        ""
+      ]
     },
-    "proteinName": "NSP6",
-    "proteinSequence": "SAVKRTIKGTHHWLLLTILTSLLVLVQSTQWSLFFFLYENAFLPFAMGIIAMSAFAMMFVKHKHAFLCLFLLPSLATVAYFNMVYMPASWVMRIMTWLDMVDTSLSGFKLKDCVMYASAVVLLILMTARTVYDDGARRVWTLMNVLTLVYKVYYGNALDQAISMWALIISVTSNYSGVVTTVMFLARGIVFMCVEYCPIFFITGNTLQCIMLVYCFLGYFCTCYFGLFCLLNRYFRLTLGVYDYLVSTQEFRYMNSQGLLPPKNSIDAFKLNIKLLGVGGKPCIKVATVQ",
-    "uniprot": "P0C6X7",
+    "name": "Replicase polyprotein 1a – non-structural protein 6",
+    "sequence": "SAVKRTIKGTHHWLLLTILTSLLVLVQSTQWSLFFFLYENAFLPFAMGIIAMSAFAMMFVKHKHAFLCLFLLPSLATVAYFNMVYMPASWVMRIMTWLDMVDTSLSGFKLKDCVMYASAVVLLILMTARTVYDDGARRVWTLMNVLTLVYKVYYGNALDQAISMWALIISVTSNYSGVVTTVMFLARGIVFMCVEYCPIFFITGNTLQCIMLVYCFLGYFCTCYFGLFCLLNRYFRLTLGVYDYLVSTQEFRYMNSQGLLPPKNSIDAFKLNIKLLGVGGKPCIKVATVQ",
+    "uniprot": {
+      "covid": "P0DTC1",
+      "sars": "P0C6X7"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -58864,16 +58899,24 @@
     }
   },
   {
-    "description": "Could be a determinant of virus virulence.",
-    "id": "ORF6",
+    "description": "Could be a determinant of virus virulence, since, when expressed in an otherwise attenuated JHM strain of murine coronavirus, it can dramatically increase the lethality of the latter. Seems to stimulate cellular DNA synthesis in vitro.",
+    "id": "ns6",
     "gene": "ORF6",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "ER",
+        "Golgi"
+      ],
+      "virus": [
+        ""
+      ]
     },
-    "proteinName": "ORF6 protein",
-    "proteinSequence": "MFHLVDFQVTIAEILLIIMRTFKVSIWNLDYIINLIIKNLSKSLTENKYSQLDEEQPMEID",
-    "uniprot": "P59634",
+    "name": "Non-structural protein 6",
+    "sequence": "MFHLVDFQVTIAEILLIIMRTFKVSIWNLDYIINLIIKNLSKSLTENKYSQLDEEQPMEID",
+    "uniprot": {
+      "covid": "P0DTC6",
+      "sars": "P59634"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -69024,16 +69067,24 @@
     }
   },
   {
-    "description": "Unknown function.",
-    "id": "ORF7A",
-    "gene": "ORF7A",
+    "description": "Non-structural protein which is dispensable for virus replication in cell culture.",
+    "id": "ORF7a",
+    "gene": "ORF7a",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        "ER",
+        "Golgi"
+      ],
+      "virus": [
+        ""
+      ]
     },
-    "proteinName": "ORF7A protein",
-    "proteinSequence": "MKIILFLALITLATCELYHYQECVRGTTVLLKEPCSSGTYEGNSPFHPLADNKFALTCFSTQFAFACPDGVKHVYQLRARSVSPKLFIRQEEVQELYSPIFLIVAAIVFITLCFTLKRKTE",
-    "uniprot": "P59635",
+    "name": "Protein 7a",
+    "sequence": "MKIILFLALITLATCELYHYQECVRGTTVLLKEPCSSGTYEGNSPFHPLADNKFALTCFSTQFAFACPDGVKHVYQLRARSVSPKLFIRQEEVQELYSPIFLIVAAIVFITLCFTLKRKTE",
+    "uniprot": {
+      "covid": "P0DTC7",
+      "sars": "P59635"
+    },
     "conditions": [
       "A549-Nt"
     ],
@@ -80525,16 +80576,23 @@
     }
   },
   {
-    "description": "Unknown function.",
-    "id": "ORF9A",
-    "gene": "ORF9A",
+    "description": "",
+    "id": "ORF9b",
+    "gene": "ORF9b",
     "localization": {
-      "cell": "",
-      "virus": ""
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
     },
-    "proteinName": "SARS-CoV",
-    "proteinSequence": "?",
-    "uniprot": "P59636",
+    "name": "Protein 9b",
+    "sequence": "MDPKISEMHPALRLVDPQIQLAVTRMENAVGRDQNNVGPKVYPIILRLGSPLSLNMARKTLNSLEDKAFQLTPIAVQMTKLATTEELPDEFVVVTVK",
+    "uniprot": {
+      "covid": "P0DTD2",
+      "sars": "P59636"
+    },
     "conditions": [
       "A549-Nt"
     ],

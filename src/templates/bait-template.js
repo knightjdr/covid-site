@@ -11,9 +11,9 @@ const BaitTemplate = ({ pageContext }) => {
     description,
     gene,
     id,
+    name,
     preys,
-    proteinName,
-    proteinSequence,
+    sequence,
     uniprot,
   } = pageContext;
 
@@ -25,9 +25,9 @@ const BaitTemplate = ({ pageContext }) => {
         description={description}
         gene={gene}
         id={id}
-        proteinName={proteinName}
+        name={name}
         preys={preys}
-        proteinSequence={proteinSequence}
+        sequence={sequence}
         uniprot={uniprot}
       />
     </Layout>
@@ -40,10 +40,13 @@ BaitTemplate.propTypes = {
     description: PropTypes.string.isRequired,
     gene: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     preys: PropTypes.shape({}).isRequired,
-    proteinName: PropTypes.string.isRequired,
-    proteinSequence: PropTypes.string.isRequired,
-    uniprot: PropTypes.string.isRequired,
+    sequence: PropTypes.string.isRequired,
+    uniprot: PropTypes.shape({
+      covid: PropTypes.string,
+      sars: PropTypes.string,
+    }).isRequired,
   }).isRequired,
 };
 

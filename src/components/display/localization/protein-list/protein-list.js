@@ -12,14 +12,17 @@ const ProteinList = ({
   handleProteinMouseOver,
   highlighted,
 }) => (
-  <ul className={`protein-nav__list ${highlighted}`}>
+  <ul
+    className="protein-nav__list"
+    data-highlighted={highlighted}
+  >
     {
       proteins.map((protein) => (
         <li key={protein.id}>
           <Link
             className="protein-nav__list-link"
-            data-cell-localization={protein.localization.cell}
-            data-virus-localization={protein.localization.virus}
+            data-cell-localization={protein.localization.cell.join(', ')}
+            data-virus-localization={protein.localization.virus.join(', ')}
             nav
             onBlur={handleProteinMouseOut}
             onFocus={handleProteinMouseOver}

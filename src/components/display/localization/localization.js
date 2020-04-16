@@ -18,7 +18,7 @@ const Localization = ({
     <h2>Localization</h2>
     <p className="display__instructions">
       Hover over a protein to view its localization or hover over a compartment
-      to view all proteins that localize to it.
+      to view all viral proteins that localize to it.
     </p>
     <ProteinList
       handleProteinMouseOut={handleProteinMouseOut}
