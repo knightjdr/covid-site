@@ -9,7 +9,12 @@ const TableBody = ({
     {
       rows.map((row) => (
         <tr key={row.id}>
-          <td>{row.prey}</td>
+          <td>
+            {row.prey}
+          </td>
+          <td>
+            {row.id}
+          </td>
           {
             conditions.map((condition) => (
               <td key={`${row.prey}-${condition}`}>

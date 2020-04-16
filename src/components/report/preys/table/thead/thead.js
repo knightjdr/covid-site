@@ -22,6 +22,7 @@ const TableHead = ({
           />
         </div>
       </th>
+      <th className="report__thead-prey" rowSpan={2}>UniProt</th>
       <th colSpan={conditions.length}>
         Conditions: spectral count (FDR)
       </th>
