@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import circleDown from './caret-circle-down.svg';
 import circleRight from './caret-circle-right.svg';
-import dotCircle from './dot-circle.svg';
+import dot from './dot-circle.svg';
 import info from './info-circle.svg';
 
 const icon = {
-  dot: dotCircle,
+  dot,
   info,
 };
 
@@ -17,9 +17,12 @@ const Details = styled.details`
     display: flex;
     list-style-type: none;
   }
+  summary::-webkit-details-marker {
+    display: none;
+  }
   summary::before {
     content: '';
-    display: block;
+    display: inline-block;
     background-image: url(${(props) => icon[props.listStyleType]});
     background-size: 1.2rem 1.2rem;
     height: 1.2rem;
