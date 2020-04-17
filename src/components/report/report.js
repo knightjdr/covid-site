@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { faCopy } from '@fortawesome/pro-solid-svg-icons';
 
 import Comparison from './comparison/comparison-container';
-import Details from '../details/details';
-import IconButton from '../buttons/icon/button';
 import Link from '../link/link';
 import Preys from './preys/preys-container';
+import Sequence from './sequence';
 
 import './report.css';
 
@@ -33,44 +31,20 @@ const Report = ({
       <div>{name}</div>
       <div className="report__header-field">Uniprot</div>
       <div className="report__header-uniprot">
-        <span>COVID-19:</span>
-        {' '}
         <Link
           nav
           to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.covid}`}
         >
           {uniprot.covid}
         </Link>
-        <span>SARS:</span>
-        {' '}
-        <Link
-          nav
-          to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.sars}`}
-        >
-          {uniprot.sars}
-        </Link>
       </div>
       <div className="report__header-field">Description</div>
       <div>{description}</div>
     </header>
-    <Details>
-      <summary>Protein sequence</summary>
-      <div className="report__protein-sequence">
-        <code>
-          <div>{sequence}</div>
-        </code>
-        <div className="report__protein-copy">
-          <span>Copy</span>
-          <IconButton
-            icon={faCopy}
-            kind="primary"
-            onClick={copyProteinToClipboard}
-            size="xs"
-            type="button"
-          />
-        </div>
-      </div>
-    </Details>
+    <Sequence
+      copyProteinToClipboard={copyProteinToClipboard}
+      sequence={sequence}
+    />
     <Comparison
       conditions={conditions}
       preys={preys}

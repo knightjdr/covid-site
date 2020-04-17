@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/pro-solid-svg-icons';
 
+import Legend from '../legend';
 import Link from '../../link/link';
 import Table from './table/table-container';
 
@@ -20,6 +21,7 @@ const Preys = ({
 }) => (
   <div>
     <h2 className="report__prey-header">Preys</h2>
+    <Legend conditions={conditions} />
     <div className="report__prey-options">
       <Filters
         fdr={fdr}
@@ -32,7 +34,7 @@ const Preys = ({
         nav
         to={`/downloads/${id}-saint.txt`}
       >
-        <FontAwesomeIcon icon={faDownload} />
+        <FontAwesomeIcon icon={faDownload} size="1x" />
         <span>SAINT</span>
       </Link>
     </div>
