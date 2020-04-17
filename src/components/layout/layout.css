@@ -219,6 +219,7 @@ body {
   font-family: var(--font-primary);
   font-weight: normal;
   font-size: 1.2em;
+  overflow-x: hidden;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";

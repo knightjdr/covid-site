@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 
 import Link from '../link/link';
-import Navbar from '../navbar/navbar';
+import Navbar from '../navbar/navbar-container';
 
 import './layout.css';
 
