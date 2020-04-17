@@ -14,7 +14,7 @@ const Search = ({
 }) => (
   <section className="search">
     <p>
-      Search for viral proteins that interact with a human gene.
+      Search for viral proteins that interact with a human protein (at 1% FDR).
     </p>
     <Input
       className="search__input"

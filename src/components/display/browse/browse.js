@@ -19,8 +19,8 @@ const Browse = ({
   <section className="display browse">
     <h2>Browse & Search</h2>
     <p className="display__instructions">
-      There are twenty-six known proteins encoded by the viral genome. Select one below to view
-      a detailed report or search for viral proteins that interact with a human gene.
+      We profiled twenty-six proteins from the viral genome. Select one below to view
+      a detailed report or search for viral proteins that interact with a human protein.
     </p>
     <div className="browse__inputs">
       <div className="browse__select-container">
