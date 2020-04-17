@@ -9,8 +9,7 @@ const Sequence = ({
   copyProteinToClipboard,
   sequence,
 }) => (
-  <Details>
-    <summary>Protein sequence</summary>
+  <Details summary="Protein sequence">
     <div className="report__protein-sequence">
       <code>
         <div>{sequence}</div>

@@ -27,8 +27,10 @@ const Legend = ({
   const tags = getTags(conditions);
   return (
     <div className="report__prey-legend">
-      <Details listStyleType="info">
-        <summary>Condition legend</summary>
+      <Details
+        listStyleType="info"
+        summary="Condition legend"
+      >
         <ul>
           {
             tags.map((tag) => (

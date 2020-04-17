@@ -19,8 +19,8 @@ const Comparison = ({
   <Details
     className="comparison"
     listStyleType="dot"
+    summary="Compare conditions"
   >
-    <summary>Compare conditions</summary>
     <div className="comparison__inner">
       <Vertices
         conditions={conditions}

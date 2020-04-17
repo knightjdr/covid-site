@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
 import circleDown from './caret-circle-down.svg';
@@ -11,43 +12,65 @@ const icon = {
   info,
 };
 
-const Details = styled.details`
+const StyledDetails = styled.details`
   summary {
-    align-items: center;
-    display: flex;
     list-style-type: none;
   }
   summary::-webkit-details-marker {
     display: none;
   }
-  summary::before {
+  .summary__inner {
+    align-items: center;
+    display: flex;
+  }
+  summary span {
     content: '';
-    display: inline-block;
     background-image: url(${(props) => icon[props.listStyleType]});
     background-size: 1.2rem 1.2rem;
+    display: inline-block;
     height: 1.2rem;
+    margin: 0;
     margin-right: 0.5rem;
     width: 1.2rem;
   }
   summary:focus {
     outline: none;
   }
-  summary:focus::before,
-  summary:hover::before  {
+  summary:focus span,
+  summary:hover span  {
     background-image: url(${circleRight});
   }
-  &[open] summary::before {
+  &[open] summary span {
     background-image: url(${circleDown});
   }
 `;
 
+const Details = ({
+  children,
+  listStyleType,
+  summary,
+}) => (
+  <StyledDetails listStyleType={listStyleType}>
+    <summary>
+      <div className="summary__inner">
+        <span />
+        {summary}
+      </div>
+    </summary>
+    {children}
+  </StyledDetails>
+);
+
 Details.defaultProps = {
   listStyleType: 'info',
+  summary: 'summary',
 };
 
 
 Details.propTypes = {
+  children: PropTypes.node.isRequired,
   listStyleType: PropTypes.string,
+  summary: PropTypes.string,
 };
 
 export default Details;
