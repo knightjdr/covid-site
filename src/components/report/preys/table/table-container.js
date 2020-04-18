@@ -14,12 +14,13 @@ const TableContainer = ({
   conditions,
   fdr,
   preys,
+  spectralCount,
 }) => {
   const [sortOptions, setSortOptions] = useState({ condition: conditions[0], direction: 'des', type: 'numeric' });
 
   const filteredPreys = useMemo(
-    () => filterPreys(preys, fdr),
-    [preys, fdr],
+    () => filterPreys(preys, fdr, spectralCount),
+    [fdr, preys, spectralCount],
   );
 
   const rows = useMemo(
@@ -57,6 +58,7 @@ TableContainer.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   fdr: PropTypes.number.isRequired,
   preys: PropTypes.shape({}).isRequired,
+  spectralCount: PropTypes.number.isRequired,
 };
 
 export default TableContainer;
