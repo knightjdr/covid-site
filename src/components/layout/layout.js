@@ -13,7 +13,10 @@ const Layout = ({
   <Location>
     {
       ({ location }) => (
-        <div className="layout">
+        <div
+          id="layout"
+          className="layout"
+        >
           <Navbar pathName={location.pathname} />
           <noscript className="noscript-warning">
             This site relies on JavaScript which is currently disabled in your browser.

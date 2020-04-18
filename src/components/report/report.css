@@ -5,6 +5,7 @@
 .report header {
   background-color: var(--color-accent);
   border-radius: 0.3rem;
+  color: var(--color-font-dark);
   column-gap: 0.5rem;
   display: grid;
   font-family: var(--font-secondary);
@@ -21,9 +22,9 @@
   width: 100%;
 }
 
-.report header a.nav-link:link,
-.report header a.nav-link:visited {
-  color: #53765F;
+.report header a.link_nav:link,
+.report header a.link_nav:visited {
+  color: #2E5EB4;
 }
 
 .report summary {

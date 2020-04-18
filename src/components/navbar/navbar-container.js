@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 
 import Navbar from './navbar';
 
-import useClickOutside from '../hooks/use-click-outside';
+import useClickOutside from '../hooks/click-outside/use-click-outside';
 
 const NavbarContainer = ({
   pathName,

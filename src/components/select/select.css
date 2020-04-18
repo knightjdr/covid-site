@@ -33,7 +33,7 @@
 .select select:hover,
 .select select:focus {
   background-color: #edeff2;
-	box-shadow: 0 0 1px 1px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 1px 1px var(--color-input-focus);
 	outline: none;
 }
 .select select option {

@@ -47,7 +47,7 @@ const Button = styled(DefaultButton)`
     &:focus:not([disabled]),
     &:hover:not([disabled]) {
       box-shadow: none;
-      color: var(--color-font-light);
+      color: var(--color-font-contrast);
     }
     &:focus:not([disabled])::before,
     &:hover:not([disabled])::before {

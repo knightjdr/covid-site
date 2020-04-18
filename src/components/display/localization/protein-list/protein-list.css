@@ -15,7 +15,7 @@
 }
 
 .protein-nav__list li a.protein-nav__list-link {
-  color: var(--font-dark);
+  color: var(--color-font-dark);
 }
 .protein-nav__list li a.protein-nav__list-link:focus,
 .protein-nav__list li a.protein-nav__list-link:hover {

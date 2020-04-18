@@ -5,6 +5,7 @@ import { faBars } from '@fortawesome/pro-solid-svg-icons';
 import Icon from './icon';
 import ButtonIcon from '../buttons/icon/button';
 import Link from '../link/link';
+import Theme from './theme/theme-container';
 
 import './navbar.css';
 
@@ -40,10 +41,12 @@ const Navbar = forwardRef((
       >
         <Link to="/">Home</Link>
         <SharedLinks />
+        <Theme />
       </div>
     </div>
     <div className="nav__right">
       <SharedLinks />
+      <Theme />
     </div>
   </div>
 ));

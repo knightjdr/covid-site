@@ -4,7 +4,7 @@
   display: flex;
   font-family: var(--font-title);
   font-weight: bold;
-  height: 40px;
+  height: 60px;
   margin-bottom: 10px;
   padding: 0 10px 0 5px;
   position: relative;
@@ -39,7 +39,7 @@
   transition: all 0.3s ease;
 }
 .nav__icon span {
-  color: var(--color-font-dark);
+  color: var(--color-font);
 }
 .nav__icon svg {
   margin-right: 0.5rem;
@@ -65,7 +65,7 @@
   transform: translateX(0);
 }
 .nav__menu-links {
-  background-color: #fff;
+  background-color: var(--color-background);
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -82,12 +82,14 @@
 }
 
 .nav__right {
+  align-items: center;
+  display: flex;
   margin-left: auto;
 }
 
 .nav__menu,
 .nav__right {
-  color: var(--color-font-dark);
+  color: var(--color-font);
 }
 
 .nav__menu a,
@@ -99,7 +101,7 @@
 .nav__menu a:visited,
 .nav__right a:link,
 .nav__right a:visited {
-  color: var(--color-font-dark);
+  color: var(--color-font);
 }
 .nav__menu a:focus,
 .nav__menu a:hover,
@@ -111,8 +113,12 @@
 .nav__menu-links a {
   margin: 0.3rem 0;
 }
+.nav__menu-links button {
+  margin-left: auto;
+  margin-top: auto;
+}
 
-.nav__right a {
+.nav__right * {
   margin: 0 0.6rem;
 }
 

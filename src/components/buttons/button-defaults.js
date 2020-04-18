@@ -46,7 +46,7 @@ const Button = styled.button`
   ${(props) => (props.kind === 'grey'
     && css`& {
       background-color: rgba(0, 0, 0, 0.2);
-      color: var(--color-font-dark);
+      color: var(--color-font);
     }
     &:focus:not([disabled]),
     &:hover:not([disabled]) {
@@ -71,7 +71,7 @@ const Button = styled.button`
   ${(props) => (props.kind === 'success'
     && css`& {
       background-color: var(--success);
-      color: var(--color-font-light);
+      color: var(--color-font-contrast);
     }
     &:focus:not([disabled]),
     &:hover:not([disabled]) {
@@ -84,7 +84,7 @@ const Button = styled.button`
   ${(props) => (props.kind === 'warning'
     && css`&{
       background-color: var(--warning);
-      color: var(--color-font-light);
+      color: var(--color-font-contrast);
     }
 
     &:focus:not([disabled]),

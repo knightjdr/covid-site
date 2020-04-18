@@ -5,7 +5,7 @@
   border: none;
 }
 .table tbody tr:nth-child(even) {
-  background-color: #f5f5f5;
+  background-color: var(--color-table-even);
 }
 .table thead {
   border-bottom: 2px solid var(--color-secondary);

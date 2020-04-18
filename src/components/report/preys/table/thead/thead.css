@@ -2,7 +2,6 @@
   background: none;
   border: none;
   border-radius: 3px;
-	color: inherit;
   display: inline-flex;
   flex-direction: column;
   padding: 0.2rem;
@@ -11,7 +10,6 @@
 .report__thead button:focus,
 .report__thead button:hover {
   background-color: var(--color-primary);
-  color: var(--color-font-dark);
   outline: none;
 }
 .report__thead button::-moz-focus-inner {
@@ -19,6 +17,17 @@
 }
 .report__thead button svg {
   margin: 0.15rem 0;
+}
+.report__thead button svg path {
+  fill: var(--color-font);
+}
+.report__thead button:focus svg path,
+.report__thead button:hover svg path {
+  fill: var(--color-font-dark);
+}
+
+.report__thead tr th {
+  border-bottom-color: var(--color-font);
 }
 
 .report__thead-prey {
