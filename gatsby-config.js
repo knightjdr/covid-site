@@ -7,6 +7,11 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-styled-components',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-use-query-params',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -14,8 +19,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -28,7 +31,6 @@ module.exports = {
         icon: 'src/images/virus.png',
       },
     },
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -37,6 +39,5 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
-    'gatsby-plugin-use-query-params',
   ],
 };

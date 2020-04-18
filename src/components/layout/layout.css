@@ -13,7 +13,7 @@ html {
   --timing-function: cubic-bezier(.17, .67, .16, .99);
   --success: #026E07;
   --warning: #C2352A;
-  font-family: serif;
+  font-family: var(--font-primary);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
