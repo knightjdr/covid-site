@@ -18,25 +18,16 @@ const storageSupport = () => {
   }
 };
 
-const getLocalStorage = (key) => {
+export const getLocalStorage = (key) => {
   if (storageSupport) {
     return localAdapter.getItem(key);
   }
-  return undefined;
+  return null;
 };
 
-const setLocalStorage = (key) => (value) => {
+export const setLocalStorage = (key, value) => {
   if (storageSupport) {
     return localAdapter.setItem(key, value);
   }
-  return undefined;
+  return null;
 };
-
-const useLocalStorage = (field) => (
-  [
-    getLocalStorage(field),
-    setLocalStorage(field),
-  ]
-);
-
-export default useLocalStorage;

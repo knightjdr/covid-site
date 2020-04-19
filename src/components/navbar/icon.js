@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from '../link/link';
-import Virus from './assets/virus';
+import Virus from '../assets/virus';
 
 const Icon = () => (
   <Link

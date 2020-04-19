@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout/layout-container';
 import SEO from '../components/seo/seo';
 
 import Browse from '../components/display/browse/browse-container';

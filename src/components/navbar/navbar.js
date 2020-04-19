@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/pro-solid-svg-icons';
 import Icon from './icon';
 import ButtonIcon from '../buttons/icon/button';
 import Link from '../link/link';
-import Theme from './theme/theme-container';
+import Theme from './theme';
 
 import './navbar.css';
 

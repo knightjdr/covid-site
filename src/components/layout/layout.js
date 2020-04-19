@@ -9,6 +9,8 @@ import './layout.css';
 
 const Layout = ({
   children,
+  theme,
+  toggleTheme,
 }) => (
   <Location>
     {
@@ -16,8 +18,13 @@ const Layout = ({
         <div
           id="layout"
           className="layout"
+          data-theme={theme}
         >
-          <Navbar pathName={location.pathname} />
+          <Navbar
+            pathName={location.pathname}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
           <noscript className="noscript-warning">
             This site relies on JavaScript which is currently disabled in your browser.
             Some functionality will be missing as a result.
@@ -40,6 +47,8 @@ const Layout = ({
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  theme: PropTypes.string.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 };
 
 export default Layout;
