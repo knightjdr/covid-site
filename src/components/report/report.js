@@ -31,10 +31,7 @@ const Report = ({
       <div>{name}</div>
       <div className="report__header-field">Uniprot</div>
       <div className="report__header-uniprot">
-        <Link
-          nav
-          to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.covid}`}
-        >
+        <Link to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.covid}`}>
           {uniprot.covid}
         </Link>
       </div>

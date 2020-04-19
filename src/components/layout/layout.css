@@ -17,9 +17,12 @@ html {
 }
 .layout,
 .layout[data-theme="light"] {
+  --color-accent-link: #2E5EB4;
+  --color-accent-link-visited: #382182;
   --color-background: #fff;
   --color-code: rgba(0, 0, 0, 0.05);
   --color-dark-accent: rgba(125, 195, 131, 0.3);
+  --color-display-focus: #64b5f6;
   --color-font: #333;
   --color-font-contrast: #F2F2F2;
   --color-font-dark: #333;
@@ -31,9 +34,13 @@ html {
   color: var(--color-font);
 }
 .layout[data-theme="dark"] {
+  --color-accent: #eb8367;
+  --color-accent-link: #691042;
+  --color-accent-link-visited: #382182;
   --color-background: #252429;
   --color-code: #17171d;
   --color-dark-accent: #17171d;
+  --color-display-focus: #337aff;
   --color-font: #F2F2F2;
   --color-font-contrast: #333;
   --color-font-dark: #333;

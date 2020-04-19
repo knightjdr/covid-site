@@ -22,9 +22,11 @@
   width: 100%;
 }
 
-.report header a.link_nav:link,
-.report header a.link_nav:visited {
-  color: #2E5EB4;
+.report header a:link {
+  color: var(--color-accent-link);
+}
+.report header a:visited {
+  color: var(--color-accent-link-visited);
 }
 
 .report summary {

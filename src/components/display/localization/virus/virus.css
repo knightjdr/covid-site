@@ -30,11 +30,11 @@ svg [data-localization*="capsid"]:hover path,
 svg [data-localization*="envelope"]:hover path,
 svg [data-localization*="matrix"]:hover circle,
 svg [data-localization*="spike"]:hover path {
-  fill: #64b5f6;
+  fill: var(--color-display-focus);
 }
 svg[data-highlighted*="capsid"] [data-localization="capsid"] path,
 svg[data-highlighted*="envelope"] [data-localization="envelope"] path,
 svg[data-highlighted*="matrix"] [data-localization="matrix"] circle,
 svg[data-highlighted*="spike"] [data-localization="spike"] path {
-  fill: #64b5f6;
+  fill: var(--color-display-focus);
 }

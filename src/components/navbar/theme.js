@@ -9,7 +9,7 @@ const Theme = () => (
     {
       ({ theme, toggleTheme }) => (
         <IconButton
-          icon={theme === 'light' ? faMoon : faSun}
+          icon={theme === 'light' ? faSun : faMoon }
           kind="primary"
           onClick={toggleTheme}
           size="xs"

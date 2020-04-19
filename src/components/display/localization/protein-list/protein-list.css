@@ -19,7 +19,7 @@
 }
 .protein-nav__list li a.protein-nav__list-link:focus,
 .protein-nav__list li a.protein-nav__list-link:hover {
-  background-color: #64b5f6;
+  background-color: var(--color-display-focus);
   text-decoration: none;
 }
 
@@ -27,7 +27,7 @@
 .protein-nav__list[data-highlighted*="envelope"] li a[data-virus-localization*="envelope"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="matrix"] li a[data-virus-localization*="matrix"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="spike"] li a[data-virus-localization*="spike"].protein-nav__list-link {
-  background-color: #64b5f6;
+  background-color: var(--color-display-focus);
 }
 
 .protein-nav__list[data-highlighted*="cytoplasm"] li a[data-cell-localization*="cytoplasm"].protein-nav__list-link,
@@ -35,5 +35,5 @@
 .protein-nav__list[data-highlighted*="Golgi"] li a[data-cell-localization*="Golgi"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="nucleus"] li a[data-cell-localization*="nucleus"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="plasma_membrane"] li a[data-cell-localization*="plasma_membrane"].protein-nav__list-link {
-  background-color: #64b5f6;
+  background-color: var(--color-display-focus);
 }
