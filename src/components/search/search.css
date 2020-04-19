@@ -12,6 +12,7 @@
 .search__results-none {
   background-color: var(--color-accent);
   border-radius: 0.2rem;
+  color: var(--color-font-dark);
   padding: 0.5rem 1rem;
   text-align: center;
   width: 100%;
