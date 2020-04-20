@@ -12,7 +12,6 @@ const Theme = () => (
           icon={theme === 'light' ? faSun : faMoon }
           kind="primary"
           onClick={toggleTheme}
-          size="xs"
           type="button"
         />
       )

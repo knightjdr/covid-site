@@ -20,7 +20,6 @@ const Sequence = ({
           icon={faCopy}
           kind="primary"
           onClick={copyProteinToClipboard}
-          size="xs"
           type="button"
         />
       </div>

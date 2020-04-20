@@ -5,24 +5,41 @@ import Browse from './browse';
 
 const BrowseContainer = () => {
   const [selectedProtein, setSelectedProtein] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleChange = (e) => {
+  const search = (term) => {
+    navigate(`/search?term=${encodeURIComponent(term)}`);
+  };
+
+  const handleChangeSelect = (e) => {
     const { value } = e.target;
     setSelectedProtein(value);
   };
 
+  const handleChangeInput = (e) => {
+    const { value } = e.target;
+    setSearchTerm(value);
+  };
+
+  const handleClick = () => {
+    if (searchTerm) {
+      search(searchTerm);
+    }
+  };
+
   const handleSearch = (e) => {
-    const { key, target } = e;
-    const { value } = target;
-    if (key === 'Enter' && value) {
-      navigate(`/search?term=${encodeURIComponent(value)}`);
+    if (e.key === 'Enter' && searchTerm) {
+      search(searchTerm);
     }
   };
 
   return (
     <Browse
-      handleChange={handleChange}
+      handleChangeSelect={handleChangeSelect}
+      handleChangeInput={handleChangeInput}
+      handleClick={handleClick}
       handleSearch={handleSearch}
+      searchTerm={searchTerm}
       selectedProtein={selectedProtein}
     />
   );

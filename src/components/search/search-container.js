@@ -12,6 +12,7 @@ const SearchContainer = () => {
   const [searchTerm, setSearchTerm] = useState(urlTerm || '');
 
   const search = (term) => {
+    navigate(`/search?term=${encodeURIComponent(term)}`, { replace: true });
     setSearchResults(find(term));
   };
 
@@ -20,10 +21,14 @@ const SearchContainer = () => {
     setSearchTerm(value);
   };
 
+  const handleClick = () => {
+    if (searchTerm) {
+      search(searchTerm);
+    }
+  };
+
   const handleSearch = (e) => {
-    const { key } = e;
-    if (key === 'Enter' && searchTerm) {
-      navigate(`/search?term=${encodeURIComponent(searchTerm)}`, { replace: true });
+    if (e.key === 'Enter' && searchTerm) {
       search(searchTerm);
     }
   };
@@ -37,6 +42,7 @@ const SearchContainer = () => {
   return (
     <Search
       handleChange={handleChange}
+      handleClick={handleClick}
       handleSearch={handleSearch}
       searchResults={searchResults}
       searchTerm={searchTerm}

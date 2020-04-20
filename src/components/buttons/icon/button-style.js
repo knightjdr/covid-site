@@ -11,7 +11,7 @@ const Button = styled(DefaultButton)`
   border-width: 2px;
   color: var(--color-primary);
   display: flex;
-  font-size: 1.3em;
+  font-size: 1em;
   justify-content: center;
   height: 34px;
   padding: 2px;

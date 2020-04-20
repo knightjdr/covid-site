@@ -32,7 +32,6 @@ const Navbar = forwardRef((
         icon={faBars}
         kind="primary"
         onClick={handleClick}
-        size="xs"
         type="button"
       />
       <div

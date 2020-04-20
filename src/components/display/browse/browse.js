@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { faSearch } from '@fortawesome/pro-solid-svg-icons';
 
+import ButtonIcon from '../../buttons/icon/button';
 import Input from '../../input/input';
 import Link from '../../link/link';
 import Select from '../../select/select';
@@ -12,8 +14,11 @@ import './browse.css';
 const options = proteins.map((protein) => protein.id);
 
 const Browse = ({
-  handleChange,
+  handleChangeSelect,
+  handleChangeInput,
+  handleClick,
   handleSearch,
+  searchTerm,
   selectedProtein,
 }) => (
   <section className="display browse">
@@ -28,7 +33,7 @@ const Browse = ({
           className={selectedProtein ? 'browse__select_option-selected' : 'browse__select'}
           id="browse_select"
           label="Protein:"
-          onChange={handleChange}
+          onChange={handleChangeSelect}
           options={options}
           placeholder="Select..."
           value={selectedProtein}
@@ -44,21 +49,34 @@ const Browse = ({
           </Link>
         </div>
       </div>
-      <Input
-        direction="horizontal"
-        id="search_human_protein"
-        label="Search:"
-        onKeyDown={handleSearch}
-        placeholder="Human gene symbol (e.g. TRIP11) or UniProt accession (e.g. Q15643)"
-        type="search"
-      />
+      <div className="input_button">
+        <Input
+          direction="horizontal"
+          id="search_human_protein"
+          label="Search:"
+          onChange={handleChangeInput}
+          onKeyDown={handleSearch}
+          placeholder="Human gene symbol (e.g. TRIP11) or UniProt accession (e.g. Q15643)"
+          type="search"
+          value={searchTerm}
+        />
+        <ButtonIcon
+          kind="primary"
+          icon={faSearch}
+          onClick={handleClick}
+          type="button"
+        />
+      </div>
     </div>
   </section>
 );
 
 Browse.propTypes = {
-  handleChange: PropTypes.func.isRequired,
+  handleChangeSelect: PropTypes.func.isRequired,
+  handleChangeInput: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired,
   selectedProtein: PropTypes.string.isRequired,
 };
 
