@@ -3,7 +3,7 @@ import React from 'react';
 
 import Details from '../../details/details';
 import Options from './options-container';
-import Scatterplot from './scatterplot-container';
+import Chart from './chart/chart-container';
 import Vertices from './vertices';
 
 import './comparison.css';
@@ -27,7 +27,8 @@ const Comparison = ({
         selectCondition={selectCondition}
         selectedConditions={selectedConditions}
       />
-      <Scatterplot
+      <Chart
+        options={options}
         preys={preys}
         x={selectedConditions.x}
         y={selectedConditions.x}

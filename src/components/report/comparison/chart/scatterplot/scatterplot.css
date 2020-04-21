@@ -1,0 +1,19 @@
+.scatterplot {
+  background-color: var(--color-background);
+}
+
+.scatterplot line {
+  stroke: var(--color-font);
+  stroke-width: 1px;
+}
+.scatterplot text {
+  fill: var(--color-font);
+  font-family: var(--font-secondary);
+}
+
+line.scatterplot__axis {
+  stroke-width: 2px;
+}
+line.scatterplot__tick {
+  stroke-width: 2px;
+}

@@ -1,0 +1,59 @@
+.chart {
+  flex-grow: 1;
+  max-width: 500px;
+}
+
+.chart__placeholder {
+  display: inline-block;
+  flex-grow: 1;
+  max-width: 500px;
+  position: relative;
+}
+.chart__placeholder:after {
+  content: '';
+  display: block;
+  margin-top: 75%;
+}
+
+.chart__placeholder-inner {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chart__placeholder-inner::after {
+  background-image: url('./placeholder.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  margin: 0 1rem;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 2rem);
+  z-index: 1;
+}
+
+.chart__placeholder-inner span {
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+}
+
+.chart__svg-container {
+  box-sizing: border-box;
+  padding: 0 10px 10px 10px;
+}
