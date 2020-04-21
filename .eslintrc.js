@@ -12,6 +12,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -25,6 +26,7 @@ module.exports = {
   rules: {
     'max-len': ['error', 120],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    "react/jsx-props-no-spreading": "off",
+    'react/jsx-props-no-spreading': 'off',
+    strict: 0
   },
 };
