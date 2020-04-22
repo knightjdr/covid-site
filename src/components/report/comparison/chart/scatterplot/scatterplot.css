@@ -1,5 +1,5 @@
-.scatterplot {
-  background-color: var(--color-background);
+.scatterplot circle {
+  fill: var(--color-font);
 }
 
 .scatterplot line {
@@ -14,6 +14,9 @@
 line.scatterplot__axis {
   stroke-width: 2px;
 }
-line.scatterplot__tick {
+.scatterplot__tick line {
   stroke-width: 2px;
+}
+.scatterplot__tick text {
+  font-size: 0.8rem;
 }

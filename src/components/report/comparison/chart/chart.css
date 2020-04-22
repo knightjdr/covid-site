@@ -1,13 +1,18 @@
 .chart {
   flex-grow: 1;
+  margin: 0 1rem;
   max-width: 500px;
+}
+
+.chart__svg {
+  background-color: var(--color-code);
+  border-radius: 0.2rem;
 }
 
 .chart__placeholder {
   display: inline-block;
-  flex-grow: 1;
-  max-width: 500px;
   position: relative;
+  width: 100%;
 }
 .chart__placeholder:after {
   content: '';
@@ -55,5 +60,5 @@
 
 .chart__svg-container {
   box-sizing: border-box;
-  padding: 0 10px 10px 10px;
+  padding: 10px;
 }

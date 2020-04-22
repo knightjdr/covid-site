@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const AXIS_OFFSET = 5;
+const AXIS_OFFSET = 15;
 const X_START = 60;
 
 const Yaxis = ({
@@ -22,9 +22,11 @@ const Yaxis = ({
         y.ticks.map((tick) => {
           const yPosition = AXIS_OFFSET + axisLength - tick.y;
           return (
-            <g key={`y-${tick.label}`}>
+            <g
+              className="scatterplot__tick"
+              key={`y-${tick.label}`}
+            >
               <line
-                className="scatterplot__tick"
                 x1={X_START}
                 x2={X_START - 10}
                 y1={yPosition}
@@ -45,8 +47,8 @@ const Yaxis = ({
       <text
         dominantBaseline="central"
         textAnchor="middle"
-        transform={`rotate(-90, 5, ${axisLabelY})`}
-        x={5}
+        transform={`rotate(-90, 10, ${axisLabelY})`}
+        x={10}
         y={axisLabelY}
       >
         {y.label}

@@ -5,7 +5,7 @@ const Points = ({
   axisLength,
   points,
 }) => (
-  <g transform="translate(60 5)">
+  <g transform="translate(60 15)">
     {
       points.map((point) => (
         <circle
@@ -13,7 +13,9 @@ const Points = ({
           cy={axisLength - point.y}
           key={point.label}
           r={5}
-        />
+        >
+          <title>{point.label}</title>
+        </circle>
       ))
     }
   </g>

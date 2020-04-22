@@ -4,7 +4,7 @@ import React from 'react';
 const Midline = ({
   axisLength,
 }) => (
-  <g transform="translate(60 5)">
+  <g transform="translate(60 15)">
     <line
       strokeDasharray="5 5"
       x1={0}

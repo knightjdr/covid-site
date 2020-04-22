@@ -31,7 +31,7 @@ const Comparison = ({
         options={options}
         preys={preys}
         x={selectedConditions.x}
-        y={selectedConditions.x}
+        y={selectedConditions.y}
       />
       <Options
         changeOption={changeOption}

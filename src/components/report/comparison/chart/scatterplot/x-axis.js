@@ -7,7 +7,7 @@ const Xaxis = ({
   axisLength,
   x,
 }) => (
-  <g transform={`translate(55 ${axisLength + 5})`}>
+  <g transform={`translate(55 ${axisLength + 15})`}>
     <line
       className="scatterplot__axis"
       x1={AXIS_OFFSET}
@@ -17,9 +17,11 @@ const Xaxis = ({
     />
     {
       x.ticks.map((tick) => (
-        <g key={`x-${tick.label}`}>
+        <g
+          className="scatterplot__tick"
+          key={`x-${tick.label}`}
+        >
           <line
-            className="scatterplot__tick"
             x1={AXIS_OFFSET + tick.x}
             x2={AXIS_OFFSET + tick.x}
             y1={0}

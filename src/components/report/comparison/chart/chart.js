@@ -10,32 +10,36 @@ const Chart = forwardRef((
   },
   ref,
 ) => (
-  data?.points?.length > 0
-    ? (
-      <div className="chart">
-        <div
-          className="chart__svg-container"
-          ref={ref}
-        >
-          <ScatterPlot
-            axisLength={data.axisLength}
-            plotDimension={data.plotDimension}
-            points={data.points}
-            x={data.x}
-            y={data.y}
-          />
-        </div>
-      </div>
-    )
-    : (
-      <div className="chart__placeholder">
-        <div className="chart__placeholder-inner">
-          <span>
-            Select a pair of conditions
-          </span>
-        </div>
-      </div>
-    )
+  <div
+    className="chart"
+    ref={ref}
+  >
+    {
+      data?.points?.length > 0
+        ? (
+          <div className="chart__svg">
+            <div className="chart__svg-container">
+              <ScatterPlot
+                axisLength={data.axisLength}
+                plotDimension={data.plotDimension}
+                points={data.points}
+                x={data.x}
+                y={data.y}
+              />
+            </div>
+          </div>
+        )
+        : (
+          <div className="chart__placeholder">
+            <div className="chart__placeholder-inner">
+              <span>
+                Select a pair of conditions
+              </span>
+            </div>
+          </div>
+        )
+    }
+  </div>
 ));
 
 Chart.propTypes = {

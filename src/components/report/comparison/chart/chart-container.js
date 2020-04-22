@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { useState, useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 
 import Chart from './chart';
+
+import getData from './data/get-data';
 
 const ChartContainer = ({
   options,
@@ -10,34 +12,14 @@ const ChartContainer = ({
   y,
 }) => {
   const wrapperRef = useRef();
-  const [data, setData] = useState({});
+
+  const data = useMemo(() => (
+    getData(preys, wrapperRef, { ...options, x, y })
+  ), [options, preys, wrapperRef, x, y]);
 
   return (
     <Chart
-      data={{
-        axisLength: 415,
-        plotDimension: 480,
-        points: [
-          { label: 'a', x: 20, y: 25 },
-          { label: 'b', x: 300, y: 250 },
-        ],
-        x: {
-          label: 'x axis',
-          ticks: [
-            { label: 0, x: 0 },
-            { label: 207.5, x: 207.5 },
-            { label: 415, x: 415 },
-          ],
-        },
-        y: {
-          label: 'y axis',
-          ticks: [
-            { label: 0, y: 0 },
-            { label: 207.5, y: 207.5 },
-            { label: 415, y: 415 },
-          ],
-        },
-      }}
+      data={data}
       ref={wrapperRef}
     />
   );
