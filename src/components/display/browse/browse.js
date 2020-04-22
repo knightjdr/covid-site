@@ -51,12 +51,16 @@ const Browse = ({
       </div>
       <div className="input_button">
         <Input
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
           direction="horizontal"
           id="search_human_protein"
           label="Search:"
           onChange={handleChangeInput}
           onKeyDown={handleSearch}
           placeholder="Human gene symbol (e.g. TRIP11) or UniProt accession (e.g. Q15643)"
+          spellCheck="false"
           type="search"
           value={searchTerm}
         />
