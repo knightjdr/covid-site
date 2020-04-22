@@ -10,6 +10,7 @@ import './scatterplot.css';
 
 const ScatterPlot = ({
   axisLength,
+  midline,
   plotDimension,
   points,
   x,
@@ -21,10 +22,7 @@ const ScatterPlot = ({
     height={plotDimension}
     width={plotDimension}
   >
-    <Midline
-      axisLength={axisLength}
-      plotDimension={plotDimension}
-    />
+    <Midline midline={midline} />
     <Yaxis
       axisLength={axisLength}
       y={y}
@@ -42,6 +40,10 @@ const ScatterPlot = ({
 
 ScatterPlot.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  midline: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
   plotDimension: PropTypes.number.isRequired,
   points: PropTypes.arrayOf(
     PropTypes.shape({

@@ -21,6 +21,7 @@ const Chart = forwardRef((
             <div className="chart__svg-container">
               <ScatterPlot
                 axisLength={data.axisLength}
+                midline={data.midline}
                 plotDimension={data.plotDimension}
                 points={data.points}
                 x={data.x}
@@ -45,6 +46,10 @@ const Chart = forwardRef((
 Chart.propTypes = {
   data: PropTypes.shape({
     axisLength: PropTypes.number,
+    midline: PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number,
+    }),
     plotDimension: PropTypes.number,
     points: PropTypes.arrayOf(
       PropTypes.shape({

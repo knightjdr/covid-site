@@ -2,21 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Midline = ({
-  axisLength,
+  midline,
 }) => (
   <g transform="translate(60 15)">
     <line
       strokeDasharray="5 5"
       x1={0}
-      x2={axisLength}
-      y1={axisLength}
+      x2={midline.x}
+      y1={midline.y}
       y2={0}
     />
   </g>
 );
 
 Midline.propTypes = {
-  axisLength: PropTypes.number.isRequired,
+  midline: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
 };
 
 export default Midline;

@@ -106,6 +106,10 @@ const getData = (preys, wrapperRef, options) => {
   const scaledData = scaleData(filteredPreys, ticks, { ...dimensions, log: options.log });
   return {
     ...dimensions,
+    midline: {
+      x: scaledData.ticks.x[scaledData.ticks.x.length - 1].x,
+      y: scaledData.ticks.y[scaledData.ticks.y.length - 1].y,
+    },
     points: scaledData.points,
     x: {
       label: options.x,
