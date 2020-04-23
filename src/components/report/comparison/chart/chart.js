@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 
 import './chart.css';
-import ScatterPlot from './scatterplot/scatterplot';
+import ScatterPlot from './scatterplot/scatterplot-container';
 
 const Chart = forwardRef((
   {

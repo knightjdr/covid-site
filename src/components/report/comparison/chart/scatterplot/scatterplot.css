@@ -14,6 +14,11 @@
 line.scatterplot__axis {
   stroke-width: 2px;
 }
+
+.scatterplot__background {
+  fill: var(--color-code);
+}
+
 .scatterplot__tick line {
   stroke-width: 2px;
 }

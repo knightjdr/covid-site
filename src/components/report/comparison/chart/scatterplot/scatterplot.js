@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Midline from './midline';
-import Points from './points';
+import Plot from './plot';
 import Xaxis from './x-axis';
 import Yaxis from './y-axis';
 
@@ -10,9 +9,11 @@ import './scatterplot.css';
 
 const ScatterPlot = ({
   axisLength,
+  handleWheelXY,
   midline,
   plotDimension,
   points,
+  transform,
   x,
   y,
 }) => (
@@ -22,7 +23,13 @@ const ScatterPlot = ({
     height={plotDimension}
     width={plotDimension}
   >
-    <Midline midline={midline} />
+    <Plot
+      axisLength={axisLength}
+      handleWheelXY={handleWheelXY}
+      midline={midline}
+      points={points}
+      transform={transform.transformPlot}
+    />
     <Yaxis
       axisLength={axisLength}
       y={y}
@@ -31,15 +38,12 @@ const ScatterPlot = ({
       axisLength={axisLength}
       x={x}
     />
-    <Points
-      axisLength={axisLength}
-      points={points}
-    />
   </svg>
 );
 
 ScatterPlot.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleWheelXY: PropTypes.func.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
@@ -52,6 +56,10 @@ ScatterPlot.propTypes = {
       y: PropTypes.number,
     }),
   ).isRequired,
+  transform: PropTypes.shape({
+    transformPlot: PropTypes.string,
+    scale: PropTypes.number,
+  }).isRequired,
   x: PropTypes.shape({
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
