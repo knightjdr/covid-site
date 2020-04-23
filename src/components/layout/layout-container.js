@@ -9,7 +9,7 @@ import { getLocalStorage, setLocalStorage } from '../../utils/local-storage';
 const LayoutContainer = ({
   children,
 }) => {
-  const [theme, setTheme] = useState(getLocalStorage('theme'));
+  const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -18,22 +18,22 @@ const LayoutContainer = ({
   };
 
   useEffect(() => {
-    if (!theme) {
-      setTheme(getLocalStorage('theme') || 'light');
+    const storedTheme = getLocalStorage('theme');
+    if (storedTheme && storedTheme !== theme) {
+      setTheme(storedTheme);
     }
   }, []);
 
-  return theme
-    && (
-      <LayoutContext.Provider value={{ theme, toggleTheme }}>
-        <Layout
-          theme={theme}
-          toggleTheme={toggleTheme}
-        >
-          {children}
-        </Layout>
-      </LayoutContext.Provider>
-    );
+  return (
+    <LayoutContext.Provider value={{ theme, toggleTheme }}>
+      <Layout
+        theme={theme}
+        toggleTheme={toggleTheme}
+      >
+        {children}
+      </Layout>
+    </LayoutContext.Provider>
+  );
 };
 
 LayoutContainer.propTypes = {
