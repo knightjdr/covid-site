@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Layout from '../components/layout/layout-container';
+import Layout from '../components/layout/layout';
 import Report from '../components/report/report-container';
 import SEO from '../components/seo/seo';
 

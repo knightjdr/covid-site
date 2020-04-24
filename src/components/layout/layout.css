@@ -15,8 +15,8 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-.layout,
-.layout[data-theme="light"] {
+body,
+body.light-mode {
   --color-accent-link: #2E5EB4;
   --color-accent-link-visited: #382182;
   --color-background: #fff;
@@ -33,7 +33,7 @@ html {
   background-color: var(--color-background);
   color: var(--color-font);
 }
-.layout[data-theme="dark"] {
+body.dark-mode {
   --color-accent: #eb8367;
   --color-accent-link: #691042;
   --color-accent-link-visited: #382182;

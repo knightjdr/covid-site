@@ -7,24 +7,15 @@ import Navbar from '../navbar/navbar-container';
 
 import './layout.css';
 
-const Layout = ({
-  children,
-  theme,
-  toggleTheme,
-}) => (
+const Layout = ({ children }) => (
   <Location>
     {
       ({ location }) => (
         <div
           id="layout"
           className="layout"
-          data-theme={theme}
         >
-          <Navbar
-            pathName={location.pathname}
-            theme={theme}
-            toggleTheme={toggleTheme}
-          />
+          <Navbar pathName={location.pathname} />
           <noscript className="noscript-warning">
             This site relies on JavaScript which is currently disabled in your browser.
             Some functionality will be missing as a result.
@@ -47,8 +38,6 @@ const Layout = ({
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  theme: PropTypes.string.isRequired,
-  toggleTheme: PropTypes.func.isRequired,
 };
 
 export default Layout;

@@ -20,14 +20,14 @@ const storageSupport = () => {
 
 export const getLocalStorage = (key) => {
   if (storageSupport) {
-    return localAdapter.getItem(key);
+    return JSON.parse(localAdapter.getItem(key));
   }
   return null;
 };
 
 export const setLocalStorage = (key, value) => {
   if (storageSupport) {
-    return localAdapter.setItem(key, value);
+    return localAdapter.setItem(key, JSON.stringify(value));
   }
   return null;
 };
