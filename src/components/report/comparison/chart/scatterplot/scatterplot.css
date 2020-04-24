@@ -4,7 +4,6 @@
 
 .scatterplot line {
   stroke: var(--color-font);
-  stroke-width: 1px;
 }
 .scatterplot text {
   fill: var(--color-font);
@@ -17,6 +16,10 @@ line.scatterplot__axis {
 
 .scatterplot__background {
   fill: var(--color-code);
+}
+
+.scatterplot__midline {
+  pointer-events: none;
 }
 
 .scatterplot__tick line {

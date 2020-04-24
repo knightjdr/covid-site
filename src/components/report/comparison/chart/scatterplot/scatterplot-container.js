@@ -22,6 +22,81 @@ const ScatterplotContainer = ({
     transformPlot: '',
   });
 
+  const mouse = { move: false, start: {} };
+
+  const handleMouseMoveXY = (e) => {
+    if (mouse.down) {
+      e.preventDefault();
+      const { pageX, pageY } = e;
+
+      const delta = {
+        x: pageX - mouse.start.x,
+        y: pageY - mouse.start.y,
+      };
+
+      const { origin, scale } = transform;
+      const newOrigin = {
+        x: origin.x + delta.x,
+        y: origin.y + delta.y,
+      };
+
+      const matrix = `matrix(${scale}, 0, 0, ${scale}, ${newOrigin.x}, ${newOrigin.y})`;
+
+      setTransform({
+        ...transform,
+        transformPlot: matrix,
+      });
+    }
+  };
+
+  const handleMouseUpXY = (e) => {
+    e.preventDefault();
+    if (mouse.down) {
+      const { pageX, pageY } = e;
+
+      const delta = {
+        x: pageX - mouse.start.x,
+        y: pageY - mouse.start.y,
+      };
+
+      const { origin, scale } = transform;
+      const newOrigin = {
+        x: origin.x + delta.x,
+        y: origin.y + delta.y,
+      };
+
+      const matrix = `matrix(${scale}, 0, 0, ${scale}, ${newOrigin.x}, ${newOrigin.y})`;
+
+      mouse.down = false;
+
+      setTransform({
+        ...transform,
+        origin: newOrigin,
+        transformPlot: matrix,
+      });
+
+      window.removeEventListener('mousemove', handleMouseMoveXY);
+      window.removeEventListener('mouseup', handleMouseUpXY);
+    }
+  };
+
+  const handleMouseDownXY = (e) => {
+    e.preventDefault();
+
+    const { pageX, pageY } = e;
+
+    mouse.down = true;
+    mouse.start = { x: pageX, y: pageY };
+
+    setTransform({
+      ...transform,
+      mouseDown: true,
+    });
+
+    window.addEventListener('mousemove', handleMouseMoveXY);
+    window.addEventListener('mouseup', handleMouseUpXY);
+  };
+
   const handleWheelXY = (e) => {
     e.preventDefault();
     const {
@@ -30,20 +105,20 @@ const ScatterplotContainer = ({
       pageX,
       pageY,
     } = e;
+    const { left, top } = currentTarget.querySelector('#scatterplot__points-wheel').getBoundingClientRect();
 
-    const { left, top } = currentTarget.getBoundingClientRect();
-    const mouse = {
-      x: round(pageX - left, 5),
-      y: round(pageY - window.pageYOffset - top, 5),
+    const position = {
+      x: pageX - left,
+      y: pageY - window.pageYOffset - top,
     };
 
     const { origin, scale } = transform;
     const zoom = Math.exp(-Math.sign(deltaY) * 0.05);
-    const newScale = scale * zoom;
+    const newScale = round(scale * zoom, 5);
 
     const newOrigin = {
-      x: mouse.x - (mouse.x - origin.x) * zoom,
-      y: mouse.y - (mouse.y - origin.y) * zoom,
+      x: round(position.x - (position.x - origin.x) * zoom, 5),
+      y: round(position.y - (position.y - origin.y) * zoom, 5),
     };
 
     const matrix = `matrix(${newScale}, 0, 0, ${newScale}, ${newOrigin.x}, ${newOrigin.y})`;
@@ -58,6 +133,7 @@ const ScatterplotContainer = ({
   return (
     <Scatterplot
       axisLength={axisLength}
+      handleMouseDownXY={handleMouseDownXY}
       handleWheelXY={handleWheelXY}
       midline={midline}
       plotDimension={plotDimension}

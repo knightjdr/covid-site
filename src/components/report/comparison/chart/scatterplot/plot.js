@@ -6,12 +6,17 @@ import Points from './points';
 
 const Plot = ({
   axisLength,
+  handleMouseDownXY,
   handleWheelXY,
   midline,
   points,
   transform,
 }) => (
-  <g transform="translate(60 15)">
+  <g
+    onMouseDown={handleMouseDownXY}
+    onWheel={handleWheelXY}
+    transform="translate(60 15)"
+  >
     <defs>
       <clipPath id="points_clip">
         <rect
@@ -22,31 +27,33 @@ const Plot = ({
         />
       </clipPath>
     </defs>
-    <g clipPath="url(#points_clip)">
-      <g
-        id="plot_transform_group"
-        transform={transform}
-      >
-        <Midline midline={midline} />
-        <Points
-          axisLength={axisLength}
-          points={points}
-          transform={transform.transformPlot}
-        />
-      </g>
-    </g>
-    <g onWheel={handleWheelXY}>
+    <g id="scatterplot__points-wheel">
       <rect
         height={axisLength}
         opacity={0}
         width={axisLength}
       />
     </g>
+    <g clipPath="url(#points_clip)">
+      <g transform={transform.transformPlot}>
+        <Midline
+          midline={midline}
+          scale={transform.scale}
+        />
+        <Points
+          axisLength={axisLength}
+          points={points}
+          scale={transform.scale}
+          transform={transform.transformPlot}
+        />
+      </g>
+    </g>
   </g>
 );
 
 Plot.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleMouseDownXY: PropTypes.func.isRequired,
   handleWheelXY: PropTypes.func.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
@@ -59,7 +66,10 @@ Plot.propTypes = {
       y: PropTypes.number,
     }),
   ).isRequired,
-  transform: PropTypes.string.isRequired,
+  transform: PropTypes.shape({
+    scale: PropTypes.number,
+    transformPlot: PropTypes.string,
+  }).isRequired,
 };
 
 export default Plot;
