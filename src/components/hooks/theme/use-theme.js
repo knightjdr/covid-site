@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getLocalStorage, setLocalStorage } from '../../../utils/local-storage';
 
 const useTheme = () => {
-  const [darkMode, toggleState] = useState(getLocalStorage('darkMode') || false);
+  const [darkMode, toggleState] = useState(false);
 
   const toggle = () => {
     const newMode = !darkMode;
@@ -26,9 +26,16 @@ const useTheme = () => {
       }
     };
 
-    window.addEventListener('storage', () => updateMode);
+    window.addEventListener('storage', updateMode);
     return window.removeEventListener('storage', updateMode);
   });
+
+  useEffect(() => {
+    const bodyMode = document.body.className.includes('dark-mode');
+    if (bodyMode !== darkMode) {
+      toggleState(bodyMode);
+    }
+  }, []);
 
   return {
     darkMode,
