@@ -13,7 +13,7 @@ const Button = styled(DefaultButton)`
 
   &:focus:not([disabled]),
   &:hover:not([disabled]) {
-    color: var(--color-font);
+    color: var(--color-font-dark);
   }
 `;
 

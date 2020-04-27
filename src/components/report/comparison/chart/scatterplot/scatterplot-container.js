@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Scatterplot from './scatterplot';
 
-import round from '../../../../../utils/round';
+import handlers from './handlers/mouse-handlers';
 
 const ScatterplotContainer = ({
   axisLength,
@@ -19,122 +19,76 @@ const ScatterplotContainer = ({
       y: 0,
     },
     scale: 1,
-    transformPlot: '',
+    matrix: {
+      plot: '',
+      xAxis: '',
+    },
   });
 
-  const mouse = { move: false, start: {} };
-
-  const handleMouseMoveXY = (e) => {
-    if (mouse.down) {
-      e.preventDefault();
-      const { pageX, pageY } = e;
-
-      const delta = {
-        x: pageX - mouse.start.x,
-        y: pageY - mouse.start.y,
-      };
-
-      const { origin, scale } = transform;
-      const newOrigin = {
-        x: origin.x + delta.x,
-        y: origin.y + delta.y,
-      };
-
-      const matrix = `matrix(${scale}, 0, 0, ${scale}, ${newOrigin.x}, ${newOrigin.y})`;
-
-      setTransform({
-        ...transform,
-        transformPlot: matrix,
-      });
-    }
-  };
-
-  const handleMouseUpXY = (e) => {
-    e.preventDefault();
-    if (mouse.down) {
-      const { pageX, pageY } = e;
-
-      const delta = {
-        x: pageX - mouse.start.x,
-        y: pageY - mouse.start.y,
-      };
-
-      const { origin, scale } = transform;
-      const newOrigin = {
-        x: origin.x + delta.x,
-        y: origin.y + delta.y,
-      };
-
-      const matrix = `matrix(${scale}, 0, 0, ${scale}, ${newOrigin.x}, ${newOrigin.y})`;
-
-      mouse.down = false;
-
-      setTransform({
-        ...transform,
-        origin: newOrigin,
-        transformPlot: matrix,
-      });
-
-      window.removeEventListener('mousemove', handleMouseMoveXY);
-      window.removeEventListener('mouseup', handleMouseUpXY);
-    }
+  const handleMouseDownX = (e) => {
+    const options = {
+      axisLength,
+      transform,
+      setTransform,
+      vertex: 'x',
+    };
+    handlers.pan(e, options);
   };
 
   const handleMouseDownXY = (e) => {
-    e.preventDefault();
+    handlers.pan(e, { transform, setTransform });
+  };
 
-    const { pageX, pageY } = e;
+  const handleMouseDownY = (e) => {
+    const options = {
+      axisLength,
+      transform,
+      setTransform,
+      vertex: 'y',
+    };
+    handlers.pan(e, options);
+  };
 
-    mouse.down = true;
-    mouse.start = { x: pageX, y: pageY };
-
-    setTransform({
-      ...transform,
-      mouseDown: true,
-    });
-
-    window.addEventListener('mousemove', handleMouseMoveXY);
-    window.addEventListener('mouseup', handleMouseUpXY);
+  const handleWheelX = (e) => {
+    const options = {
+      axisLength,
+      id: '#scatterplot__xaxis-wheel',
+      transform,
+      setTransform,
+      vertex: 'x',
+    };
+    handlers.zoom(e, options);
   };
 
   const handleWheelXY = (e) => {
-    e.preventDefault();
-    const {
-      currentTarget,
-      deltaY,
-      pageX,
-      pageY,
-    } = e;
-    const { left, top } = currentTarget.querySelector('#scatterplot__points-wheel').getBoundingClientRect();
-
-    const position = {
-      x: pageX - left,
-      y: pageY - window.pageYOffset - top,
+    const options = {
+      id: '#scatterplot__points-wheel',
+      transform,
+      setTransform,
     };
+    handlers.zoom(e, options);
+  };
 
-    const { origin, scale } = transform;
-    const zoom = Math.exp(-Math.sign(deltaY) * 0.05);
-    const newScale = round(scale * zoom, 5);
-
-    const newOrigin = {
-      x: round(position.x - (position.x - origin.x) * zoom, 5),
-      y: round(position.y - (position.y - origin.y) * zoom, 5),
+  const handleWheelY = (e) => {
+    const options = {
+      axisLength,
+      id: '#scatterplot__yaxis-wheel',
+      transform,
+      setTransform,
+      vertex: 'y',
     };
-
-    const matrix = `matrix(${newScale}, 0, 0, ${newScale}, ${newOrigin.x}, ${newOrigin.y})`;
-
-    setTransform({
-      origin: newOrigin,
-      scale: newScale,
-      transformPlot: matrix,
-    });
+    handlers.zoom(e, options);
   };
 
   return (
     <Scatterplot
       axisLength={axisLength}
+      handleMouseDownX={handleMouseDownX}
       handleMouseDownXY={handleMouseDownXY}
+      handleMouseDownY={handleMouseDownY}
+      handleWheelX={handleWheelX}
       handleWheelXY={handleWheelXY}
+      handleWheelY={handleWheelY}
       midline={midline}
       plotDimension={plotDimension}
       points={points}

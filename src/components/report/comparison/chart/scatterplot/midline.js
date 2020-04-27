@@ -10,6 +10,7 @@ const Midline = ({
   return (
     <line
       className="scatterplot__midline"
+      stroke="black"
       strokeDasharray={`${dash} ${dash}`}
       strokeWidth={strokeWidth}
       x1={0}

@@ -6,15 +6,15 @@ import Points from './points';
 
 const Plot = ({
   axisLength,
-  handleMouseDownXY,
-  handleWheelXY,
+  handleMouseDown,
+  handleWheel,
   midline,
   points,
   transform,
 }) => (
   <g
-    onMouseDown={handleMouseDownXY}
-    onWheel={handleWheelXY}
+    onMouseDown={handleMouseDown}
+    onWheel={handleWheel}
     transform="translate(60 15)"
   >
     <defs>
@@ -32,10 +32,12 @@ const Plot = ({
         height={axisLength}
         opacity={0}
         width={axisLength}
+        x={0}
+        y={0}
       />
     </g>
     <g clipPath="url(#points_clip)">
-      <g transform={transform.transformPlot}>
+      <g transform={transform.matrix.plot}>
         <Midline
           midline={midline}
           scale={transform.scale}
@@ -44,7 +46,6 @@ const Plot = ({
           axisLength={axisLength}
           points={points}
           scale={transform.scale}
-          transform={transform.transformPlot}
         />
       </g>
     </g>
@@ -53,8 +54,8 @@ const Plot = ({
 
 Plot.propTypes = {
   axisLength: PropTypes.number.isRequired,
-  handleMouseDownXY: PropTypes.func.isRequired,
-  handleWheelXY: PropTypes.func.isRequired,
+  handleMouseDown: PropTypes.func.isRequired,
+  handleWheel: PropTypes.func.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
@@ -68,7 +69,9 @@ Plot.propTypes = {
   ).isRequired,
   transform: PropTypes.shape({
     scale: PropTypes.number,
-    transformPlot: PropTypes.string,
+    matrix: PropTypes.shape({
+      plot: PropTypes.string,
+    }),
   }).isRequired,
 };
 

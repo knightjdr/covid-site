@@ -48,9 +48,13 @@ const StyledDetails = styled.details`
 const Details = ({
   children,
   listStyleType,
+  open,
   summary,
 }) => (
-  <StyledDetails listStyleType={listStyleType}>
+  <StyledDetails
+    listStyleType={listStyleType}
+    open={open}
+  >
     <summary>
       <div className="summary__inner">
         <span />
@@ -63,6 +67,7 @@ const Details = ({
 
 Details.defaultProps = {
   listStyleType: 'info',
+  open: false,
   summary: 'summary',
 };
 
@@ -70,6 +75,7 @@ Details.defaultProps = {
 Details.propTypes = {
   children: PropTypes.node.isRequired,
   listStyleType: PropTypes.string,
+  open: PropTypes.bool,
   summary: PropTypes.string,
 };
 

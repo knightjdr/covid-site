@@ -21,10 +21,3 @@ line.scatterplot__axis {
 .scatterplot__midline {
   pointer-events: none;
 }
-
-.scatterplot__tick line {
-  stroke-width: 2px;
-}
-.scatterplot__tick text {
-  font-size: 0.8rem;
-}

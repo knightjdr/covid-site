@@ -9,8 +9,12 @@ import './scatterplot.css';
 
 const ScatterPlot = ({
   axisLength,
+  handleMouseDownX,
   handleMouseDownXY,
+  handleMouseDownY,
+  handleWheelX,
   handleWheelXY,
+  handleWheelY,
   midline,
   plotDimension,
   points,
@@ -19,25 +23,32 @@ const ScatterPlot = ({
   y,
 }) => (
   <svg
-    className="scatterplot"
     xmlns="http://www.w3.org/2000/svg"
+    id="scatterplot"
+    className="scatterplot"
     height={plotDimension}
     width={plotDimension}
   >
     <Plot
       axisLength={axisLength}
-      handleMouseDownXY={handleMouseDownXY}
-      handleWheelXY={handleWheelXY}
+      handleMouseDown={handleMouseDownXY}
+      handleWheel={handleWheelXY}
       midline={midline}
       points={points}
       transform={transform}
     />
     <Yaxis
       axisLength={axisLength}
+      handleMouseDownY={handleMouseDownY}
+      handleWheelY={handleWheelY}
+      transform={transform}
       y={y}
     />
     <Xaxis
       axisLength={axisLength}
+      handleMouseDownX={handleMouseDownX}
+      handleWheel={handleWheelX}
+      transform={transform}
       x={x}
     />
   </svg>
@@ -45,8 +56,12 @@ const ScatterPlot = ({
 
 ScatterPlot.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleMouseDownX: PropTypes.func.isRequired,
   handleMouseDownXY: PropTypes.func.isRequired,
+  handleMouseDownY: PropTypes.func.isRequired,
+  handleWheelX: PropTypes.func.isRequired,
   handleWheelXY: PropTypes.func.isRequired,
+  handleWheelY: PropTypes.func.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
@@ -61,7 +76,9 @@ ScatterPlot.propTypes = {
   ).isRequired,
   transform: PropTypes.shape({
     scale: PropTypes.number,
-    transformPlot: PropTypes.string,
+    matrix: PropTypes.shape({
+      plot: PropTypes.string,
+    }),
   }).isRequired,
   x: PropTypes.shape({
     label: PropTypes.string,

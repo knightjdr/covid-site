@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { faMinus, faPlus } from '@fortawesome/pro-solid-svg-icons';
 
+import Button from '../../buttons/rectangular/button';
+import ButtonIcon from '../../buttons/icon/button';
 import Input from '../../input/input';
 import Switch from '../../switch/switch';
 
 import './options.css';
 
 const Options = ({
+  handleExport,
   handleFDRChange,
   handleLogToggle,
   handleSpecChange,
@@ -39,10 +43,34 @@ const Options = ({
       onChange={handleLogToggle}
       type="checkbox"
     />
+    <div className="comparison__options-zoom">
+      <span>Zoom:</span>
+      <ButtonIcon
+        icon={faPlus}
+        kind="secondary"
+      />
+      <ButtonIcon
+        icon={faMinus}
+        kind="secondary"
+      />
+    </div>
+    <Button
+      onClick={handleExport}
+      kind="primary"
+    >
+      Export
+    </Button>
+    <Button
+      onClick={handleExport}
+      kind="warning"
+    >
+      Reset
+    </Button>
   </div>
 );
 
 Options.propTypes = {
+  handleExport: PropTypes.func.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
   handleLogToggle: PropTypes.func.isRequired,
   handleSpecChange: PropTypes.func.isRequired,

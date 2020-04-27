@@ -17,7 +17,7 @@
 .chart__placeholder:after {
   content: '';
   display: block;
-  margin-top: 75%;
+  margin-top: 100%;
 }
 
 .chart__placeholder-inner {

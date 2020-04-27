@@ -5,50 +5,103 @@ const AXIS_OFFSET = 5;
 
 const Xaxis = ({
   axisLength,
+  handleMouseDownX,
+  handleWheel,
+  transform,
   x,
-}) => (
-  <g transform={`translate(55 ${axisLength + 15})`}>
-    <line
-      className="scatterplot__axis"
-      x1={AXIS_OFFSET}
-      x2={AXIS_OFFSET + axisLength}
-      y1={0}
-      y2={0}
-    />
-    {
-      x.ticks.map((tick) => (
-        <g
-          className="scatterplot__tick"
-          key={`x-${tick.label}`}
-        >
-          <line
-            x1={AXIS_OFFSET + tick.x}
-            x2={AXIS_OFFSET + tick.x}
-            y1={0}
-            y2={10}
-          />
-          <text
-            textAnchor="middle"
-            x={AXIS_OFFSET + tick.x}
-            y={28}
-          >
-            {tick.label}
-          </text>
-        </g>
-      ))
-    }
-    <text
-      textAnchor="middle"
-      x={AXIS_OFFSET + (axisLength / 2)}
-      y={55}
+}) => {
+  const { scale } = transform;
+  const tickFontSize = 12 / scale;
+  const tickLabelPosition = 28 / scale;
+  const tickLength = 10 / scale;
+  const tickWidth = 2 / scale;
+  return (
+    <g
+      onMouseDown={handleMouseDownX}
+      onWheel={handleWheel}
+      transform={`translate(55 ${axisLength + 15})`}
     >
-      {x.label}
-    </text>
-  </g>
-);
+      <defs>
+        <clipPath id="xaxis_clip">
+          <rect
+            height={65}
+            width={axisLength + 15}
+            x={0}
+            y={0}
+          />
+        </clipPath>
+      </defs>
+      <g id="scatterplot__xaxis-wheel">
+        <rect
+          height={65}
+          opacity={0}
+          width={axisLength}
+          x={5}
+          y={0}
+        />
+      </g>
+      <line
+        className="scatterplot__axis"
+        stroke="black"
+        x1={AXIS_OFFSET}
+        x2={AXIS_OFFSET + axisLength}
+        y1={0}
+        y2={0}
+      />
+      <g clipPath="url(#xaxis_clip)">
+        <g transform={transform.matrix.xAxis}>
+          {
+            x.ticks.map((tick) => (
+              <g
+                className="scatterplot__tick"
+                key={`x-${tick.label}`}
+              >
+                <line
+                  stroke="black"
+                  strokeWidth={tickWidth}
+                  x1={AXIS_OFFSET + tick.x}
+                  x2={AXIS_OFFSET + tick.x}
+                  y1={0}
+                  y2={tickLength}
+                />
+                <text
+                  fill="black"
+                  fontFamily="Liberation Sans"
+                  fontSize={`${tickFontSize}px`}
+                  textAnchor="middle"
+                  x={AXIS_OFFSET + tick.x}
+                  y={tickLabelPosition}
+                >
+                  {tick.label}
+                </text>
+              </g>
+            ))
+          }
+        </g>
+      </g>
+      <text
+        fill="black"
+        fontFamily="Liberation Sans"
+        textAnchor="middle"
+        x={AXIS_OFFSET + (axisLength / 2)}
+        y={55}
+      >
+        {x.label}
+      </text>
+    </g>
+  );
+};
 
 Xaxis.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleMouseDownX: PropTypes.func.isRequired,
+  handleWheel: PropTypes.func.isRequired,
+  transform: PropTypes.shape({
+    scale: PropTypes.number,
+    matrix: PropTypes.shape({
+      xAxis: PropTypes.string,
+    }),
+  }).isRequired,
   x: PropTypes.shape({
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(

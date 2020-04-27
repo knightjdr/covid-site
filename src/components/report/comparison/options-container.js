@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Options from './options';
+
+import download from '../../../utils/download';
 import validateFDR from '../../../utils/input-handlers/validate-fdr';
 import validateSpec from '../../../utils/input-handlers/validate-spec';
 
@@ -9,6 +11,13 @@ const OptionsContainer = ({
   changeOption,
   options,
 }) => {
+  const handleExport = () => {
+    const svg = document.getElementById('scatterplot');
+    if (svg) {
+      download(svg.outerHTML, 'scatterplot.svg');
+    }
+  };
+
   const handleFDRChange = (e) => {
     const [validated, value] = validateFDR(e);
     if (validated) {
@@ -29,6 +38,7 @@ const OptionsContainer = ({
 
   return (
     <Options
+      handleExport={handleExport}
       handleFDRChange={handleFDRChange}
       handleLogToggle={handleLogToggle}
       handleSpecChange={handleSpecChange}

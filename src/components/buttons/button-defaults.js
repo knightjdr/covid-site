@@ -68,6 +68,19 @@ const Button = styled.button`
     }`
   )};
 
+${(props) => (props.kind === 'secondary'
+    && css`& {
+      background-color: var(--color-secondary);
+      color: var(--color-font-dark);
+    }
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: #fff;
+      border-color: var(--color-secondary);
+      color: var(--color-secondary);
+    }`
+  )};
+
   ${(props) => (props.kind === 'success'
     && css`& {
       background-color: var(--success);
@@ -84,7 +97,7 @@ const Button = styled.button`
   ${(props) => (props.kind === 'warning'
     && css`&{
       background-color: var(--warning);
-      color: var(--color-font-contrast);
+      color: var(--color-font);
     }
 
     &:focus:not([disabled]),
