@@ -8,6 +8,7 @@ import getData from './data/get-data';
 const ChartContainer = ({
   options,
   preys,
+  transform,
   x,
   y,
 }) => {
@@ -21,6 +22,7 @@ const ChartContainer = ({
     <Chart
       data={data}
       ref={wrapperRef}
+      transform={transform}
     />
   );
 };
@@ -32,6 +34,19 @@ ChartContainer.propTypes = {
     log: PropTypes.bool,
   }).isRequired,
   preys: PropTypes.shape({}).isRequired,
+  transform: PropTypes.shape({
+    origin: PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number,
+    }),
+    matrix: PropTypes.shape({
+      plot: PropTypes.string,
+      xAxis: PropTypes.string,
+      yAxis: PropTypes.string,
+    }),
+    scale: PropTypes.number,
+    setTransform: PropTypes.func.isRequired,
+  }).isRequired,
   x: PropTypes.string.isRequired,
   y: PropTypes.string.isRequired,
 };

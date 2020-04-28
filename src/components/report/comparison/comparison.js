@@ -15,6 +15,7 @@ const Comparison = ({
   preys,
   selectCondition,
   selectedConditions,
+  transform,
 }) => (
   <Details
     className="comparison"
@@ -30,12 +31,14 @@ const Comparison = ({
       <Chart
         options={options}
         preys={preys}
+        transform={transform}
         x={selectedConditions.x}
         y={selectedConditions.y}
       />
       <Options
         changeOption={changeOption}
         options={options}
+        transform={transform}
       />
     </div>
   </Details>
@@ -51,6 +54,7 @@ Comparison.propTypes = {
     x: PropTypes.string,
     y: PropTypes.string,
   }).isRequired,
+  transform: PropTypes.shape({}).isRequired,
 };
 
 export default Comparison;

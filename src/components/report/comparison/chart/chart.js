@@ -7,6 +7,7 @@ import ScatterPlot from './scatterplot/scatterplot-container';
 const Chart = forwardRef((
   {
     data,
+    transform,
   },
   ref,
 ) => (
@@ -24,6 +25,7 @@ const Chart = forwardRef((
                 midline={data.midline}
                 plotDimension={data.plotDimension}
                 points={data.points}
+                transform={transform}
                 x={data.x}
                 y={data.y}
               />
@@ -76,6 +78,19 @@ Chart.propTypes = {
         }),
       ),
     }),
+  }).isRequired,
+  transform: PropTypes.shape({
+    origin: PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number,
+    }),
+    matrix: PropTypes.shape({
+      plot: PropTypes.string,
+      xAxis: PropTypes.string,
+      yAxis: PropTypes.string,
+    }),
+    scale: PropTypes.number,
+    setTransform: PropTypes.func.isRequired,
   }).isRequired,
 };
 

@@ -59,22 +59,27 @@ export const getWheelOrigin = (position, zoom, origin) => ({
 
 export const getWheelPosition = (e, options) => {
   const { currentTarget, pageX, pageY } = e;
-  const { axisLength, id, vertex } = options;
-  const { left, top } = currentTarget.querySelector(id).getBoundingClientRect();
+  const { id, vertex } = options;
+  const rect = currentTarget.querySelector(id).getBoundingClientRect();
 
-  if (vertex === 'x') {
+  if (vertex === 'center') {
     return {
-      x: pageX - left,
-      y: axisLength / 2,
+      x: rect.width / 2,
+      y: rect.height / 2,
+    };
+  } if (vertex === 'x') {
+    return {
+      x: pageX - rect.left,
+      y: rect.width / 2,
     };
   } if (vertex === 'y') {
     return {
-      x: axisLength / 2,
-      y: pageY - window.pageYOffset - top,
+      x: rect.height / 2,
+      y: pageY - window.pageYOffset - rect.top,
     };
   }
   return {
-    x: pageX - left,
-    y: pageY - window.pageYOffset - top,
+    x: pageX - rect.left,
+    y: pageY - window.pageYOffset - rect.top,
   };
 };

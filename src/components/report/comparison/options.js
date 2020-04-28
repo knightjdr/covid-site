@@ -13,7 +13,9 @@ const Options = ({
   handleExport,
   handleFDRChange,
   handleLogToggle,
+  handleReset,
   handleSpecChange,
+  handleZoom,
   options,
 }) => (
   <div className="comparison__options">
@@ -46,12 +48,16 @@ const Options = ({
     <div className="comparison__options-zoom">
       <span>Zoom:</span>
       <ButtonIcon
+        data-delta={-1}
         icon={faPlus}
         kind="secondary"
+        onClick={handleZoom}
       />
       <ButtonIcon
+        data-delta={1}
         icon={faMinus}
         kind="secondary"
+        onClick={handleZoom}
       />
     </div>
     <Button
@@ -61,7 +67,7 @@ const Options = ({
       Export
     </Button>
     <Button
-      onClick={handleExport}
+      onClick={handleReset}
       kind="warning"
     >
       Reset
@@ -73,7 +79,9 @@ Options.propTypes = {
   handleExport: PropTypes.func.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
   handleLogToggle: PropTypes.func.isRequired,
+  handleReset: PropTypes.func.isRequired,
   handleSpecChange: PropTypes.func.isRequired,
+  handleZoom: PropTypes.func.isRequired,
   options: PropTypes.shape({
     count: PropTypes.number,
     fdr: PropTypes.number,

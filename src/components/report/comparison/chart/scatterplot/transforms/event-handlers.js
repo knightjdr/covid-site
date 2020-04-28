@@ -16,7 +16,8 @@ const handleMouseMove = (options) => (e) => {
   if (mouse.down) {
     e.preventDefault();
 
-    const { setTransform, transform, vertex } = options;
+    const { transform, vertex } = options;
+    const { setTransform } = transform;
     const newOrigin = getPanOrigin(e, { origin: transform.origin, start: mouse.start, vertex });
 
     setTransform({
@@ -29,7 +30,8 @@ const handleMouseMove = (options) => (e) => {
 const handleMouseUp = (options) => (e) => {
   e.preventDefault();
   if (mouse.down) {
-    const { setTransform, transform, vertex } = options;
+    const { transform, vertex } = options;
+    const { setTransform } = transform;
     const newOrigin = getPanOrigin(e, { origin: transform.origin, start: mouse.start, vertex });
 
     mouse.down = false;
@@ -45,11 +47,12 @@ const handleMouseUp = (options) => (e) => {
   }
 };
 
-const handleMouseDown = (e, options) => {
+export const handleMouseDown = (e, options) => {
   e.preventDefault();
 
   const { pageX, pageY } = e;
-  const { setTransform, transform } = options;
+  const { transform } = options;
+  const { setTransform } = transform;
 
   mouse.down = true;
   mouse.start = { x: pageX, y: pageY };
@@ -66,9 +69,10 @@ const handleMouseDown = (e, options) => {
   });
 };
 
-const handleWheel = (e, options) => {
+export const handleWheel = (e, options) => {
   e.preventDefault();
-  const { setTransform, transform } = options;
+  const { transform } = options;
+  const { setTransform } = transform;
 
   const position = getWheelPosition(e, options);
   const scale = getScale(e, transform.scale);

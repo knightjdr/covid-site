@@ -1,49 +1,34 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 
 import Scatterplot from './scatterplot';
 
-import handlers from './handlers/mouse-handlers';
+import { handlers } from './transforms/transforms';
 
 const ScatterplotContainer = ({
   axisLength,
   midline,
   plotDimension,
   points,
+  transform,
   x,
   y,
 }) => {
-  const [transform, setTransform] = useState({
-    origin: {
-      x: 0,
-      y: 0,
-    },
-    scale: 1,
-    matrix: {
-      plot: '',
-      xAxis: '',
-    },
-  });
-
   const handleMouseDownX = (e) => {
     const options = {
-      axisLength,
       transform,
-      setTransform,
       vertex: 'x',
     };
     handlers.pan(e, options);
   };
 
   const handleMouseDownXY = (e) => {
-    handlers.pan(e, { transform, setTransform });
+    handlers.pan(e, { transform });
   };
 
   const handleMouseDownY = (e) => {
     const options = {
-      axisLength,
       transform,
-      setTransform,
       vertex: 'y',
     };
     handlers.pan(e, options);
@@ -51,10 +36,8 @@ const ScatterplotContainer = ({
 
   const handleWheelX = (e) => {
     const options = {
-      axisLength,
       id: '#scatterplot__xaxis-wheel',
       transform,
-      setTransform,
       vertex: 'x',
     };
     handlers.zoom(e, options);
@@ -64,17 +47,14 @@ const ScatterplotContainer = ({
     const options = {
       id: '#scatterplot__points-wheel',
       transform,
-      setTransform,
     };
     handlers.zoom(e, options);
   };
 
   const handleWheelY = (e) => {
     const options = {
-      axisLength,
       id: '#scatterplot__yaxis-wheel',
       transform,
-      setTransform,
       vertex: 'y',
     };
     handlers.zoom(e, options);
@@ -113,6 +93,19 @@ ScatterplotContainer.propTypes = {
       y: PropTypes.number,
     }),
   ).isRequired,
+  transform: PropTypes.shape({
+    origin: PropTypes.shape({
+      x: PropTypes.number,
+      y: PropTypes.number,
+    }),
+    matrix: PropTypes.shape({
+      plot: PropTypes.string,
+      xAxis: PropTypes.string,
+      yAxis: PropTypes.string,
+    }),
+    scale: PropTypes.number,
+    setTransform: PropTypes.func.isRequired,
+  }).isRequired,
   x: PropTypes.shape({
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(

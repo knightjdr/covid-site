@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 
 import Comparison from './comparison';
 
+import { defaultState as defaultTransform } from './chart/scatterplot/transforms/transforms';
+
 const ComparisonContainer = ({
   conditions,
   preys,
 }) => {
   const [options, setOptions] = useState({ count: 0, fdr: 0.01, log: false });
   const [selectedConditions, setSelectedConditions] = useState({ x: '', y: '' });
+  const [transform, setTransform] = useState(defaultTransform);
 
   const selectCondition = (e) => {
     const { value } = e.target;
@@ -34,6 +37,10 @@ const ComparisonContainer = ({
       preys={preys}
       selectCondition={selectCondition}
       selectedConditions={selectedConditions}
+      transform={{
+        ...transform,
+        setTransform,
+      }}
     />
   );
 };
