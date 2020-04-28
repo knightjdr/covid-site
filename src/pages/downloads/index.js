@@ -5,8 +5,9 @@ import SEO from '../../components/seo/seo';
 
 const DownloadsPage = () => (
   <Layout>
-    <SEO title="About" />
+    <SEO title="Downloads" />
     <h1>Downloads</h1>
+    <p>Coming soon...</p>
   </Layout>
 );
 
