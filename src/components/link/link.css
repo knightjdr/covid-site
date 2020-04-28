@@ -4,9 +4,6 @@ a {
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
 }
-a:focus {
-  outline: none;
-}
 a::-moz-focus-inner {
   border: none;
 }
@@ -56,4 +53,13 @@ a.link_button.link_nav:visited {
   color: var(--color-font);
 }
 
-
+a:not(.link_outline):focus {
+  outline: none;
+}
+a.link_outline:focus {
+  outline: auto;
+  outline-color: #4D90FE;
+  outline-offset: 2px;
+  outline-style: dashed;
+  outline-width: 2px;
+}

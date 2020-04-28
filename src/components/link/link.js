@@ -11,6 +11,7 @@ const CustomLink = ({
   children,
   className,
   nav,
+  outline,
   to,
   ...otherProps
 }) => {
@@ -20,6 +21,9 @@ const CustomLink = ({
   }
   if (buttonStyle) {
     classes.push('link_button');
+  }
+  if (outline) {
+    classes.push('link_outline');
   }
 
   if (to.startsWith('/') && /\.[0-9a-z]+$/i.test(to)) {
@@ -57,6 +61,7 @@ CustomLink.defaultProps = {
   buttonStyle: false,
   className: '',
   nav: false,
+  outline: false,
 };
 
 CustomLink.propTypes = {
@@ -64,6 +69,7 @@ CustomLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   nav: PropTypes.bool,
+  outline: PropTypes.bool,
   to: PropTypes.string.isRequired,
 };
 
