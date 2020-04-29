@@ -27,7 +27,7 @@ const Navbar = forwardRef((
   ref,
 ) => (
   <div className="nav">
-    { pathName !== '/' && <Icon /> }
+    <Icon pathName={pathName} />
     <div className={`nav__menu ${isMenuOpen ? 'nav__menu_open' : 'nav__menu_closed'}`}>
       <ButtonIcon
         icon={faBars}

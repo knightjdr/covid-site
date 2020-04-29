@@ -4,14 +4,13 @@ html {
   --color-accent: #fff1bc;
   --color-primary: #7dc383;
   --color-secondary: #699c78;
-  --font-primary: 'Source Serif Pro', serif;
+  --font-primary: 'Quicksand', serif;
   --font-secondary: 'Source Sans Pro', sans-serif;
   --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Helvetica, sans-serif;
   --font-title: 'Quicksand', sans-serif;
   --timing-function: cubic-bezier(.17, .67, .16, .99);
   --success: #026E07;
   --warning: #C2352A;
-  font-family: var(--font-primary);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -26,6 +25,7 @@ body.light-mode {
   --color-font: #333;
   --color-font-contrast: #F2F2F2;
   --color-font-dark: #333;
+  --color-font-light: #F2F2F2;
   --color-input-focus: rgba(59, 153, 252, .7);
   --color-link: #2468e5;
   --color-link-visited: #551A8B;
@@ -44,6 +44,7 @@ body.dark-mode {
   --color-font: #F2F2F2;
   --color-font-contrast: #333;
   --color-font-dark: #333;
+  --color-font-light: #F2F2F2;
   --color-input-focus: rgba(59, 153, 252, .7);
   --color-link: #5B95FF;
   --color-link-visited: #9675FF;
@@ -54,6 +55,7 @@ body.dark-mode {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-primary);
 }
 article,
 aside,
@@ -668,9 +670,11 @@ pre tt:after {
 }
 .layout > main {
   flex-grow: 1;
+  width: 100%;
+}
+.layout_margin > main {
   max-width: 960px;
   padding: 0.5rem 1rem;
-  width: 100%;
 }
 .layout > footer {
   display: flex;

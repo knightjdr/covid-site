@@ -7,13 +7,16 @@ import Navbar from '../navbar/navbar-container';
 
 import './layout.css';
 
-const Layout = ({ children }) => (
+const Layout = ({
+  children,
+  margin,
+}) => (
   <Location>
     {
       ({ location }) => (
         <div
           id="layout"
-          className="layout"
+          className={margin ? 'layout layout_margin' : 'layout'}
         >
           <Navbar pathName={location.pathname} />
           <noscript className="noscript-warning">
@@ -36,8 +39,13 @@ const Layout = ({ children }) => (
   </Location>
 );
 
+Layout.defaultProps = {
+  margin: true,
+};
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  margin: PropTypes.bool,
 };
 
 export default Layout;

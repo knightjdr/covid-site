@@ -21,7 +21,7 @@ const Browse = ({
   searchTerm,
   selectedProtein,
 }) => (
-  <section className="display browse">
+  <div className="display browse">
     <h2>Browse & Search</h2>
     <p className="display__instructions">
       We profiled twenty-six proteins from the viral genome. Select one below to view
@@ -72,7 +72,7 @@ const Browse = ({
         />
       </div>
     </div>
-  </section>
+  </div>
 );
 
 Browse.propTypes = {
