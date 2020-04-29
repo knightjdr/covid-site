@@ -18,7 +18,7 @@ const BaitTemplate = ({ pageContext }) => {
   } = pageContext;
 
   return (
-    <Layout>
+    <Layout margin={false}>
       <SEO title={id} />
       <Report
         conditions={conditions}

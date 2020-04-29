@@ -19,7 +19,7 @@ const Preys = ({
   preys,
   spectralCount,
 }) => (
-  <div>
+  <div className="report__preys">
     <h2 className="report__prey-header">Preys</h2>
     <Legend conditions={conditions} />
     <div className="report__prey-options">

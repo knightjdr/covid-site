@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Comparison from './comparison/comparison-container';
+import Hero from '../layout/background/hero';
 import Link from '../link/link';
 import Preys from './preys/preys-container';
 import Sequence from './sequence';
@@ -20,32 +21,39 @@ const Report = ({
   uniprot,
 }) => (
   <div className="report">
-    <header>
-      <h1>
-        <div className="report__header-title">Identifier</div>
-        <div>{id}</div>
-      </h1>
-      <div className="report__header-field">Gene</div>
-      <div>{gene}</div>
-      <div className="report__header-field">Protein name</div>
-      <div>{name}</div>
-      <div className="report__header-field">Uniprot</div>
-      <div className="report__header-uniprot">
-        <Link to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.covid}`}>
-          {uniprot.covid}
-        </Link>
+    <Hero
+      className="report__header"
+      Tag="header"
+    >
+      <div className="report__header-inner">
+        <h1>
+          <div className="report__header-title">Identifier</div>
+          <div>{id}</div>
+        </h1>
+        <div className="report__header-field">Gene</div>
+        <div>{gene}</div>
+        <div className="report__header-field">Protein name</div>
+        <div>{name}</div>
+        <div className="report__header-field">Uniprot</div>
+        <div className="report__header-uniprot">
+          <Link to={`https://covid-19.uniprot.org/uniprotkb/${uniprot.covid}`}>
+            {uniprot.covid}
+          </Link>
+        </div>
+        <div className="report__header-field">Description</div>
+        <div>{description}</div>
       </div>
-      <div className="report__header-field">Description</div>
-      <div>{description}</div>
-    </header>
-    <Sequence
-      copyProteinToClipboard={copyProteinToClipboard}
-      sequence={sequence}
-    />
-    <Comparison
-      conditions={conditions}
-      preys={preys}
-    />
+    </Hero>
+    <div className="report_margin">
+      <Sequence
+        copyProteinToClipboard={copyProteinToClipboard}
+        sequence={sequence}
+      />
+      <Comparison
+        conditions={conditions}
+        preys={preys}
+      />
+    </div>
     <Preys
       conditions={conditions}
       id={id}

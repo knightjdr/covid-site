@@ -1,8 +1,17 @@
 .report > * {
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
-.report header {
+.report__header {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.report__header-inner {
   background-color: var(--color-accent);
   border-radius: 0.3rem;
   color: var(--color-font-dark);
@@ -11,6 +20,7 @@
   font-family: var(--font-secondary);
   grid-template-columns: 10rem auto;
   margin: 0;
+  max-width: 960px;
   padding: 0.3rem 0.5rem;
   row-gap: 0.5rem;
 }
@@ -22,10 +32,10 @@
   width: 100%;
 }
 
-.report header a:link {
+.report__header a:link {
   color: var(--color-accent-link);
 }
-.report header a:visited {
+.report__header a:visited {
   color: var(--color-accent-link-visited);
 }
 
@@ -81,4 +91,18 @@
 }
 .report__protein-copy button {
   margin-top: 0.5rem;
+}
+
+.report_margin {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem; 
+}
+.report_margin > * {
+  width: 100%;
+}
+.report_margin > *:not(:last-child) {
+  margin-bottom: 1.5rem;
 }

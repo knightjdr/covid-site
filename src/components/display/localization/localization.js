@@ -14,7 +14,7 @@ const Localization = ({
   handleProteinMouseOver,
   highlighted,
 }) => (
-  <section className="display localization">
+  <section className="display localization display_bg-circles">
     <h2>Localization</h2>
     <p className="display__instructions">
       Hover over a protein to view its localization or hover over a compartment

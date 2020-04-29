@@ -6,6 +6,9 @@
   flex-direction: column;
   margin: 0 auto;
 }
+.home__display {
+  padding: 0 2rem;
+}
 .home__landing > div {
   max-width: 960px;
   padding: 3rem 1rem;
