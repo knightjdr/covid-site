@@ -54,7 +54,7 @@
   display: none;
   position: absolute;
   right: -10rem;
-  top: 0;
+  top: 8px;
   transition: transform 0.3s var(--timing-function);
 }
 .nav__menu_open {
