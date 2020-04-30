@@ -5,12 +5,20 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const Hero = ({
   children,
+  image,
   ...props
 }) => {
   const query = useStaticQuery(
     graphql`
       query {
-        virus: file(relativePath: { eq: "background/virus.jpg" }) {
+        image1: file(relativePath: { eq: "background/virus.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        image2: file(relativePath: { eq: "background/virus-2.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -22,7 +30,7 @@ const Hero = ({
   );
 
   const backgroundFluidImageStack = [
-    query.virus.childImageSharp.fluid,
+    query[image].childImageSharp.fluid,
     'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
   ].reverse();
 
@@ -36,8 +44,13 @@ const Hero = ({
   );
 };
 
+Hero.defaultProps = {
+  image: 'image1',
+};
+
 Hero.propTypes = {
   children: PropTypes.node.isRequired,
+  image: PropTypes.string,
 };
 
 export default Hero;

@@ -44,7 +44,7 @@ const Report = ({
         <div>{description}</div>
       </div>
     </Hero>
-    <div className="report_margin">
+    <div className="report__options">
       <Sequence
         copyProteinToClipboard={copyProteinToClipboard}
         sequence={sequence}
