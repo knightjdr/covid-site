@@ -18,6 +18,7 @@ const Browse = ({
   handleChangeInput,
   handleClick,
   handleSearch,
+  inputPlaceholder,
   searchTerm,
   selectedProtein,
 }) => (
@@ -59,7 +60,7 @@ const Browse = ({
           label="Search:"
           onChange={handleChangeInput}
           onKeyDown={handleSearch}
-          placeholder="Human gene symbol (e.g. TRIP11) or UniProt accession (e.g. Q15643)"
+          placeholder={inputPlaceholder}
           spellCheck="false"
           type="search"
           value={searchTerm}
@@ -80,6 +81,7 @@ Browse.propTypes = {
   handleChangeInput: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  inputPlaceholder: PropTypes.string.isRequired,
   searchTerm: PropTypes.string.isRequired,
   selectedProtein: PropTypes.string.isRequired,
 };

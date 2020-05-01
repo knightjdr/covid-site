@@ -28,3 +28,22 @@
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
+
+@media (max-width: 800px) {
+  .browse__inputs {
+    flex-direction: column;
+  }
+  .browse__inputs > * {
+    width: 100%;
+  }
+  .browse__inputs > *:not(:last-child) {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  .browse__inputs .input__label,
+  .browse__inputs .select__label {
+    box-sizing: border-box;
+    text-align: end;
+    width: 80px;
+  }
+}

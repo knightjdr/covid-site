@@ -20,6 +20,7 @@ const Options = ({
 }) => (
   <div className="comparison__options">
     <Input
+      direction="horizontal"
       id="comparison_fdr_option"
       label="FDR:"
       max={1}
@@ -30,6 +31,7 @@ const Options = ({
       value={options.fdr}
     />
     <Input
+      direction="horizontal"
       id="comparison_spec_option"
       label="Spectral count:"
       min={0}
