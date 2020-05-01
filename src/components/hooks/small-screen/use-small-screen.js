@@ -5,7 +5,7 @@ import debounce from '../../../utils/debounce';
 const isSmallScreen = (size) => window.innerWidth < size;
 
 const useSmallScreen = (wait = 50, size = 800) => {
-  const [smallScreen, setSmallScreen] = useState(isSmallScreen(size));
+  const [smallScreen, setSmallScreen] = useState(false);
 
   const listener = debounce(() => {
     setSmallScreen(isSmallScreen(size));
@@ -17,6 +17,12 @@ const useSmallScreen = (wait = 50, size = 800) => {
       window.removeEventListener('resize', listener);
     };
   });
+
+  useEffect(() => {
+    if (isSmallScreen(size)) {
+      setSmallScreen(true);
+    }
+  }, []);
 
   return smallScreen;
 };
