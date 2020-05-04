@@ -22,11 +22,19 @@ const Xaxis = ({
       transform={`translate(55 ${axisLength + 15})`}
     >
       <defs>
-        <clipPath id="xaxis_clip">
+        <clipPath id="xaxis_text_clip">
           <rect
             height={65}
-            width={axisLength + 15}
-            x={0}
+            width={axisLength + 25}
+            x={-5}
+            y={0}
+          />
+        </clipPath>
+        <clipPath id="xaxis_tick_clip">
+          <rect
+            height={65}
+            width={axisLength + 2}
+            x={AXIS_OFFSET - 1}
             y={0}
           />
         </clipPath>
@@ -48,13 +56,13 @@ const Xaxis = ({
         y1={0}
         y2={0}
       />
-      <g clipPath="url(#xaxis_clip)">
+      <g clipPath="url(#xaxis_tick_clip)">
         <g transform={transform.matrix.xAxis}>
           {
             x.ticks.map((tick) => (
               <g
                 className="scatterplot__tick"
-                key={`x-${tick.label}`}
+                key={`x-tick-${tick.label}`}
               >
                 <line
                   stroke="black"
@@ -64,6 +72,19 @@ const Xaxis = ({
                   y1={0}
                   y2={tickLength}
                 />
+              </g>
+            ))
+          }
+        </g>
+      </g>
+      <g clipPath="url(#xaxis_text_clip)">
+        <g transform={transform.matrix.xAxis}>
+          {
+            x.ticks.map((tick) => (
+              <g
+                className="scatterplot__tick"
+                key={`x-text-${tick.label}`}
+              >
                 <text
                   fill="black"
                   fontFamily="Liberation Sans"

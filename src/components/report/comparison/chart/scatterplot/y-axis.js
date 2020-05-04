@@ -24,12 +24,20 @@ const Yaxis = ({
       onWheel={handleWheelY}
     >
       <defs>
-        <clipPath id="yaxis_clip">
+        <clipPath id="yaxis_text_clip">
           <rect
             height={axisLength + 25}
             width={65}
             x={0}
             y={0}
+          />
+        </clipPath>
+        <clipPath id="yaxis_tick_clip">
+          <rect
+            height={axisLength + 2}
+            width={65}
+            x={0}
+            y={AXIS_OFFSET - 1}
           />
         </clipPath>
       </defs>
@@ -50,7 +58,7 @@ const Yaxis = ({
         y1={AXIS_OFFSET}
         y2={AXIS_OFFSET + axisLength}
       />
-      <g clipPath="url(#yaxis_clip)">
+      <g clipPath="url(#yaxis_tick_clip)">
         <g transform={transform.matrix.yAxis}>
           {
             y.ticks.map((tick) => {
@@ -68,6 +76,22 @@ const Yaxis = ({
                     y1={yPosition}
                     y2={yPosition}
                   />
+                </g>
+              );
+            })
+          }
+        </g>
+      </g>
+      <g clipPath="url(#yaxis_text_clip)">
+        <g transform={transform.matrix.yAxis}>
+          {
+            y.ticks.map((tick) => {
+              const yPosition = AXIS_OFFSET + axisLength - tick.y;
+              return (
+                <g
+                  className="scatterplot__tick"
+                  key={`y-${tick.label}`}
+                >
                   <text
                     dominantBaseline="central"
                     fill="black"
