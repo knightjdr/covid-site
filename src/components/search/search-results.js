@@ -11,7 +11,7 @@ const SearchResults = ({
     {
       searchResults.length > 0
         ? (
-          <Table>
+          <Table minWidth={500}>
             <thead>
               <tr>
                 <th>Symbol</th>

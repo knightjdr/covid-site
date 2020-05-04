@@ -12,6 +12,7 @@ const Search = ({
   handleChange,
   handleClick,
   handleSearch,
+  inputPlaceholder,
   searchResults,
   searchTerm,
 }) => (
@@ -30,7 +31,7 @@ const Search = ({
         label="Search:"
         onChange={handleChange}
         onKeyDown={handleSearch}
-        placeholder="Human gene symbol (e.g. TRIP11) or UniProt accession (e.g. Q15643)"
+        placeholder={inputPlaceholder}
         spellCheck="false"
         type="search"
         value={searchTerm}
@@ -57,6 +58,7 @@ Search.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  inputPlaceholder: PropTypes.string.isRequired,
   searchResults: PropTypes.arrayOf(
     PropTypes.shape({}),
   ),

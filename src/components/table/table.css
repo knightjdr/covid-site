@@ -1,3 +1,7 @@
+.table__container {
+  overflow-x: auto;
+}
+
 .table tbody {
   border-bottom: 2px solid var(--color-secondary);
 }
