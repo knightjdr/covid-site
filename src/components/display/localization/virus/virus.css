@@ -4,6 +4,10 @@
   flex-direction: column;
   font-family: var(--font-secondary);
 }
+.protein-nav__virus svg {
+  height: 400px;
+  width: 400px;
+}
 
 .protein-nav__virus-description {
   height: 2rem;
@@ -37,4 +41,11 @@ svg[data-highlighted*="envelope"] [data-localization="envelope"] path,
 svg[data-highlighted*="matrix"] [data-localization="matrix"] circle,
 svg[data-highlighted*="spike"] [data-localization="spike"] path {
   fill: var(--color-display-focus);
+}
+
+@media (max-width: 499px) {
+  .protein-nav__virus svg {
+    height: auto;
+    width: 100%;
+  }
 }

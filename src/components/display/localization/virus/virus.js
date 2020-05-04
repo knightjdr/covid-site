@@ -30,8 +30,6 @@ const Virus = ({
     <svg
       data-highlighted={highlighted.virus}
       xmlns="http://www.w3.org/2000/svg"
-      height="400"
-      width="400"
       viewBox="0 0 400 400"
     >
       <g

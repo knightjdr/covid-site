@@ -50,3 +50,10 @@ svg[data-highlighted*="nucleus"] [data-localization="nucleus"] *,
 svg[data-highlighted*="plasma_membrane"] [data-localization="plasma_membrane"] path {
   fill: var(--color-display-focus);
 }
+
+@media (max-width: 499px) {
+  .protein-nav__cell svg {
+    height: auto;
+    width: 100%;
+  }
+}

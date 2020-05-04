@@ -11,6 +11,9 @@
   margin-bottom: 1rem;
 }
 
-.localization__title {
-  
+@media (max-width: 859px) {
+  .localization__graphics {
+    display: flex;
+    flex-direction: column;
+  }
 }
