@@ -1,6 +1,11 @@
 .comparison__inner {
   display: flex;
-  padding: 1rem 0;
+  flex-wrap: wrap;
+  padding: 1rem -0.5rem;
+  padding-top: 1rem;
+}
+.comparison__inner > * {
+  margin: 0.5rem 0.5rem;
 }
 
 .comparison__select-menus {

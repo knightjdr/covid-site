@@ -1,6 +1,5 @@
 .chart {
   flex-grow: 1;
-  margin: 0 1rem;
   max-width: 500px;
 }
 
@@ -11,6 +10,7 @@
 
 .chart__placeholder {
   display: inline-block;
+  min-width: 500px;
   position: relative;
   width: 100%;
 }
@@ -46,10 +46,9 @@
   display: block;
   height: 100%;
   left: 0;
-  margin: 0 1rem;
   position: absolute;
   top: 0;
-  width: calc(100% - 2rem);
+  width: 100%;
   z-index: 1;
 }
 
@@ -61,4 +60,19 @@
 .chart__svg-container {
   box-sizing: border-box;
   padding: 10px;
+}
+
+@media (max-width: 599px) {
+  .chart {
+    max-width: calc(100% - 1rem);
+  }
+  .chart__placeholder {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 399px) {
+  .chart__placeholder {
+    min-width: 200px;
+  }
 }
