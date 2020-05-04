@@ -15,6 +15,7 @@ const ScatterPlot = ({
   handleWheelX,
   handleWheelXY,
   handleWheelY,
+  log,
   midline,
   plotDimension,
   points,
@@ -41,6 +42,7 @@ const ScatterPlot = ({
       axisLength={axisLength}
       handleMouseDownY={handleMouseDownY}
       handleWheelY={handleWheelY}
+      log={log}
       transform={transform}
       y={y}
     />
@@ -48,6 +50,7 @@ const ScatterPlot = ({
       axisLength={axisLength}
       handleMouseDownX={handleMouseDownX}
       handleWheel={handleWheelX}
+      log={log}
       transform={transform}
       x={x}
     />
@@ -62,6 +65,7 @@ ScatterPlot.propTypes = {
   handleWheelX: PropTypes.func.isRequired,
   handleWheelXY: PropTypes.func.isRequired,
   handleWheelY: PropTypes.func.isRequired,
+  log: PropTypes.bool.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
@@ -84,6 +88,7 @@ ScatterPlot.propTypes = {
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
       PropTypes.shape({
+        key: PropTypes.string,
         label: PropTypes.number,
         x: PropTypes.number,
       }),
@@ -93,6 +98,7 @@ ScatterPlot.propTypes = {
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
       PropTypes.shape({
+        key: PropTypes.string,
         label: PropTypes.number,
         x: PropTypes.number,
       }),

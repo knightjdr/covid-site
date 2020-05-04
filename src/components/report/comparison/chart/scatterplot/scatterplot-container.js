@@ -7,6 +7,7 @@ import { handlers } from './transforms/transforms';
 
 const ScatterplotContainer = ({
   axisLength,
+  log,
   midline,
   plotDimension,
   points,
@@ -69,6 +70,7 @@ const ScatterplotContainer = ({
       handleWheelX={handleWheelX}
       handleWheelXY={handleWheelXY}
       handleWheelY={handleWheelY}
+      log={log}
       midline={midline}
       plotDimension={plotDimension}
       points={points}
@@ -81,6 +83,7 @@ const ScatterplotContainer = ({
 
 ScatterplotContainer.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  log: PropTypes.bool.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,
@@ -110,6 +113,7 @@ ScatterplotContainer.propTypes = {
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
       PropTypes.shape({
+        key: PropTypes.string,
         label: PropTypes.number,
         x: PropTypes.number,
       }),
@@ -119,6 +123,7 @@ ScatterplotContainer.propTypes = {
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
       PropTypes.shape({
+        key: PropTypes.string,
         label: PropTypes.number,
         x: PropTypes.number,
       }),

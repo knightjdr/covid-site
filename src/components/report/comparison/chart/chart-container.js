@@ -14,9 +14,15 @@ const ChartContainer = ({
 }) => {
   const wrapperRef = useRef();
 
-  const data = useMemo(() => (
-    getData(preys, wrapperRef, { ...options, x, y })
-  ), [options, preys, wrapperRef, x, y]);
+  const data = useMemo(() => {
+    const dataOptions = {
+      ...options,
+      scale: transform.scale,
+      x,
+      y,
+    };
+    return getData(preys, wrapperRef, dataOptions);
+  }, [options, preys, transform.scale, wrapperRef, x, y]);
 
   return (
     <Chart

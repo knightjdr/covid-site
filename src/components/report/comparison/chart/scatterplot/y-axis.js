@@ -66,7 +66,7 @@ const Yaxis = ({
               return (
                 <g
                   className="scatterplot__tick"
-                  key={`y-${tick.label}`}
+                  key={`y-tick-${tick.key}`}
                 >
                   <line
                     stroke="black"
@@ -90,7 +90,7 @@ const Yaxis = ({
               return (
                 <g
                   className="scatterplot__tick"
-                  key={`y-${tick.label}`}
+                  key={`y-text-${tick.key}`}
                 >
                   <text
                     dominantBaseline="central"
@@ -138,6 +138,7 @@ Yaxis.propTypes = {
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
       PropTypes.shape({
+        key: PropTypes.string,
         label: PropTypes.number,
         x: PropTypes.number,
       }),

@@ -62,7 +62,7 @@ const Xaxis = ({
             x.ticks.map((tick) => (
               <g
                 className="scatterplot__tick"
-                key={`x-tick-${tick.label}`}
+                key={`x-tick-${tick.key}`}
               >
                 <line
                   stroke="black"
@@ -83,7 +83,7 @@ const Xaxis = ({
             x.ticks.map((tick) => (
               <g
                 className="scatterplot__tick"
-                key={`x-text-${tick.label}`}
+                key={`x-text-${tick.key}`}
               >
                 <text
                   fill="black"
@@ -127,6 +127,7 @@ Xaxis.propTypes = {
     label: PropTypes.string,
     ticks: PropTypes.arrayOf(
       PropTypes.shape({
+        key: PropTypes.string,
         label: PropTypes.number,
         x: PropTypes.number,
       }),

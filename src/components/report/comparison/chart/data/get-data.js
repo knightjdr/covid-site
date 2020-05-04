@@ -1,8 +1,13 @@
+import { nanoid } from 'nanoid';
 import round from '../../../../../utils/round';
 
-const calculateLinearTicks = (max) => {
+const getScaleFactor = (scale, multiplier) => (
+  scale < 1.5 ? 1 : Math.floor((scale - 1) / 0.5) * multiplier
+);
+
+const calculateLinearTicks = (max, scale) => {
   const power = Math.floor(Math.log10(max - 0));
-  const step = 10 ** power;
+  const step = (10 ** power) / getScaleFactor(scale, 2);
   const ticks = [];
   for (let i = 0; i <= max; i += step) {
     ticks.push(i);
@@ -23,10 +28,17 @@ const getMinLogTick = (min) => {
   return 1;
 };
 
-const calculateLogTicks = (max, min) => {
+const calculateLogTicks = (max, min, scale) => {
+  const scaleFactor = getScaleFactor(scale, 1);
   const ticks = [];
-  for (let i = getMinLogTick(min); i <= max; i *= 10) {
+  const base = getMinLogTick(min);
+  for (let i = base; i <= max; i *= 10) {
     ticks.push(i);
+    const minorTick = (i * 10) / scaleFactor;
+    for (let j = 1; j < scaleFactor; j += 1) {
+      const tick = j * minorTick;
+      ticks.push(tick);
+    }
   }
   if (ticks[ticks.length - 1] !== max) {
     ticks.push(ticks[ticks.length - 1] * 10);
@@ -35,10 +47,10 @@ const calculateLogTicks = (max, min) => {
 };
 
 const defineAxis = (preyData, options) => {
-  const { log, vertex } = options;
+  const { log, scale, vertex } = options;
   const max = preyData.reduce((maxValue, datum) => (datum[vertex] > maxValue ? datum[vertex] : maxValue), 0);
   const min = preyData.reduce((minValue, datum) => (datum[vertex] < minValue ? datum[vertex] : minValue), 1000);
-  return log ? calculateLogTicks(max, min) : calculateLinearTicks(max);
+  return log ? calculateLogTicks(max, min, scale) : calculateLinearTicks(max, scale);
 };
 
 const doesPreyPassFilters = (data, condition, options) => (
@@ -74,9 +86,9 @@ const scaleData = (points, ticks, options) => {
       const min = ticks[vertex][0];
       const k = axisLength / (Math.log10(max) - Math.log10(min));
       const c = -1 * k * Math.log10(min);
-      return (point) => round(k * Math.log10(point) + c, 2);
+      return (point) => k * Math.log10(point) + c;
     }
-    return (point) => round((point / max) * axisLength, 2);
+    return (point) => (point / max) * axisLength;
   };
   const scaleXValue = getScaler('x');
   const scaleYValue = getScaler('y');
@@ -87,8 +99,8 @@ const scaleData = (points, ticks, options) => {
       y: scaleYValue(Math.max(point.y, ticks.y[0])),
     })),
     ticks: {
-      x: ticks.x.map((tick) => ({ label: tick, x: scaleXValue(tick) })),
-      y: ticks.y.map((tick) => ({ label: tick, y: scaleYValue(tick) })),
+      x: ticks.x.map((tick) => ({ key: nanoid(10), label: round(tick, 2), x: scaleXValue(tick) })),
+      y: ticks.y.map((tick) => ({ key: nanoid(10), label: round(tick, 2), y: scaleYValue(tick) })),
     },
   };
 };
@@ -100,12 +112,13 @@ const getData = (preys, wrapperRef, options) => {
   const dimensions = getDimensions(wrapperRef);
   const filteredPreys = filterPreys(preys, options);
   const ticks = {
-    x: defineAxis(filteredPreys, { log: options.log, vertex: 'x' }),
-    y: defineAxis(filteredPreys, { log: options.log, vertex: 'x' }),
+    x: defineAxis(filteredPreys, { log: options.log, scale: options.scale, vertex: 'x' }),
+    y: defineAxis(filteredPreys, { log: options.log, scale: options.scale, vertex: 'y' }),
   };
   const scaledData = scaleData(filteredPreys, ticks, { ...dimensions, log: options.log });
   return {
     ...dimensions,
+    log: options.log,
     midline: {
       x: scaledData.ticks.x[scaledData.ticks.x.length - 1].x,
       y: scaledData.ticks.y[scaledData.ticks.y.length - 1].y,
