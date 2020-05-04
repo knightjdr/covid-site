@@ -5,6 +5,11 @@
   font-family: var(--font-secondary);
 }
 
+.protein-nav__cell svg {
+  height: 400px;
+  width: 400px;
+}
+
 .protein-nav__cell-description {
   height: 2rem;
 }
