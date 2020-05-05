@@ -1,9 +1,10 @@
 module.exports = {
-  pathPrefix: '/covid-site',
+  pathPrefix: '/',
   siteMetadata: {
-    siteUrl: 'https://jamesknight.dev/covid-site',
-    title: 'COVID-19 interactome',
     description: 'BioID-based interactome of the COVID-19 proteome.',
+    image: '/thumbnail.png',
+    siteUrl: 'https://covid19interactome.org',
+    title: 'COVID-19 interactome',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -31,14 +32,14 @@ module.exports = {
         icon: 'src/images/virus.png',
       },
     },
-    {
+    /* {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://jamesknight.dev/covid-site',
-        sitemap: 'https://jamesknight.dev/covid-site/sitemap.xml',
+        host: 'https://covid19interactome.org',
+        sitemap: 'https://covid19interactome.org/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
-    },
+    }, */
     {
       resolve: 'gatsby-plugin-use-dark-mode',
       options: {
