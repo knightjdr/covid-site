@@ -20,7 +20,7 @@ const IndexPage = () => (
       <div>
         <h1>COVID-19 interactome</h1>
         <p className="home__landing-description">
-          BioID-based interactome of the COVID-19 proteome
+          BioID-based interactome of the SARS-CoV-2 proteome
         </p>
         <Browse />
       </div>

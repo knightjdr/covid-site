@@ -38,9 +38,9 @@ const AboutPage = () => (
           Fritz Roth
         </Link>
         {' '}
-        aim to identify the human proteins interacting with the COVID-19
-        viral proteome using the proximity labelling technique BioID. This website
-        is a repository for that data.
+        aim to identify the human proteins interacting with the SARS-CoV-2 proteome
+        using the proximity labelling technique BioID. This website is a repository
+        for that data.
       </p>
       <h2>Contact</h2>
       <ul>
