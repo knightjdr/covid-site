@@ -61,12 +61,16 @@ const Report = ({
   </div>
 );
 
+Report.defaultProps = {
+  images: null,
+};
+
 Report.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  images: PropTypes.shape({}).isRequired,
+  images: PropTypes.shape({}),
   name: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
   sequence: PropTypes.string.isRequired,
