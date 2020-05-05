@@ -2,11 +2,10 @@ import levenshtein from 'fast-levenshtein';
 
 import preys from '../../../content/preys.json';
 
-const preyDB = Object.entries(preys).map(([key, details]) => ([
-  key,
-  ...details.synonyms,
-  ...details.uniprot,
-]));
+const preyDB = Object.entries(preys).map(([key, details]) => ({
+  symbols: [key, ...details.synonyms],
+  uniprot: details.uniprot,
+}));
 
 const getMinLevenshteinCalculator = (term) => {
   const lcTerm = term.toLowerCase();
@@ -34,8 +33,12 @@ const sortMatches = (term, matches) => {
 };
 
 const find = (term) => {
-  const re = new RegExp(term, 'i');
-  const matches = preyDB.filter((prey) => prey.some((id) => re.test(id)));
+  const reSymbol = new RegExp(term, 'i');
+  const reUniprot = new RegExp(`^${term}$`, 'i');
+  const matches = preyDB.filter((prey) => (
+    prey.symbols.some((symbol) => reSymbol.test(symbol))
+    || prey.uniprot.some((accession) => reUniprot.test(accession))
+  )).map((prey) => [...prey.symbols, ...prey.uniprot]);
   return sortMatches(term, matches);
 };
 
