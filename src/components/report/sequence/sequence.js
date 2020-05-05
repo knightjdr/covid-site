@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { faCopy } from '@fortawesome/pro-solid-svg-icons';
 
-import Details from '../details/details';
-import IconButton from '../buttons/icon/button';
+import Details from '../../details/details';
+import IconButton from '../../buttons/icon/button';
 
 const Sequence = ({
   copyProteinToClipboard,

@@ -17,6 +17,24 @@
       "covid": "P0DTC4",
       "sars": "P59637"
     },
+    "images": {
+      "red": {
+        "marker": "red channel",
+        "src": "if/E_red.png"
+      },
+      "green": {
+        "marker": "green channel",
+        "src": "if/E_green.png"
+      },
+      "blue": {
+        "marker": "blue channel",
+        "src": "if/E_blue.png"
+      },
+      "merge": {
+        "marker": "merge",
+        "src": "if/E_merge.png"
+      }
+    },
     "conditions": [
       "A549-Nt"
     ],

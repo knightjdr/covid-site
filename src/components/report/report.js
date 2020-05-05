@@ -3,18 +3,19 @@ import React from 'react';
 
 import Comparison from './comparison/comparison-container';
 import Hero from '../layout/background/hero';
+import IF from './if/if';
 import Link from '../link/link';
 import Preys from './preys/preys-container';
-import Sequence from './sequence';
+import Sequence from './sequence/sequence-container';
 
 import './report.css';
 
 const Report = ({
   conditions,
-  copyProteinToClipboard,
   description,
   gene,
   id,
+  images,
   name,
   preys,
   sequence,
@@ -45,10 +46,8 @@ const Report = ({
       </div>
     </Hero>
     <div className="report__options">
-      <Sequence
-        copyProteinToClipboard={copyProteinToClipboard}
-        sequence={sequence}
-      />
+      <IF images={images} />
+      <Sequence sequence={sequence} />
       <Comparison
         conditions={conditions}
         preys={preys}
@@ -64,10 +63,10 @@ const Report = ({
 
 Report.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
-  copyProteinToClipboard: PropTypes.func.isRequired,
   description: PropTypes.string.isRequired,
   gene: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  images: PropTypes.shape({}).isRequired,
   name: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
   sequence: PropTypes.string.isRequired,

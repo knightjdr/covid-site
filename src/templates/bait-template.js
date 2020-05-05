@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Layout from '../components/layout/layout';
-import Report from '../components/report/report-container';
+import Report from '../components/report/report';
 import SEO from '../components/seo/seo';
 
 const BaitTemplate = ({ pageContext }) => {
@@ -11,6 +11,7 @@ const BaitTemplate = ({ pageContext }) => {
     description,
     gene,
     id,
+    images,
     name,
     preys,
     sequence,
@@ -25,6 +26,7 @@ const BaitTemplate = ({ pageContext }) => {
         description={description}
         gene={gene}
         id={id}
+        images={images}
         name={name}
         preys={preys}
         sequence={sequence}
@@ -40,6 +42,7 @@ BaitTemplate.propTypes = {
     description: PropTypes.string.isRequired,
     gene: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    images: PropTypes.shape({}),
     name: PropTypes.string.isRequired,
     preys: PropTypes.shape({}).isRequired,
     sequence: PropTypes.string.isRequired,
