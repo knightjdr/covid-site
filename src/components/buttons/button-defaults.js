@@ -97,7 +97,7 @@ ${(props) => (props.kind === 'secondary'
   ${(props) => (props.kind === 'warning'
     && css`&{
       background-color: var(--warning);
-      color: var(--color-font);
+      color: var(--color-font-light);
     }
 
     &:focus:not([disabled]),
