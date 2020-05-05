@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://jamesknight.dev/covid-site/sitemap.xml
-Host: https://jamesknight.dev
