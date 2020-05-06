@@ -1,0 +1,35 @@
+.report__if {
+  padding: 0 0.5rem;
+}
+.report__if-inner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 -0.5rem;
+}
+.report__if-image {
+  margin: 1rem 0.5rem;
+  width: 400px;
+}
+.report__if-image figcaption {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 999px) {
+  .report__if-inner {
+    flex-wrap: wrap;
+  }
+  .report__if-image {
+    width: 300px;
+  }
+}
+
+@media (max-width: 399px) {
+  .report__if-image {
+    width: 100%;
+  }
+}

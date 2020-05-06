@@ -25,7 +25,7 @@ const Browse = ({
   <div className="display browse">
     <h2>Browse & Search</h2>
     <p className="display__instructions">
-      We profiled twenty-six proteins from the viral genome. Select one below to view
+      We profiled twenty-eight proteins from the viral genome. Select one below to view
       a detailed report or search for viral proteins that interact with a human protein.
     </p>
     <div className="browse__inputs">

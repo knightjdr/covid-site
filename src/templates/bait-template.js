@@ -39,17 +39,14 @@ const BaitTemplate = ({ pageContext }) => {
 BaitTemplate.propTypes = {
   pageContext: PropTypes.shape({
     conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     gene: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    images: PropTypes.shape({}),
-    name: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.shape({})),
+    name: PropTypes.string,
     preys: PropTypes.shape({}).isRequired,
     sequence: PropTypes.string.isRequired,
-    uniprot: PropTypes.shape({
-      covid: PropTypes.string,
-      sars: PropTypes.string,
-    }).isRequired,
+    uniprot: PropTypes.string,
   }).isRequired,
 };
 

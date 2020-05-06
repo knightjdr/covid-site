@@ -2,117 +2,9 @@
   margin-bottom: 1.5rem;
 }
 
-.report__header {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem 1rem;
-}
-
-.report__header-inner {
-  background-color: var(--color-accent);
-  border-radius: 0.3rem;
-  color: var(--color-font-dark);
-  column-gap: 0.5rem;
-  display: grid;
-  font-family: var(--font-secondary);
-  grid-template-columns: 10rem auto;
-  margin: 0;
-  max-width: 960px;
-  padding: 0.3rem 0.5rem;
-  row-gap: 0.5rem;
-  width: 100%;
-}
-.report header h1 {
-  display: flex;
-  font-size: 1.5rem;
-  grid-column: 1 / 3;
-  margin: 0;
-  width: 100%;
-}
-
-.report__header a:link {
-  color: var(--color-accent-link);
-}
-.report__header a:visited {
-  color: var(--color-accent-link-visited);
-}
-
 .report summary {
   font-family: var(--font-title);
   font-weight: bold;
-}
-
-.report__header-field,
-.report__header-title {
-  font-weight: bold;
-  justify-self: end;
-}
-.report__header-field::after,
-.report__header-title::after {
-  content: ':';
-}
-.report__header-title {
-  margin-right: 0.5rem;
-  text-align: right;
-  width: 10rem;
-}
-.report__header-uniprot a {
-  margin-right: 1rem;
-}
-
-.report__if {
-  padding: 0 0.5rem;
-}
-.report__if-inner {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 0 -0.5rem;
-}
-.report__if-image {
-  margin: 1rem 0.5rem;
-  width: 400px;
-}
-.report__if-image figcaption {
-  font-family: var(--font-secondary);
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  text-align: center;
-  width: 100%;
-}
-
-.report__prey-header {
-  margin-bottom: 0.8rem;
-}
-
-.report__protein-sequence {
-  display: flex;
-  margin-top: 0.5rem;
-}
-.report__protein-sequence code {
-  align-items: center;
-  display: flex;
-  max-width: calc(100% - 4rem);
-  padding: 0.2rem 0.5rem;
-}
-.report__protein-sequence code div {
-  max-width: 100%;
-}
-.report__protein-copy {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-secondary);
-  font-weight: 600;
-  justify-content: center;
-  padding: 0.5rem 0.8rem;
-  width: 4rem;
-}
-.report__protein-copy button {
-  margin-top: 0.5rem;
 }
 
 .report__options {
@@ -135,19 +27,4 @@
 }
 .report__options details {
   border: 1px solid var(--color-primary);
-}
-
-@media (max-width: 999px) {
-  .report__if-inner {
-    flex-wrap: wrap;
-  }
-  .report__if-image {
-    width: 300px;
-  }
-}
-
-@media (max-width: 399px) {
-  .report__if-image {
-    width: 100%;
-  }
 }

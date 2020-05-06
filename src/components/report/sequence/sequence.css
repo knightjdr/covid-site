@@ -1,0 +1,26 @@
+.report__protein-sequence {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.report__protein-sequence code {
+  align-items: center;
+  display: flex;
+  max-width: calc(100% - 4rem);
+  padding: 0.2rem 0.5rem;
+}
+.report__protein-sequence code div {
+  max-width: 100%;
+}
+.report__protein-copy {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  width: 4rem;
+}
+.report__protein-copy button {
+  margin-top: 0.5rem;
+}

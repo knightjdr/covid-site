@@ -1,9 +1,12 @@
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import React, { useMemo } from 'react';
+import React from 'react';
+import { nanoid } from 'nanoid';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Details from '../../details/details';
+
+import './if.css';
 
 const Immunofluorescence = ({ images }) => {
   if (images) {
@@ -26,59 +29,61 @@ const Immunofluorescence = ({ images }) => {
       `,
     );
 
-    const blue = useMemo(() => (
-      query.allFile.edges.find(({ node }) => images.blue.src === node.relativePath)
-    ), [query, images.blue.src]);
-
-    const green = useMemo(() => (
-      query.allFile.edges.find(({ node }) => images.green.src === node.relativePath)
-    ), [query, images.green.src]);
-
-    const merge = useMemo(() => (
-      query.allFile.edges.find(({ node }) => images.merge.src === node.relativePath)
-    ), [query, images.merge.src]);
-
-    const red = useMemo(() => (
-      query.allFile.edges.find(({ node }) => images.red.src === node.relativePath)
-    ), [query, images.red.src]);
-
     return (
       <Details summary="Immunofluorescence">
         <div className="report__if">
-          <div className="report__if-inner">
-            <figure className="report__if-image">
-              <Img
-                fluid={red.node.childImageSharp.fluid}
-                height={400}
-                width={400}
-              />
-              <figcaption>{images.red.marker}</figcaption>
-            </figure>
-            <figure className="report__if-image">
-              <Img
-                fluid={green.node.childImageSharp.fluid}
-                height={400}
-                width={400}
-              />
-              <figcaption>{images.green.marker}</figcaption>
-            </figure>
-            <figure className="report__if-image">
-              <Img
-                fluid={blue.node.childImageSharp.fluid}
-                height={400}
-                width={400}
-              />
-              <figcaption>{images.blue.marker}</figcaption>
-            </figure>
-            <figure className="report__if-image">
-              <Img
-                fluid={merge.node.childImageSharp.fluid}
-                height={400}
-                width={400}
-              />
-              <figcaption>{images.merge.marker}</figcaption>
-            </figure>
-          </div>
+          {
+            images.map((image, index) => {
+              const blue = query.allFile.edges.find(({ node }) => image.blue.src === node.relativePath);
+              const green = query.allFile.edges.find(({ node }) => image.green.src === node.relativePath);
+              const merge = query.allFile.edges.find(({ node }) => image.merge.src === node.relativePath);
+              const red = query.allFile.edges.find(({ node }) => image.red.src === node.relativePath);
+
+              return (
+                <div
+                  className="report__if-inner"
+                  key={nanoid(10)}
+                >
+                  <figure className="report__if-image">
+                    <Img
+                      alt={`Image ${index + 1} red channel`}
+                      fluid={red.node.childImageSharp.fluid}
+                      height={400}
+                      width={400}
+                    />
+                    <figcaption>{image.red.marker}</figcaption>
+                  </figure>
+                  <figure className="report__if-image">
+                    <Img
+                      alt={`Image ${index + 1} green channel`}
+                      fluid={green.node.childImageSharp.fluid}
+                      height={400}
+                      width={400}
+                    />
+                    <figcaption>{image.green.marker}</figcaption>
+                  </figure>
+                  <figure className="report__if-image">
+                    <Img
+                      alt={`Image ${index + 1} blue channel`}
+                      fluid={blue.node.childImageSharp.fluid}
+                      height={400}
+                      width={400}
+                    />
+                    <figcaption>{image.blue.marker}</figcaption>
+                  </figure>
+                  <figure className="report__if-image">
+                    <Img
+                      alt={`Image ${index + 1} merge channel`}
+                      fluid={merge.node.childImageSharp.fluid}
+                      height={400}
+                      width={400}
+                    />
+                    <figcaption>{image.merge.marker}</figcaption>
+                  </figure>
+                </div>
+              );
+            })
+          }
         </div>
       </Details>
     );
@@ -91,24 +96,26 @@ Immunofluorescence.defaultProps = {
 };
 
 Immunofluorescence.propTypes = {
-  images: PropTypes.shape({
-    blue: PropTypes.shape({
-      marker: PropTypes.string,
-      src: PropTypes.string,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      blue: PropTypes.shape({
+        marker: PropTypes.string,
+        src: PropTypes.string,
+      }),
+      green: PropTypes.shape({
+        marker: PropTypes.string,
+        src: PropTypes.string,
+      }),
+      merge: PropTypes.shape({
+        marker: PropTypes.string,
+        src: PropTypes.string,
+      }),
+      red: PropTypes.shape({
+        marker: PropTypes.string,
+        src: PropTypes.string,
+      }),
     }),
-    green: PropTypes.shape({
-      marker: PropTypes.string,
-      src: PropTypes.string,
-    }),
-    merge: PropTypes.shape({
-      marker: PropTypes.string,
-      src: PropTypes.string,
-    }),
-    red: PropTypes.shape({
-      marker: PropTypes.string,
-      src: PropTypes.string,
-    }),
-  }),
+  ),
 };
 
 export default Immunofluorescence;
