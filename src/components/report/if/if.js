@@ -50,7 +50,6 @@ const Immunofluorescence = ({ images }) => {
               <Img
                 fluid={red.node.childImageSharp.fluid}
                 height={400}
-                src={red}
                 width={400}
               />
               <figcaption>{images.red.marker}</figcaption>
@@ -59,7 +58,6 @@ const Immunofluorescence = ({ images }) => {
               <Img
                 fluid={green.node.childImageSharp.fluid}
                 height={400}
-                src={green}
                 width={400}
               />
               <figcaption>{images.green.marker}</figcaption>
@@ -68,7 +66,6 @@ const Immunofluorescence = ({ images }) => {
               <Img
                 fluid={blue.node.childImageSharp.fluid}
                 height={400}
-                src={blue}
                 width={400}
               />
               <figcaption>{images.blue.marker}</figcaption>
@@ -77,7 +74,6 @@ const Immunofluorescence = ({ images }) => {
               <Img
                 fluid={merge.node.childImageSharp.fluid}
                 height={400}
-                src={merge}
                 width={400}
               />
               <figcaption>{images.merge.marker}</figcaption>
