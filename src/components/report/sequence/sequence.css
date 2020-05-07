@@ -1,6 +1,7 @@
 .report__protein-sequence {
   display: flex;
   margin-top: 0.5rem;
+  padding: 0 0.5rem;
 }
 .report__protein-sequence code {
   align-items: center;
