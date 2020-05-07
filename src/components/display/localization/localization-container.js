@@ -17,8 +17,8 @@ const LocalizationContainer = () => {
     const { cellLocalization, virusLocalization } = e.target.dataset;
     sethighlighted({
       ...highlighted,
-      cell: cellLocalization,
-      virus: virusLocalization,
+      cell: cellLocalization || 'unknown',
+      virus: virusLocalization || 'non-structural',
     });
   };
 
