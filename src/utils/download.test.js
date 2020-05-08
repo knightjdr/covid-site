@@ -1,5 +1,13 @@
 import download from './download';
 
+const noOp = () => {};
+if (typeof window.URL.createObjectURL === 'undefined') {
+  Object.defineProperty(window.URL, 'createObjectURL', { value: noOp, writable: true });
+}
+if (typeof window.URL.revokeObjectURL === 'undefined') {
+  Object.defineProperty(window.URL, 'revokeObjectURL', { value: noOp, writable: true });
+}
+
 beforeAll(() => {
   jest.clearAllMocks();
 });
