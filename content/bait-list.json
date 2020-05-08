@@ -11,18 +11,7 @@
     }
   },
   {
-    "id": "NSP6",
-    "localization": {
-      "cell": [
-        "plasma_membrane"
-      ],
-      "virus": [
-        ""
-      ]
-    }
-  },
-  {
-    "id": "NSP10",
+    "id": "NSP4",
     "localization": {
       "cell": [
         "cytoplasm"
@@ -33,13 +22,35 @@
     }
   },
   {
-    "id": "E",
+    "id": "NSP8",
+    "localization": {
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "ORF3A",
     "localization": {
       "cell": [
         "Golgi"
       ],
       "virus": [
-        "envelope"
+        ""
+      ]
+    }
+  },
+  {
+    "id": "ORF3B",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
       ]
     }
   },
@@ -55,7 +66,7 @@
     }
   },
   {
-    "id": "ORF6",
+    "id": "ORF7A",
     "localization": {
       "cell": [
         "ER",
@@ -67,11 +78,10 @@
     }
   },
   {
-    "id": "ORF7A",
+    "id": "ORF8",
     "localization": {
       "cell": [
-        "ER",
-        "Golgi"
+        ""
       ],
       "virus": [
         ""
