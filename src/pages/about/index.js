@@ -46,13 +46,13 @@ const AboutPage = () => {
         <p>
           The laboratories of Drs.
           {' '}
-          <Link to="https://gingraslab.lunenfeld.ca">
+          <Link rel="noreferrer" to="https://gingraslab.lunenfeld.ca">
             Anne-Claude Gingras
           </Link>
           {' '}
           and
           {' '}
-          <Link to="http://www.raughtlab.ca">
+          <Link rel="noreferrer" to="http://www.raughtlab.ca">
             Brian Raught
           </Link>
           {' '}
@@ -64,18 +64,18 @@ const AboutPage = () => {
           This is part of a larger project to map the functional interactome enabled by
           the synthesis of SARS-CoV-2 ORFs by
           {' '}
-          <Link to="http://llama.mshri.on.ca">
+          <Link rel="noreferrer" to="http://llama.mshri.on.ca">
             Fritz Roth
           </Link>
           ,
           {' '}
-          <Link to="https://research.pasteur.fr/en/team/group-yves-jacob">
+          <Link rel="noreferrer" to="https://research.pasteur.fr/en/team/group-yves-jacob">
             Yves Jacob
           </Link>
           {' '}
           and
           {' '}
-          <Link to="http://www.raughtlab.ca">
+          <Link rel="noreferrer" to="http://www.raughtlab.ca">
             Brian Raught
           </Link>
           {' '}
@@ -141,6 +141,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://thistledown.ca"
             >
               <img
@@ -154,6 +155,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://www.cihr-irsc.gc.ca"
             >
               <img
@@ -167,6 +169,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://www.innovation.ca"
             >
               <img
@@ -180,6 +183,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://www.genomecanada.ca"
             >
               <img
@@ -193,6 +197,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="http://www.lunenfeld.ca"
             >
               <img
@@ -206,6 +211,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="http://www.ontariogenomics.ca"
             >
               <img
@@ -219,6 +225,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://www.ontario.ca/page/ontario-research-fund"
             >
               <Img
@@ -232,6 +239,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://thepmcf.ca"
             >
               <Img
@@ -245,6 +253,7 @@ const AboutPage = () => {
           <li>
             <Link
               outline
+              rel="noreferrer"
               to="https://www.utoronto.ca"
             >
               <img

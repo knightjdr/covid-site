@@ -29,7 +29,7 @@ const Header = ({
       <div>{name}</div>
       <div className="report__header-field">Uniprot</div>
       <div className="report__header-uniprot">
-        <Link to={`https://covid-19.uniprot.org/uniprotkb/${uniprot}`}>
+        <Link rel="noreferrer" to={`https://covid-19.uniprot.org/uniprotkb/${uniprot}`}>
           {uniprot}
         </Link>
       </div>

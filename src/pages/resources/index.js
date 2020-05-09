@@ -17,22 +17,22 @@ const ResourcesPage = () => (
     <h2>Databases</h2>
     <ul>
       <li>
-        <Link to="https://www.covid19cellatlas.org">
+        <Link rel="noreferrer" to="https://www.covid19cellatlas.org">
           COVID-19 Cell Atlas (www.covid19cellatlas.org)
         </Link>
       </li>
       <li>
-        <Link to="https://www.covid19dataportal.org">
+        <Link rel="noreferrer" to="https://www.covid19dataportal.org">
           EMBL-EBI COVID-19 Data Portal (www.covid19dataportal.org)
         </Link>
       </li>
       <li>
-        <Link to="https://covid-19.uniprot.org">
+        <Link rel="noreferrer" to="https://covid-19.uniprot.org">
           UniProtKB data for SARS-CoV-2 and related entries (covid-19.uniprot.org)
         </Link>
       </li>
       <li>
-        <Link to="https://viralzone.expasy.org/8996">
+        <Link rel="noreferrer" to="https://viralzone.expasy.org/8996">
           ViralZone SARS-CoV-2 resources (viralzone.expasy.org/8996)
         </Link>
       </li>

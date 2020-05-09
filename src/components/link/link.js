@@ -13,7 +13,7 @@ const CustomLink = ({
   nav,
   outline,
   to,
-  ...otherProps
+  ...props
 }) => {
   const classes = className ? [className] : [];
   if (nav) {
@@ -31,7 +31,7 @@ const CustomLink = ({
       <a
         className={formatClass(classes)}
         href={withPrefix(to)}
-        {...otherProps}
+        {...props}
       >
         {children}
       </a>
@@ -41,7 +41,7 @@ const CustomLink = ({
       <Link
         className={formatClass(classes)}
         to={to}
-        {...otherProps}
+        {...props}
       >
         {children}
       </Link>
@@ -51,6 +51,7 @@ const CustomLink = ({
     <a
       className={formatClass(classes)}
       href={to}
+      {...props}
     >
       {children}
     </a>
