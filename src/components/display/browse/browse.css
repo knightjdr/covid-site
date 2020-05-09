@@ -1,7 +1,9 @@
 .browse {
   align-items: center;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
+  justify-content: center;
 }
 .browse__inputs {
   align-items: center;

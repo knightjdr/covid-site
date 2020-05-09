@@ -26,15 +26,22 @@ const Header = ({
       <div>{gene}</div>
       {}
       <div className="report__header-field">Protein name</div>
-      <div>{name}</div>
-      <div className="report__header-field">Uniprot</div>
-      <div className="report__header-uniprot">
-        <Link rel="noreferrer" to={`https://covid-19.uniprot.org/uniprotkb/${uniprot}`}>
-          {uniprot}
-        </Link>
-      </div>
+      <div>{name || 'none currently assigned'}</div>
+      {
+        uniprot
+          && (
+            <>
+              <div className="report__header-field">Uniprot</div>
+              <div className="report__header-uniprot">
+                <Link rel="noreferrer" to={`https://covid-19.uniprot.org/uniprotkb/${uniprot}`}>
+                  {uniprot}
+                </Link>
+              </div>
+            </>
+          )
+      }
       <div className="report__header-field">Description</div>
-      <div>{description}</div>
+      <div>{description || '-'}</div>
     </div>
   </Hero>
 );

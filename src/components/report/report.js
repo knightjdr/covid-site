@@ -32,10 +32,15 @@ const Report = ({
     <div className="report__options">
       <IF images={images} />
       <Sequence sequence={sequence} />
-      <Comparison
-        conditions={conditions}
-        preys={preys}
-      />
+      {
+        conditions.length > 1
+          && (
+            <Comparison
+              conditions={conditions}
+              preys={preys}
+            />
+          )
+      }
     </div>
     <Preys
       conditions={conditions}

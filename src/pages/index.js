@@ -17,7 +17,7 @@ const IndexPage = () => (
       className="home__landing"
       Tag="section"
     >
-      <div>
+      <div className="home__landing-inner">
         <h1>COVID-19 interactome</h1>
         <p className="home__landing-description">
           BioID-based interactome of the SARS-CoV-2 proteome
@@ -25,9 +25,6 @@ const IndexPage = () => (
         <Browse />
       </div>
     </Hero>
-    <div className="home__display">
-      <Localization />
-    </div>
   </Layout>
 );
 
