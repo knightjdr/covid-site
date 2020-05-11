@@ -25,3 +25,17 @@
 body.dark-mode .about__funding-list {
   background-color: #F2F2F2;
 }
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -0.5rem;
+  margin-bottom: 1rem;
+}
+.about__links li {
+  display: inline-block;
+  font-weight: bold;
+  margin: 0 0.5rem;
+  padding: 0;
+}
