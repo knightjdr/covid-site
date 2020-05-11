@@ -16,12 +16,17 @@ const Localization = ({
   handleProteinMouseOver,
   highlighted,
 }) => (
-  <section className="display localization display_bg-circles">
+  <section className="display">
     <div className="display__inner">
-      <h2 className="display__title localization__title">
+      <h2 className="display__title">
         <FontAwesomeIcon icon={faMapMarkerAlt} />
         Localization
       </h2>
+      <p className="display__legend">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
       <p className="display__instructions">
         Hover over a protein to view its localization or over a compartment
         to view all viral proteins that localize there.
@@ -31,7 +36,7 @@ const Localization = ({
         handleProteinMouseOver={handleProteinMouseOver}
         highlighted={highlighted.protein}
       />
-      <div className="localization__graphics">
+      <div className="display__localization-graphics">
         <Virus
           handleGraphicMouseOut={handleGraphicMouseOut}
           handleGraphicMouseOver={handleGraphicMouseOver}

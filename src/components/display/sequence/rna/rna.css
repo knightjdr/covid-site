@@ -1,0 +1,24 @@
+.display__sequence-rna line {
+  stroke: var(--color-font);
+}
+
+.display__sequence-rna text {
+  fill: var(--color-font);
+}
+
+.display__sequence-rna-orf1a rect {
+  fill: #9656a1;
+}
+.display__sequence-rna-sp rect {
+  fill: #fa9191;
+}
+.display__sequence-rna-nsp rect {
+  fill: #bd574e;
+}
+
+.display__sequence-rna rect {
+  transition: fill 0.3s var(--timing-function);
+}
+.display__sequence-rna g[data-orf]:hover rect {
+  fill: var(--color-display-focus);
+}

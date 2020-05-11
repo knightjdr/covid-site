@@ -1,10 +1,4 @@
-.localization {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.localization__graphics {
+.display__localization-graphics {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -12,7 +6,7 @@
 }
 
 @media (max-width: 859px) {
-  .localization__graphics {
+  .display__localization-graphics {
     display: flex;
     flex-direction: column;
   }
