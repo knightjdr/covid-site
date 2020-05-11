@@ -9,11 +9,32 @@ const ResourcesPage = () => (
     <SEO title="Resources" />
     <h1>Resources</h1>
     <p>
-      Below you can find links to the protocols used for this project and other resources
-      relevant to SARS-CoV-2 and COVID-19.
+      Below you can find links to useful tools, reagents and resources relevant to SARS-CoV-2 and COVID-19.
     </p>
     <h2>Protocols</h2>
-    <p>Coming soon...</p>
+    <p>
+      BioID and lentiviral protocols, as well as plasmid constructs, can be found at the
+      {' '}
+      <Link
+        rel="noreferrer"
+        to="https://nbcc.lunenfeld.ca/resources"
+      >
+        Network Biology Collaborative Centre
+      </Link>
+      .
+    </p>
+    <h2>Tools</h2>
+    <ul>
+      <li>
+        <Link rel="noreferrer" to="https://gene-info.org">
+          GIX
+        </Link>
+        {' '}
+        is a browser extension that retrieves gene information on any website simply
+        by clicking on a gene name. You may find it helpful for quickly retrieving
+        information when browsing data on this website.
+      </li>
+    </ul>
     <h2>Databases</h2>
     <ul>
       <li>
