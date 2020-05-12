@@ -1,0 +1,8 @@
+.display__genome {
+  align-items: center;
+  display: flex;
+}
+.display__genome > *:last-child {
+  flex: 1;
+  margin-left: 2rem;
+}

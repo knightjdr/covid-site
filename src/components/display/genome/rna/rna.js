@@ -3,54 +3,64 @@ import React from 'react';
 
 import './rna.css';
 
-const RNA = ({}) => (
+const RNA = ({
+  handleMouseOver,
+}) => (
   <div className="display__sequence-rna">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height={540}
-      width={200}
-      viewBox="0 0 200 540"
+      width={250}
+      viewBox="0 0 250 540"
     >
       <text
         dominantBaseline="hanging"
         fontSize={14}
         textAnchor="middle"
-        x={100}
+        x={125}
         y={0}
       >
         5&apos;
       </text>
       <g transform="translate(0, 20)">
         <g className="display__sequence-rna-orf1a">
-          <g data-orf="ORF1a">
+          <g
+            data-orf="ORF1a"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={220.75}
-              width={15}
-              x={100}
+              width={20}
+              x={125}
               y={4.43}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
-              x={120}
+              x={150}
               y={114.81}
             >
               ORF1a
             </text>
           </g>
-          <g data-orf="ORF1ab">
+          <g
+            data-orf="ORF1ab"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={355.97}
-              width={15}
-              x={85}
+              width={20}
+              x={105}
               y={4.43}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
-              x={80}
+              x={100}
               y={182.42}
             >
               ORF1ab
@@ -61,15 +71,15 @@ const RNA = ({}) => (
           <g data-orf="S">
             <rect
               height={63.89}
-              width={15}
-              x={100}
+              width={20}
+              x={125}
               y={360.53}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
-              x={120}
+              x={150}
               y={392.48}
             >
               S
@@ -78,32 +88,38 @@ const RNA = ({}) => (
           <g data-orf="E">
             <rect
               height={3.8}
-              width={15}
-              x={85}
+              width={20}
+              x={105}
               y={438.82}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
-              x={80}
+              x={50}
               y={440.72}
             >
               E
             </text>
+            <line
+              x1={55}
+              x2={100}
+              y1={440.72}
+              y2={440.72}
+            />
           </g>
           <g data-orf="M">
             <rect
               height={11.17}
-              width={15}
-              x={100}
+              width={20}
+              x={125}
               y={443.47}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
-              x={120}
+              x={150}
               y={449.06}
             >
               M
@@ -112,15 +128,15 @@ const RNA = ({}) => (
           <g data-orf="N">
             <rect
               height={21.05}
-              width={15}
-              x={100}
+              width={20}
+              x={125}
               y={472.75}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
-              x={120}
+              x={150}
               y={483.28}
             >
               N
@@ -131,32 +147,49 @@ const RNA = ({}) => (
           <g data-orf="ORF3a">
             <rect
               height={13.83}
-              width={15}
-              x={85}
+              width={20}
+              x={105}
               y={424.57}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
-              x={80}
+              x={100}
               y={431.49}
             >
               ORF3a
             </text>
           </g>
+          <g data-orf="ORF3b">
+            <rect
+              height={2.84}
+              width={20}
+              x={125}
+              y={427.2}
+            />
+            <text
+              dominantBaseline="middle"
+              fontSize={14}
+              textAnchor="start"
+              x={150}
+              y={428.62}
+            >
+              ORF3b
+            </text>
+          </g>
           <g data-orf="ORF6">
             <rect
               height={3.09}
-              width={15}
-              x={85}
+              width={20}
+              x={105}
               y={454.82}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
-              x={80}
+              x={100}
               y={456.37}
             >
               ORF6
@@ -165,50 +198,119 @@ const RNA = ({}) => (
           <g data-orf="ORF7a">
             <rect
               height={6.1}
-              width={15}
-              x={100}
+              width={20}
+              x={125}
               y={458.03}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
-              x={120}
+              x={200}
               y={461.08}
             >
               ORF7a
             </text>
+            <line
+              x1={150}
+              x2={195}
+              y1={461.08}
+              y2={461.08}
+            />
+          </g>
+          <g data-orf="ORF7b">
+            <rect
+              height={2.22}
+              width={20}
+              x={105}
+              y={464.15}
+            />
+            <text
+              dominantBaseline="middle"
+              fontSize={14}
+              textAnchor="end"
+              x={50}
+              y={465.26}
+            >
+              ORF7b
+            </text>
+            <line
+              x1={55}
+              x2={100}
+              y1={465.26}
+              y2={465.26}
+            />
           </g>
           <g data-orf="ORF8">
             <rect
               data-orf="ORF8"
               height={6.1}
-              width={15}
-              x={100}
+              width={20}
+              x={125}
               y={466.39}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
-              x={120}
+              x={150}
               y={469.44}
             >
               ORF8
             </text>
           </g>
+          <g data-orf="ORF9b">
+            <rect
+              height={3.68}
+              width={20}
+              x={105}
+              y={473.01}
+            />
+            <text
+              dominantBaseline="middle"
+              fontSize={14}
+              textAnchor="end"
+              x={100}
+              y={474.85}
+            >
+              ORF9b
+            </text>
+          </g>
+          <g data-orf="ORF14">
+            <rect
+              height={3.68}
+              width={20}
+              x={105}
+              y={480.7}
+            />
+            <text
+              dominantBaseline="middle"
+              fontSize={14}
+              textAnchor="end"
+              x={50}
+              y={482.54}
+            >
+              ORF14
+            </text>
+            <line
+              x1={55}
+              x2={100}
+              y1={482.54}
+              y2={482.54}
+            />
+          </g>
           <g data-orf="ORF10">
             <rect
               height={1.94}
-              width={15}
-              x={85}
+              width={20}
+              x={105}
               y={494.21}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
-              x={80}
+              x={100}
               y={494.21}
             >
               ORF10
@@ -217,8 +319,8 @@ const RNA = ({}) => (
         </g>
         <line
           strokeWidth={1}
-          x1={100}
-          x2={100}
+          x1={125}
+          x2={125}
           y1={0}
           y2={500}
         />
@@ -227,7 +329,7 @@ const RNA = ({}) => (
         dominantBaseline="hanging"
         fontSize={14}
         textAnchor="middle"
-        x={100}
+        x={125}
         y={525}
       >
         3&apos;
@@ -236,6 +338,8 @@ const RNA = ({}) => (
   </div>
 );
 
-RNA.propTypes = {};
+RNA.propTypes = {
+  handleMouseOver: PropTypes.func.isRequired,
+};
 
 export default RNA;

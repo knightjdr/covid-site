@@ -4,15 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/pro-duotone-svg-icons';
 
 import RNA from './rna/rna';
+import description from './description/description';
 
-import './sequence.css';
+import './genome.css';
 
-const Sequence = ({}) => (
+const Genome = ({
+  handleMouseOver,
+  orf,
+}) => (
   <section className="display">
     <div className="display__inner">
       <h2 className="display__title">
         <FontAwesomeIcon icon={faCircleNotch} />
-        RNA sequence
+        Genome
       </h2>
       <p className="display__legend">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -22,11 +26,17 @@ const Sequence = ({}) => (
       <p className="display__instructions">
         View details about each ORF by hovering over it.
       </p>
-      <RNA />
+      <div className="display__genome">
+        <RNA handleMouseOver={handleMouseOver} />
+        { orf && description[orf] }
+      </div>
     </div>
   </section>
 );
 
-Sequence.propTypes = {};
+Genome.propTypes = {
+  handleMouseOver: PropTypes.func.isRequired,
+  orf: PropTypes.string.isRequired,
+};
 
-export default Sequence;
+export default Genome;

@@ -1,0 +1,27 @@
+.display__sequence-description {
+  background-color: var(--color-code);
+  border-radius: 0.2rem;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.display__sequence-description h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.display__sequence-description p {
+  margin-top: 1rem;
+}
+
+.display__sequence-nucleotides {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  row-gap: 0.3rem;
+}
+.display__sequence-nucleotides > span:nth-child(odd) {
+  font-weight: bold;
+  margin-right: 0.8rem;
+}

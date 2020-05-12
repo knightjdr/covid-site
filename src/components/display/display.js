@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Localization from './localization/localization-container';
-import Sequence from './sequence/sequence-container';
+import Genome from './genome/genome-container';
 import Summary from './summary/summary';
 
 const Display = () => (
   <div>
     <Summary />
-    <Sequence />
+    <Genome />
     <Localization />
   </div>
 );
