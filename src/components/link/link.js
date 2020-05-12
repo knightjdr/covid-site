@@ -51,6 +51,7 @@ const CustomLink = ({
     <a
       className={formatClass(classes)}
       href={to}
+      rel="noreferrer"
       {...props}
     >
       {children}

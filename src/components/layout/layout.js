@@ -27,7 +27,7 @@ const Layout = ({
           <footer>
             ©
             {' '}
-            <Link rel="noreferrer" to="https://gingraslab.lunenfeld.ca">Gingras lab</Link>
+            <Link to="https://gingraslab.lunenfeld.ca">Gingras lab</Link>
             ,
             {' '}
             {new Date().getFullYear()}

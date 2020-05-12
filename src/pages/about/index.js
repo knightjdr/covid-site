@@ -43,13 +43,13 @@ const AboutPage = () => (
       <p>
         The laboratories of Drs.
         {' '}
-        <Link rel="noreferrer" to="https://gingraslab.lunenfeld.ca">
+        <Link to="https://gingraslab.lunenfeld.ca">
           Anne-Claude Gingras
         </Link>
         {' '}
         and
         {' '}
-        <Link rel="noreferrer" to="http://www.raughtlab.ca">
+        <Link to="http://www.raughtlab.ca">
           Brian Raught
         </Link>
         {' '}
@@ -61,18 +61,18 @@ const AboutPage = () => (
         This is part of a larger project to map the functional interactome enabled by
         the synthesis of SARS-CoV-2 ORFs by
         {' '}
-        <Link rel="noreferrer" to="http://llama.mshri.on.ca">
+        <Link to="http://llama.mshri.on.ca">
           Fritz Roth
         </Link>
         ,
         {' '}
-        <Link rel="noreferrer" to="https://research.pasteur.fr/en/team/group-yves-jacob">
+        <Link to="https://research.pasteur.fr/en/team/group-yves-jacob">
           Yves Jacob
         </Link>
         {' '}
         and
         {' '}
-        <Link rel="noreferrer" to="http://www.raughtlab.ca">
+        <Link to="http://www.raughtlab.ca">
           Brian Raught
         </Link>
         {' '}

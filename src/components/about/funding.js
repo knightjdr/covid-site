@@ -44,7 +44,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://thistledown.ca"
           >
             <img
@@ -58,7 +57,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://www.cihr-irsc.gc.ca"
           >
             <img
@@ -72,7 +70,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://www.innovation.ca"
           >
             <img
@@ -86,7 +83,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://www.genomecanada.ca"
           >
             <img
@@ -100,7 +96,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="http://www.lunenfeld.ca"
           >
             <img
@@ -114,7 +109,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="http://www.ontariogenomics.ca"
           >
             <img
@@ -128,7 +122,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://www.ontario.ca/page/ontario-research-fund"
           >
             <Img
@@ -142,7 +135,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://thepmcf.ca"
           >
             <Img
@@ -156,7 +148,6 @@ const Funding = () => {
         <li>
           <Link
             outline
-            rel="noreferrer"
             to="https://www.utoronto.ca"
           >
             <img
