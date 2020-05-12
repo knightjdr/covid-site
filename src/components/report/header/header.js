@@ -41,7 +41,7 @@ const Header = ({
           )
       }
       <div className="report__header-field">Description</div>
-      <div>{description || '-'}</div>
+      <div>{`${description} From UniProt.` || '-'}</div>
     </div>
   </Hero>
 );

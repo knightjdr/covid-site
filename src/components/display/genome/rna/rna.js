@@ -68,7 +68,11 @@ const RNA = ({
           </g>
         </g>
         <g className="display__sequence-rna-sp">
-          <g data-orf="S">
+          <g
+            data-orf="S"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={63.89}
               width={20}
@@ -85,7 +89,11 @@ const RNA = ({
               S
             </text>
           </g>
-          <g data-orf="E">
+          <g
+            data-orf="E"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={3.8}
               width={20}
@@ -108,7 +116,11 @@ const RNA = ({
               y2={440.72}
             />
           </g>
-          <g data-orf="M">
+          <g
+            data-orf="M"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={11.17}
               width={20}
@@ -125,7 +137,11 @@ const RNA = ({
               M
             </text>
           </g>
-          <g data-orf="N">
+          <g
+            data-orf="N"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={21.05}
               width={20}
@@ -144,7 +160,11 @@ const RNA = ({
           </g>
         </g>
         <g className="display__sequence-rna-nsp">
-          <g data-orf="ORF3a">
+          <g
+            data-orf="ORF3a"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={13.83}
               width={20}
@@ -161,24 +181,32 @@ const RNA = ({
               ORF3a
             </text>
           </g>
-          <g data-orf="ORF3b">
+          <g
+            data-orf="ORF3b"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
-              height={2.84}
+              height={2.89}
               width={20}
               x={125}
-              y={427.2}
+              y={426.76}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="start"
               x={150}
-              y={428.62}
+              y={428.21}
             >
               ORF3b
             </text>
           </g>
-          <g data-orf="ORF6">
+          <g
+            data-orf="ORF6"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={3.09}
               width={20}
@@ -195,7 +223,11 @@ const RNA = ({
               ORF6
             </text>
           </g>
-          <g data-orf="ORF7a">
+          <g
+            data-orf="ORF7a"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={6.1}
               width={20}
@@ -218,30 +250,38 @@ const RNA = ({
               y2={461.08}
             />
           </g>
-          <g data-orf="ORF7b">
+          <g
+            data-orf="ORF7b"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
-              height={2.22}
+              height={2.19}
               width={20}
               x={105}
-              y={464.15}
+              y={464.08}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
               x={50}
-              y={465.26}
+              y={465.18}
             >
               ORF7b
             </text>
             <line
               x1={55}
               x2={100}
-              y1={465.26}
-              y2={465.26}
+              y1={465.18}
+              y2={465.18}
             />
           </g>
-          <g data-orf="ORF8">
+          <g
+            data-orf="ORF8"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               data-orf="ORF8"
               height={6.1}
@@ -259,47 +299,59 @@ const RNA = ({
               ORF8
             </text>
           </g>
-          <g data-orf="ORF9b">
+          <g
+            data-orf="ORF9b"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
-              height={3.68}
+              height={4.9}
               width={20}
               x={105}
-              y={473.01}
+              y={472.91}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
               x={100}
-              y={474.85}
+              y={475.36}
             >
               ORF9b
             </text>
           </g>
-          <g data-orf="ORF14">
+          <g
+            data-orf="ORF14"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
-              height={3.68}
+              height={3.7}
               width={20}
               x={105}
-              y={480.7}
+              y={480.44}
             />
             <text
               dominantBaseline="middle"
               fontSize={14}
               textAnchor="end"
               x={50}
-              y={482.54}
+              y={482.29}
             >
               ORF14
             </text>
             <line
               x1={55}
               x2={100}
-              y1={482.54}
-              y2={482.54}
+              y1={482.29}
+              y2={482.29}
             />
           </g>
-          <g data-orf="ORF10">
+          <g
+            data-orf="ORF10"
+            onFocus={handleMouseOver}
+            onMouseOver={handleMouseOver}
+          >
             <rect
               height={1.94}
               width={20}
@@ -311,7 +363,7 @@ const RNA = ({
               fontSize={14}
               textAnchor="end"
               x={100}
-              y={494.21}
+              y={495.18}
             >
               ORF10
             </text>

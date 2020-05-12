@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/pro-duotone-svg-icons';
 
+import Link from '../../link/link';
 import RNA from './rna/rna';
 import description from './description/description';
 
@@ -22,6 +23,10 @@ const Genome = ({
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
         nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Reference sequence
+        {' '}
+        <Link to="https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3">MN908947.3</Link>
+        .
       </p>
       <p className="display__instructions">
         View details about each ORF by hovering over it.

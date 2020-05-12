@@ -11,9 +11,21 @@
   text-align: center;
   width: 100%;
 }
+.display__sequence-description h4 {
+  margin-bottom: 0.5rem;
+}
 
 .display__sequence-description p {
   margin-top: 1rem;
+}
+
+.display__sequence-description ul {
+  list-style: none;
+  margin: 0 -0.5rem;
+}
+.display__sequence-description li {
+  display: inline-block;
+  margin: 0.5rem;
 }
 
 .display__sequence-nucleotides {
@@ -24,4 +36,18 @@
 .display__sequence-nucleotides > span:nth-child(odd) {
   font-weight: bold;
   margin-right: 0.8rem;
+}
+
+.display__sequence-description-report-link {
+  display: flex;
+  flex-direction: column;
+}
+.display__sequence-description-report-link > *:first-child {
+  font-weight: bold;
+}
+.display__sequence-description-report-link_inline {
+  flex-direction: row;
+}
+.display__sequence-description-report-link_inline > *:first-child {
+  margin-right: 0.5rem;
 }
