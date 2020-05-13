@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Link from '../../../../link/link';
+
+const createSearchTerm = (prey) => `^${prey}$`;
+
 const TableBody = ({
   conditions,
   rows,
@@ -8,9 +12,18 @@ const TableBody = ({
   <tbody>
     {
       rows.map((row) => (
-        <tr key={row.id}>
+        <tr
+          className={row.highlight ? 'repory__prey-table_highlight' : null}
+          key={row.id}
+        >
           <td>
-            {row.prey}
+            {' '}
+            <Link
+              nav
+              to={`/search?term=${encodeURIComponent(createSearchTerm(row.prey))}`}
+            >
+              {row.prey}
+            </Link>
           </td>
           <td>
             {row.id}

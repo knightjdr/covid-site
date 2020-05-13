@@ -5,6 +5,8 @@ import CustomTable from '../../../table/table';
 import TBody from './tbody/tbody';
 import THead from './thead/thead';
 
+import './table.css';
+
 const Table = ({
   conditions,
   handleSortByColumn,

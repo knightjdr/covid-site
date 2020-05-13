@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import { useQueryParam, StringParam } from 'use-query-params';
 
 import Preys from './preys';
 import validateFDR from '../../../utils/input-handlers/validate-fdr';
@@ -12,6 +13,7 @@ const PreysContainer = ({
 }) => {
   const [fdr, setFDR] = useState(0.01);
   const [spectralCount, setSpectralCount] = useState(0);
+  const [highlightedPrey] = useQueryParam('prey', StringParam);
 
   const handleFDRChange = (e) => {
     const [validated, value] = validateFDR(e);
@@ -33,6 +35,7 @@ const PreysContainer = ({
       fdr={fdr}
       handleFDRChange={handleFDRChange}
       handleSpecChange={handleSpecChange}
+      highlightedPrey={highlightedPrey || ''}
       id={id}
       preys={preys}
       spectralCount={spectralCount}

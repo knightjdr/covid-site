@@ -13,10 +13,16 @@ const getDirection = (condition, previousOptions) => {
 const TableContainer = ({
   conditions,
   fdr,
+  highlightedPrey,
   preys,
   spectralCount,
 }) => {
-  const [sortOptions, setSortOptions] = useState({ condition: conditions[0], direction: 'des', type: 'numeric' });
+  const [sortOptions, setSortOptions] = useState({
+    condition: conditions[0],
+    direction: 'des',
+    highlightedPrey,
+    type: 'numeric',
+  });
 
   const filteredPreys = useMemo(
     () => filterPreys(preys, fdr, spectralCount),
@@ -26,13 +32,9 @@ const TableContainer = ({
   const rows = useMemo(
     () => sortPreys(
       filteredPreys,
-      {
-        condition: sortOptions.condition,
-        direction: sortOptions.direction,
-        sortType: sortOptions.type,
-      },
+      sortOptions,
     ),
-    [conditions, filteredPreys, sortOptions],
+    [filteredPreys, sortOptions],
   );
 
   const handleSortByColumn = (e) => {
@@ -40,6 +42,7 @@ const TableContainer = ({
     setSortOptions({
       condition,
       direction: getDirection(condition, sortOptions),
+      highlightedPrey: '',
       type: condition === 'prey' ? 'string' : 'numeric',
     });
   };
@@ -57,6 +60,7 @@ const TableContainer = ({
 TableContainer.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   fdr: PropTypes.number.isRequired,
+  highlightedPrey: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
   spectralCount: PropTypes.number.isRequired,
 };

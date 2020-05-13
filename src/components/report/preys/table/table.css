@@ -1,0 +1,8 @@
+.repory__prey-table_highlight {
+  background-color: var(--color-accent);
+  color: var(--color-font-dark);
+}
+.repory__prey-table_highlight a,
+.repory__prey-table_highlight a:visited {
+  color: var(--color-accent-link);
+}

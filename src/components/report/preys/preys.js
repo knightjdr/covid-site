@@ -15,6 +15,7 @@ const Preys = ({
   fdr,
   handleFDRChange,
   handleSpecChange,
+  highlightedPrey,
   id,
   preys,
   spectralCount,
@@ -41,6 +42,7 @@ const Preys = ({
     <Table
       conditions={conditions}
       fdr={fdr}
+      highlightedPrey={highlightedPrey}
       preys={preys}
       spectralCount={spectralCount}
     />
@@ -52,6 +54,7 @@ Preys.propTypes = {
   fdr: PropTypes.number.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
   handleSpecChange: PropTypes.func.isRequired,
+  highlightedPrey: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
   spectralCount: PropTypes.number.isRequired,

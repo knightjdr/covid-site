@@ -34,7 +34,7 @@ const SearchResults = ({
                           <Link
                             key={`${result.symbol}-bait`}
                             nav
-                            to={`/${bait}`}
+                            to={`/${bait}?prey=${result.symbol}`}
                           >
                             {bait}
                           </Link>,
