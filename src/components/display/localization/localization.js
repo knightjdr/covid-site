@@ -25,11 +25,11 @@ const Localization = ({
       </h2>
       <p className="display__legend">
         There are four structual viral proteins (E - envelope, M - membrane,
-        N - nucleocapsid and S - spike) and 25 non-structural proteins. We localized
-        these proteins in host cells using immunfluorescence and confirmed
-        localizations with Gene Ontology (GO) enrichments of proximal proteins
-        detected in BioID experiments. NB: NSP11 was too small for cloning and is
-        not included in this analysis.
+        N - nucleocapsid and S - spike) and 25 non-structural proteins. We are localizing
+        these proteins in host cells using immunfluorescence and Gene Ontology (GO) enrichments
+        of proximal proteins detected in BioID experiments. The current localizations listed
+        here are from UniProt.
+        {/* NB: NSP11 was too small for cloning and is not included in this analysis. */}
       </p>
       <p className="display__instructions">{userText}</p>
       <ProteinList
