@@ -20,10 +20,9 @@ const Genome = ({
         Genome
       </h2>
       <p className="display__legend">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Reference sequence
+        The viral genome is a single-stranded RNA approximately twenty-nine kilobases in size.
+        In has fifteen known open-reading frames that encode twenty-nine proteins.
+        The reference sequence for the features below is
         {' '}
         <Link to="https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3">MN908947.3</Link>
         .
