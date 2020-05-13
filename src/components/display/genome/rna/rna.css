@@ -24,6 +24,10 @@
 .display__sequence-rna rect {
   transition: fill 0.3s var(--timing-function);
 }
+
+.display__sequence-rna g[data-orf] {
+  cursor: default;
+}
 .display__sequence-rna g[data-orf]:hover rect {
   fill: var(--color-display-focus);
 }

@@ -10,8 +10,9 @@ import description from './description/description';
 import './genome.css';
 
 const Genome = ({
-  handleMouseOver,
+  handleClick,
   orf,
+  userText,
 }) => (
   <section className="display">
     <div className="display__inner">
@@ -27,11 +28,9 @@ const Genome = ({
         <Link to="https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3">MN908947.3</Link>
         .
       </p>
-      <p className="display__instructions">
-        View details about each ORF by hovering over it.
-      </p>
+      <p className="display__instructions">{userText}</p>
       <div className="display__genome">
-        <RNA handleMouseOver={handleMouseOver} />
+        <RNA handleClick={handleClick} />
         { orf && description[orf] }
       </div>
     </div>
@@ -39,8 +38,9 @@ const Genome = ({
 );
 
 Genome.propTypes = {
-  handleMouseOver: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
   orf: PropTypes.string.isRequired,
+  userText: PropTypes.string.isRequired,
 };
 
 export default Genome;

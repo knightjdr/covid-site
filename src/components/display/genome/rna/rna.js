@@ -4,7 +4,7 @@ import React from 'react';
 import './rna.css';
 
 const RNA = ({
-  handleMouseOver,
+  handleClick,
 }) => (
   <div className="display__sequence-rna">
     <svg
@@ -26,8 +26,7 @@ const RNA = ({
         <g className="display__sequence-rna-orf1a">
           <g
             data-orf="ORF1a"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={220.75}
@@ -47,8 +46,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF1ab"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={355.97}
@@ -70,8 +68,7 @@ const RNA = ({
         <g className="display__sequence-rna-sp">
           <g
             data-orf="S"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={63.89}
@@ -91,8 +88,7 @@ const RNA = ({
           </g>
           <g
             data-orf="E"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={3.8}
@@ -118,8 +114,7 @@ const RNA = ({
           </g>
           <g
             data-orf="M"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={11.17}
@@ -139,8 +134,7 @@ const RNA = ({
           </g>
           <g
             data-orf="N"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={21.05}
@@ -162,8 +156,7 @@ const RNA = ({
         <g className="display__sequence-rna-nsp">
           <g
             data-orf="ORF3a"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={13.83}
@@ -183,8 +176,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF3b"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={2.89}
@@ -204,8 +196,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF6"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={3.09}
@@ -225,8 +216,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF7a"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={6.1}
@@ -252,8 +242,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF7b"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={2.19}
@@ -279,8 +268,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF8"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               data-orf="ORF8"
@@ -301,8 +289,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF9b"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={4.9}
@@ -322,8 +309,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF14"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={3.7}
@@ -349,8 +335,7 @@ const RNA = ({
           </g>
           <g
             data-orf="ORF10"
-            onFocus={handleMouseOver}
-            onMouseOver={handleMouseOver}
+            onClick={handleClick}
           >
             <rect
               height={1.94}
@@ -391,7 +376,7 @@ const RNA = ({
 );
 
 RNA.propTypes = {
-  handleMouseOver: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default RNA;

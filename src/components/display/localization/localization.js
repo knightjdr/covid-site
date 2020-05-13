@@ -15,6 +15,7 @@ const Localization = ({
   handleProteinMouseOut,
   handleProteinMouseOver,
   highlighted,
+  userText,
 }) => (
   <section className="display">
     <div className="display__inner">
@@ -30,10 +31,7 @@ const Localization = ({
         detected in BioID experiments. NB: NSP11 was too small for cloning and is
         not included in this analysis.
       </p>
-      <p className="display__instructions">
-        Hover over a protein to view its localization or over a compartment
-        to view all viral proteins that localize there.
-      </p>
+      <p className="display__instructions">{userText}</p>
       <ProteinList
         handleProteinMouseOut={handleProteinMouseOut}
         handleProteinMouseOver={handleProteinMouseOver}
@@ -64,6 +62,7 @@ Localization.propTypes = {
     protein: PropTypes.string,
     virus: PropTypes.string,
   }).isRequired,
+  userText: PropTypes.string.isRequired,
 };
 
 export default Localization;
