@@ -24,8 +24,8 @@ const description = {
         <span>Reports</span>
         <ul>
           <li><Link nav to="/NSP2">NSP2</Link></li>
-          <li><Link nav to="/NSP2">NSP4</Link></li>
-          <li><Link nav to="/NSP2">NSP8</Link></li>
+          <li><Link nav to="/NSP4">NSP4</Link></li>
+          <li><Link nav to="/NSP8">NSP8</Link></li>
         </ul>
       </div>
     </div>
@@ -49,8 +49,8 @@ const description = {
         <span>Reports</span>
         <ul>
           <li><Link nav to="/NSP2">NSP2</Link></li>
-          <li><Link nav to="/NSP2">NSP4</Link></li>
-          <li><Link nav to="/NSP2">NSP8</Link></li>
+          <li><Link nav to="/NSP4">NSP4</Link></li>
+          <li><Link nav to="/NSP8">NSP8</Link></li>
         </ul>
       </div>
     </div>

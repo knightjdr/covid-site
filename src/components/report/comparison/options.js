@@ -50,12 +50,14 @@ const Options = ({
     <div className="comparison__options-zoom">
       <span>Zoom:</span>
       <ButtonIcon
+        ariaLabel="zoom in"
         data-delta={-1}
         icon={faPlus}
         kind="secondary"
         onClick={handleZoom}
       />
       <ButtonIcon
+        ariaLabel="zoom out"
         data-delta={1}
         icon={faMinus}
         kind="secondary"

@@ -5,7 +5,7 @@ import { faParagraph } from '@fortawesome/pro-duotone-svg-icons';
 import './summary.css';
 
 const Summary = () => (
-  <section className="display display__summary">
+  <section className="display summary">
     <div className="display__inner">
       <h2 className="display__title">
         <FontAwesomeIcon icon={faParagraph} />

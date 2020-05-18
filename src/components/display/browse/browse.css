@@ -29,6 +29,10 @@
   border-top-right-radius: 0;
 }
 
+.browse h2 {
+  width: 100%;
+}
+
 @media (max-width: 800px) {
   .browse__inputs {
     flex-direction: column;

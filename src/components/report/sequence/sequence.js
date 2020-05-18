@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { faCopy } from '@fortawesome/pro-solid-svg-icons';
 
+import ButtonIcon from '../../buttons/icon/button';
 import Details from '../../details/details';
-import IconButton from '../../buttons/icon/button';
 
 import './sequence.css';
 
@@ -18,7 +18,8 @@ const Sequence = ({
       </code>
       <div className="report__protein-copy">
         <span>Copy</span>
-        <IconButton
+        <ButtonIcon
+          ariaLabel="copy"
           icon={faCopy}
           kind="primary"
           onClick={copyProteinToClipboard}

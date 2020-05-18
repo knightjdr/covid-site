@@ -67,6 +67,7 @@ const Browse = ({
           value={searchTerm}
         />
         <ButtonIcon
+          ariaLabel="search"
           kind="primary"
           icon={faSearch}
           onClick={handleClick}

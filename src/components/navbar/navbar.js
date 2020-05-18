@@ -30,6 +30,7 @@ const Navbar = forwardRef((
     <Icon pathName={pathName} />
     <div className={`nav__menu ${isMenuOpen ? 'nav__menu_open' : 'nav__menu_closed'}`}>
       <ButtonIcon
+        ariaLabel="navigation menu"
         icon={faBars}
         kind="primary"
         onClick={handleClick}

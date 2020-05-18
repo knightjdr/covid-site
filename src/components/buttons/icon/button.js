@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import StyledButton from './button-style';
 
 const IconButton = ({
+  ariaLabel,
   icon,
   pulse,
   rotation,
@@ -13,6 +14,8 @@ const IconButton = ({
   ...props
 }) => (
   <StyledButton
+    aria-hidden={false}
+    aria-label={ariaLabel}
     {...props}
   >
     <FontAwesomeIcon
@@ -33,6 +36,7 @@ IconButton.defaultProps = {
 };
 
 IconButton.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
   icon: PropTypes.shape({}).isRequired,
   pulse: PropTypes.bool,
   rotation: PropTypes.number,

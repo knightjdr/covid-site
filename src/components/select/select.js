@@ -5,6 +5,7 @@ import './select.css';
 
 const Select = ({
   className,
+  id,
   label,
   onChange,
   options,
@@ -21,9 +22,10 @@ const Select = ({
     <div className={classes.join(' ')}>
       {
         label
-        && <span className="select__label">{label}</span>
+        && <label className="select__label" htmlFor={id}>{label}</label>
       }
       <select
+        id={id}
         onChange={onChange}
         value={value}
         {...props}
@@ -60,6 +62,7 @@ Select.defaultProps = {
 
 Select.propTypes = {
   className: PropTypes.string,
+  id: PropTypes.string.isRequired,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,

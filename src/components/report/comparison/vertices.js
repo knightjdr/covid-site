@@ -11,6 +11,7 @@ const Vertices = ({
   <div className="comparison__select-menus">
     <Select
       data-vertex="x"
+      id="vertex_x"
       onChange={selectCondition}
       options={conditions}
       placeholder="Select x..."
@@ -18,6 +19,7 @@ const Vertices = ({
     />
     <Select
       data-vertex="y"
+      id="vertex_y"
       onChange={selectCondition}
       options={conditions}
       placeholder="Select y..."
