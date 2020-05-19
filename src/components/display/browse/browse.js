@@ -25,7 +25,7 @@ const Browse = ({
   <div className="display browse">
     <h2>Browse & Search</h2>
     <p className="display__instructions">
-      We profiled eight of twenty-eight proteins from the viral genome (twenty in progress).
+      We profiled eight of twenty-nine proteins from the viral genome (twenty-one in progress).
       Select one below to view a detailed report or search for viral proteins that interact with
       a human protein.
     </p>
