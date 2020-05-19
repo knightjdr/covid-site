@@ -1,6 +1,6 @@
 a {
   background-color: transparent;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
 }

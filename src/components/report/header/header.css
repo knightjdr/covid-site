@@ -29,6 +29,9 @@
   width: 100%;
 }
 
+.report__header a {
+  font-family: var(--font-secondary);
+}
 .report__header a:link {
   color: var(--color-accent-link);
 }

@@ -92,6 +92,7 @@
 
 .nav__menu a,
 .nav__right a {
+  font-family: var(--font-secondary);
   text-decoration: none;
   transition: color 0.3s ease;
 }

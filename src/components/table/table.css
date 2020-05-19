@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.table {
+  font-family: var(--font-secondary);
+}
+
 .table tbody {
   border-bottom: 2px solid var(--color-secondary);
 }
@@ -15,7 +19,6 @@
 .table thead {
   border-bottom: 2px solid var(--color-secondary);
   border-top: 2px solid var(--color-secondary);
-  font-family: var(--font-secondary);
   font-size: 1.2rem;
   padding: 0.2rem 0.5rem;
 }
@@ -28,4 +31,8 @@
 .table td,
 .table th {
   text-align: center;
+}
+
+.table a {
+  font-family: var(--font-secondary);
 }
