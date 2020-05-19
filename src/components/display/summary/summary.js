@@ -35,6 +35,17 @@ const Summary = () => (
         infection) and proximity interactions for host proteins will be added to this
         website as the data are generated.
       </p>
+      <h3>Notes</h3>
+      <p>
+        Consider installing the browser extension
+        {' '}
+        <Link to="https://gene-info.org">
+          GIX
+        </Link>
+        {' '}
+        for retrieving human gene information anywhere on this website by double-clicking on
+        its name or immediately next to the name on report tables.
+      </p>
     </div>
   </section>
 );
