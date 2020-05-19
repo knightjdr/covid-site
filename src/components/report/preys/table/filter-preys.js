@@ -1,6 +1,10 @@
-const filterPreys = (preys, fdr, spectralCount) => {
+const filterPreys = (preys, fdr, specificity, spectralCount) => {
   const filteredEntries = Object.entries(preys).filter(([, preyData]) => (
-    Object.values(preyData.conditions).some((condition) => condition.fdr <= fdr && condition.count >= spectralCount)
+    Object.values(preyData.conditions).some((condition) => (
+      condition.fdr <= fdr
+      && condition.count >= spectralCount
+      && (condition.specificity === 'Infinity' || condition.specificity >= specificity)
+    ))
   ));
 
   const filtered = {};

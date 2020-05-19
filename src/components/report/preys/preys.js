@@ -13,11 +13,13 @@ import Filters from './filters';
 const Preys = ({
   conditions,
   fdr,
+  handleCountChange,
   handleFDRChange,
-  handleSpecChange,
+  handleSpecificityChange,
   highlightedPrey,
   id,
   preys,
+  specificity,
   spectralCount,
 }) => (
   <div className="report__preys">
@@ -26,8 +28,10 @@ const Preys = ({
     <div className="report__prey-options">
       <Filters
         fdr={fdr}
+        handleCountChange={handleCountChange}
         handleFDRChange={handleFDRChange}
-        handleSpecChange={handleSpecChange}
+        handleSpecificityChange={handleSpecificityChange}
+        specificity={specificity}
         spectralCount={spectralCount}
       />
       <Link
@@ -44,6 +48,7 @@ const Preys = ({
       fdr={fdr}
       highlightedPrey={highlightedPrey}
       preys={preys}
+      specificity={specificity}
       spectralCount={spectralCount}
     />
   </div>
@@ -52,11 +57,13 @@ const Preys = ({
 Preys.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   fdr: PropTypes.number.isRequired,
+  handleCountChange: PropTypes.func.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
-  handleSpecChange: PropTypes.func.isRequired,
+  handleSpecificityChange: PropTypes.func.isRequired,
   highlightedPrey: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
+  specificity: PropTypes.number.isRequired,
   spectralCount: PropTypes.number.isRequired,
 };
 

@@ -5,8 +5,10 @@ import Input from '../../input/input';
 
 const Filters = ({
   fdr,
+  handleCountChange,
   handleFDRChange,
-  handleSpecChange,
+  handleSpecificityChange,
+  specificity,
   spectralCount,
 }) => (
   <div className="report__prey-filters">
@@ -23,21 +25,33 @@ const Filters = ({
     />
     <Input
       direction="horizontal"
-      id="table_spec_filter"
+      id="table_count_filter"
       label="Spectral count:"
       min={0}
-      onChange={handleSpecChange}
+      onChange={handleCountChange}
       step={1}
       type="number"
       value={spectralCount}
+    />
+    <Input
+      direction="horizontal"
+      id="table_specificity_filter"
+      label="Specificity:"
+      min={0}
+      onChange={handleSpecificityChange}
+      step={1}
+      type="number"
+      value={specificity}
     />
   </div>
 );
 
 Filters.propTypes = {
   fdr: PropTypes.number.isRequired,
+  handleCountChange: PropTypes.func.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
-  handleSpecChange: PropTypes.func.isRequired,
+  handleSpecificityChange: PropTypes.func.isRequired,
+  specificity: PropTypes.number.isRequired,
   spectralCount: PropTypes.number.isRequired,
 };
 

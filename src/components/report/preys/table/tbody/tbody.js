@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Link from '../../../../link/link';
 
@@ -30,15 +30,31 @@ const TableBody = ({
           </td>
           {
             conditions.map((condition) => (
-              <td key={`${row.prey}-${condition}`}>
+              <Fragment key={`${row.prey}-${condition}`}>
                 {
                   row.conditions[condition]
                     ? (
-                      `${row.conditions[condition].count} (${row.conditions[condition].fdr})`
+                      <>
+                        <td>
+                          {row.conditions[condition].count}
+                        </td>
+                        <td>
+                          {row.conditions[condition].specificity}
+                        </td>
+                        <td>
+                          {row.conditions[condition].fdr}
+                        </td>
+                      </>
                     )
-                    : '-'
+                    : (
+                      <>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      </>
+                    )
                 }
-              </td>
+              </Fragment>
             ))
           }
         </tr>

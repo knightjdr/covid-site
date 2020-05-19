@@ -1,6 +1,6 @@
 import isNumber from '../is-number';
 
-const validateSpec = (e) => {
+const validateCount = (e) => {
   let value = Number(e.target.value);
   if (isNumber(value)) {
     value = Math.max(0, value);
@@ -9,4 +9,4 @@ const validateSpec = (e) => {
   return [false];
 };
 
-export default validateSpec;
+export default validateCount;

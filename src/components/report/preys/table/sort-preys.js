@@ -1,11 +1,11 @@
 import sortArrByKey from '../../../../utils/sort/sort-arr-by-key';
 
-const defineConditionGetter = (condition) => (
+const defineConditionGetter = (condition, metric) => (
   condition === 'prey'
     ? (prey) => ({ prey })
     : (prey, conditions) => ({
       prey,
-      value: conditions[condition] ? conditions[condition].count : 0,
+      value: conditions[condition] ? Number(conditions[condition][metric]) : 0,
     })
 );
 
@@ -27,10 +27,11 @@ const sortPreys = (preys, options) => {
     condition,
     direction,
     highlightedPrey,
+    metric,
     type: sortType,
   } = options;
 
-  const getSortValue = defineConditionGetter(condition);
+  const getSortValue = defineConditionGetter(condition, metric);
   const conditionValues = Object.entries(preys).map(([prey, preyData]) => getSortValue(prey, preyData.conditions));
 
   const sortKey = sortType === 'string' ? 'prey' : 'value';

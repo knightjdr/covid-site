@@ -5,9 +5,12 @@ import Table from './table';
 import filterPreys from './filter-preys';
 import sortPreys from './sort-preys';
 
-const getDirection = (condition, previousOptions) => {
+const getDirection = (condition, metric, previousOptions) => {
   const swapDirection = (direction) => (direction === 'asc' ? 'des' : 'asc');
-  return condition === previousOptions.condition ? swapDirection(previousOptions.direction) : 'des';
+  return condition === previousOptions.condition
+    && metric === previousOptions.metric
+    ? swapDirection(previousOptions.direction)
+    : 'des';
 };
 
 const TableContainer = ({
@@ -15,18 +18,20 @@ const TableContainer = ({
   fdr,
   highlightedPrey,
   preys,
+  specificity,
   spectralCount,
 }) => {
   const [sortOptions, setSortOptions] = useState({
     condition: conditions[0],
     direction: 'des',
     highlightedPrey,
+    metric: 'count',
     type: 'numeric',
   });
 
   const filteredPreys = useMemo(
-    () => filterPreys(preys, fdr, spectralCount),
-    [fdr, preys, spectralCount],
+    () => filterPreys(preys, fdr, specificity, spectralCount),
+    [fdr, preys, specificity, spectralCount],
   );
 
   const rows = useMemo(
@@ -38,11 +43,12 @@ const TableContainer = ({
   );
 
   const handleSortByColumn = (e) => {
-    const { condition } = e.currentTarget.dataset;
+    const { condition, metric } = e.currentTarget.dataset;
     setSortOptions({
       condition,
-      direction: getDirection(condition, sortOptions),
+      direction: getDirection(condition, metric, sortOptions),
       highlightedPrey: '',
+      metric,
       type: condition === 'prey' ? 'string' : 'numeric',
     });
   };
@@ -62,6 +68,7 @@ TableContainer.propTypes = {
   fdr: PropTypes.number.isRequired,
   highlightedPrey: PropTypes.string.isRequired,
   preys: PropTypes.shape({}).isRequired,
+  specificity: PropTypes.number.isRequired,
   spectralCount: PropTypes.number.isRequired,
 };
 

@@ -4,8 +4,8 @@ import React from 'react';
 import Options from './options';
 
 import download from '../../../utils/download';
+import validateCount from '../../../utils/input-handlers/validate-count';
 import validateFDR from '../../../utils/input-handlers/validate-fdr';
-import validateSpec from '../../../utils/input-handlers/validate-spec';
 import {
   defaultState as defaulTransform,
   handlers as transformHandlers,
@@ -41,7 +41,7 @@ const OptionsContainer = ({
   };
 
   const handleSpecChange = (e) => {
-    const [validated, value] = validateSpec(e);
+    const [validated, value] = validateCount(e);
     if (validated) {
       changeOption('count', value);
     }

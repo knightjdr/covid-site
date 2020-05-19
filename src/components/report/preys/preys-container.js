@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { useQueryParam, StringParam } from 'use-query-params';
 
 import Preys from './preys';
+import validateCount from '../../../utils/input-handlers/validate-count';
 import validateFDR from '../../../utils/input-handlers/validate-fdr';
-import validateSpec from '../../../utils/input-handlers/validate-spec';
 
 const PreysContainer = ({
   conditions,
@@ -13,7 +13,15 @@ const PreysContainer = ({
 }) => {
   const [fdr, setFDR] = useState(0.01);
   const [spectralCount, setSpectralCount] = useState(0);
+  const [specificity, setSpecificity] = useState(0);
   const [highlightedPrey] = useQueryParam('prey', StringParam);
+
+  const handleCountChange = (e) => {
+    const [validated, value] = validateCount(e);
+    if (validated) {
+      setSpectralCount(value);
+    }
+  };
 
   const handleFDRChange = (e) => {
     const [validated, value] = validateFDR(e);
@@ -22,10 +30,10 @@ const PreysContainer = ({
     }
   };
 
-  const handleSpecChange = (e) => {
-    const [validated, value] = validateSpec(e);
+  const handleSpecificityChange = (e) => {
+    const [validated, value] = validateCount(e);
     if (validated) {
-      setSpectralCount(value);
+      setSpecificity(value);
     }
   };
 
@@ -33,11 +41,13 @@ const PreysContainer = ({
     <Preys
       conditions={conditions}
       fdr={fdr}
+      handleCountChange={handleCountChange}
       handleFDRChange={handleFDRChange}
-      handleSpecChange={handleSpecChange}
+      handleSpecificityChange={handleSpecificityChange}
       highlightedPrey={highlightedPrey || ''}
       id={id}
       preys={preys}
+      specificity={specificity}
       spectralCount={spectralCount}
     />
   );
