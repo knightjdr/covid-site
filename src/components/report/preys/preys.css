@@ -18,6 +18,10 @@
   margin-bottom: 0.8rem;
 }
 
+.report__prey-legend li > span {
+  font-weight: bold;
+}
+
 .report__prey-legend ul {
   background-color: var(--color-dark-accent);
   border-radius: 0.2rem;

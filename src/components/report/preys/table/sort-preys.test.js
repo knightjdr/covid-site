@@ -3,7 +3,12 @@ import sortPreys from './sort-preys';
 describe('Sort preys', () => {
   describe('sort by spectral count', () => {
     it('should in ascending direction', () => {
-      const options = { condition: 'b', direction: 'asc', type: 'numeric' };
+      const options = {
+        condition: 'b',
+        direction: 'asc',
+        metric: 'count',
+        type: 'numeric',
+      };
       const preys = {
         prey1: {
           id: 'id1',
@@ -58,7 +63,12 @@ describe('Sort preys', () => {
     });
 
     it('should in descending direction', () => {
-      const options = { condition: 'b', direction: 'des', type: 'numeric' };
+      const options = {
+        condition: 'b',
+        direction: 'des',
+        metric: 'count',
+        type: 'numeric',
+      };
       const preys = {
         prey1: {
           id: 'id1',
@@ -115,7 +125,12 @@ describe('Sort preys', () => {
 
   describe('sort by prey name', () => {
     it('should in ascending direction', () => {
-      const options = { condition: 'prey', direction: 'asc', type: 'string' };
+      const options = {
+        condition: 'prey',
+        direction: 'asc',
+        metric: 'count',
+        type: 'string',
+      };
       const preys = {
         prey1: {
           id: 'id1',
@@ -170,7 +185,12 @@ describe('Sort preys', () => {
     });
 
     it('should in descending direction', () => {
-      const options = { condition: 'prey', direction: 'des', type: 'string' };
+      const options = {
+        condition: 'prey',
+        direction: 'des',
+        metric: 'count',
+        type: 'string',
+      };
       const preys = {
         prey1: {
           id: 'id1',
@@ -231,6 +251,7 @@ describe('Sort preys', () => {
         condition: 'prey',
         direction: 'asc',
         highlightedPrey: 'prey3',
+        metric: 'count',
         type: 'string',
       };
       const preys = {

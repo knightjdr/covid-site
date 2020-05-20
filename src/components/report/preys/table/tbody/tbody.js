@@ -71,6 +71,10 @@ TableBody.propTypes = {
     conditions: PropTypes.shape({
       count: PropTypes.number,
       fdr: PropTypes.number,
+      specificity: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+      ]),
     }),
   })).isRequired,
 };
