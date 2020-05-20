@@ -2,26 +2,28 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { faMinus, faPlus } from '@fortawesome/pro-solid-svg-icons';
 
-import Button from '../../buttons/rectangular/button';
-import ButtonIcon from '../../buttons/icon/button';
-import Input from '../../input/input';
-import Switch from '../../switch/switch';
+import Button from '../../../buttons/rectangular/button';
+import ButtonIcon from '../../../buttons/icon/button';
+import Input from '../../../input/input';
+import Switch from '../../../switch/switch';
 
 import './options.css';
 
 const Options = ({
+  handleCountChange,
   handleExport,
   handleFDRChange,
   handleLogToggle,
   handleReset,
-  handleSpecChange,
+  handleSpecificityChange,
   handleZoom,
+  id,
   options,
 }) => (
   <div className="comparison__options">
     <Input
       direction="horizontal"
-      id="comparison_fdr_option"
+      id={`${id}_fdr_option`}
       label="FDR:"
       max={1}
       min={0}
@@ -32,17 +34,27 @@ const Options = ({
     />
     <Input
       direction="horizontal"
-      id="comparison_spec_option"
+      id={`${id}_count_option`}
       label="Spectral count:"
       min={0}
-      onChange={handleSpecChange}
+      onChange={handleCountChange}
+      step={1}
+      type="number"
+      value={options.count}
+    />
+    <Input
+      direction="horizontal"
+      id={`${id}_specificity_option`}
+      label="Specificity:"
+      min={0}
+      onChange={handleSpecificityChange}
       step={1}
       type="number"
       value={options.count}
     />
     <Switch
       checked={options.log}
-      id="comparison_log_option"
+      id={`${id}_log_option`}
       label="Log axes:"
       onChange={handleLogToggle}
       type="checkbox"
@@ -80,12 +92,14 @@ const Options = ({
 );
 
 Options.propTypes = {
+  handleCountChange: PropTypes.func.isRequired,
   handleExport: PropTypes.func.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
   handleLogToggle: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
-  handleSpecChange: PropTypes.func.isRequired,
+  handleSpecificityChange: PropTypes.func.isRequired,
   handleZoom: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   options: PropTypes.shape({
     count: PropTypes.number,
     fdr: PropTypes.number,

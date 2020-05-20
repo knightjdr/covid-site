@@ -2,12 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import chartScatter from './chart-scatter.svg';
 import circleDown from './caret-circle-down.svg';
 import circleRight from './caret-circle-right.svg';
 import dot from './dot-circle.svg';
 import info from './info-circle.svg';
 
 const icon = {
+  chart: chartScatter,
   dot,
   info,
 };

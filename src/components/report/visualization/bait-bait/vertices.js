@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Select from '../../select/select';
+import Select from '../../../select/select';
 
 const Vertices = ({
   conditions,

@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 
-import './chart.css';
 import ScatterPlot from './scatterplot/scatterplot-container';
+
+import './chart.css';
 
 const Chart = forwardRef((
   {
     data,
+    id,
+    placeholderText,
     transform,
   },
   ref,
@@ -22,6 +25,7 @@ const Chart = forwardRef((
             <div className="chart__svg-container">
               <ScatterPlot
                 axisLength={data.axisLength}
+                id={id}
                 log={data.log}
                 midline={data.midline}
                 plotDimension={data.plotDimension}
@@ -36,9 +40,7 @@ const Chart = forwardRef((
         : (
           <div className="chart__placeholder">
             <div className="chart__placeholder-inner">
-              <span>
-                Select a pair of conditions
-              </span>
+              <span>{placeholderText}</span>
             </div>
           </div>
         )
@@ -83,6 +85,8 @@ Chart.propTypes = {
       ),
     }),
   }).isRequired,
+  id: PropTypes.string.isRequired,
+  placeholderText: PropTypes.string.isRequired,
   transform: PropTypes.shape({
     origin: PropTypes.shape({
       x: PropTypes.number,

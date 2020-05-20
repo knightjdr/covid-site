@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Comparison from './comparison/comparison-container';
-
 import IF from './if/if';
 import Preys from './preys/preys-container';
 import Sequence from './sequence/sequence-container';
+import Visualization from './visualization/visualization';
 
 import './report.css';
 import Header from './header/header';
@@ -32,15 +31,10 @@ const Report = ({
     <div className="report__options">
       <IF images={images} />
       <Sequence sequence={sequence} />
-      {
-        conditions.length > 1
-          && (
-            <Comparison
-              conditions={conditions}
-              preys={preys}
-            />
-          )
-      }
+      <Visualization
+        conditions={conditions}
+        preys={preys}
+      />
     </div>
     <Preys
       conditions={conditions}

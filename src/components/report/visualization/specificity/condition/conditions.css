@@ -1,0 +1,8 @@
+.specificity__conditions {
+  display: flex;
+  flex-direction: column;
+}
+.specificity__conditions > .select {
+  margin-bottom: 1rem;
+  width: 10rem;
+}

@@ -15,6 +15,7 @@ const ScatterPlot = ({
   handleWheelX,
   handleWheelXY,
   handleWheelY,
+  id,
   log,
   midline,
   plotDimension,
@@ -25,7 +26,7 @@ const ScatterPlot = ({
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    id="scatterplot"
+    id={id}
     className="scatterplot"
     height={plotDimension}
     width={plotDimension}
@@ -34,6 +35,7 @@ const ScatterPlot = ({
       axisLength={axisLength}
       handleMouseDown={handleMouseDownXY}
       handleWheel={handleWheelXY}
+      id={id}
       midline={midline}
       points={points}
       transform={transform}
@@ -42,6 +44,7 @@ const ScatterPlot = ({
       axisLength={axisLength}
       handleMouseDownY={handleMouseDownY}
       handleWheelY={handleWheelY}
+      id={id}
       log={log}
       transform={transform}
       y={y}
@@ -50,6 +53,7 @@ const ScatterPlot = ({
       axisLength={axisLength}
       handleMouseDownX={handleMouseDownX}
       handleWheel={handleWheelX}
+      id={id}
       log={log}
       transform={transform}
       x={x}
@@ -65,6 +69,7 @@ ScatterPlot.propTypes = {
   handleWheelX: PropTypes.func.isRequired,
   handleWheelXY: PropTypes.func.isRequired,
   handleWheelY: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   log: PropTypes.bool.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,

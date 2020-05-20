@@ -8,6 +8,7 @@ const Yaxis = ({
   axisLength,
   handleMouseDownY,
   handleWheelY,
+  id,
   transform,
   y,
 }) => {
@@ -24,7 +25,7 @@ const Yaxis = ({
       onWheel={handleWheelY}
     >
       <defs>
-        <clipPath id="yaxis_text_clip">
+        <clipPath id={`${id}_yaxis_text_clip`}>
           <rect
             height={axisLength + 25}
             width={65}
@@ -32,7 +33,7 @@ const Yaxis = ({
             y={0}
           />
         </clipPath>
-        <clipPath id="yaxis_tick_clip">
+        <clipPath id={`${id}_yaxis_tick_clip`}>
           <rect
             height={axisLength + 2}
             width={65}
@@ -41,7 +42,7 @@ const Yaxis = ({
           />
         </clipPath>
       </defs>
-      <g id="scatterplot__yaxis-wheel">
+      <g id={`${id}_yaxis_wheel`}>
         <rect
           height={axisLength}
           opacity={0}
@@ -58,7 +59,7 @@ const Yaxis = ({
         y1={AXIS_OFFSET}
         y2={AXIS_OFFSET + axisLength}
       />
-      <g clipPath="url(#yaxis_tick_clip)">
+      <g clipPath={`url(#${id}_yaxis_tick_clip)`}>
         <g transform={transform.matrix.yAxis}>
           {
             y.ticks.map((tick) => {
@@ -82,7 +83,7 @@ const Yaxis = ({
           }
         </g>
       </g>
-      <g clipPath="url(#yaxis_text_clip)">
+      <g clipPath={`url(#${id}_yaxis_text_clip)`}>
         <g transform={transform.matrix.yAxis}>
           {
             y.ticks.map((tick) => {
@@ -128,6 +129,7 @@ Yaxis.propTypes = {
   axisLength: PropTypes.number.isRequired,
   handleMouseDownY: PropTypes.func.isRequired,
   handleWheelY: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   transform: PropTypes.shape({
     scale: PropTypes.number,
     matrix: PropTypes.shape({

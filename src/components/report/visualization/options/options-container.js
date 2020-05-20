@@ -3,25 +3,33 @@ import React from 'react';
 
 import Options from './options';
 
-import download from '../../../utils/download';
-import validateCount from '../../../utils/input-handlers/validate-count';
-import validateFDR from '../../../utils/input-handlers/validate-fdr';
+import download from '../../../../utils/download';
+import validateCount from '../../../../utils/input-handlers/validate-count';
+import validateFDR from '../../../../utils/input-handlers/validate-fdr';
 import {
   defaultState as defaulTransform,
   handlers as transformHandlers,
-} from './chart/scatterplot/transforms/transforms';
+} from '../transforms/transforms';
 
 const OptionsContainer = ({
   changeOption,
+  id,
   options,
   transform,
 }) => {
   const { setTransform } = transform;
 
   const handleExport = () => {
-    const svg = document.getElementById('scatterplot');
+    const svg = document.getElementById(id);
     if (svg) {
-      download(svg.outerHTML, 'scatterplot.svg');
+      download(svg.outerHTML, `${id}.svg`);
+    }
+  };
+
+  const handleCountChange = (e) => {
+    const [validated, value] = validateCount(e);
+    if (validated) {
+      changeOption('count', value);
     }
   };
 
@@ -40,7 +48,7 @@ const OptionsContainer = ({
     setTransform(defaulTransform);
   };
 
-  const handleSpecChange = (e) => {
+  const handleSpecificityChange = (e) => {
     const [validated, value] = validateCount(e);
     if (validated) {
       changeOption('count', value);
@@ -51,10 +59,10 @@ const OptionsContainer = ({
     const pseudoE = {
       deltaY: Number(e.currentTarget.dataset.delta),
       preventDefault: () => {},
-      currentTarget: document.querySelector('#scatterplot'),
+      currentTarget: document.getElementById(id),
     };
     const wheelOptions = {
-      id: '#scatterplot__points-wheel',
+      id: `#${id}_points_wheel`,
       transform,
       vertex: 'center',
     };
@@ -63,12 +71,14 @@ const OptionsContainer = ({
 
   return (
     <Options
+      handleCountChange={handleCountChange}
       handleExport={handleExport}
       handleFDRChange={handleFDRChange}
       handleLogToggle={handleLogToggle}
       handleReset={handleReset}
-      handleSpecChange={handleSpecChange}
+      handleSpecificityChange={handleSpecificityChange}
       handleZoom={handleZoom}
+      id={id}
       options={options}
     />
   );
@@ -76,6 +86,7 @@ const OptionsContainer = ({
 
 OptionsContainer.propTypes = {
   changeOption: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   options: PropTypes.shape({}).isRequired,
   transform: PropTypes.shape({
     origin: PropTypes.shape({

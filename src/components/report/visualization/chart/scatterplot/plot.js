@@ -8,6 +8,7 @@ const Plot = ({
   axisLength,
   handleMouseDown,
   handleWheel,
+  id,
   midline,
   points,
   transform,
@@ -18,7 +19,7 @@ const Plot = ({
     transform="translate(60 15)"
   >
     <defs>
-      <clipPath id="points_clip">
+      <clipPath id={`${id}_points_clip`}>
         <rect
           height={axisLength}
           width={axisLength}
@@ -27,7 +28,7 @@ const Plot = ({
         />
       </clipPath>
     </defs>
-    <g id="scatterplot__points-wheel">
+    <g id={`${id}_points_wheel`}>
       <rect
         height={axisLength}
         opacity={0}
@@ -36,7 +37,7 @@ const Plot = ({
         y={0}
       />
     </g>
-    <g clipPath="url(#points_clip)">
+    <g clipPath={`url(#${id}_points_clip)`}>
       <g transform={transform.matrix.plot}>
         <Midline
           midline={midline}
@@ -56,6 +57,7 @@ Plot.propTypes = {
   axisLength: PropTypes.number.isRequired,
   handleMouseDown: PropTypes.func.isRequired,
   handleWheel: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,
     y: PropTypes.number,

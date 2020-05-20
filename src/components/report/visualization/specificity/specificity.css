@@ -1,0 +1,13 @@
+.specificity h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.specificity__inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+  padding-bottom: 1rem;
+}
+.specificity__inner > * {
+  margin: 0.5rem 0.5rem;
+}

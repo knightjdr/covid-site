@@ -3,10 +3,11 @@ import React from 'react';
 
 import Scatterplot from './scatterplot';
 
-import { handlers } from './transforms/transforms';
+import { handlers } from '../../transforms/transforms';
 
 const ScatterplotContainer = ({
   axisLength,
+  id,
   log,
   midline,
   plotDimension,
@@ -37,7 +38,7 @@ const ScatterplotContainer = ({
 
   const handleWheelX = (e) => {
     const options = {
-      id: '#scatterplot__xaxis-wheel',
+      id: `#${id}_xaxis_wheel`,
       transform,
       vertex: 'x',
     };
@@ -46,7 +47,7 @@ const ScatterplotContainer = ({
 
   const handleWheelXY = (e) => {
     const options = {
-      id: '#scatterplot__points-wheel',
+      id: `#${id}_points_wheel`,
       transform,
     };
     handlers.zoom(e, options);
@@ -54,7 +55,7 @@ const ScatterplotContainer = ({
 
   const handleWheelY = (e) => {
     const options = {
-      id: '#scatterplot__yaxis-wheel',
+      id: `#${id}_yaxis_wheel`,
       transform,
       vertex: 'y',
     };
@@ -70,6 +71,7 @@ const ScatterplotContainer = ({
       handleWheelX={handleWheelX}
       handleWheelXY={handleWheelXY}
       handleWheelY={handleWheelY}
+      id={id}
       log={log}
       midline={midline}
       plotDimension={plotDimension}
@@ -83,6 +85,7 @@ const ScatterplotContainer = ({
 
 ScatterplotContainer.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   log: PropTypes.bool.isRequired,
   midline: PropTypes.shape({
     x: PropTypes.number,

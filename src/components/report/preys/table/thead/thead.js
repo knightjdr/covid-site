@@ -46,7 +46,7 @@ const TableHead = ({
           <Fragment key={`column-${condition}`}>
             <th>
               <div className="report__th-inner">
-                <span>S.C.</span>
+                <span title="spectral count">S.C.</span>
                 <SortButton
                   condition={condition}
                   handleSortByColumn={handleSortByColumn}
@@ -57,7 +57,7 @@ const TableHead = ({
             </th>
             <th>
               <div className="report__th-inner">
-                <span>Spec.</span>
+                <span title="specificity">Spec.</span>
                 <SortButton
                   condition={condition}
                   handleSortByColumn={handleSortByColumn}
