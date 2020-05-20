@@ -57,7 +57,8 @@ const ResourcesPage = () => (
         </Link>
       </li>
     </ul>
-    <h2 id="bioid">BioID</h2>
+    <h2>Definitions</h2>
+    <h3 id="bioid">BioID</h3>
     <p>
       BioID is a technique that identifies protein-protein interactions in living cells, and represents a
       powerful complementary approach to standard affinity purification approaches (e.g. immunoprecipitation
@@ -79,7 +80,7 @@ const ResourcesPage = () => (
       BioID does not require that protein-protein interactions be maintained post-lysis. Weak and/or transient
       interactors can thus also be identified with this technique.
     </p>
-    <h3>References</h3>
+    <h4>References</h4>
     <ul>
       <li>
         <Link to="https://www.sciencedirect.com/science/article/abs/pii/S1367593118301327?via%3Dihub">

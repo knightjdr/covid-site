@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faParagraph } from '@fortawesome/pro-duotone-svg-icons';
+import { faCommentAltExclamation } from '@fortawesome/pro-solid-svg-icons';
 
 import Link from '../../link/link';
 
@@ -27,8 +28,8 @@ const Summary = () => (
         , we aim to
         characterize the virus-host protein-protein interactome in multiple human cell types.
       </p>
-      <h3>Notes</h3>
-      <p>
+      <p className="summary__notes">
+        <FontAwesomeIcon icon={faCommentAltExclamation} />
         Consider installing the browser extension
         {' '}
         <Link to="https://gene-info.org">

@@ -31,17 +31,30 @@ const Legend = ({
         listStyleType="info"
         summary="Condition legend"
       >
-        <ul>
+        <ul className="report__prey-legend">
           {
             tags.map((tag) => (
               <li key={tag}>
-                {tag}
+                <span>{tag}</span>
                 :
                 {' '}
                 {descriptions[tag]}
               </li>
             ))
           }
+          <li>
+            <span>SC</span>
+            : spectral counts
+          </li>
+          <li>
+            <span>Spec</span>
+            : specificity, calculated as the fold enrichment of a prey in the condition relative
+            to all other baits in the same cell type
+          </li>
+          <li>
+            <span>FDR</span>
+            : false discovery rate
+          </li>
         </ul>
       </Details>
     </div>

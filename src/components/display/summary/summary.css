@@ -1,7 +1,16 @@
+.summary p {
+  width: 100%;
+}
+
 .summary .display__title {
   text-align: center;
 }
 
-.summary p {
-  width: 100%;
+.summary__notes {
+  border-top: 1px solid var(--color-font);
+  padding-top: 1rem;
+}
+.summary__notes svg {
+  color: var(--color-secondary);
+  margin-right: 0.6rem;
 }
