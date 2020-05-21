@@ -22,7 +22,7 @@ const Visualization = ({
         preys={preys}
       />
       {
-        conditions.length > 0
+        conditions.length > 1
         && (
           <BaitBait
             conditions={conditions}
