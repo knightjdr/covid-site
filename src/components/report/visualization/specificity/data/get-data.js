@@ -1,4 +1,5 @@
 import defineAxis from '../../data/define-axis';
+import defineMidline from '../../data/define-midline';
 import filterPreys from '../../data/filter-preys';
 import getDimensions from '../../data/get-dimensions';
 import scaleData from '../../data/scale-data';
@@ -36,20 +37,19 @@ const getData = (preys, ref, options) => {
 
   const scaledData = scaleData(filteredPreys, ticks, { ...dimensions, log: options.log });
 
+  const midline = options.midline ? defineMidline(scaledData.ticks, dimensions.axisLength, options.log) : null;
+
   return {
     ...dimensions,
     log: options.log,
-    midline: {
-      x: scaledData.ticks.x[scaledData.ticks.x.length - 1].x,
-      y: scaledData.ticks.y[scaledData.ticks.y.length - 1].y,
-    },
+    midline,
     points: scaledData.points,
     x: {
-      label: options.x,
+      label: 'spectral count',
       ticks: scaledData.ticks.x,
     },
     y: {
-      label: options.y,
+      label: 'specificity',
       ticks: scaledData.ticks.y,
     },
   };

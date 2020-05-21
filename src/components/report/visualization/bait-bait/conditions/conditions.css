@@ -1,0 +1,8 @@
+.bb__conditions {
+  display: flex;
+  flex-direction: column;
+}
+.bb__conditions > .select {
+  margin-bottom: 1rem;
+  width: 10rem;
+}

@@ -48,6 +48,10 @@ const Chart = forwardRef((
   </div>
 ));
 
+Chart.defaultProps = {
+  midline: false,
+};
+
 Chart.propTypes = {
   data: PropTypes.shape({
     axisLength: PropTypes.number,
@@ -86,6 +90,7 @@ Chart.propTypes = {
     }),
   }).isRequired,
   id: PropTypes.string.isRequired,
+  midline: PropTypes.bool,
   placeholderText: PropTypes.string.isRequired,
   transform: PropTypes.shape({
     origin: PropTypes.shape({

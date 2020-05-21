@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import BaitBait from './bait-bait/bb-container';
 import Details from '../../details/details';
 import Specificity from './specificity/specificity-container';
 
@@ -20,6 +21,15 @@ const Visualization = ({
         conditions={conditions}
         preys={preys}
       />
+      {
+        conditions.length > 1
+        && (
+          <BaitBait
+            conditions={conditions}
+            preys={preys}
+          />
+        )
+      }
     </div>
   </Details>
 );

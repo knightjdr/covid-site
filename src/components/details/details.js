@@ -7,11 +7,13 @@ import circleDown from './caret-circle-down.svg';
 import circleRight from './caret-circle-right.svg';
 import dot from './dot-circle.svg';
 import info from './info-circle.svg';
+import microscope from './microscope.svg';
 
 const icon = {
   chart: chartScatter,
   dot,
   info,
+  microscope,
 };
 
 const StyledDetails = styled.details`

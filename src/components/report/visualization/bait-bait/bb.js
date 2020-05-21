@@ -2,42 +2,42 @@ import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 
 import Chart from '../chart/chart';
-import Condition from './condition/condition';
+import Conditions from './conditions/conditions';
 import Options from '../options/options-container';
 
-import './specificity.css';
+import './bb.css';
 
-const Specificity = forwardRef((
+const BaitBait = forwardRef((
   {
     changeOption,
     conditions,
     data,
     options,
     selectCondition,
-    selectedCondition,
+    selectedConditions,
     transform,
   },
   ref,
 ) => (
-  <div className="specificity">
-    <h3>Specificity</h3>
-    <div className="specificity__inner">
-      <Condition
+  <div className="bb">
+    <h3>Compare conditions</h3>
+    <div className="bb__inner">
+      <Conditions
         conditions={conditions}
         selectCondition={selectCondition}
-        selectedCondition={selectedCondition}
+        selectedConditions={selectedConditions}
       />
       <Chart
         data={data}
-        id="specificity_plot"
+        id="bb_plot"
         midline={false}
-        placeholderText="Select a condition"
+        placeholderText="Select a pair of conditions"
         ref={ref}
         transform={transform}
       />
       <Options
         changeOption={changeOption}
-        id="specificity_plot"
+        id="bb_plot"
         options={options}
         transform={transform}
       />
@@ -45,14 +45,17 @@ const Specificity = forwardRef((
   </div>
 ));
 
-Specificity.propTypes = {
+BaitBait.propTypes = {
   changeOption: PropTypes.func.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   data: PropTypes.shape({}).isRequired,
   options: PropTypes.shape({}).isRequired,
   selectCondition: PropTypes.func.isRequired,
-  selectedCondition: PropTypes.string.isRequired,
+  selectedConditions: PropTypes.shape({
+    x: PropTypes.string,
+    y: PropTypes.string,
+  }).isRequired,
   transform: PropTypes.shape({}).isRequired,
 };
 
-export default Specificity;
+export default BaitBait;

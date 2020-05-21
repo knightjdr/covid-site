@@ -30,7 +30,10 @@ const Immunofluorescence = ({ images }) => {
     );
 
     return (
-      <Details summary="Immunofluorescence">
+      <Details
+        listStyleType="microscope"
+        summary="Immunofluorescence"
+      >
         <div className="report__if">
           {
             images.map((image, index) => {

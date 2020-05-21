@@ -39,10 +39,15 @@ const Plot = ({
     </g>
     <g clipPath={`url(#${id}_points_clip)`}>
       <g transform={transform.matrix.plot}>
-        <Midline
-          midline={midline}
-          scale={transform.scale}
-        />
+        {
+          midline
+          && (
+            <Midline
+              midline={midline}
+              scale={transform.scale}
+            />
+          )
+        }
         <Points
           axisLength={axisLength}
           points={points}
@@ -53,15 +58,21 @@ const Plot = ({
   </g>
 );
 
+Plot.defaultProps = {
+  midline: null,
+};
+
 Plot.propTypes = {
   axisLength: PropTypes.number.isRequired,
   handleMouseDown: PropTypes.func.isRequired,
   handleWheel: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   midline: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
-  }).isRequired,
+    x1: PropTypes.number,
+    x2: PropTypes.number,
+    y1: PropTypes.number,
+    y2: PropTypes.number,
+  }),
   points: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,

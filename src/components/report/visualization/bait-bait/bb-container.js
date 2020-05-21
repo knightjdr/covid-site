@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useMemo, useRef, useState } from 'react';
 
-import Specificity from './specificity';
+import BaitBait from './bb';
 
 import getData from './data/get-data';
 import { defaultState as defaultTransform } from '../transforms/transforms';
 
-const SpecificityContainer = ({
+const BaitBaitContainer = ({
   conditions,
   preys,
 }) => {
@@ -14,10 +14,10 @@ const SpecificityContainer = ({
     count: 0,
     fdr: 0.01,
     log: true,
-    midline: false,
+    midline: true,
     specificity: 0,
   });
-  const [selectedCondition, setSelectedCondition] = useState('');
+  const [selectedConditions, setSelectedConditions] = useState({ x: '', y: '' });
   const [transform, setTransform] = useState({
     matrix: { ...defaultTransform.matrix },
     origin: { ...defaultTransform.origin },
@@ -28,15 +28,19 @@ const SpecificityContainer = ({
   const data = useMemo(() => {
     const dataOptions = {
       ...options,
-      condition: selectedCondition,
+      ...selectedConditions,
       scale: transform.scale,
     };
     return getData(preys, scatterRef, dataOptions);
-  }, [options, preys, transform.scale, scatterRef, selectedCondition]);
+  }, [options, preys, transform.scale, scatterRef, selectedConditions]);
 
   const selectCondition = (e) => {
     const { value } = e.target;
-    setSelectedCondition(value);
+    const { vertex } = e.target.dataset;
+    setSelectedConditions({
+      ...selectedConditions,
+      [vertex]: value,
+    });
   };
 
   const changeOption = (field, value) => {
@@ -47,14 +51,14 @@ const SpecificityContainer = ({
   };
 
   return (
-    <Specificity
+    <BaitBait
       changeOption={changeOption}
       conditions={conditions}
       data={data}
       options={options}
       ref={scatterRef}
       selectCondition={selectCondition}
-      selectedCondition={selectedCondition}
+      selectedConditions={selectedConditions}
       transform={{
         ...transform,
         setTransform,
@@ -63,9 +67,9 @@ const SpecificityContainer = ({
   );
 };
 
-SpecificityContainer.propTypes = {
+BaitBaitContainer.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   preys: PropTypes.shape({}).isRequired,
 };
 
-export default SpecificityContainer;
+export default BaitBaitContainer;

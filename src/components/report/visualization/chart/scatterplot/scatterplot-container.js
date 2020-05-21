@@ -83,14 +83,20 @@ const ScatterplotContainer = ({
   );
 };
 
+ScatterplotContainer.defaultProps = {
+  midline: null,
+};
+
 ScatterplotContainer.propTypes = {
   axisLength: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   log: PropTypes.bool.isRequired,
   midline: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number,
-  }).isRequired,
+    x1: PropTypes.number,
+    x2: PropTypes.number,
+    y1: PropTypes.number,
+    y2: PropTypes.number,
+  }),
   plotDimension: PropTypes.number.isRequired,
   points: PropTypes.arrayOf(
     PropTypes.shape({
