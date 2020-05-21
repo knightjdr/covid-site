@@ -8,6 +8,11 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+
+.bb__definition {
+  margin: 1rem 0;
+}
+
 .bb__inner {
   display: flex;
   flex-wrap: wrap;

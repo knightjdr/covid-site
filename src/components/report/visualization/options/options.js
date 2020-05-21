@@ -14,6 +14,7 @@ const Options = ({
   handleExport,
   handleFDRChange,
   handleLogToggle,
+  handleMidlineToggle,
   handleReset,
   handleSpecificityChange,
   handleZoom,
@@ -21,6 +22,7 @@ const Options = ({
   options,
 }) => (
   <div className="comparison__options">
+    <h4>Options</h4>
     <Input
       direction="horizontal"
       id={`${id}_fdr_option`}
@@ -57,6 +59,13 @@ const Options = ({
       id={`${id}_log_option`}
       label="Log axes:"
       onChange={handleLogToggle}
+      type="checkbox"
+    />
+    <Switch
+      checked={options.midline}
+      id={`${id}_midline_option`}
+      label="x = y line:"
+      onChange={handleMidlineToggle}
       type="checkbox"
     />
     <div className="comparison__options-zoom">
@@ -96,6 +105,7 @@ Options.propTypes = {
   handleExport: PropTypes.func.isRequired,
   handleFDRChange: PropTypes.func.isRequired,
   handleLogToggle: PropTypes.func.isRequired,
+  handleMidlineToggle: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
   handleSpecificityChange: PropTypes.func.isRequired,
   handleZoom: PropTypes.func.isRequired,
@@ -104,6 +114,7 @@ Options.propTypes = {
     count: PropTypes.number,
     fdr: PropTypes.number,
     log: PropTypes.bool,
+    midline: PropTypes.bool,
   }).isRequired,
 };
 

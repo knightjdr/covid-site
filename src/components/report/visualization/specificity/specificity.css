@@ -2,6 +2,10 @@
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+
+.specificity__definition {
+  margin: 1rem 0;
+}
 .specificity__inner {
   display: flex;
   flex-wrap: wrap;

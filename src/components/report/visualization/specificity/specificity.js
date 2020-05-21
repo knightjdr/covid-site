@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 
 import Chart from '../chart/chart';
 import Condition from './condition/condition';
+import Details from '../../../details/details';
 import Options from '../options/options-container';
 
 import './specificity.css';
@@ -21,6 +22,13 @@ const Specificity = forwardRef((
 ) => (
   <div className="specificity">
     <h3>Specificity</h3>
+    <p className="specificity__definition">
+      Plot the specificity of a prey versus its spectral count. The specificty of a prey is calculated as
+      the fold change in the spectral count relative to the average across all other baits in the same
+      cell type. Any other conditions/treatments for the query bait are ignored when calculating the average.
+      Every other bait can contribute a single value when calculting the average, and this value is
+      the maximum spectral count across any conditions present for that bait.
+    </p>
     <div className="specificity__inner">
       <Condition
         conditions={conditions}

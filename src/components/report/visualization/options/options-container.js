@@ -44,6 +44,10 @@ const OptionsContainer = ({
     changeOption('log', e.target.checked);
   };
 
+  const handleMidlineToggle = (e) => {
+    changeOption('midline', e.target.checked);
+  };
+
   const handleReset = () => {
     setTransform(defaulTransform);
   };
@@ -75,6 +79,7 @@ const OptionsContainer = ({
       handleExport={handleExport}
       handleFDRChange={handleFDRChange}
       handleLogToggle={handleLogToggle}
+      handleMidlineToggle={handleMidlineToggle}
       handleReset={handleReset}
       handleSpecificityChange={handleSpecificityChange}
       handleZoom={handleZoom}

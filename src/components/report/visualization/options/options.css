@@ -1,3 +1,7 @@
+.comparison__options h4 {
+  font-size: 1.2rem;
+}
+
 .comparison__options > *:not(:last-child) {
   margin-bottom: 0.8rem;
 }
