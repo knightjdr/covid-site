@@ -12,6 +12,7 @@ const Points = ({
       <circle
         cx={point.x}
         cy={axisLength - point.y}
+        data-highlight={point.highlight}
         key={point.label}
         r={radius}
       >
@@ -25,6 +26,7 @@ Points.propTypes = {
   axisLength: PropTypes.number.isRequired,
   points: PropTypes.arrayOf(
     PropTypes.shape({
+      highlight: PropTypes.bool,
       label: PropTypes.string,
       x: PropTypes.number,
       y: PropTypes.number,

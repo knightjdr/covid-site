@@ -6,6 +6,16 @@
 .specificity__definition {
   margin: 1rem 0;
 }
+
+.specificity__highlight {
+  background-color: var(--color-plot-highlight);
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.8rem;
+  margin-top: 0.3rem;
+  width: 0.8rem;
+}
+
 .specificity__inner {
   display: flex;
   flex-wrap: wrap;

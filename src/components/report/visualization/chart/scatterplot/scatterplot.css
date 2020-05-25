@@ -1,5 +1,8 @@
-.scatterplot circle {
+.scatterplot circle:not([data-highlight]) {
   fill: var(--color-font);
+}
+.scatterplot circle[data-highlight] {
+  fill: var(--color-plot-highlight);
 }
 
 .scatterplot line {

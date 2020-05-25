@@ -17,7 +17,7 @@ const scaleData = (points, ticks, options) => {
   const scaleYValue = getScaler('y');
   return {
     points: points.map((point) => ({
-      label: point.label,
+      ...point,
       x: scaleXValue(Math.max(point.x, ticks.x[0])),
       y: scaleYValue(Math.max(point.y, ticks.y[0])),
     })),

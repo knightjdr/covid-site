@@ -2,18 +2,28 @@ const getScaleFactor = (scale, multiplier) => (
   scale < 1.5 ? 1 : Math.floor((scale - 1) / 0.5) * multiplier
 );
 
+const getMaxLinearTick = (max) => {
+  const exp = 10 ** Math.floor(Math.log10(max));
+  return Math.ceil(max / exp) * exp;
+};
+
 const calculateLinearTicks = (max, scale) => {
   const power = Math.floor(Math.log10(max - 0));
   const step = (10 ** power) / getScaleFactor(scale, 2);
   const ticks = [];
-  for (let i = 0; i <= max; i += step) {
+  const lastTick = getMaxLinearTick(max);
+  for (let i = 0; i <= lastTick; i += step) {
     ticks.push(i);
   }
-  if (ticks[ticks.length - 1] !== max) {
-    ticks.push(ticks[ticks.length - 1] + step);
+  if (ticks[ticks.length - 1] !== lastTick) {
+    ticks.push(lastTick);
   }
   return ticks;
 };
+
+const getMaxLogTick = (max) => (
+  10 ** Math.ceil(Math.log10(max))
+);
 
 const getMinLogTick = (min) => {
   const logValue = Math.log10(min);
@@ -29,7 +39,8 @@ const calculateLogTicks = (max, min, scale) => {
   const scaleFactor = getScaleFactor(scale, 1);
   const ticks = [];
   const base = getMinLogTick(min);
-  for (let i = base; i <= max; i *= 10) {
+  const lastTick = getMaxLogTick(max);
+  for (let i = base; i < lastTick; i *= 10) {
     ticks.push(i);
     const minorTick = (i * 10) / scaleFactor;
     for (let j = 1; j < scaleFactor; j += 1) {
@@ -37,9 +48,9 @@ const calculateLogTicks = (max, min, scale) => {
       ticks.push(tick);
     }
   }
-  if (ticks[ticks.length - 1] !== max) {
-    ticks.push(ticks[ticks.length - 1] * 10);
-  }
+
+  ticks.push(lastTick);
+
   return ticks;
 };
 

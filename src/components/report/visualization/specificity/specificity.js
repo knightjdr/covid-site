@@ -3,7 +3,6 @@ import React, { forwardRef } from 'react';
 
 import Chart from '../chart/chart';
 import Condition from './condition/condition';
-import Details from '../../../details/details';
 import Options from '../options/options-container';
 
 import './specificity.css';
@@ -28,6 +27,13 @@ const Specificity = forwardRef((
       cell type. Any other conditions/treatments for the query bait are ignored when calculating the average.
       Every other bait can contribute a single value when calculting the average, and this value is
       the maximum spectral count across any conditions present for that bait.
+    </p>
+    <p>
+      Orange points
+      {' '}
+      <span className="specificity__highlight" />
+      {' '}
+      have infinite specificty.
     </p>
     <div className="specificity__inner">
       <Condition

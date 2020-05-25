@@ -8,10 +8,18 @@ const convertSpecificityToNumber = (preys) => {
   const max = preys.reduce((accum, prey) => (
     prey.y !== 'Infinity' && prey.y > accum ? prey.y : accum
   ), 0);
-  return preys.map((prey) => ({
-    ...prey,
-    y: prey.y === 'Infinity' ? max : prey.y,
-  }));
+  return preys.map((prey) => {
+    if (prey.y === 'Infinity') {
+      return {
+        ...prey,
+        highlight: true,
+        y: max,
+      };
+    }
+    return {
+      ...prey,
+    };
+  });
 };
 
 const getData = (preys, ref, options) => {

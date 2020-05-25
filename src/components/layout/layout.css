@@ -29,6 +29,7 @@ body.light-mode {
   --color-input-focus: rgba(59, 153, 252, .7);
   --color-link: #346ACC;
   --color-link-visited: #551A8B;
+  --color-plot-highlight: #C85207;
   --color-table-even: #f5f5f5;
   background-color: var(--color-background);
   color: var(--color-font);
@@ -48,6 +49,7 @@ body.dark-mode {
   --color-input-focus: rgba(59, 153, 252, .7);
   --color-link: #5B95FF;
   --color-link-visited: #9675FF;
+  --color-plot-highlight: #EE7B15;
   --color-table-even: #17171d;
   background-color: var(--color-background);
   color: var(--color-font);
