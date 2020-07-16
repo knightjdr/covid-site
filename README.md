@@ -7,5 +7,5 @@ Developed by the Gingras lab.
 1. Start development server
 
 ```shell
-gatsby develop
+npm run dev
 ```
