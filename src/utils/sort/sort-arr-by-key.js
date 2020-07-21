@@ -1,4 +1,5 @@
-import deepCopy from './deep-copy';
+import { cloneDeep } from 'lodash';
+
 import customSort from './sort';
 
 const validateArguments = (arr, key) => (
@@ -17,7 +18,7 @@ const sortArrByKey = (arr, key, dir = 'asc', type = 'string') => {
   }
 
   const multiplier = dir === 'des' ? -1 : 1;
-  const sortArray = deepCopy(arr);
+  const sortArray = cloneDeep(arr);
   const sortFunc = type === 'numeric' ? customSort.numeric : customSort.character;
   sortArray.sort((a, b) => (
     multiplier * sortFunc(a[key], b[key])

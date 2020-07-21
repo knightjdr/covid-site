@@ -4,6 +4,8 @@ import Details from '../details/details';
 
 const descriptions = {
   A549: 'A549 adenocarcinomic human alveolar basal epithelial cells',
+  C145A: 'Cysteine to alanine mutation at residue 145',
+  C857A: 'Cysteine to alanine mutation at residue 857',
   Ct: 'N-terminal tag',
   Nt: 'N-terminal tag',
 };

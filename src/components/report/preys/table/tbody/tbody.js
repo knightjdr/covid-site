@@ -14,7 +14,7 @@ const TableBody = ({
       rows.map((row) => (
         <tr
           className={row.highlight ? 'repory__prey-table_highlight' : null}
-          key={row.id}
+          key={row.id.entrez}
         >
           <td>
             {' '}
@@ -26,7 +26,11 @@ const TableBody = ({
             </Link>
           </td>
           <td>
-            {row.id}
+            {row.id.entrez}
+            {' '}
+            /
+            {' '}
+            {row.id.uniprot}
           </td>
           {
             conditions.map((condition) => (
@@ -66,7 +70,10 @@ const TableBody = ({
 TableBody.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   rows: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.shape({
+      entrez: PropTypes.string,
+      uniprot: PropTypes.string,
+    }),
     prey: PropTypes.string,
     conditions: PropTypes.shape({
       count: PropTypes.number,

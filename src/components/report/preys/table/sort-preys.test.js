@@ -31,6 +31,12 @@ describe('Sort preys', () => {
             b: { count: 6, fdr: 0.01 },
           },
         },
+        prey4: {
+          id: 'id4',
+          conditions: {
+            a: { count: 4, fdr: 0.02 },
+          },
+        },
       };
 
       const expected = [
@@ -56,6 +62,13 @@ describe('Sort preys', () => {
           conditions: {
             a: { count: 7, fdr: 0.02 },
             b: { count: 30.3, fdr: 0.05 },
+          },
+        },
+        {
+          id: 'id4',
+          prey: 'prey4',
+          conditions: {
+            a: { count: 4, fdr: 0.02 },
           },
         },
       ];
@@ -91,6 +104,12 @@ describe('Sort preys', () => {
             b: { count: 6, fdr: 0.01 },
           },
         },
+        prey4: {
+          id: 'id4',
+          conditions: {
+            a: { count: 4, fdr: 0.02 },
+          },
+        },
       };
 
       const expected = [
@@ -116,6 +135,13 @@ describe('Sort preys', () => {
           conditions: {
             a: { count: 10, fdr: 0.01 },
             b: { count: 5, fdr: 0.05 },
+          },
+        },
+        {
+          id: 'id4',
+          prey: 'prey4',
+          conditions: {
+            a: { count: 4, fdr: 0.02 },
           },
         },
       ];

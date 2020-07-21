@@ -23,7 +23,7 @@ const TableHead = ({
           />
         </div>
       </th>
-      <th className="report__thead-prey" rowSpan={3}>UniProt</th>
+      <th className="report__thead-prey" rowSpan={3}>ID (Entrez / UniProt)</th>
       <th colSpan={conditions.length * 3}>
         Conditions
       </th>
