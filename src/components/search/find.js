@@ -3,6 +3,7 @@ import levenshtein from 'fast-levenshtein';
 import preys from '../../../content/preys.json';
 
 const preyDB = Object.entries(preys).map(([key, details]) => ({
+  entrez: String(details.entrez),
   symbols: [key, ...details.synonyms],
   uniprot: details.uniprot,
 }));
@@ -37,8 +38,9 @@ const find = (term) => {
   const reUniprot = new RegExp(`^${term}$`, 'i');
   const matches = preyDB.filter((prey) => (
     prey.symbols.some((symbol) => reSymbol.test(symbol))
+    || prey.entrez === term
     || prey.uniprot.some((accession) => reUniprot.test(accession))
-  )).map((prey) => [...prey.symbols, ...prey.uniprot]);
+  )).map((prey) => [...prey.symbols, prey.entrez, ...prey.uniprot]);
   return sortMatches(term, matches);
 };
 

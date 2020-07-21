@@ -16,6 +16,7 @@ const SearchResults = ({
               <tr>
                 <th>Symbol</th>
                 <th>Synonyms</th>
+                <th>Entrez</th>
                 <th>UniProt</th>
                 <th>Viral protein</th>
               </tr>
@@ -26,6 +27,7 @@ const SearchResults = ({
                   <tr key={result.symbol}>
                     <td>{result.symbol}</td>
                     <td>{result.synonyms.length > 0 ? result.synonyms.join(', ') : '-' }</td>
+                    <td>{result.entrez}</td>
                     <td>{result.uniprot.length > 0 ? result.uniprot[0] : '-'}</td>
                     <td>
                       {

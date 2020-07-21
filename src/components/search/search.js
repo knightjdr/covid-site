@@ -18,7 +18,7 @@ const Search = ({
 }) => (
   <section className="search">
     <p>
-      Search for viral proteins that interact with a human protein (at 1% FDR).
+      Search by a human identifier for viral proteins that detected it (at 1% FDR).
     </p>
     <div className="input_button">
       <Input
