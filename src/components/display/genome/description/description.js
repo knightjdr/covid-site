@@ -23,9 +23,21 @@ const description = {
       <div className="display__sequence-description-report-link">
         <span>Reports</span>
         <ul>
+          <li><Link nav to="/NSP1">NSP1</Link></li>
           <li><Link nav to="/NSP2">NSP2</Link></li>
+          <li><Link nav to="/NSP3">NSP3</Link></li>
           <li><Link nav to="/NSP4">NSP4</Link></li>
+          <li><Link nav to="/NSP5">NSP5</Link></li>
+          <li><Link nav to="/NSP6">NSP6</Link></li>
+          <li><Link nav to="/NSP7">NSP7</Link></li>
           <li><Link nav to="/NSP8">NSP8</Link></li>
+          <li><Link nav to="/NSP9">NSP9</Link></li>
+          <li><Link nav to="/NSP10">NSP10</Link></li>
+          <li>
+            <span className="display__sequence_not-profiled">NSP11</span>
+            {' '}
+            (not profiled)
+          </li>
         </ul>
       </div>
     </div>
@@ -48,9 +60,21 @@ const description = {
       <div className="display__sequence-description-report-link">
         <span>Reports</span>
         <ul>
+          <li><Link nav to="/NSP1">NSP1</Link></li>
           <li><Link nav to="/NSP2">NSP2</Link></li>
+          <li><Link nav to="/NSP3">NSP3</Link></li>
           <li><Link nav to="/NSP4">NSP4</Link></li>
+          <li><Link nav to="/NSP5">NSP5</Link></li>
+          <li><Link nav to="/NSP6">NSP6</Link></li>
+          <li><Link nav to="/NSP7">NSP7</Link></li>
           <li><Link nav to="/NSP8">NSP8</Link></li>
+          <li><Link nav to="/NSP9">NSP9</Link></li>
+          <li><Link nav to="/NSP10">NSP10</Link></li>
+          <li><Link nav to="/NSP12">NSP12</Link></li>
+          <li><Link nav to="/NSP13">NSP13</Link></li>
+          <li><Link nav to="/NSP14">NSP14</Link></li>
+          <li><Link nav to="/NSP15">NSP15</Link></li>
+          <li><Link nav to="/NSP16">NSP16</Link></li>
         </ul>
       </div>
     </div>
@@ -68,10 +92,10 @@ const description = {
         The spike protein attaches the virion to the cell through binding of the human ACE2
         receptor and internalization of the virus by endocytosis.
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/S">S</Link>
-      </div> */ }
+      </div>
     </div>
   ),
   E: (
@@ -87,10 +111,10 @@ const description = {
         Viral envelope viroporin that self-assembles in host membranes to facilitate
         ion transport (from UniProt).
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/E">E</Link>
-    </div> */}
+      </div>
     </div>
   ),
   M: (
@@ -124,10 +148,10 @@ const description = {
         Nucleocapsid protein that packages viral genomic RNA and through an interaction
         with the M protein facilitates virion assembly (from UniProt).
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/N">N</Link>
-      </div> */}
+      </div>
     </div>
   ),
   ORF3a: (
@@ -181,10 +205,10 @@ const description = {
         May stimulate cellular DNA synthesis in vitro (from UniProt). Antagonizes STAT1 function
         and IFN signalling.
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/ORF6">ORF6</Link>
-      </div> */}
+      </div>
     </div>
   ),
   ORF7a: (
@@ -217,10 +241,10 @@ const description = {
       <p>
         Encodes a protein that induces an inflammatory response.
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/ORF7B">ORF7B</Link>
-      </div> */}
+      </div>
     </div>
   ),
   ORF8: (
@@ -253,10 +277,10 @@ const description = {
       <p>
         Encodes a protein of unknown function.
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/ORF9B">ORF9B</Link>
-      </div> */}
+      </div>
     </div>
   ),
   ORF14: (
@@ -271,10 +295,10 @@ const description = {
       <p>
         Encodes a protein of unknown function.
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/ORF14">ORF14</Link>
-      </div> */}
+      </div>
     </div>
   ),
   ORF10: (
@@ -289,10 +313,10 @@ const description = {
       <p>
         Encodes a protein of unknown function.
       </p>
-      {/* <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
+      <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
         <Link nav to="/ORF10">ORF10</Link>
-      </div> */}
+      </div>
     </div>
   ),
 };
