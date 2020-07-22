@@ -30,7 +30,10 @@ Table.propTypes = {
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleSortByColumn: PropTypes.func.isRequired,
   rows: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.shape({
+      entrez: PropTypes.string,
+      uniprot: PropTypes.string,
+    }),
     prey: PropTypes.string,
     conditions: PropTypes.shape({
       count: PropTypes.number,
