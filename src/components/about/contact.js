@@ -33,7 +33,7 @@ const Contact = () => (
         </Link>
       </li>
       <li>
-        Website and data downloads:
+        Website and data requests:
         {' '}
         <Link
           to="mailto:jknight@lunenfeld.ca"
