@@ -315,7 +315,8 @@ const description = {
       </p>
       <div className="display__sequence-description-report-link display__sequence-description-report-link_inline">
         <span>Report:</span>
-        <Link nav to="/ORF10">ORF10</Link>
+        <span>not currently profiled</span>
+        { /* <Link nav to="/ORF10">ORF10</Link> */ }
       </div>
     </div>
   ),

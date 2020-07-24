@@ -1,9 +1,31 @@
 [
   {
+    "id": "NSP1",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
     "id": "NSP2",
     "localization": {
       "cell": [
         ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP3",
+    "localization": {
+      "cell": [
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -22,6 +44,39 @@
     }
   },
   {
+    "id": "NSP5",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP6",
+    "localization": {
+      "cell": [
+        "plasma_membrane"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP7",
+    "localization": {
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
     "id": "NSP8",
     "localization": {
       "cell": [
@@ -29,6 +84,94 @@
       ],
       "virus": [
         ""
+      ]
+    }
+  },
+  {
+    "id": "NSP9",
+    "localization": {
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP10",
+    "localization": {
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP12",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP13",
+    "localization": {
+      "cell": [
+        "ERGIC"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP14",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP15",
+    "localization": {
+      "cell": [
+        "cytoplasm"
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "NSP16",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "S",
+    "localization": {
+      "cell": [
+        "ERGIC"
+      ],
+      "virus": [
+        "spike"
       ]
     }
   },
@@ -55,6 +198,17 @@
     }
   },
   {
+    "id": "E",
+    "localization": {
+      "cell": [
+        "Golgi"
+      ],
+      "virus": [
+        "envelope"
+      ]
+    }
+  },
+  {
     "id": "M",
     "localization": {
       "cell": [
@@ -62,6 +216,18 @@
       ],
       "virus": [
         "envelope"
+      ]
+    }
+  },
+  {
+    "id": "ORF6",
+    "localization": {
+      "cell": [
+        "ER",
+        "Golgi"
+      ],
+      "virus": [
+        ""
       ]
     }
   },
@@ -78,7 +244,52 @@
     }
   },
   {
+    "id": "ORF7B",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
     "id": "ORF8",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "N",
+    "localization": {
+      "cell": [
+        "ERGIC",
+        "Golgi"
+      ],
+      "virus": [
+        "capsid"
+      ]
+    }
+  },
+  {
+    "id": "ORF9B",
+    "localization": {
+      "cell": [
+        ""
+      ],
+      "virus": [
+        ""
+      ]
+    }
+  },
+  {
+    "id": "ORF14",
     "localization": {
       "cell": [
         ""
