@@ -32,14 +32,6 @@ module.exports = {
         icon: 'src/images/virus.png',
       },
     },
-    /* {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://covid19interactome.org',
-        sitemap: 'https://covid19interactome.org/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    }, */
     {
       resolve: 'gatsby-plugin-use-dark-mode',
       options: {
@@ -49,5 +41,13 @@ module.exports = {
         minify: true,
       },
     },
+    /* {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://covid19interactome.org',
+        sitemap: 'https://covid19interactome.org/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    }, */
   ],
 };
