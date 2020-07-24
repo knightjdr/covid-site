@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{geUK:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a),o=t("8k0H"),c=t("6d1X");n.default=function(){return l.a.createElement(o.a,null,l.a.createElement(c.a,{title:"Downloads"}),l.a.createElement("h1",null,"Downloads"),l.a.createElement("p",null,"Coming soon..."))}}}]);
-//# sourceMappingURL=component---src-pages-downloads-index-js-09a2aee54d4bcc888d67.js.map
