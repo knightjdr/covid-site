@@ -28,8 +28,8 @@ const Localization = ({
         N - nucleocapsid and S - spike) and 25 non-structural proteins. We are localizing
         these proteins in host cells using immunfluorescence and Gene Ontology (GO) enrichments
         of proximal proteins detected in BioID experiments. The current localizations listed
-        here are from UniProt.
-        {/* NB: NSP11 was too small for cloning and is not included in this analysis. */}
+        here are from UniProt. NB: NSP11 was too small for cloning and is not included in this
+        analysis.
       </p>
       <p className="display__instructions">{userText}</p>
       <ProteinList
