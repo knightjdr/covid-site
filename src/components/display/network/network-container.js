@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { cloneDeep } from 'lodash';
 
 import Network from './network';
-
+import isTouchDevice from '../../../utils/is-touch-device';
 import useFetch from '../../hooks/fetch/use-fetch';
 
 const ZOOM_INCREMENT = 0.1;
@@ -14,6 +14,8 @@ const NetworkContainer = () => {
   const cy = useRef();
   const ref = useRef();
   const { fetching, response: network } = useFetch('/files/network.json');
+
+  const isTouch = isTouchDevice();
 
   const getElementCenter = () => {
     const rect = ref.current.getBoundingClientRect();
@@ -52,6 +54,7 @@ const NetworkContainer = () => {
     if (network && ref.current && !cy.current) {
       cy.current = cytoscape({
         container: ref.current,
+        boxSelectionEnabled: false,
         elements: cloneDeep(network.elements),
         layout: {
           name: 'preset',
@@ -62,10 +65,14 @@ const NetworkContainer = () => {
       cy.current.on('tap', 'node', (e) => {
         const node = cy.current.$(`#${e.target.id()}`);
 
-        cy.current.$('*').neighborhood().addClass('hidden');
-        node.removeClass('hidden');
-        node.neighborhood().removeClass('hidden');
-        setSelectedNode({ id: e.target.id(), data: node.data() });
+        if (isTouch || e.originalEvent.shiftKey) {
+          cy.current.elements().not(e.target).unselect();
+          cy.current.$('*').neighborhood().addClass('hidden');
+          node.removeClass('hidden');
+          node.neighborhood().removeClass('hidden');
+        } else {
+          setSelectedNode({ id: e.target.id(), data: node.data() });
+        }
       });
     }
   }, [cy.current, network, ref.current]);
