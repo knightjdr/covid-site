@@ -5,7 +5,7 @@ const usePlaceholder = () => {
 
   return isSmallScreen
     ? 'Gene symbol or UniProt'
-    : 'e.g. human gene symbol (TRIP11), Entrez ID (9321) or UniProt accession (Q15643)';
+    : 'e.g. gene symbol (TRIP11), Entrez ID (9321) or UniProt accession (Q15643)';
 };
 
 export default usePlaceholder;
