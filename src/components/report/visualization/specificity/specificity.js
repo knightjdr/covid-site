@@ -23,8 +23,8 @@ const Specificity = forwardRef((
     <h3>Specificity</h3>
     <p className="specificity__definition">
       Plot the specificity of a prey versus its spectral count. The specificty of a prey is calculated as
-      the fold change in the spectral count relative to the average across all other baits in the same
-      cell type. Any other conditions/treatments for the query bait are ignored when calculating the average.
+      the fold change in the spectral count relative to the average across all other baits. Any other
+      conditions/treatments for the query bait are ignored when calculating the average.
       Every other bait can contribute a single value when calculting the average, and this value is
       the maximum spectral count across any conditions present for that bait.
     </p>
@@ -33,7 +33,7 @@ const Specificity = forwardRef((
       {' '}
       <span className="specificity__highlight" />
       {' '}
-      have infinite specificty.
+      have infinite specificty. Hover over a point to see its label.
     </p>
     <div className="specificity__inner">
       <Condition

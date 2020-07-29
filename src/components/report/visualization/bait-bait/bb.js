@@ -23,7 +23,8 @@ const BaitBait = forwardRef((
     <h3>Compare conditions</h3>
     <p className="bb__definition">
       Compare the spectral counts between two different conditions. Any prey passing
-      the option criteria for at least one bait will be displayed.
+      the option criteria for at least one bait will be displayed. Hover over a point
+      to see its label.
     </p>
     <div className="bb__inner">
       <Conditions
