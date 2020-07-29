@@ -43,6 +43,7 @@
 }
 
 .network__selected-node {
+  background-color: var(--color-background);
   border: 1px solid var(--color-primary);
   border-top-left-radius: 3px;
   bottom: -1px;
