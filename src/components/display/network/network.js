@@ -3,13 +3,21 @@ import React, { forwardRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartNetwork } from '@fortawesome/pro-duotone-svg-icons';
 
-import Button from '../../buttons/rectangular/button';
+import Loading from '../../loading/loading';
+import NetworkButtons from './network-button';
+import NetworkInstructions from './network-instructions';
+import NetworkLegend from './network-legend';
 
 import './network.css';
 
 const Network = forwardRef((
   {
+    handleClear,
     handleReset,
+    handleZoomIn,
+    handleZoomOut,
+    isLoading,
+    selectedNode,
   },
   ref,
 ) => (
@@ -22,28 +30,41 @@ const Network = forwardRef((
         <FontAwesomeIcon icon={faChartNetwork} />
         Network
       </h2>
-      <p className="display__legend">
-        paragraph
-      </p>
-      <p className="display__instructions">Instructions</p>
-      <div
-        className="network__cytoscape-container"
-        ref={ref}
-      />
-      <div className="network__buttons">
-        <Button
-          kind="primary"
-          onClick={handleReset}
-        >
-          Reset
-        </Button>
+      <NetworkLegend />
+      <NetworkInstructions />
+      <div className="network__cytoscape-container">
+        <div
+          className="network__canvas-container"
+          ref={ref}
+        />
+        {
+          selectedNode
+          && <span className="network__selected-node">{selectedNode}</span>
+        }
+        { isLoading && <Loading /> }
       </div>
+      <NetworkButtons
+        handleClear={handleClear}
+        handleReset={handleReset}
+        handleZoomIn={handleZoomIn}
+        handleZoomOut={handleZoomOut}
+        isLoading={isLoading}
+      />
     </div>
   </section>
 ));
 
+Network.defaultProps = {
+  selectedNode: '',
+};
+
 Network.propTypes = {
+  handleClear: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
+  handleZoomIn: PropTypes.func.isRequired,
+  handleZoomOut: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  selectedNode: PropTypes.string,
 };
 
 export default Network;

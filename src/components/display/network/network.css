@@ -3,13 +3,51 @@
 }
 
 .network__cytoscape-container {
+  align-items: center;
   border: 2px solid var(--color-primary);
   border-radius: 3px;
+  display: flex;
   height: calc(100vw - 48px);
+  justify-content: center;
   max-height: 700px;
+  position: relative;
+  width: 100%;
+}
+.network__canvas-container {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 
 .network__buttons {
+  display: flex;
   margin-top: 1rem;
+}
+.network__buttons > * {
+  margin: 0 0.5rem;
+}
+
+.network__legend_orange {
+  background-color: #f28522;
+  border-radius: 3px;
+  color: #280101;
+  padding: 0 0.2rem;
+}
+.network__legend_purple {
+  background-color: #af58ba;
+  border-radius: 3px;
+  color: #280101;
+  padding: 0 0.2rem;
+}
+
+.network__selected-node {
+  border: 1px solid var(--color-primary);
+  border-radius: 3px;
+  bottom: -1px;
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  right: -1px;
 }

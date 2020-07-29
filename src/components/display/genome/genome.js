@@ -12,7 +12,6 @@ import './genome.css';
 const Genome = ({
   handleClick,
   orf,
-  userText,
 }) => (
   <section className="display">
     <div className="display__inner">
@@ -28,7 +27,14 @@ const Genome = ({
         <Link to="https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3">MN908947.3</Link>
         .
       </p>
-      <p className="display__instructions">{userText}</p>
+      <p className="display__instructions">
+        <span className="display__instructions-desktop">
+          Click an ORF to view details about it.
+        </span>
+        <span className="display__instructions-touch">
+          Tap an ORF to view details about it.
+        </span>
+      </p>
       <div className="display__genome">
         <RNA handleClick={handleClick} />
         { orf && description[orf] }
@@ -40,7 +46,6 @@ const Genome = ({
 Genome.propTypes = {
   handleClick: PropTypes.func.isRequired,
   orf: PropTypes.string.isRequired,
-  userText: PropTypes.string.isRequired,
 };
 
 export default Genome;

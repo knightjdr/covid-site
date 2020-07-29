@@ -15,7 +15,6 @@ const Localization = ({
   handleProteinMouseOut,
   handleProteinMouseOver,
   highlighted,
-  userText,
 }) => (
   <section className="display">
     <div className="display__inner">
@@ -31,7 +30,16 @@ const Localization = ({
         here are from UniProt. NB: NSP11 was too small for cloning and is not included in this
         analysis.
       </p>
-      <p className="display__instructions">{userText}</p>
+      <p className="display__instructions">
+        <span className="display__instructions-desktop">
+          Hover over a protein to view its localization or over a compartment to view all viral
+          proteins that localize there.
+        </span>
+        <span className="display__instructions-touch">
+          Tap a protein to view its localization or a compartment to view all viral proteins that
+          localize there.
+        </span>
+      </p>
       <ProteinList
         handleProteinMouseOut={handleProteinMouseOut}
         handleProteinMouseOver={handleProteinMouseOver}
@@ -62,7 +70,6 @@ Localization.propTypes = {
     protein: PropTypes.string,
     virus: PropTypes.string,
   }).isRequired,
-  userText: PropTypes.string.isRequired,
 };
 
 export default Localization;

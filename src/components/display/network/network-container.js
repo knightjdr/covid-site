@@ -1,49 +1,84 @@
 import cytoscape from 'cytoscape';
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { cloneDeep } from 'lodash';
 
 import Network from './network';
 
 import useFetch from '../../hooks/fetch/use-fetch';
 
+const ZOOM_INCREMENT = 0.1;
+const ZOOM_MIN = 0.1;
+
 const NetworkContainer = () => {
+  const [selectedNode, setSelectedNode] = useState({ id: '', data: {} });
+  const cy = useRef();
   const ref = useRef();
   const { fetching, response: network } = useFetch('/files/network.json');
 
-  const cy = network
-    ? cytoscape({
-      container: ref.current,
-      elements: cloneDeep(network.elements),
-      layout: {
-        name: 'preset',
-      },
-      style: network.style,
-    })
-    : null;
-
-  const handleReset = () => {
-    cy.elements().remove();
-    cy.add(cloneDeep(network.elements));
-    cy.fit([], 30);
+  const getElementCenter = () => {
+    const rect = ref.current.getBoundingClientRect();
+    return { x: rect.width / 2, y: rect.height / 2 };
   };
 
-  const startingZoom = cy ? cy.zoom() : 1;
+  const handleClear = () => {
+    cy.current.$('*').neighborhood().removeClass('hidden');
+    setSelectedNode({ id: '', data: {} });
+  };
+
+  const handleReset = () => {
+    cy.current.elements().remove();
+    cy.current.add(cloneDeep(network.elements));
+    cy.current.fit([], 30);
+    setSelectedNode({ id: '', data: {} });
+  };
+
+  const handleZoomIn = () => {
+    const currentZoom = cy.current.zoom();
+    cy.current.zoom({
+      level: currentZoom + ZOOM_INCREMENT,
+      renderedPosition: getElementCenter(),
+    });
+  };
+
+  const handleZoomOut = () => {
+    const currentZoom = cy.current.zoom();
+    cy.current.zoom({
+      level: Math.max(currentZoom - ZOOM_INCREMENT, ZOOM_MIN),
+      renderedPosition: getElementCenter(),
+    });
+  };
 
   useEffect(() => {
-    if (cy) {
-      cy.on('zoom', () => {
-        const zoomFactor = cy.zoom() / startingZoom;
-        console.log(zoomFactor);
+    if (network && ref.current && !cy.current) {
+      cy.current = cytoscape({
+        container: ref.current,
+        elements: cloneDeep(network.elements),
+        layout: {
+          name: 'preset',
+        },
+        minZoom: ZOOM_MIN,
+        style: network.style,
+      });
+      cy.current.on('tap', 'node', (e) => {
+        const node = cy.current.$(`#${e.target.id()}`);
+
+        cy.current.$('*').neighborhood().addClass('hidden');
+        node.removeClass('hidden');
+        node.neighborhood().removeClass('hidden');
+        setSelectedNode({ id: e.target.id(), data: node.data() });
       });
     }
-  }, [cy]);
+  }, [cy.current, network, ref.current]);
 
   return (
     <Network
-      cy={cy}
+      handleClear={handleClear}
       handleReset={handleReset}
+      handleZoomIn={handleZoomIn}
+      handleZoomOut={handleZoomOut}
       isLoading={fetching}
       ref={ref}
+      selectedNode={selectedNode.data.name}
     />
   );
 };

@@ -1,0 +1,9 @@
+.loading-notification {
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+}
+
+.loading-notification svg {
+  color: var(--color-primary);
+  margin-right: 1rem;
+}
