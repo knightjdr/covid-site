@@ -48,12 +48,13 @@ const Legend = ({
           }
           <li>
             <span>SC</span>
-            : spectral counts
+            : spectral counts, calculated as the average spectral count between replicates minus
+            the average detect in controls
           </li>
           <li>
             <span>Spec</span>
-            : specificity, calculated as the fold enrichment of a prey in the condition relative
-            to all other baits in the same cell type
+            : specificity, calculated as the fold enrichment of a prey relative to all other bait
+            proteins
           </li>
           <li>
             <span>FDR</span>
