@@ -8,7 +8,7 @@ const descriptions = {
   C857A: 'Cysteine to alanine mutation at residue 857',
   H165A: 'Histidine to alanine mutation at residue 166',
   K164A: 'Lysine to alanine mutation at residue 164',
-  Ct: 'N-terminal tag',
+  Ct: 'C-terminal tag',
   Nt: 'N-terminal tag',
 };
 

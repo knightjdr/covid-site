@@ -5,6 +5,11 @@ import SortButton from './sort-button';
 
 import './thead.css';
 
+const conditionMap = {
+  Ct: 'C-terminal tag (Ct)',
+  Nt: 'N-terminal tag (Nt)',
+};
+
 const TableHead = ({
   conditions,
   handleSortByColumn,
@@ -35,7 +40,7 @@ const TableHead = ({
             colSpan={3}
             key={`column-${condition}`}
           >
-            {condition}
+            {conditionMap[condition] || condition}
           </th>
         ))
       }
