@@ -10,6 +10,7 @@ import './layout.css';
 
 const Layout = ({
   children,
+  footer,
   margin,
 }) => (
   <Location>
@@ -25,15 +26,20 @@ const Layout = ({
             Some functionality will be missing as a result.
           </noscript>
           <main>{children}</main>
-          <footer>
-            ©
-            {' '}
-            <Link to="https://gingraslab.lunenfeld.ca">Gingras lab</Link>
-            ,
-            {' '}
-            {new Date().getFullYear()}
-            .
-          </footer>
+          {
+            footer
+            && (
+              <footer>
+                ©
+                {' '}
+                <Link to="https://gingraslab.lunenfeld.ca">Gingras lab</Link>
+                ,
+                {' '}
+                {new Date().getFullYear()}
+                .
+              </footer>
+            )
+          }
           <CookieBanner />
         </div>
       )
@@ -42,11 +48,13 @@ const Layout = ({
 );
 
 Layout.defaultProps = {
+  footer: true,
   margin: true,
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  footer: PropTypes.bool,
   margin: PropTypes.bool,
 };
 
