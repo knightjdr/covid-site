@@ -10,9 +10,15 @@
   width: 100%;
 }
 
+.heatmap h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
 .heatmap p {
   font-size: 1rem;
   line-height: 1.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .heatmap__columns-container {
@@ -26,15 +32,33 @@
   margin-left: 100px;
   padding-right: 15px;
 }
-.heatmap__columns > div {
+.heatmap__columns > a {
   box-sizing: border-box;
+  display: inline-block;
   font-family: var(--font-secondary);
   font-size: 16px;
-  height: 50px;
   padding-top: 3px;
   width: 20px;
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
+}
+.heatmap__columns > a {
+  position: relative;
+}
+.heatmap__columns > a:hover:after,
+.heatmap__columns > a:focus:after,
+.heatmap__columns > a:active:after {
+  border-left: 1px solid;
+  content: '';
+  height: 100%;
+  left: 3px;
+  position: absolute;
+  top: 0;
+}
+.heatmap__columns > a:hover,
+.heatmap__columns > a:focus,
+.heatmap__columns > a:active {
+  text-decoration: none;
 }
 
 .heatmap__scroll-container {
@@ -66,4 +90,59 @@
 .heatmap__highlight {
   background-color: var(--color-accent);
   color: var(--color-font-dark);
+}
+
+.heatmap__controls {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.heatmap__legend {
+  color: var(--color-link);
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+}
+.heatmap__legend:hover::after,
+.heatmap__legend:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.heatmap__legend::before {
+  border-color: var(--color-font) transparent transparent transparent;
+  border-style: solid;
+  border-width: 4px 6px 0 6px;
+  content: '';
+  left: 100%;
+  margin-left: 1px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%) rotate(90deg);
+  transition: opacity 0.2s ease;
+  transition-delay: 0.2s;
+  visibility: hidden;
+  z-index: 1000;
+}
+.heatmap__legend::after {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+  content: url('./assets/legend.svg');
+  left: 100%;
+  margin-left: 0.5rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0.8rem 1rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateX(0%) translateY(-50%);
+  transition: opacity 0.2s ease;
+  transition-delay: 0.2s;
+  visibility: hidden;
+  z-index: 1000;
 }

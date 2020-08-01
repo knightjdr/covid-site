@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 
+import HeatmapLegend from './heatmap-legend';
 import Link from '../link/link';
 
 import './heatmap.css';
@@ -16,7 +17,7 @@ const Heatmap = forwardRef((
   refs,
 ) => (
   <div className="heatmap">
-    <h1>Bait-prey heat map</h1>
+    <h1>Viral-human proximity interaction heat map</h1>
     <p>
       Clustered heat map of spectral counts for all significant preys (FDR &le; 0.01) detected by viral
       baits. An interactive version of this image can be viewed at
@@ -28,9 +29,22 @@ const Heatmap = forwardRef((
       </Link>
       .
     </p>
+    <div className="heatmap__controls">
+      <HeatmapLegend />
+    </div>
     <div className="heatmap__columns-container">
       <div className="heatmap__columns">
-        { columns.map((column) => <div key={column}>{column}</div>)}
+        {
+          columns.map((column) => (
+            <Link
+              key={column}
+              nav
+              to={`/${column}`}
+            >
+              {column}
+            </Link>
+          ))
+        }
       </div>
     </div>
     <div
