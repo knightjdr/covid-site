@@ -1,5 +1,7 @@
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
+
 module.exports = {
-  pathPrefix: '/',
+  pathPrefix: `/${process.env.GATSBY_DEPLOY_FOLDER}/`,
   siteMetadata: {
     description: 'BioID-based interactome of the COVID-19 proteome.',
     image: '/thumbnail.png',

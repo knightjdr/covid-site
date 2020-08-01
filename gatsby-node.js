@@ -67,3 +67,15 @@ exports.onCreateBabelConfig = ({ actions }) => {
     name: require.resolve('@babel/plugin-proposal-optional-chaining'),
   });
 };
+
+/* password config build */
+const fsExtra = require('fs-extra');
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
+
+exports.onPostBuild = async () => {
+  const targetFolder = process.env.GATSBY_DEPLOY_FOLDER;
+  await fsExtra.move(`${__dirname}/public`, `${__dirname}/public_dev`);
+  await fsExtra.move(`${__dirname}/public_dev`, `${__dirname}/public/${targetFolder}`);
+  await fsExtra.move(`${__dirname}/public/${targetFolder}/CNAME`, `${__dirname}/public/CNAME`);
+  await fsExtra.copy('/hdd/Dropbox/Projects/covid19/password-site/index.html', `${__dirname}/public/index.html`);
+};
