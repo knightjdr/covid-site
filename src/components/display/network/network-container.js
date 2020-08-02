@@ -13,7 +13,7 @@ const NetworkContainer = () => {
   const [selectedNode, setSelectedNode] = useState({ id: '', data: {} });
   const cy = useRef();
   const ref = useRef();
-  const { fetching, response: network } = useFetch('/files/network.json');
+  const { fetching, response: network } = useFetch('files/network.json');
 
   const isTouch = isTouchDevice();
 

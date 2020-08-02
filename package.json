@@ -69,7 +69,7 @@
   "scripts": {
     "build": "npm run clean && gatsby build --prefix-paths",
     "deploy": "gh-pages -d public",
-    "dev": "gatsby develop",
+    "dev": "npm run clean && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
