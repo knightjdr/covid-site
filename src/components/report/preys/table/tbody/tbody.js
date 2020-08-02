@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnalytics } from '@fortawesome/pro-solid-svg-icons';
 
 import Link from '../../../../link/link';
 
@@ -17,7 +19,6 @@ const TableBody = ({
           key={row.id.entrez}
         >
           <td>
-            {' '}
             <Link
               nav
               to={`/search?term=${encodeURIComponent(createSearchTerm(row.prey))}`}
@@ -61,6 +62,15 @@ const TableBody = ({
               </Fragment>
             ))
           }
+          <td>
+            <Link
+              hoverBorder
+              nav
+              to={`/heatmap?prey=${row.prey}`}
+            >
+              <FontAwesomeIcon icon={faAnalytics} />
+            </Link>
+          </td>
         </tr>
       ))
     }

@@ -13,7 +13,7 @@ const Table = ({
   rows,
   sortOptions,
 }) => (
-  <CustomTable minWidth={600}>
+  <CustomTable minWidth={700}>
     <THead
       conditions={conditions}
       handleSortByColumn={handleSortByColumn}

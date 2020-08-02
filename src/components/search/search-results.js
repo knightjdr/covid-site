@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnalytics } from '@fortawesome/pro-duotone-svg-icons';
 
 import Link from '../link/link';
 import Table from '../table/table';
@@ -11,7 +13,7 @@ const SearchResults = ({
     {
       searchResults.length > 0
         ? (
-          <Table minWidth={500}>
+          <Table minWidth={600}>
             <thead>
               <tr>
                 <th>Symbol</th>
@@ -19,6 +21,7 @@ const SearchResults = ({
                 <th>Entrez</th>
                 <th>UniProt</th>
                 <th>Viral protein</th>
+                <th>Profile</th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +45,15 @@ const SearchResults = ({
                           </Link>,
                         ])
                       }
+                    </td>
+                    <td>
+                      <Link
+                        hoverBorder
+                        nav
+                        to={`/heatmap?prey=${result.symbol}`}
+                      >
+                        <FontAwesomeIcon icon={faAnalytics} />
+                      </Link>
                     </td>
                   </tr>
                 ))

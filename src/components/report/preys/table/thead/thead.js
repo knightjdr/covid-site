@@ -32,6 +32,7 @@ const TableHead = ({
       <th colSpan={conditions.length * 3}>
         Conditions
       </th>
+      <th className="report__thead-profile" rowSpan={3}>Profile</th>
     </tr>
     <tr>
       {

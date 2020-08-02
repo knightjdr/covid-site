@@ -53,6 +53,20 @@ a.link_button.link_nav:visited {
   color: var(--color-font);
 }
 
+a.link_hover {
+  position: relative;
+}
+a.link_hover:hover:after,
+a.link_hover:focus:after,
+a.link_hover:active:after {
+  border-bottom: 1px solid;
+  bottom: -2px;
+  content: '';
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
 a:not(.link_outline):focus {
   outline: none;
 }

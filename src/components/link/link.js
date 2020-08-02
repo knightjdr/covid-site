@@ -10,6 +10,7 @@ const CustomLink = ({
   buttonStyle,
   children,
   className,
+  hoverBorder,
   nav,
   outline,
   to,
@@ -21,6 +22,9 @@ const CustomLink = ({
   }
   if (buttonStyle) {
     classes.push('link_button');
+  }
+  if (hoverBorder) {
+    classes.push('link_hover');
   }
   if (outline) {
     classes.push('link_outline');
@@ -62,6 +66,7 @@ const CustomLink = ({
 CustomLink.defaultProps = {
   buttonStyle: false,
   className: '',
+  hoverBorder: false,
   nav: false,
   outline: false,
 };
@@ -70,6 +75,7 @@ CustomLink.propTypes = {
   buttonStyle: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  hoverBorder: PropTypes.bool,
   nav: PropTypes.bool,
   outline: PropTypes.bool,
   to: PropTypes.string.isRequired,

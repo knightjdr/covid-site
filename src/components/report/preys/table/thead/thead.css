@@ -30,7 +30,8 @@
   border-bottom-color: var(--color-font);
 }
 
-.report__thead-prey {
+.report__thead-prey,
+.report__thead-profile {
   vertical-align: bottom;
 }
 
