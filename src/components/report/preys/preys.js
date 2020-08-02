@@ -44,6 +44,7 @@ const Preys = ({
       </Link>
     </div>
     <Table
+      bait={id}
       conditions={conditions}
       fdr={fdr}
       highlightedPrey={highlightedPrey}

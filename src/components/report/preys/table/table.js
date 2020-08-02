@@ -8,6 +8,7 @@ import THead from './thead/thead';
 import './table.css';
 
 const Table = ({
+  bait,
   conditions,
   handleSortByColumn,
   rows,
@@ -20,6 +21,7 @@ const Table = ({
       sortOptions={sortOptions}
     />
     <TBody
+      bait={bait}
       conditions={conditions}
       rows={rows}
     />
@@ -27,6 +29,7 @@ const Table = ({
 );
 
 Table.propTypes = {
+  bait: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleSortByColumn: PropTypes.func.isRequired,
   rows: PropTypes.arrayOf(PropTypes.shape({

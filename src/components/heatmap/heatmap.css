@@ -32,32 +32,33 @@
   margin-left: 100px;
   padding-right: 15px;
 }
-.heatmap__columns > a {
+.heatmap__columns > div {
   box-sizing: border-box;
   display: inline-block;
-  font-family: var(--font-secondary);
-  font-size: 16px;
+  height: 50px;
   padding-top: 3px;
   width: 20px;
   writing-mode: vertical-lr;
   transform: rotate(-180deg);
 }
-.heatmap__columns > a {
+.heatmap__columns > div > a {
+  font-family: var(--font-secondary);
+  font-size: 16px;
   position: relative;
 }
-.heatmap__columns > a:hover:after,
-.heatmap__columns > a:focus:after,
-.heatmap__columns > a:active:after {
+.heatmap__columns > div > a:hover:after,
+.heatmap__columns > div > a:focus:after,
+.heatmap__columns > div > a:active:after {
   border-left: 1px solid;
   content: '';
   height: 100%;
-  left: 3px;
+  left: 1px;
   position: absolute;
   top: 0;
 }
-.heatmap__columns > a:hover,
-.heatmap__columns > a:focus,
-.heatmap__columns > a:active {
+.heatmap__columns > div > a:hover,
+.heatmap__columns > div > a:focus,
+.heatmap__columns > div > a:active {
   text-decoration: none;
 }
 

@@ -14,6 +14,7 @@ const getDirection = (condition, metric, previousOptions) => {
 };
 
 const TableContainer = ({
+  bait,
   conditions,
   fdr,
   highlightedPrey,
@@ -55,6 +56,7 @@ const TableContainer = ({
 
   return (
     <Table
+      bait={bait}
       conditions={conditions}
       handleSortByColumn={handleSortByColumn}
       rows={rows}
@@ -64,6 +66,7 @@ const TableContainer = ({
 };
 
 TableContainer.propTypes = {
+  bait: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   fdr: PropTypes.number.isRequired,
   highlightedPrey: PropTypes.string.isRequired,

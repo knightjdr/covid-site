@@ -9,6 +9,7 @@ import './heatmap.css';
 const Heatmap = forwardRef((
   {
     columns,
+    highlightedBait,
     highlightedPrey,
     rows,
     scrollerDimensions,
@@ -36,13 +37,18 @@ const Heatmap = forwardRef((
       <div className="heatmap__columns">
         {
           columns.map((column) => (
-            <Link
+            <div
+              className={highlightedBait === column ? 'heatmap__highlight' : null}
               key={column}
-              nav
-              to={`/${column}`}
             >
-              {column}
-            </Link>
+              <Link
+                
+                nav
+                to={`/${column}`}
+              >
+                {column}
+              </Link>
+            </div>
           ))
         }
       </div>
@@ -81,11 +87,13 @@ const Heatmap = forwardRef((
 ));
 
 Heatmap.defaultProps = {
+  highlightedBait: '',
   highlightedPrey: '',
 };
 
 Heatmap.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.string).isRequired,
+  highlightedBait: PropTypes.string,
   highlightedPrey: PropTypes.string,
   rows: PropTypes.arrayOf(PropTypes.string).isRequired,
   scrollerDimensions: PropTypes.shape({

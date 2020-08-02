@@ -81,6 +81,7 @@ const HeatmapContainer = () => {
   const canvasRef = useRef();
   const containerRef = useRef();
   const programmticScrollRef = useRef(false);
+  const [urlBait] = useQueryParam('bait', StringParam);
   const [urlPrey] = useQueryParam('prey', StringParam);
 
   const updateCanvas = (rowIndex) => {
@@ -133,6 +134,7 @@ const HeatmapContainer = () => {
   return (
     <Heatmap
       columns={data.columns}
+      highlightedBait={urlBait}
       highlightedPrey={urlPrey}
       ref={{
         canvas: canvasRef,

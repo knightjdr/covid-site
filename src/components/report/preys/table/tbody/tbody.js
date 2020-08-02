@@ -8,6 +8,7 @@ import Link from '../../../../link/link';
 const createSearchTerm = (prey) => `^${prey}$`;
 
 const TableBody = ({
+  bait,
   conditions,
   rows,
 }) => (
@@ -66,7 +67,7 @@ const TableBody = ({
             <Link
               hoverBorder
               nav
-              to={`/heatmap?prey=${row.prey}`}
+              to={`/heatmap?bait=${bait}&prey=${row.prey}`}
             >
               <FontAwesomeIcon icon={faAnalytics} />
             </Link>
@@ -78,6 +79,7 @@ const TableBody = ({
 );
 
 TableBody.propTypes = {
+  bait: PropTypes.string.isRequired,
   conditions: PropTypes.arrayOf(PropTypes.string).isRequired,
   rows: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.shape({
