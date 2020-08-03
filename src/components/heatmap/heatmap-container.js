@@ -135,8 +135,8 @@ const HeatmapContainer = () => {
   };
 
   useEffect(() => {
-    if (canvasRef.current && containerRef.current && urlPrey) {
-      findPrey(urlPrey);
+    if (canvasRef.current && containerRef.current) {
+      findPrey(urlPrey || '');
       setHighlightedPrey(urlPrey);
     }
   }, [canvasRef.current, containerRef.current, urlPrey]);
