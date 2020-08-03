@@ -92,6 +92,9 @@
   background-color: var(--color-accent);
   color: var(--color-font-dark);
 }
+.heatmap__highlight a:link {
+  color: var(--color-accent-link);
+}
 
 .heatmap__controls {
   align-items: center;
