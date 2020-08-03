@@ -7,7 +7,7 @@ import debounce from '../../utils/debounce';
 import drawCanvas from './canvas/draw-canvas';
 import data from './assets/heatmap-shape.json';
 
-const rowMap = data.rows.reduce((accum, value, index) => ({ ...accum, [value]: index }), {});
+const rowMap = data.rows.reduce((accum, value, index) => ({ ...accum, [value.toLowerCase()]: index }), {});
 
 const CELL_SIZE = 20;
 const ROW_BUFFER = 20;
@@ -76,7 +76,9 @@ const getScrollToRow = (container, rowIndex, dims) => {
 };
 
 const HeatmapContainer = () => {
+  const [highlightedPrey, setHighlightedPrey] = useState('');
   const [rows, setRows] = useState({ names: [], startIndex: null });
+  const [searchTerm, setSearchTerm] = useState({ message: '', value: '' });
   const [translation, setTranslation] = useState(0);
   const canvasRef = useRef();
   const containerRef = useRef();
@@ -98,16 +100,44 @@ const HeatmapContainer = () => {
   };
   const debouncedUpdated = debounce(updateCanvas, 100);
 
-  useEffect(() => {
-    if (canvasRef.current && containerRef.current) {
-      const rowIndex = rowMap[urlPrey] || 0;
-      const { height } = containerRef.current.getBoundingClientRect();
-      const containerHeightInCells = Math.floor(height / CELL_SIZE);
-      const desiredTopRowIndex = rowIndex - Math.floor(containerHeightInCells / 2);
+  const findPrey = (term) => {
+    const rowIndex = rowMap[term.toLowerCase()] || 0;
+    const { height } = containerRef.current.getBoundingClientRect();
+    const containerHeightInCells = Math.floor(height / CELL_SIZE);
+    const desiredTopRowIndex = rowIndex - Math.floor(containerHeightInCells / 2);
 
-      const row = updateCanvas(desiredTopRowIndex);
-      programmticScrollRef.current = true;
-      containerRef.current.scrollTop = row.index * CELL_SIZE;
+    const row = updateCanvas(desiredTopRowIndex);
+    programmticScrollRef.current = true;
+    containerRef.current.scrollTop = row.index * CELL_SIZE;
+  };
+
+  const handleChangeSearchTerm = (e) => {
+    setSearchTerm({ message: '', value: e.target.value });
+  };
+
+  const handleSearch = (e) => {
+    if (
+      searchTerm.value
+      && (
+        e.currentTarget.tagName === 'BUTTON'
+        || (
+          e.which === 13 || e.keyCode === 13
+        )
+      )
+    ) {
+      if (rowMap[searchTerm.value.toLowerCase()]) {
+        findPrey(searchTerm.value);
+        setHighlightedPrey(searchTerm.value);
+      } else {
+        setSearchTerm({ ...searchTerm, message: 'Not found' });
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (canvasRef.current && containerRef.current && urlPrey) {
+      findPrey(urlPrey);
+      setHighlightedPrey(urlPrey);
     }
   }, [canvasRef.current, containerRef.current, urlPrey]);
 
@@ -134,14 +164,17 @@ const HeatmapContainer = () => {
   return (
     <Heatmap
       columns={data.columns}
+      handleChangeSearchTerm={handleChangeSearchTerm}
+      handleSearch={handleSearch}
       highlightedBait={urlBait}
-      highlightedPrey={urlPrey}
+      highlightedPrey={highlightedPrey}
       ref={{
         canvas: canvasRef,
         container: containerRef,
       }}
       rows={rows.names}
       scrollerDimensions={scrollerDimensions}
+      searchTerm={searchTerm}
       translation={translation}
     />
   );

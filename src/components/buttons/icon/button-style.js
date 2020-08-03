@@ -10,7 +10,7 @@ const Button = styled(DefaultButton)`
   border-style: solid;
   border-width: 2px;
   color: var(--color-primary);
-  display: flex;
+  display: inline-flex;
   font-size: 1em;
   justify-content: center;
   height: 34px;

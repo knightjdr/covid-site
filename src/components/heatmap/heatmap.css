@@ -94,13 +94,15 @@
 }
 
 .heatmap__controls {
-  margin-bottom: 0.5rem;
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
   width: 100%;
 }
 .heatmap__legend {
   color: var(--color-link);
   display: inline-block;
-  font-size: 1rem;
   position: relative;
 }
 .heatmap__legend:hover::after,
@@ -146,4 +148,28 @@
   transition-delay: 0.2s;
   visibility: hidden;
   z-index: 1000;
+}
+.heatmap__controls .input {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+.heatmap__controls .input input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 30px;
+  width: 120px;
+}
+.heatmap__controls button {
+  border-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 30px;
+  width: 30px;
+}
+.heatmap__controls-message {
+  margin-left: 0.8rem;
+}
+.heatmap__controls-message svg {
+  color: var(--warning);
+  margin-right: 0.5rem;
 }
