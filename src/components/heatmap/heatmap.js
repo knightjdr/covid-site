@@ -30,17 +30,19 @@ const Heatmap = forwardRef((
       handleSearch={handleSearch}
       searchTerm={searchTerm}
     />
-    <HeatmapColumns
-      columns={columns}
-      highlightedBait={highlightedBait}
-    />
-    <HeatmapRows
-      highlightedPrey={highlightedPrey}
-      ref={refs}
-      rows={rows}
-      scrollerDimensions={scrollerDimensions}
-      translation={translation}
-    />
+    <div className="heatmap__container">
+      <HeatmapColumns
+        columns={columns}
+        highlightedBait={highlightedBait}
+      />
+      <HeatmapRows
+        highlightedPrey={highlightedPrey}
+        ref={refs}
+        rows={rows}
+        scrollerDimensions={scrollerDimensions}
+        translation={translation}
+      />
+    </div>
   </div>
 ));
 

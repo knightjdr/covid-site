@@ -21,6 +21,15 @@
   margin-bottom: 0.3rem;
 }
 
+.heatmap__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: calc(100vw - 2rem);
+  min-height: 350px;
+  overflow: auto;
+}
+
 .heatmap__columns-container {
   background-color: var(--color-background);
 }
@@ -66,6 +75,7 @@
   box-sizing: border-box;
   flex-grow: 1;
   min-height: 300px;
+  min-width: 655px;
   overflow-y: auto;
   padding-right: 15px;
 }

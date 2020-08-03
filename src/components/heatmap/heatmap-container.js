@@ -142,8 +142,15 @@ const HeatmapContainer = () => {
   }, [canvasRef.current, containerRef.current, urlPrey]);
 
   useEffect(() => {
+    const getTop = () => Math.ceil(containerRef.current.scrollTop / CELL_SIZE);
+    const onResize = () => {
+      const topIndex = getTop();
+      debouncedUpdated(topIndex);
+      programmticScrollRef.current = false;
+    };
+
     const onScroll = () => {
-      const topIndex = Math.ceil(containerRef.current.scrollTop / CELL_SIZE);
+      const topIndex = getTop();
       if (
         !programmticScrollRef.current
         && (
@@ -156,9 +163,13 @@ const HeatmapContainer = () => {
       programmticScrollRef.current = false;
     };
 
+    window.addEventListener('resize', onResize);
     containerRef.current.addEventListener('scroll', onScroll);
 
-    return () => { containerRef.current.removeEventListener('scroll', onScroll); };
+    return () => {
+      window.removeEventListener('resize', onResize);
+      containerRef.current.removeEventListener('scroll', onScroll);
+    };
   }, [containerRef.current, programmticScrollRef.current, rows.startIndex]);
 
   return (
