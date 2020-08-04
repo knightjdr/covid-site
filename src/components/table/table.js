@@ -1,13 +1,21 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import './table.css';
 
-const Table = ({
-  children,
-  minWidth,
-}) => (
-  <div className="table__container">
+const Table = forwardRef((
+  {
+    children,
+    classOnOverflow,
+    minWidth,
+    tableOverflows,
+  },
+  ref,
+) => (
+  <div
+    className={classOnOverflow && tableOverflows ? `table__container ${classOnOverflow}` : 'table__container'}
+    ref={ref}
+  >
     <table
       className="table"
       style={{ minWidth }}
@@ -15,7 +23,7 @@ const Table = ({
       {children}
     </table>
   </div>
-);
+));
 
 Table.defaultProps = {
   minWidth: 'auto',
@@ -23,10 +31,12 @@ Table.defaultProps = {
 
 Table.propTypes = {
   children: PropTypes.node.isRequired,
+  classOnOverflow: PropTypes.string.isRequired,
   minWidth: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
   ]),
+  tableOverflows: PropTypes.bool.isRequired,
 };
 
 export default Table;

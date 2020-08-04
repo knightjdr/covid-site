@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnalytics } from '@fortawesome/pro-duotone-svg-icons';
 
 import Link from '../link/link';
-import Table from '../table/table';
+import Table from '../table/table-container';
 
 const SearchResults = ({
   searchResults,

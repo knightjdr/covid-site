@@ -6,3 +6,13 @@
 .repory__prey-table_highlight a:visited {
   color: var(--color-accent-link);
 }
+
+.report__prey-table_overflows {
+  height: 500px;
+}
+
+@media (hover: none) {
+  .report__prey-table_overflows {
+    height: auto;
+  }
+}

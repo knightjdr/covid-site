@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import CustomTable from '../../../table/table';
+import CustomTable from '../../../table/table-container';
 import TBody from './tbody/tbody';
 import THead from './thead/thead';
 
@@ -14,7 +14,10 @@ const Table = ({
   rows,
   sortOptions,
 }) => (
-  <CustomTable minWidth={700}>
+  <CustomTable
+    classOnOverflow="report__prey-table_overflows"
+    minWidth={700}
+  >
     <THead
       conditions={conditions}
       handleSortByColumn={handleSortByColumn}
