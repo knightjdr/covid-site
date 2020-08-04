@@ -68,6 +68,19 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+exports.onCreateWebpackConfig = ({ actions, stage, getConfig, loaders }) => {
+  if (stage === 'build-javascript') {
+    const config = getConfig();
+    const index = config.plugins.findIndex((plugin) => {
+      return plugin.constructor.name === "MiniCssExtractPlugin";
+    });
+    config.plugins[index] = new MiniCssExtractPlugin({ ignoreOrder: true });
+    actions.replaceWebpackConfig(config);
+  }
+};
+
 /* password config build */
 const fsExtra = require('fs-extra');
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
