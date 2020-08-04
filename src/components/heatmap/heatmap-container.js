@@ -18,7 +18,7 @@ const scrollerDimensions = {
   width: (data.columns.length * CELL_SIZE) + 100,
 };
 
-const getDimensions = (container) => {
+export const getDimensions = (container) => {
   const { height } = container.getBoundingClientRect();
 
   const pageSize = Math.floor(height / CELL_SIZE);
@@ -35,7 +35,7 @@ const getDimensions = (container) => {
   };
 };
 
-const getScrollToRow = (container, rowIndex, dims) => {
+export const getScrollToRow = (container, rowIndex, dims) => {
   const { height } = container.getBoundingClientRect();
   const containerHeightInCells = Math.floor(height / CELL_SIZE);
 
@@ -139,7 +139,7 @@ const HeatmapContainer = () => {
       findPrey(urlPrey || '');
       setHighlightedPrey(urlPrey);
     }
-  }, [canvasRef.current, containerRef.current, urlPrey]);
+  }, []);
 
   useEffect(() => {
     const getTop = () => Math.ceil(containerRef.current.scrollTop / CELL_SIZE);
