@@ -1,29 +1,55 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Points = ({
   axisLength,
+  handleClickLabel,
+  labels,
   points,
   scale,
 }) => {
+  const fontSize = 12 / scale;
   const radius = 5 / scale;
+  const textGap = 8 / scale;
   return (
-    points.map((point) => (
-      <circle
-        cx={point.x}
-        cy={axisLength - point.y}
-        data-highlight={point.highlight}
-        key={point.label}
-        r={radius}
-      >
-        <title>{point.label}</title>
-      </circle>
-    ))
+    points.map((point) => {
+      const y = axisLength - point.y;
+      return (
+        <Fragment key={point.label}>
+          <circle
+            cx={point.x}
+            cy={y}
+            data-highlight={point.highlight}
+            data-label={point.label}
+            onClick={handleClickLabel}
+            r={radius}
+          >
+            <title>{point.label}</title>
+          </circle>
+          {
+            labels[point.label]
+            && (
+              <text
+                dominantBaseline="middle"
+                fontSize={fontSize}
+                textAnchor="start"
+                x={point.x + textGap}
+                y={y}
+              >
+                {point.label}
+              </text>
+            )
+          }
+        </Fragment>
+      );
+    })
   );
 };
 
 Points.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleClickLabel: PropTypes.func.isRequired,
+  labels: PropTypes.shape({}).isRequired,
   points: PropTypes.arrayOf(
     PropTypes.shape({
       highlight: PropTypes.bool,

@@ -9,6 +9,7 @@ import './scatterplot.css';
 
 const ScatterPlot = ({
   axisLength,
+  handleClickLabel,
   handleMouseDownX,
   handleMouseDownXY,
   handleMouseDownY,
@@ -16,6 +17,7 @@ const ScatterPlot = ({
   handleWheelXY,
   handleWheelY,
   id,
+  labels,
   log,
   midline,
   plotDimension,
@@ -33,9 +35,11 @@ const ScatterPlot = ({
   >
     <Plot
       axisLength={axisLength}
+      handleClickLabel={handleClickLabel}
       handleMouseDown={handleMouseDownXY}
       handleWheel={handleWheelXY}
       id={id}
+      labels={labels}
       midline={midline}
       points={points}
       transform={transform}
@@ -67,6 +71,7 @@ ScatterPlot.defaultProps = {
 
 ScatterPlot.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleClickLabel: PropTypes.func.isRequired,
   handleMouseDownX: PropTypes.func.isRequired,
   handleMouseDownXY: PropTypes.func.isRequired,
   handleMouseDownY: PropTypes.func.isRequired,
@@ -74,6 +79,7 @@ ScatterPlot.propTypes = {
   handleWheelXY: PropTypes.func.isRequired,
   handleWheelY: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  labels: PropTypes.shape({}).isRequired,
   log: PropTypes.bool.isRequired,
   midline: PropTypes.shape({
     x1: PropTypes.number,

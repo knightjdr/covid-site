@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Scatterplot from './scatterplot';
 
@@ -16,6 +16,16 @@ const ScatterplotContainer = ({
   x,
   y,
 }) => {
+  const [labels, setLabels] = useState({});
+
+  const handleClickLabel = (e) => {
+    const { label } = e.target.dataset;
+    setLabels({
+      ...labels,
+      [label]: labels[label] ? false : true,
+    });
+  };
+
   const handleMouseDownX = (e) => {
     const options = {
       transform,
@@ -65,6 +75,7 @@ const ScatterplotContainer = ({
   return (
     <Scatterplot
       axisLength={axisLength}
+      handleClickLabel={handleClickLabel}
       handleMouseDownX={handleMouseDownX}
       handleMouseDownXY={handleMouseDownXY}
       handleMouseDownY={handleMouseDownY}
@@ -72,6 +83,7 @@ const ScatterplotContainer = ({
       handleWheelXY={handleWheelXY}
       handleWheelY={handleWheelY}
       id={id}
+      labels={labels}
       log={log}
       midline={midline}
       plotDimension={plotDimension}

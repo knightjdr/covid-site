@@ -6,9 +6,11 @@ import Points from './points';
 
 const Plot = ({
   axisLength,
+  handleClickLabel,
   handleMouseDown,
   handleWheel,
   id,
+  labels,
   midline,
   points,
   transform,
@@ -50,6 +52,8 @@ const Plot = ({
         }
         <Points
           axisLength={axisLength}
+          handleClickLabel={handleClickLabel}
+          labels={labels}
           points={points}
           scale={transform.scale}
         />
@@ -64,9 +68,11 @@ Plot.defaultProps = {
 
 Plot.propTypes = {
   axisLength: PropTypes.number.isRequired,
+  handleClickLabel: PropTypes.func.isRequired,
   handleMouseDown: PropTypes.func.isRequired,
   handleWheel: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  labels: PropTypes.shape({}).isRequired,
   midline: PropTypes.shape({
     x1: PropTypes.number,
     x2: PropTypes.number,
