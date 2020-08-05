@@ -40,7 +40,9 @@
 .protein-nav__list[data-highlighted*="cytoplasm"] li a[data-cell-localization*="cytoplasm"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="ER"] li a[data-cell-localization*="ER"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="Golgi"] li a[data-cell-localization*="Golgi"].protein-nav__list-link,
+.protein-nav__list[data-highlighted*="mitochondrion"] li a[data-cell-localization*="mitochondrion"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="nucleus"] li a[data-cell-localization*="nucleus"].protein-nav__list-link,
+.protein-nav__list[data-highlighted*="nucleolus"] li a[data-cell-localization*="nucleolus"].protein-nav__list-link,
 .protein-nav__list[data-highlighted*="plasma_membrane"] li a[data-cell-localization*="plasma_membrane"].protein-nav__list-link {
   background-color: var(--color-display-focus);
 }

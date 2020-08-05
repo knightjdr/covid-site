@@ -3,7 +3,7 @@
     "id": "NSP1",
     "localization": {
       "cell": [
-        ""
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -14,7 +14,7 @@
     "id": "NSP2",
     "localization": {
       "cell": [
-        ""
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -36,7 +36,7 @@
     "id": "NSP4",
     "localization": {
       "cell": [
-        "cytoplasm"
+        "ER"
       ],
       "virus": [
         ""
@@ -47,7 +47,7 @@
     "id": "NSP5",
     "localization": {
       "cell": [
-        ""
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -58,7 +58,7 @@
     "id": "NSP6",
     "localization": {
       "cell": [
-        "plasma_membrane"
+        "ER"
       ],
       "virus": [
         ""
@@ -102,7 +102,7 @@
     "id": "NSP10",
     "localization": {
       "cell": [
-        "cytoplasm"
+        "nucleus"
       ],
       "virus": [
         ""
@@ -124,7 +124,7 @@
     "id": "NSP13",
     "localization": {
       "cell": [
-        "ERGIC"
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -135,7 +135,8 @@
     "id": "NSP14",
     "localization": {
       "cell": [
-        ""
+        "cytoplasm",
+        "ER"
       ],
       "virus": [
         ""
@@ -146,7 +147,7 @@
     "id": "NSP15",
     "localization": {
       "cell": [
-        "cytoplasm"
+        ""
       ],
       "virus": [
         ""
@@ -157,7 +158,7 @@
     "id": "NSP16",
     "localization": {
       "cell": [
-        ""
+        "mitochondrion"
       ],
       "virus": [
         ""
@@ -168,7 +169,7 @@
     "id": "S",
     "localization": {
       "cell": [
-        "ERGIC"
+        "ER"
       ],
       "virus": [
         "spike"
@@ -179,7 +180,7 @@
     "id": "ORF3A",
     "localization": {
       "cell": [
-        "Golgi"
+        "ER"
       ],
       "virus": [
         ""
@@ -190,7 +191,7 @@
     "id": "ORF3B",
     "localization": {
       "cell": [
-        ""
+        "Golgi"
       ],
       "virus": [
         ""
@@ -201,7 +202,7 @@
     "id": "E",
     "localization": {
       "cell": [
-        "Golgi"
+        "ER"
       ],
       "virus": [
         "envelope"
@@ -212,6 +213,7 @@
     "id": "M",
     "localization": {
       "cell": [
+        "ER",
         "Golgi"
       ],
       "virus": [
@@ -247,7 +249,8 @@
     "id": "ORF7B",
     "localization": {
       "cell": [
-        ""
+        "ER",
+        "Golgi"
       ],
       "virus": [
         ""
@@ -258,7 +261,7 @@
     "id": "ORF8",
     "localization": {
       "cell": [
-        ""
+        "ER"
       ],
       "virus": [
         ""
@@ -269,8 +272,7 @@
     "id": "N",
     "localization": {
       "cell": [
-        "ERGIC",
-        "Golgi"
+        "cytoplasm"
       ],
       "virus": [
         "capsid"
@@ -281,7 +283,7 @@
     "id": "ORF9B",
     "localization": {
       "cell": [
-        ""
+        "mitochondrion"
       ],
       "virus": [
         ""
@@ -292,7 +294,7 @@
     "id": "ORF14",
     "localization": {
       "cell": [
-        ""
+        "nucleolus"
       ],
       "virus": [
         ""
