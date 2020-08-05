@@ -8,7 +8,7 @@ const validHighlightNames = [
   'cytoplasm',
   'ER',
   'Golgi',
-  'mitochondria',
+  'mitochondrion',
   'nucleus',
   'nucleolus',
   'plasma_membrane',
@@ -440,7 +440,7 @@ const InfectedCell = ({
         />
       </g>
       <g
-        data-localization="mitochondria"
+        data-localization="mitochondrion"
         onBlur={handleGraphicMouseOut}
         onFocus={handleGraphicMouseOver}
         onMouseOut={handleGraphicMouseOut}
