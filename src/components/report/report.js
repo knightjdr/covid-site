@@ -15,6 +15,7 @@ const Report = ({
   gene,
   id,
   images,
+  localization,
   name,
   preys,
   sequence,
@@ -25,6 +26,7 @@ const Report = ({
       description={description}
       gene={gene}
       id={id}
+      localization={localization}
       name={name}
       uniprot={uniprot}
     />
@@ -57,6 +59,10 @@ Report.propTypes = {
   gene: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   images: PropTypes.arrayOf(PropTypes.shape({})),
+  localization: PropTypes.shape({
+    cell: PropTypes.arrayOf(PropTypes.string),
+    virus: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
   name: PropTypes.string,
   preys: PropTypes.shape({}).isRequired,
   sequence: PropTypes.string.isRequired,

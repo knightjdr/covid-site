@@ -12,6 +12,7 @@ const BaitTemplate = ({ pageContext }) => {
     gene,
     id,
     images,
+    localization,
     name,
     preys,
     sequence,
@@ -27,6 +28,7 @@ const BaitTemplate = ({ pageContext }) => {
         gene={gene}
         id={id}
         images={images}
+        localization={localization}
         name={name}
         preys={preys}
         sequence={sequence}
@@ -43,6 +45,10 @@ BaitTemplate.propTypes = {
     gene: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.shape({})),
+    localization: PropTypes.shape({
+      cell: PropTypes.arrayOf(PropTypes.string),
+      virus: PropTypes.arrayOf(PropTypes.string),
+    }).isRequired,
     name: PropTypes.string,
     preys: PropTypes.shape({}).isRequired,
     sequence: PropTypes.string.isRequired,
