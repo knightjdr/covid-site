@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import HeaderLocalization from './header-localization';
 import Hero from '../../layout/background/hero';
-import Link from '../../link/link';
 
 import './header.css';
+import HeaderUniprot from './header-uniprot';
+import HeaderDescription from './header-description';
 
 const Header = ({
   description,
@@ -13,67 +15,38 @@ const Header = ({
   localization,
   name,
   uniprot,
-}) => {
-  const cellLocalizations = localization.cell?.length > 0 ? localization.cell.join(', ') : 'unknown';
-  const expressedInVirus = localization.virus?.length > 0;
-  return (
-    <Hero
-      className="report__header"
-      Tag="header"
-    >
-      <div className="report__header-inner">
-        <h1>
-          <div className="report__header-title">Identifier</div>
-          <div>{id}</div>
-        </h1>
-        <div className="report__header-field">Gene</div>
-        <div>{gene}</div>
-        {}
-        <div className="report__header-field">Protein name</div>
-        <div>{name || 'none currently assigned'}</div>
-        {
-          uniprot
-            && (
-              <>
-                <div className="report__header-field">Uniprot</div>
-                <div className="report__header-uniprot">
-                  <Link to={`https://covid-19.uniprot.org/uniprotkb/${uniprot}`}>
-                    {uniprot}
-                  </Link>
-                </div>
-              </>
-            )
-        }
-        <div className="report__header-field">Localization</div>
-        {
-          expressedInVirus
-            ? (
-              <div className="report__header-localization">
-                <span>cell -</span>
-                {' '}
-                <span>{cellLocalizations}</span>
-                ,
-                {' '}
-                <span>virus -</span>
-                {' '}
-                <span>{localization.virus.join(', ')}</span>
-              </div>
-            )
-            : <div>{cellLocalizations}</div>
-        }
-        <div className="report__header-field">Description</div>
-        <div>{`${description} Description from UniProt.` || '-'}</div>
-      </div>
-    </Hero>
-  );
-};
+}) => (
+  <Hero
+    className="report__header"
+    Tag="header"
+  >
+    <div className="report__header-inner">
+      <h1>
+        <div className="report__header-title">Identifier</div>
+        <div>{id}</div>
+      </h1>
+      <div className="report__header-field">Gene</div>
+      <div>{gene}</div>
+      {}
+      <div className="report__header-field">Protein name</div>
+      <div>{name || 'none currently assigned'}</div>
+      <div className="report__header-field">Localization</div>
+      <HeaderLocalization localization={localization} />
+      <HeaderUniprot uniprot={uniprot} />
+      <HeaderDescription description={description} />
+    </div>
+  </Hero>
+);
 
 Header.propTypes = {
-  description: PropTypes.string.isRequired,
+  description: PropTypes.shape({
+    custom: PropTypes.string,
+    uniprot: PropTypes.string,
+  }).isRequired,
   gene: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   localization: PropTypes.shape({
-    cell: PropTypes.arrayOf(PropTypes.string),
+    cellSpecific: PropTypes.arrayOf(PropTypes.string),
     virus: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   name: PropTypes.string.isRequired,
