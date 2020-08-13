@@ -1,0 +1,87 @@
+.enrichment h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.enrichment p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.enrichment__controls {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  width: 100%;
+}
+.enrichment__legend {
+  color: var(--color-link);
+  display: inline-block;
+  position: relative;
+}
+.enrichment__legend:hover::after,
+.enrichment__legend:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.enrichment__legend::before {
+  border-color: var(--color-font) transparent transparent transparent;
+  border-style: solid;
+  border-width: 4px 6px 0 6px;
+  content: '';
+  left: 100%;
+  margin-left: 1px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%) rotate(90deg);
+  transition: opacity 0.2s ease;
+  transition-delay: 0.2s;
+  visibility: hidden;
+  z-index: 1000;
+}
+.enrichment__legend::after {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
+  content: url('./assets/legend.svg');
+  left: 100%;
+  margin-left: 0.5rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0.8rem 1rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateX(0%) translateY(-50%);
+  transition: opacity 0.2s ease;
+  transition-delay: 0.2s;
+  visibility: hidden;
+  z-index: 1000;
+}
+.enrichment__controls .autocomplete {
+  flex-grow: 1;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+.enrichment__controls .input {
+  width: 100%;
+}
+.enrichment__controls .input input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 30px;
+}
+.enrichment__controls button.enrichment__controls-button {
+  border-radius: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 30px;
+  width: 30px;
+}
