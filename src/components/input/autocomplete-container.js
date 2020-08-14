@@ -41,16 +41,9 @@ const AutocompleteContainer = ({
   };
 
   const selectSuggestion = (e, query) => {
-    const syntheticEvent = {
-      ...e,
-      target: {
-        ...e.target,
-        value: query,
-      },
-    };
     clearSuggestions();
-    onChange(syntheticEvent, query);
-    onSelect(syntheticEvent, query);
+    onChange(e, query);
+    onSelect(e, query);
   };
 
   const handleSelect = (e) => {
