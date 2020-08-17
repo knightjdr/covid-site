@@ -23,7 +23,7 @@ const Heatmap = forwardRef((
   refs,
 ) => (
   <div className="heatmap">
-    <h1>Viral-human proximity interaction heat map</h1>
+    <h1>Proximity interaction heat map</h1>
     <HeatmapDescription />
     <HeatmapControls
       handleChangeSearchTerm={handleChangeSearchTerm}
