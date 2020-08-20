@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import IF from './if/if';
+import Info from './info/info-container';
 import Preys from './preys/preys-container';
-import Sequence from './sequence/sequence-container';
 import Visualization from './visualization/visualization';
 
 import './report.css';
@@ -31,8 +31,11 @@ const Report = ({
       uniprot={uniprot}
     />
     <div className="report__options">
+      <Info
+        id={id}
+        sequence={sequence}
+      />
       <IF images={images} />
-      <Sequence sequence={sequence} />
       <Visualization
         conditions={conditions}
         preys={preys}

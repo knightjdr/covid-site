@@ -54,10 +54,12 @@ const Details = ({
   listStyleType,
   open,
   summary,
+  ...props
 }) => (
   <StyledDetails
     listStyleType={listStyleType}
     open={open}
+    {...props}
   >
     <summary>
       <div className="summary__inner">
@@ -74,7 +76,6 @@ Details.defaultProps = {
   open: false,
   summary: 'summary',
 };
-
 
 Details.propTypes = {
   children: PropTypes.node.isRequired,

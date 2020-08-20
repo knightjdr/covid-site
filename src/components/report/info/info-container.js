@@ -1,25 +1,30 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Sequence from './sequence';
+import Info from './info';
 
 import copyToClipboard from '../../../utils/copy-to-clipboard';
 
-const SequenceContainer = ({ sequence }) => {
+const InfoContainer = ({
+  id,
+  sequence,
+}) => {
   const copyProteinToClipboard = () => {
     copyToClipboard(sequence);
   };
 
   return (
-    <Sequence
+    <Info
       copyProteinToClipboard={copyProteinToClipboard}
+      id={id}
       sequence={sequence}
     />
   );
 };
 
-SequenceContainer.propTypes = {
+InfoContainer.propTypes = {
+  id: PropTypes.string.isRequired,
   sequence: PropTypes.string.isRequired,
 };
 
-export default SequenceContainer;
+export default InfoContainer;

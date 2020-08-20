@@ -1,0 +1,42 @@
+.report__info {
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+.report__info h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+.report__info p {
+  margin-bottom: 0;
+}
+.report__info ul {
+  margin-bottom: 0.5rem;
+}
+.report__info p,
+.report__info ul {
+  font-size: 1rem;
+}
+.report__info-sequence {
+  display: flex;
+}
+.report__info-sequence code {
+  align-items: center;
+  display: flex;
+  max-width: calc(100% - 4rem);
+  padding: 0.2rem 0.5rem;
+}
+.report__info-sequence code div {
+  max-width: 100%;
+}
+.report__info-copy {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  justify-content: center;
+  padding: 0.5rem 0.8rem;
+  width: 4rem;
+}
+.report__info-copy button {
+  margin-top: 0.5rem;
+}

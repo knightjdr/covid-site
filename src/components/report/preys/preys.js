@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/pro-solid-svg-icons';
 
 import Legend from '../legend';
-import Link from '../../link/link';
 import Table from './table/table-container';
 
 import './preys.css';
@@ -34,14 +31,6 @@ const Preys = ({
         specificity={specificity}
         spectralCount={spectralCount}
       />
-      <Link
-        download
-        nav
-        to={`/downloads/saint/${id}-saint.txt`}
-      >
-        <FontAwesomeIcon icon={faDownload} size="1x" />
-        <span>SAINT</span>
-      </Link>
     </div>
     <Table
       bait={id}

@@ -17,7 +17,6 @@ const DownloadsPage = () => (
       <li>
         <Link
           download
-          nav
           to="downloads/saint/saint-all.txt"
         >
           saint-all
@@ -30,7 +29,6 @@ const DownloadsPage = () => (
       <li>
         <Link
           download
-          nav
           to="downloads/saint/saint-virus.txt"
         >
           saint-virus
@@ -42,7 +40,6 @@ const DownloadsPage = () => (
       <li>
         <Link
           download
-          nav
           to="downloads/saint/saint-virus-no-mutants.txt"
         >
           saint-virus-no-mutants
@@ -54,7 +51,6 @@ const DownloadsPage = () => (
       <li>
         <Link
           download
-          nav
           to="downloads/saint/saint-virus-merged.txt"
         >
           saint-merged
@@ -65,6 +61,17 @@ const DownloadsPage = () => (
         highest spectral count when a prey was detected by both tags.
       </li>
     </ul>
+    <h2>GO enrichment</h2>
+    <p>
+      <Link
+        download
+        to="downloads/enrichment/enrichment.xlsx"
+      >
+        enrichment
+      </Link>
+      {' '}
+      for viral baits.
+    </p>
   </Layout>
 );
 

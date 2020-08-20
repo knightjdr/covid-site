@@ -1,0 +1,8 @@
+bait	source	native	name	p_value	term_size	query_size	intersection_size	background_size	precision	recall	intersections
+NSP7_Ct	GO:MF	GO:0031698	beta-2 adrenergic receptor binding	0.004784434384516581	5	22	2	16268	0.09090909090909091	0.4	['SLC9A3R1', 'GNAS']
+NSP7_Nt	GO:CC	GO:0005829	cytosol	0.001738616668932728	4850	40	25	16963	0.625	0.005154639175257732	['CEP131', 'ANAPC7', 'CPNE1', 'JAK1', 'PTPN1', 'CAD', 'TXNL1', 'CLPX', 'ESPL1', 'TTC37', 'NCAPD2', 'VAC14', 'HUWE1', 'NF1', 'GNAS', 'SREBF1', 'DNM2', 'ASMTL', 'CDK13', 'NPEPPS', 'PRKDC', 'AP2A1', 'ANAPC5', 'STRIP2', 'TUT4']
+NSP7_Nt	GO:MF	GO:0004088	carbamoyl-phosphate synthase (glutamine-hydrolyzing) activity	0.00239633682032771	2	40	2	16268	0.05	1.0	['CPS1', 'CAD']
+NSP7_Nt	GO:BP	GO:1901970	positive regulation of mitotic sister chromatid separation	0.005727444931150362	13	39	3	15979	0.07692307692307693	0.2307692307692308	['ANAPC7', 'ESPL1', 'ANAPC5']
+NSP7_Nt	GO:BP	GO:1902101	positive regulation of metaphase/anaphase transition of cell cycle	0.005727444931150362	13	39	3	15979	0.07692307692307693	0.2307692307692308	['ANAPC7', 'ESPL1', 'ANAPC5']
+NSP7_Nt	GO:BP	GO:0045842	positive regulation of mitotic metaphase/anaphase transition	0.005727444931150362	13	39	3	15979	0.07692307692307693	0.2307692307692308	['ANAPC7', 'ESPL1', 'ANAPC5']
+NSP7_Nt	GO:BP	GO:1905820	positive regulation of chromosome separation	0.007277163672199136	14	39	3	15979	0.07692307692307693	0.2142857142857143	['ANAPC7', 'ESPL1', 'ANAPC5']
