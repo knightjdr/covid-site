@@ -37,7 +37,7 @@ const Preys = ({
       <Link
         download
         nav
-        to={`/downloads/${id}-saint.txt`}
+        to={`/downloads/saint/${id}-saint.txt`}
       >
         <FontAwesomeIcon icon={faDownload} size="1x" />
         <span>SAINT</span>

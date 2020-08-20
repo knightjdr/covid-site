@@ -18,7 +18,7 @@ const DownloadsPage = () => (
         <Link
           download
           nav
-          to="downloads/saint-all.txt"
+          to="downloads/saint/saint-all.txt"
         >
           saint-all
         </Link>
@@ -31,7 +31,7 @@ const DownloadsPage = () => (
         <Link
           download
           nav
-          to="downloads/saint-virus.txt"
+          to="downloads/saint/saint-virus.txt"
         >
           saint-virus
         </Link>
@@ -43,7 +43,7 @@ const DownloadsPage = () => (
         <Link
           download
           nav
-          to="downloads/saint-virus-no-mutants.txt"
+          to="downloads/saint/saint-virus-no-mutants.txt"
         >
           saint-virus-no-mutants
         </Link>
@@ -55,7 +55,7 @@ const DownloadsPage = () => (
         <Link
           download
           nav
-          to="downloads/saint-virus-merged.txt"
+          to="downloads/saint/saint-virus-merged.txt"
         >
           saint-merged
         </Link>
