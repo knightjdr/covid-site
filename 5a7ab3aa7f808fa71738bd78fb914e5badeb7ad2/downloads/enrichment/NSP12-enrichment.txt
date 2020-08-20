@@ -1,0 +1,2 @@
+bait	source	native	name	p_value	term_size	query_size	intersection_size	background_size	precision	recall	intersections
+NSP12_Nt	GO:MF	GO:0016628	oxidoreductase activity, acting on the CH-CH group of donors, NAD or NADP as acceptor	0.002093609597547989	19	5	2	16268	0.4	0.1052631578947368	['DHCR7', 'AKR1C1']
