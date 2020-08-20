@@ -18,7 +18,10 @@ const Localization = ({
 }) => (
   <section className="display">
     <div className="display__inner">
-      <h2 className="display__title">
+      <h2
+        className="display__title"
+        id="localization"
+      >
         <FontAwesomeIcon icon={faMapMarkerAlt} />
         Localization
       </h2>

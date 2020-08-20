@@ -15,7 +15,10 @@ const Genome = ({
 }) => (
   <section className="display">
     <div className="display__inner">
-      <h2 className="display__title">
+      <h2
+        className="display__title"
+        id="genome"
+      >
         <FontAwesomeIcon icon={faCircleNotch} />
         Genome
       </h2>
