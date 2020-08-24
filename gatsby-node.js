@@ -68,27 +68,18 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// eslint-disable-next-line import/no-extraneous-dependencies
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-exports.onCreateWebpackConfig = ({ actions, stage, getConfig, loaders }) => {
+exports.onCreateWebpackConfig = ({
+  actions,
+  stage,
+  getConfig,
+}) => {
   if (stage === 'build-javascript') {
     const config = getConfig();
-    const index = config.plugins.findIndex((plugin) => {
-      return plugin.constructor.name === "MiniCssExtractPlugin";
-    });
+    const index = config.plugins.findIndex((plugin) => plugin.constructor.name === 'MiniCssExtractPlugin');
     config.plugins[index] = new MiniCssExtractPlugin({ ignoreOrder: true });
     actions.replaceWebpackConfig(config);
   }
-};
-
-/* password config build */
-const fsExtra = require('fs-extra');
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
-
-exports.onPostBuild = async () => {
-  const targetFolder = process.env.GATSBY_DEPLOY_FOLDER;
-  await fsExtra.move(`${__dirname}/public`, `${__dirname}/public_dev`);
-  await fsExtra.move(`${__dirname}/public_dev`, `${__dirname}/public/${targetFolder}`);
-  await fsExtra.move(`${__dirname}/public/${targetFolder}/CNAME`, `${__dirname}/public/CNAME`);
-  await fsExtra.copy('/hdd/Dropbox/Projects/covid19/password-site/index.html', `${__dirname}/public/index.html`);
 };

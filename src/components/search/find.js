@@ -1,4 +1,4 @@
-import levenshtein from 'fast-levenshtein';
+import levenshtein from 'fastest-levenshtein';
 
 import preys from '../../../content/preys.json';
 
@@ -14,7 +14,7 @@ const getMinLevenshteinCalculator = (term) => {
     let min = Number.MAX_SAFE_INTEGER;
 
     arr.forEach((value) => {
-      const d = levenshtein.get(value.toLowerCase(), lcTerm);
+      const d = levenshtein.distance(value.toLowerCase(), lcTerm);
       if (d < min) {
         min = d;
       }

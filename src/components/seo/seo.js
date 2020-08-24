@@ -94,10 +94,6 @@ function SEO({
           property: 'twitter:card',
           content: 'summary_large_image',
         },
-        {
-          name: 'robots',
-          content: 'noindex,nofollow',
-        },
       ].concat(meta)}
       link={[
         {
