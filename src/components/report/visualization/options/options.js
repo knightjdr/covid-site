@@ -52,7 +52,7 @@ const Options = ({
       onChange={handleSpecificityChange}
       step={1}
       type="number"
-      value={options.count}
+      value={options.specificity}
     />
     <Switch
       checked={options.log}
@@ -115,6 +115,7 @@ Options.propTypes = {
     fdr: PropTypes.number,
     log: PropTypes.bool,
     midline: PropTypes.bool,
+    specificity: PropTypes.number,
   }).isRequired,
 };
 

@@ -55,7 +55,7 @@ const OptionsContainer = ({
   const handleSpecificityChange = (e) => {
     const [validated, value] = validateCount(e);
     if (validated) {
-      changeOption('count', value);
+      changeOption('specificity', value);
     }
   };
 
