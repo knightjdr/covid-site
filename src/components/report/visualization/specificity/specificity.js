@@ -33,7 +33,8 @@ const Specificity = forwardRef((
       {' '}
       <span className="specificity__highlight" />
       {' '}
-      have infinite specificty. Hover over a point to see its label.
+      have infinite specificty. Hover over a point to see its label or click on a point to add a label
+      to the plot.
     </p>
     <div className="specificity__inner">
       <Condition
