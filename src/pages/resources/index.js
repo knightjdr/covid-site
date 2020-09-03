@@ -30,7 +30,7 @@ const ResourcesPage = () => (
         </Link>
         {' '}
         is a browser extension that retrieves gene information on any website simply
-        by clicking on a gene name. You may find it helpful for quickly retrieving
+        by double-clicking on a gene name. You may find it helpful for quickly retrieving
         information when browsing data on this website.
       </li>
     </ul>
@@ -60,17 +60,17 @@ const ResourcesPage = () => (
     <h2>Definitions</h2>
     <h3 id="bioid">BioID</h3>
     <p>
-      BioID is a technique that identifies protein-protein interactions in living cells, and represents a
+      BioID is a technique that identifies protein-protein interactions in living cells and represents a
       powerful complementary approach to standard affinity purification approaches (e.g. immunoprecipitation
       combined with mass spectrometry, IP-MS), with a notably improved ability to identify transient or weak
-      interactors - and PPIs that take place in/at cellular membranes and on chromatin, where key steps in
-      viral replication take place. In BioID, a protein of interest is fused with an
+      interactors, as well as PPIs that take place in/at cellular membranes and on chromatin, where key steps
+      in viral replication take place. In BioID a protein of interest is fused with an
       {' '}
       <span className="resources__bioid-species">
         E. coli
       </span>
       {' '}
-      biotin conjugating enzyme mutant. The abortive mutant BirA* protein (R118G) can efficiently activate biotin,
+      biotin conjugating enzyme mutant. The abortive mutant BirA* protein (R118G) can efficiently activate biotin
       but exhibits a reduced affinity for the activated molecule. Highly reactive biotinoyl-AMP thus simply
       diffuses away from BirA* and forms covalent bonds with nearby amine groups - including epsilon amines
       on lysine residues in neighbouring (within ~10nm) polypeptides. Following cell lysis, these

@@ -10,8 +10,8 @@ const DownloadsPage = () => (
     <h1>Downloads</h1>
     <h2>SAINT files</h2>
     <p>
-      The SAINT files contain all preys detected for profiled baits with scoring and comprehensive identifier
-      information. There are four datasets available for download:
+      The SAINT files contain all preys detected for profiled baits with scoring and
+      comprehensive identifier information. There are four datasets available for download:
     </p>
     <ul>
       <li>
@@ -61,17 +61,20 @@ const DownloadsPage = () => (
         highest spectral count when a prey was detected by both tags.
       </li>
     </ul>
-    <h2>GO enrichment</h2>
-    <p>
-      <Link
-        download
-        to="downloads/enrichment/enrichment.xlsx"
-      >
-        enrichment
-      </Link>
-      {' '}
-      for viral baits.
-    </p>
+    <h2>Term enrichments</h2>
+    <ul>
+      <li>
+        <Link
+          download
+          to="downloads/enrichment/enrichment.xlsx"
+        >
+          profile enrichment
+        </Link>
+        :
+        {' '}
+        complete GO, Corum and Reactome enrichments for viral baits
+      </li>
+    </ul>
   </Layout>
 );
 

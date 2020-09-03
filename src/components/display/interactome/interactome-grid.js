@@ -49,9 +49,9 @@ const InteractomeGrid = () => (
           width={120}
         />
         <p>
-          We detected over 20% of the A549 proteome to be in proximity to
-          at least one of the viral proteins we expressed. The N protein
-          had only six proximity interactions while M had 938 or ~10% of the cellular proteome.
+          We detected over 20% of the estimated A549 proteome to be in proximity to
+          at least one of the viral proteins we expressed. The N protein had only six
+          proximity interactions while M had 938 or ~10% of the cellular proteome.
         </p>
       </div>
     </div>

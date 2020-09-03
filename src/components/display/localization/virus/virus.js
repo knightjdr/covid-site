@@ -7,7 +7,6 @@ import './virus.css';
 const validHighlightNames = [
   'capsid',
   'envelope',
-  'matrix',
   'spike',
 ];
 
@@ -98,13 +97,7 @@ const Virus = ({
       >
         <path className="protein-nav__virus_dark" d="M200 64c36.3 0 70.5 14.1 96.2 39.8 25.7 25.7 39.8 59.8 39.8 96.2s-14.1 70.5-39.8 96.2C270.5 321.9 236.3 336 200 336s-70.5-14.1-96.2-39.8C78.1 270.5 64 236.3 64 200s14.1-70.5 39.8-96.2S163.7 64 200 64m0-14c-82.8 0-150 67.2-150 150s67.2 150 150 150 150-67.2 150-150S282.8 50 200 50z" />
       </g>
-      <g
-        data-localization="matrix"
-        onBlur={handleGraphicMouseOut}
-        onFocus={handleGraphicMouseOver}
-        onMouseOut={handleGraphicMouseOut}
-        onMouseOver={handleGraphicMouseOver}
-      >
+      <g data-localization="matrix">
         <circle className="protein-nav__virus_medium" cx="76" cy="200" r="10" />
         <circle className="protein-nav__virus_medium" cx="77.5" cy="219.4" r="10" />
         <circle className="protein-nav__virus_medium" cx="82.1" cy="238.3" r="10" />

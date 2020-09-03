@@ -3,7 +3,7 @@
     "id": "NSP1",
     "localization": {
       "cell": [
-        "cytoplasm"
+        ""
       ],
       "virus": [
         ""
@@ -25,7 +25,7 @@
     "id": "NSP3",
     "localization": {
       "cell": [
-        "cytoplasm"
+        ""
       ],
       "virus": [
         ""
@@ -58,7 +58,8 @@
     "id": "NSP6",
     "localization": {
       "cell": [
-        "ER"
+        "ER",
+        "Golgi"
       ],
       "virus": [
         ""
@@ -102,7 +103,7 @@
     "id": "NSP10",
     "localization": {
       "cell": [
-        "nucleus"
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -113,7 +114,7 @@
     "id": "NSP12",
     "localization": {
       "cell": [
-        ""
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -135,8 +136,7 @@
     "id": "NSP14",
     "localization": {
       "cell": [
-        "cytoplasm",
-        "ER"
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -147,7 +147,7 @@
     "id": "NSP15",
     "localization": {
       "cell": [
-        ""
+        "cytoplasm"
       ],
       "virus": [
         ""
@@ -169,7 +169,8 @@
     "id": "S",
     "localization": {
       "cell": [
-        "ER"
+        "ER",
+        "Golgi"
       ],
       "virus": [
         "spike"
@@ -180,7 +181,8 @@
     "id": "ORF3A",
     "localization": {
       "cell": [
-        "ER"
+        "ER",
+        "Golgi"
       ],
       "virus": [
         ""
@@ -294,7 +296,7 @@
     "id": "ORF14",
     "localization": {
       "cell": [
-        "nucleolus"
+        "nucleus"
       ],
       "virus": [
         ""

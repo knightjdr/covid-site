@@ -10,8 +10,6 @@ const validHighlightNames = [
   'Golgi',
   'mitochondrion',
   'nucleus',
-  'nucleolus',
-  'plasma_membrane',
 ];
 
 const getHighlightName = (highlighted) => {
@@ -44,13 +42,7 @@ const InfectedCell = ({
       >
         <path className="protein-nav__cell_light" d="M199.6 49.8c-26 0-50.4 6.6-71.7 18.2 7.4 6.9 12.1 16.7 12.1 27.5 0 20.7-16.8 37.5-37.5 37.5-11.8 0-22.4-5.5-29.3-14.1-15 23.3-23.6 51.1-23.6 80.8 0 82.8 67.2 150 150 150s150-67.2 150-150-67.2-149.9-150-149.9z" />
       </g>
-      <g
-        data-localization="plasma_membrane"
-        onBlur={handleGraphicMouseOut}
-        onFocus={handleGraphicMouseOver}
-        onMouseOut={handleGraphicMouseOut}
-        onMouseOver={handleGraphicMouseOver}
-      >
+      <g data-localization="plasma_membrane">
         <path className="protein-nav__cell_dark" d="M199.6 63.8c36.3 0 70.5 14.1 96.2 39.8 25.7 25.7 39.8 59.8 39.8 96.2s-14.1 70.5-39.8 96.2c-25.7 25.7-59.8 39.8-96.2 39.8s-70.5-14.1-96.2-39.8c-25.7-25.7-39.8-59.8-39.8-96.2 0-20.7 4.7-41 13.6-59.4 7.6 4.3 16.3 6.6 25.3 6.6 28.4 0 51.5-23.1 51.5-51.5 0-7.7-1.7-15.2-5-22 16-6.4 33.2-9.7 50.6-9.7m0-14c-26 0-50.4 6.6-71.7 18.2 7.4 6.9 12.1 16.7 12.1 27.5 0 20.7-16.8 37.5-37.5 37.5-11.8 0-22.4-5.5-29.3-14.1-15 23.3-23.6 51.1-23.6 80.8 0 82.8 67.2 150 150 150s150-67.2 150-150-67.2-149.9-150-149.9z" />
       </g>
       <g id="virus">
@@ -259,15 +251,6 @@ const InfectedCell = ({
           d="M161.7,313c-28.3,0-51.2-23-51.2-51.2s23-51.2,51.2-51.2s51.2,23,51.2,51.2S190,313,161.7,313z M161.7,217.5
           c-24.4,0-44.2,19.8-44.2,44.2s19.8,44.2,44.2,44.2s44.2-19.8,44.2-44.2S186.1,217.5,161.7,217.5z"
         />
-      </g>
-      <g
-        data-localization="nucleolus"
-        onBlur={handleGraphicMouseOut}
-        onFocus={handleGraphicMouseOver}
-        onMouseOut={handleGraphicMouseOut}
-        onMouseOver={handleGraphicMouseOver}
-      >
-        <circle className="protein-nav__cell_dark" cx="153.5" cy="272.5" r="18.5" />
       </g>
       <g
         data-localization="Golgi"

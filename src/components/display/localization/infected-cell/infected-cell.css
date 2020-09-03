@@ -45,18 +45,14 @@ svg [data-localization*="cytoplasm"]:hover path,
 svg [data-localization*="ER"]:hover path,
 svg [data-localization*="Golgi"]:hover path,
 svg [data-localization*="mitochondrion"]:hover *,
-svg [data-localization*="nucleolus"]:hover *,
-svg [data-localization*="nucleus"]:hover *,
-svg [data-localization*="plasma_membrane"]:hover path {
+svg [data-localization*="nucleus"]:hover * {
   fill: var(--color-display-focus);
 }
 svg[data-highlighted*="cytoplasm"] [data-localization="cytoplasm"] path,
 svg[data-highlighted*="ER"] [data-localization="ER"] path,
 svg[data-highlighted*="Golgi"] [data-localization="Golgi"] path,
 svg[data-highlighted*="mitochondrion"] [data-localization="mitochondrion"] *,
-svg[data-highlighted*="nucleolus"] [data-localization="nucleolus"] *,
-svg[data-highlighted*="nucleus"] [data-localization="nucleus"] *,
-svg[data-highlighted*="plasma_membrane"] [data-localization="plasma_membrane"] path {
+svg[data-highlighted*="nucleus"] [data-localization="nucleus"] * {
   fill: var(--color-display-focus);
 }
 
