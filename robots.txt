@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://covid19interactome.org/sitemap.xml
+Host: https://covid19interactome.org

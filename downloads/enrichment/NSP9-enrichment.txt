@@ -1,0 +1,3 @@
+bait	source	native	name	p_value	term_size	query_size	intersection_size	background_size	precision	recall	genes
+NSP9_Nt	GO:CC	GO:1902737	dendritic filopodium	0.004631818713535826	3	34	3	7292	0.08823529411764706	1.0	['FMR1', 'FXR1', 'FXR2']
+NSP9_Nt	GO:CC	GO:0044326	dendritic spine neck	0.004631818713535826	3	34	3	7292	0.08823529411764706	1.0	['FMR1', 'FXR1', 'FXR2']

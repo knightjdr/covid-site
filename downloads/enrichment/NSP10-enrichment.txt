@@ -1,0 +1,2 @@
+bait	source	native	name	p_value	term_size	query_size	intersection_size	background_size	precision	recall	genes
+NSP10_Ct	CORUM	CORUM:189	BAF complex	0.001879273503957523	11	6	2	7292	0.3333333333333333	0.18181818181818182	['ARID1A', 'ARID1B']
