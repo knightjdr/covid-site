@@ -1,4 +1,3 @@
-import cytoscape from 'cytoscape';
 import React, { useEffect, useRef, useState } from 'react';
 import { cloneDeep } from 'lodash';
 
@@ -52,28 +51,33 @@ const NetworkContainer = () => {
 
   useEffect(() => {
     if (network && ref.current && !cy.current) {
-      cy.current = cytoscape({
-        container: ref.current,
-        boxSelectionEnabled: false,
-        elements: cloneDeep(network.elements),
-        layout: {
-          name: 'preset',
-        },
-        minZoom: ZOOM_MIN,
-        style: network.style,
-      });
-      cy.current.on('tap', 'node', (e) => {
-        const node = cy.current.$(`#${e.target.id()}`);
+      const drawNetwork = async () => {
+        const cytoscape = (await import('cytoscape')).default;
+        cy.current = cytoscape({
+          container: ref.current,
+          boxSelectionEnabled: false,
+          elements: cloneDeep(network.elements),
+          layout: {
+            name: 'preset',
+          },
+          minZoom: ZOOM_MIN,
+          style: network.style,
+        });
+        cy.current.on('tap', 'node', (e) => {
+          const node = cy.current.$(`#${e.target.id()}`);
 
-        if (isTouch || e.originalEvent.shiftKey) {
-          cy.current.elements().not(e.target).unselect();
-          cy.current.$('*').neighborhood().addClass('hidden');
-          node.removeClass('hidden');
-          node.neighborhood().removeClass('hidden');
-        } else {
-          setSelectedNode({ id: e.target.id(), data: node.data() });
-        }
-      });
+          if (isTouch || e.originalEvent.shiftKey) {
+            cy.current.elements().not(e.target).unselect();
+            cy.current.$('*').neighborhood().addClass('hidden');
+            node.removeClass('hidden');
+            node.neighborhood().removeClass('hidden');
+          } else {
+            setSelectedNode({ id: e.target.id(), data: node.data() });
+          }
+        });
+      };
+
+      drawNetwork();
     }
   }, [cy.current, network, ref.current]);
 
