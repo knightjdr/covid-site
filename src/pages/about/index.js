@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Citation from '../../components/about/citation';
 import Contact from '../../components/about/contact';
 import Credits from '../../components/about/credits';
 import Funding from '../../components/about/funding';
@@ -15,6 +16,14 @@ const AboutPage = () => (
     <section className="about">
       <h1>About</h1>
       <ul className="about__links">
+        <li>
+          <Link
+            nav
+            to="/about/#citation"
+          >
+            Citation
+          </Link>
+        </li>
         <li>
           <Link
             nav
@@ -83,6 +92,7 @@ const AboutPage = () => (
         &#41;
         .
       </p>
+      <Citation />
       <Credits />
       <Contact />
       <Funding />
