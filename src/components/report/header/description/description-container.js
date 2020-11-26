@@ -23,7 +23,6 @@ const DescriptionContainer = ({
     const isOverflown = () => {
       if (ref.current) {
         const { clientWidth, scrollWidth } = ref.current;
-        console.log(scrollWidth, clientWidth);
         setShowButtonState(scrollWidth > clientWidth);
       }
     };

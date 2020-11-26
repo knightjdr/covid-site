@@ -20,7 +20,7 @@ const getLogMidline = (ticks, axisLength) => {
   } else {
     const yLabelStart = ticks.y[0].label;
     coordinates.x1 = ticks.x.find((tick) => tick.label === yLabelStart).x;
-    coordinates.y1 = 0;
+    coordinates.y1 = axisLength;
   }
 
   if (ticks.x[ticks.x.length - 1].label >= ticks.y[ticks.y.length - 1].label) {

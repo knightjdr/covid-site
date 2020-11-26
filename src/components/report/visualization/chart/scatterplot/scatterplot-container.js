@@ -17,6 +17,7 @@ const ScatterplotContainer = ({
   y,
 }) => {
   const [labels, setLabels] = useState({});
+  const [scrollLock, setScrollLock] = useState(false);
 
   const handleClickLabel = (e) => {
     const { label } = e.target.dataset;
@@ -44,6 +45,14 @@ const ScatterplotContainer = ({
       vertex: 'y',
     };
     handlers.pan(e, options);
+  };
+
+  const handleMouseEnter = () => {
+    setScrollLock(true);
+  };
+
+  const handleMouseLeave = () => {
+    setScrollLock(false);
   };
 
   const handleWheelX = (e) => {
@@ -79,6 +88,8 @@ const ScatterplotContainer = ({
       handleMouseDownX={handleMouseDownX}
       handleMouseDownXY={handleMouseDownXY}
       handleMouseDownY={handleMouseDownY}
+      handleMouseEnter={handleMouseEnter}
+      handleMouseLeave={handleMouseLeave}
       handleWheelX={handleWheelX}
       handleWheelXY={handleWheelXY}
       handleWheelY={handleWheelY}
@@ -88,6 +99,7 @@ const ScatterplotContainer = ({
       midline={midline}
       plotDimension={plotDimension}
       points={points}
+      scrollLock={scrollLock}
       transform={transform}
       x={x}
       y={y}

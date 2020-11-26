@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { RemoveScroll } from 'react-remove-scroll';
 
 import Plot from './plot';
 import Xaxis from './x-axis';
@@ -13,6 +14,8 @@ const ScatterPlot = ({
   handleMouseDownX,
   handleMouseDownXY,
   handleMouseDownY,
+  handleMouseEnter,
+  handleMouseLeave,
   handleWheelX,
   handleWheelXY,
   handleWheelY,
@@ -22,47 +25,52 @@ const ScatterPlot = ({
   midline,
   plotDimension,
   points,
+  scrollLock,
   transform,
   x,
   y,
 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    id={id}
-    className="scatterplot"
-    height={plotDimension}
-    width={plotDimension}
-  >
-    <Plot
-      axisLength={axisLength}
-      handleClickLabel={handleClickLabel}
-      handleMouseDown={handleMouseDownXY}
-      handleWheel={handleWheelXY}
+  <RemoveScroll enabled={scrollLock}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
       id={id}
-      labels={labels}
-      midline={midline}
-      points={points}
-      transform={transform}
-    />
-    <Yaxis
-      axisLength={axisLength}
-      handleMouseDownY={handleMouseDownY}
-      handleWheelY={handleWheelY}
-      id={id}
-      log={log}
-      transform={transform}
-      y={y}
-    />
-    <Xaxis
-      axisLength={axisLength}
-      handleMouseDownX={handleMouseDownX}
-      handleWheel={handleWheelX}
-      id={id}
-      log={log}
-      transform={transform}
-      x={x}
-    />
-  </svg>
+      className="scatterplot"
+      height={plotDimension}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      width={plotDimension}
+    >
+      <Plot
+        axisLength={axisLength}
+        handleClickLabel={handleClickLabel}
+        handleMouseDown={handleMouseDownXY}
+        handleWheel={handleWheelXY}
+        id={id}
+        labels={labels}
+        midline={midline}
+        points={points}
+        transform={transform}
+      />
+      <Yaxis
+        axisLength={axisLength}
+        handleMouseDownY={handleMouseDownY}
+        handleWheelY={handleWheelY}
+        id={id}
+        log={log}
+        transform={transform}
+        y={y}
+      />
+      <Xaxis
+        axisLength={axisLength}
+        handleMouseDownX={handleMouseDownX}
+        handleWheel={handleWheelX}
+        id={id}
+        log={log}
+        transform={transform}
+        x={x}
+      />
+    </svg>
+  </RemoveScroll>
 );
 
 ScatterPlot.defaultProps = {
@@ -75,6 +83,8 @@ ScatterPlot.propTypes = {
   handleMouseDownX: PropTypes.func.isRequired,
   handleMouseDownXY: PropTypes.func.isRequired,
   handleMouseDownY: PropTypes.func.isRequired,
+  handleMouseEnter: PropTypes.func.isRequired,
+  handleMouseLeave: PropTypes.func.isRequired,
   handleWheelX: PropTypes.func.isRequired,
   handleWheelXY: PropTypes.func.isRequired,
   handleWheelY: PropTypes.func.isRequired,
@@ -95,6 +105,7 @@ ScatterPlot.propTypes = {
       y: PropTypes.number,
     }),
   ).isRequired,
+  scrollLock: PropTypes.bool.isRequired,
   transform: PropTypes.shape({
     scale: PropTypes.number,
     matrix: PropTypes.shape({

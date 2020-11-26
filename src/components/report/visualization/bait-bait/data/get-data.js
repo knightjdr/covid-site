@@ -27,7 +27,6 @@ const getData = (preys, ref, options) => {
   const scaledData = scaleData(filteredPreys, ticks, { ...dimensions, log: options.log });
 
   const midline = options.midline ? defineMidline(scaledData.ticks, dimensions.axisLength, options.log) : null;
-
   return {
     ...dimensions,
     log: options.log,
