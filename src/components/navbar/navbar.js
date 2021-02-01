@@ -52,7 +52,6 @@ const Navbar = forwardRef((
   </div>
 ));
 
-
 Navbar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isMenuOpen: PropTypes.bool.isRequired,

@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { forwardRef } from 'react';
 
-import Link from '../link/link';
-
-
 const HeatmapRows = forwardRef((
   {
     highlightedPrey,

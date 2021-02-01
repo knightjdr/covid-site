@@ -1,5 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { render } from '@testing-library/react';
 
 export { act };

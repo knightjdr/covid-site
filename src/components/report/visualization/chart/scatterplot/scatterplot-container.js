@@ -23,7 +23,7 @@ const ScatterplotContainer = ({
     const { label } = e.target.dataset;
     setLabels({
       ...labels,
-      [label]: labels[label] ? false : true,
+      [label]: !labels[label],
     });
   };
 
