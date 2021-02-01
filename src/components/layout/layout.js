@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Location } from '@reach/router';
 
-import CookieBanner from './cookie-banner/cookie-banner';
 import Link from '../link/link';
 import Navbar from '../navbar/navbar-container';
 
@@ -40,7 +39,6 @@ const Layout = ({
               </footer>
             )
           }
-          <CookieBanner />
         </div>
       )
     }

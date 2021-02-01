@@ -48,5 +48,12 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    {
+      resolve: 'gatsby-plugin-plausible',
+      options: {
+        customDomain: 'analytics.jamesknight.dev',
+        domain: 'covid19interactome.org',
+      },
+    },
   ],
 };
