@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     description: 'BioID-based interactome of the COVID-19 proteome.',
@@ -51,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-plausible',
       options: {
-        customDomain: 'analytics.jamesknight.dev',
+        customDomain: process.env.PLAUSIBLE_DOMAIN,
         domain: 'covid19interactome.org',
       },
     },
