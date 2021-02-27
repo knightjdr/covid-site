@@ -17,7 +17,10 @@ const ResourcesPage = () => (
     <p>
       BioID and lentiviral protocols, as well as plasmid constructs, can be found at the
       {' '}
-      <Link to="https://nbcc.lunenfeld.ca/resources">
+      <Link
+        allowReferrer
+        to="https://nbcc.lunenfeld.ca/resources"
+      >
         Network Biology Collaborative Centre
       </Link>
       .
@@ -25,7 +28,10 @@ const ResourcesPage = () => (
     <h2>Tools</h2>
     <ul>
       <li>
-        <Link to="https://gene-info.org">
+        <Link
+          allowReferrer
+          to="https://gene-info.org"
+        >
           GIX
         </Link>
         {' '}

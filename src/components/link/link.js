@@ -7,6 +7,7 @@ import './link.css';
 const formatClass = (classes) => (classes.length > 0 ? classes.join(' ') : undefined);
 
 const CustomLink = ({
+  allowReferrer,
   buttonStyle,
   children,
   className,
@@ -55,7 +56,7 @@ const CustomLink = ({
     <a
       className={formatClass(classes)}
       href={to}
-      rel="noreferrer"
+      {...(!allowReferrer ? { rel: 'noreferrer' } : {})}
       {...props}
     >
       {children}
@@ -64,6 +65,7 @@ const CustomLink = ({
 };
 
 CustomLink.defaultProps = {
+  allowReferrer: false,
   buttonStyle: false,
   className: '',
   hoverBorder: false,
@@ -72,6 +74,7 @@ CustomLink.defaultProps = {
 };
 
 CustomLink.propTypes = {
+  allowReferrer: PropTypes.bool,
   buttonStyle: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node.isRequired,

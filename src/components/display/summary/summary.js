@@ -32,7 +32,10 @@ const Summary = () => (
         <FontAwesomeIcon icon={faCommentAltExclamation} />
         Consider installing the browser extension
         {' '}
-        <Link to="https://gene-info.org">
+        <Link
+          allowReferrer
+          to="https://gene-info.org"
+        >
           GIX
         </Link>
         {' '}
